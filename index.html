@@ -97,6 +97,22 @@
   .marquee-text { display: inline-block; padding-left: 100%; animation: scrollMarquee 18s linear infinite; font-size: 14px; font-weight: 700; color: #ffffff; text-shadow: 0 1px 6px rgba(0,0,0,0.8); letter-spacing: 0.3px; }
   @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
+  /* BANNER QUẢNG CÁO */
+  .ad-container { 
+    position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 24px; 
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15); border: 1px solid var(--glass-border); 
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    background: rgba(255,255,255,0.15); display: flex; flex-direction: column;
+  }
+  .ad-image { width: 100%; display: block; object-fit: cover; max-height: 180px; }
+  .btn-close-ad { 
+    position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.4); color: white; 
+    border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 13px; font-weight: 800; 
+    cursor: pointer; display: flex; align-items: center; justify-content: center; 
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: all 0.2s; z-index: 10;
+  }
+  .btn-close-ad:active { transform: scale(0.85); background: rgba(0, 0, 0, 0.7); }
+
   .progress-container { width: 100%; height: 5px; background: rgba(0,0,0,0.05); }
   .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 0 5px 5px 0; }
 
@@ -233,6 +249,16 @@
         <span class="marquee-text" id="noticeText">Loading notice...</span>
       </div>
     </div>
+
+    <!-- BANNER QUẢNG CÁO -->
+    <div id="adBanner" class="ad-container hidden">
+      <button class="btn-close-ad" onclick="closeAd()">✕</button>
+      <!-- Thay file banner.jpg bằng hình ảnh thực tế bạn tải lên kho GitHub -->
+      <a href="#" target="_blank">
+        <img src="banner.jpg" alt="Advertisement" class="ad-image">
+      </a>
+    </div>
+
     <div class="hub-title">Training Modules</div>
     <div class="hub-sub">Please select a module to start.</div>
     <div class="module-grid" id="moduleList">
@@ -289,8 +315,22 @@ const DOM = {
   statPassed: document.getElementById('statPassed'), statAccuracy: document.getElementById('statAccuracy'), qText: document.getElementById('qText'),
   optionsList: document.getElementById('optionsList'), feedbackBox: document.getElementById('feedbackBox'), btnPrev: document.getElementById('btnPrev'),
   btnNext: document.getElementById('btnNext'), paletteGrid: document.getElementById('paletteGrid'), endDesc: document.getElementById('endDesc'),
-  dropdownMenu: document.getElementById('dropdownMenu'), btnMenu: document.getElementById('btnMenu'), loginError: document.getElementById('loginError')
+  dropdownMenu: document.getElementById('dropdownMenu'), btnMenu: document.getElementById('btnMenu'), loginError: document.getElementById('loginError'),
+  adBanner: document.getElementById('adBanner')
 };
+
+// Khôi phục trạng thái Quảng cáo (Nếu chưa tắt thì mới hiện ra)
+if (sessionStorage.getItem('adHidden') !== 'true' && DOM.adBanner) {
+  DOM.adBanner.classList.remove('hidden');
+}
+
+// Hàm tắt và ghi nhớ trạng thái Quảng cáo
+function closeAd() {
+  if (DOM.adBanner) {
+    DOM.adBanner.classList.add('hidden');
+    sessionStorage.setItem('adHidden', 'true');
+  }
+}
 
 let originalQuizData = [], currentRoundData = [], nextRoundData = [];    
 let globalTotal = 0, globalCompleted = 0, currentRoundIndex = 0; 
