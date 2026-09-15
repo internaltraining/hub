@@ -54,7 +54,7 @@
   .btn-header:active { transform: scale(0.92); }
   .btn-logout { background: var(--danger-bg); color: var(--danger); border-color: rgba(255, 59, 48, 0.2); margin-left: 8px; }
 
-  /* OVERLAY MODAL */
+  /* OVERLAY MODALS */
   .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 999; padding: 20px; animation: fadeIn 0.2s ease; }
   .modal-box { background: white; width: 100%; max-width: 440px; border-radius: 28px; padding: 28px 24px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); max-height: 85vh; overflow-y: auto; animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
@@ -110,11 +110,11 @@
   .opt-btn:active:not(:disabled) { transform: scale(0.97); }
   .opt-label { font-weight: 700; color: var(--accent); flex-shrink: 0; }
   
-  /* Trạng thái chọn trong lúc thi */
+  /* Select Option State */
   .opt-btn.selected { background: #e0f0ff; border-color: var(--accent); color: var(--accent); font-weight: 600; }
   .opt-btn.selected .opt-label { color: var(--accent); }
 
-  /* Trạng thái sau khi chấm điểm */
+  /* Evaluation States */
   .opt-btn.correct { background: var(--success-bg); border-color: var(--success); color: #0e5c22; }
   .opt-btn.correct .opt-label { color: var(--success); }
   .opt-btn.wrong { background: var(--danger-bg); border-color: var(--danger); color: #8a1510; }
@@ -155,73 +155,77 @@
 </div>
 <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
 
-<!-- MODAL 1: HÀNH ĐỘNG CỦA ADMIN -->
+<!-- MODAL 1: ADMIN ACTION SELECTION -->
 <div id="adminActionModal" class="modal-overlay hidden">
   <div class="modal-box">
     <div class="modal-title" id="actionModalTitle">Module Name</div>
-    <div class="modal-sub">Vui lòng chọn tính năng quản trị:</div>
+    <div class="modal-sub">Select assessment target or administration feature:</div>
     
+    <button class="mode-btn" onclick="startAdminQuiz('all')" style="border-color: var(--accent); background: #f0f7ff;">
+      <div class="mode-title" style="color: var(--accent);">📚 Assessment: Full Module (Combined)</div>
+      <div class="mode-desc">Practice all questions combined without trick separation, identical to the standard portal.</div>
+    </button>
     <button class="mode-btn" onclick="startAdminQuiz('longest')">
-      <div class="mode-title">🎯 Làm Bài: Mẹo Dài Nhất</div>
-      <div class="mode-desc">Lọc riêng các câu có đáp án dài nhất trong file này.</div>
+      <div class="mode-title">🎯 Assessment: Longest Option Trick</div>
+      <div class="mode-desc">Filter and practice questions where the longest choice is the correct key.</div>
     </button>
     <button class="mode-btn" onclick="startAdminQuiz('normal')">
-      <div class="mode-title">📖 Làm Bài: Câu Bình Thường</div>
-      <div class="mode-desc">Lọc riêng các câu lý thuyết thông thường.</div>
+      <div class="mode-title">📖 Assessment: Standard Questions</div>
+      <div class="mode-desc">Practice theoretical questions without length bias.</div>
     </button>
     <button class="mode-btn" onclick="openEditor()" style="border-color: #ff9500; background: #fff5e5;">
-      <div class="mode-title" style="color: #ff9500;">✏️ Fix Lỗi / Chỉnh Sửa JSON</div>
-      <div class="mode-desc">Sửa lỗi chính tả, đổi đáp án và tải file JSON gốc mới.</div>
+      <div class="mode-title" style="color: #ff9500;">✏️ Data Editor / Fix JSON</div>
+      <div class="mode-desc">Modify question text, correct keys, and explanations, then download updated JSON.</div>
     </button>
-    <button class="btn-close-modal" onclick="closeAdminAction()">Hủy</button>
+    <button class="btn-close-modal" onclick="closeAdminAction()">Cancel</button>
   </div>
 </div>
 
-<!-- MODAL 2: CHỌN CHẾ ĐỘ THI -->
+<!-- MODAL 2: SELECT TRAINING MODE -->
 <div id="modeModal" class="modal-overlay hidden">
   <div class="modal-box">
-    <div class="modal-title">Select Training Mode</div>
-    <div class="modal-sub">Chọn định dạng làm bài mong muốn:</div>
+    <div class="modal-title">Select Assessment Format</div>
+    <div class="modal-sub">Choose how you want to interact with questions:</div>
 
     <button class="mode-btn" onclick="confirmMode('EXAM')" style="border-color: var(--accent); background: #f0f7ff;">
-      <div class="mode-title" style="color: var(--accent);">📝 Thi Thử (Được Sửa Câu - Nộp Bài Mới Chấm)</div>
-      <div class="mode-desc">Chọn và thay đổi đáp án tự do, xem bảng câu hỏi. Chỉ hiển thị đúng/sai và giải thích sau khi bấm Nộp bài.</div>
+      <div class="mode-title" style="color: var(--accent);">📝 Mock Exam (Free Navigation & Submit)</div>
+      <div class="mode-desc">Select and change answers freely. Evaluation and explanations are revealed after submission.</div>
     </button>
 
     <button class="mode-btn" onclick="confirmMode('ONE_BY_ONE')">
-      <div class="mode-title">🎯 Luyện Từng Câu (Hiện Đáp Án Ngay)</div>
-      <div class="mode-desc">Bấm chọn câu nào biết ngay đúng/sai câu đó, có kèm giải thích tức thì.</div>
+      <div class="mode-title">🎯 Instant Feedback (One by One)</div>
+      <div class="mode-desc">Immediate answer validation and detailed explanations per question.</div>
     </button>
 
     <button class="mode-btn" onclick="confirmMode('SCROLL')">
-      <div class="mode-title">🚀 Continuous Training (Cuộn Phản Xạ)</div>
-      <div class="mode-desc">Tự động nhảy sang câu tiếp theo sau 1.2s khi bấm chọn đáp án.</div>
+      <div class="mode-title">🚀 Continuous Training (Rapid Reflex)</div>
+      <div class="mode-desc">Auto-advance after each selection to build fast exam reflexes.</div>
     </button>
     
     <button class="btn-close-modal" onclick="document.getElementById('modeModal').classList.add('hidden')">Cancel</button>
   </div>
 </div>
 
-<!-- MODAL 3: SỬA NỘI DUNG CÂU HỎI (EDITOR) -->
+<!-- MODAL 3: QUESTION EDITOR -->
 <div id="editModal" class="modal-overlay hidden">
   <div class="modal-box" style="max-width: 480px;">
-    <div class="modal-title" style="text-align: left; font-size: 18px; margin-bottom: 16px;">✏️ Fix Câu Hỏi</div>
+    <div class="modal-title" style="text-align: left; font-size: 18px; margin-bottom: 16px;">✏️ Fix Question</div>
     <input type="hidden" id="editIndex">
     
-    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Nội dung câu hỏi:</div>
+    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Question Text:</div>
     <textarea id="editQText" class="input-edit"></textarea>
 
-    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Các đáp án:</div>
+    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Answer Options:</div>
     <div id="editOptionsContainer"></div>
 
-    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px; margin-top: 8px;">Đáp án đúng (0 = A, 1 = B, 2 = C):</div>
+    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px; margin-top: 8px;">Correct Index (0 = A, 1 = B, 2 = C):</div>
     <input type="number" id="editCorrectIdx" class="input-edit" min="0">
 
-    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Giải thích / Ghi chú (Reference):</div>
+    <div style="font-size: 13px; font-weight: 700; color: var(--text-sub); margin-bottom: 4px;">Reference / Note:</div>
     <input type="text" id="editNote" class="input-edit">
 
-    <button class="btn-primary" onclick="saveEdit()">💾 Lưu Thay Đổi</button>
-    <button class="btn-close-modal" onclick="document.getElementById('editModal').classList.add('hidden')">Hủy</button>
+    <button class="btn-primary" onclick="saveEdit()">💾 Save Changes</button>
+    <button class="btn-close-modal" onclick="document.getElementById('editModal').classList.add('hidden')">Cancel</button>
   </div>
 </div>
 
@@ -231,7 +235,7 @@
   <div id="menuView">
     <div class="admin-badge">👤 Logged in as: <span id="adminNameDisplay">Admin</span></div>
     <div class="hub-title">Admin Hub</div>
-    <div class="hub-sub">Quản lý và Kiểm thử Ngân hàng Câu hỏi</div>
+    <div class="hub-sub">Question Bank Management & Internal Assessment</div>
     <div class="module-grid" id="moduleList">
       <div class="loader-spinner" style="margin-top: 20px;"></div>
     </div>
@@ -241,16 +245,16 @@
   <div id="editorView" class="card hidden glass-effect">
     <div class="editor-header">
       <div>
-        <h2 style="font-size: 20px; font-weight: 700; color: var(--text-main);">Danh sách Câu hỏi</h2>
-        <p style="font-size: 13px; color: var(--text-sub);">Bấm vào câu bất kỳ để sửa.</p>
+        <h2 style="font-size: 20px; font-weight: 700; color: var(--text-main);">Question Repository</h2>
+        <p style="font-size: 13px; color: var(--text-sub);">Select any item below to edit its content.</p>
       </div>
-      <button class="btn-header" style="background: var(--accent); color: white;" onclick="exportFixedJSON()">📥 Tải JSON Mới</button>
+      <button class="btn-header" style="background: var(--accent); color: white;" onclick="exportFixedJSON()">📥 Export Updated JSON</button>
     </div>
     <div class="editor-list" id="editorListContainer"></div>
-    <button class="btn-close-modal" style="margin-top: 16px;" onclick="exitEditor()">‹ Quay lại Hub</button>
+    <button class="btn-close-modal" style="margin-top: 16px;" onclick="exitEditor()">‹ Back to Hub</button>
   </div>
 
-  <!-- BÀI LÀM QUIZ -->
+  <!-- QUIZ VIEW -->
   <div id="quizView" class="card hidden glass-effect">
     <div class="stats-grid" id="qStatsGrid">
       <div class="stat-card"><span class="stat-label">Progress</span><span class="stat-val" id="statCurrentQ">1/0</span></div>
@@ -265,39 +269,39 @@
     <div style="display: flex; gap: 10px; margin-top: 24px; align-items: center;" id="navBar">
       <button onclick="navPrev()" id="btnPrev" class="btn-header" style="flex: 1; padding: 14px;">‹ Previous</button>
       <button onclick="navNext()" id="btnNext" class="btn-header" style="flex: 1; padding: 14px;">Next ›</button>
-      <button onclick="submitExam()" id="btnSubmitExam" class="btn-header" style="flex: 1.2; padding: 14px; background: var(--success); color: white; border-color: var(--success); display: none;">📝 Nộp Bài</button>
+      <button onclick="submitExam()" id="btnSubmitExam" class="btn-header" style="flex: 1.2; padding: 14px; background: var(--success); color: white; border-color: var(--success); display: none;">📝 Submit Exam</button>
     </div>
     
-    <button class="btn-close-modal" style="margin-top: 20px;" onclick="exitQuiz()">Thoát Bài Thi</button>
+    <button class="btn-close-modal" style="margin-top: 20px;" onclick="exitQuiz()">Exit Assessment</button>
   </div>
 
-  <!-- BẢNG CÂU HỎI (QUESTION PALETTE) -->
+  <!-- QUESTION PALETTE -->
   <div id="paletteCard" class="card hidden glass-effect" style="margin-top: 16px;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
       <span style="font-size: 13px; font-weight: 700; color: var(--text-sub); text-transform: uppercase;">Question Palette</span>
-      <span id="paletteStatusText" style="font-size: 12px; color: var(--text-sub);">Bấm số để nhảy câu</span>
+      <span id="paletteStatusText" style="font-size: 12px; color: var(--text-sub);">Click number to jump</span>
     </div>
     <div id="paletteGrid" class="palette-grid"></div>
   </div>
 
-  <!-- KẾT THÚC BÀI THI (SUMMARY) -->
+  <!-- END SUMMARY VIEW -->
   <div id="endView" class="card hidden text-center glass-effect">
     <div style="font-size: 70px; margin-bottom: 12px;">🏆</div>
-    <h2 style="font-size: 30px; margin-bottom: 10px;" id="endTitle">Kết Quả Bài Thi</h2>
+    <h2 style="font-size: 30px; margin-bottom: 10px;" id="endTitle">Assessment Completed</h2>
     <p style="color: var(--text-sub); margin-bottom: 24px; font-size: 15px;" id="endDesc">Calculating score...</p>
     <div style="display: flex; gap: 10px; flex-direction: column;">
-      <button class="btn-primary" onclick="reviewExamDetail()" style="margin-top: 0;">🔍 Xem Lại Chi Tiết & Giải Thích</button>
-      <button class="btn-header" onclick="exitQuiz()" style="padding: 14px; border-radius: 14px;">Quay lại Hub</button>
+      <button class="btn-primary" onclick="reviewExamDetail()" style="margin-top: 0;">🔍 Review Questions & Explanations</button>
+      <button class="btn-header" onclick="exitQuiz()" style="padding: 14px; border-radius: 14px;">Return to Hub</button>
     </div>
   </div>
 
 </div>
 
 <script>
-// KIỂM TRA BẢO MẬT PHIÊN LÀM VIỆC
+// SESSION AUTHORIZATION CHECK
 (function checkAuth() {
   if (sessionStorage.getItem("isAdmin") !== "true") {
-    alert("Vui lòng đăng nhập quyền Administrator từ trang chủ!");
+    alert("Please log in as Administrator from the home page!");
     window.location.href = "index.html";
   }
 })();
@@ -316,7 +320,7 @@ let originalQuizData = [], currentRoundData = [];
 let globalTotal = 0, currentRoundIndex = 0; 
 let totalAttempts = 0, totalCorrectAttempts = 0, advanceTimer;
 let examMode = "EXAM", userAnswers = {}; 
-let examSubmitted = false; // Cờ kiểm tra đã nộp bài hay chưa
+let examSubmitted = false;
 
 async function init() {
   try {
@@ -328,7 +332,9 @@ async function init() {
         <div class="m-title">${m.title}</div>
         <div class="m-desc">${m.desc}</div>
       </button>`).join('');
-  } catch (error) { document.getElementById('moduleList').innerHTML = '<p style="color:red; text-align:center;">Lỗi tải modules.json!</p>'; }
+  } catch (error) { 
+    document.getElementById('moduleList').innerHTML = '<p style="color:red; text-align:center;">Failed to load modules.json!</p>'; 
+  }
 }
 
 async function selectModuleForAdmin(fileUrl, title) {
@@ -341,29 +347,42 @@ async function selectModuleForAdmin(fileUrl, title) {
     if (!res.ok) throw new Error();
     workingData = await res.json();
     document.getElementById('adminActionModal').classList.remove('hidden');
-  } catch (err) { alert("Không thể tải dữ liệu JSON của module này!"); }
+  } catch (err) { 
+    alert("Failed to fetch module JSON data!"); 
+  }
 }
 
-function closeAdminAction() { document.getElementById('adminActionModal').classList.add('hidden'); }
+function closeAdminAction() { 
+  document.getElementById('adminActionModal').classList.add('hidden'); 
+}
 
-/* ==================== PHẦN 1: BÀI TRẮC NGHIỆM ĐA CHẾ ĐỘ ==================== */
+/* ==================== QUIZ ENGINE (ALL / LONGEST / NORMAL) ==================== */
 function startAdminQuiz(type) {
   document.getElementById('adminActionModal').classList.add('hidden');
   let filteredData = [];
   
-  workingData.forEach(q => {
-    const options = Array.isArray(q[2]) ? q[2] : [];
-    let correctIdx = typeof q[3] === 'string' ? q[3].toUpperCase().charCodeAt(0) - 65 : parseInt(q[3], 10);
-    const correctLen = (options[correctIdx] || '').trim().length;
-    
-    const isStrictlyLongest = options.every((opt, idx) => idx === correctIdx || correctLen > opt.trim().length);
-    if (type === 'longest' && isStrictlyLongest) filteredData.push(q);
-    else if (type === 'normal' && !isStrictlyLongest) filteredData.push(q);
-  });
+  if (type === 'all') {
+    // Chế độ gộp tất cả câu hỏi như giao diện chính
+    filteredData = [...workingData];
+  } else {
+    // Chế độ bóc tách
+    workingData.forEach(q => {
+      const options = Array.isArray(q[2]) ? q[2] : [];
+      let correctIdx = typeof q[3] === 'string' ? q[3].toUpperCase().charCodeAt(0) - 65 : parseInt(q[3], 10);
+      const correctLen = (options[correctIdx] || '').trim().length;
+      
+      const isStrictlyLongest = options.every((opt, idx) => idx === correctIdx || correctLen > opt.trim().length);
+      if (type === 'longest' && isStrictlyLongest) filteredData.push(q);
+      else if (type === 'normal' && !isStrictlyLongest) filteredData.push(q);
+    });
+  }
   
-  if (filteredData.length === 0) { alert("Không có câu hỏi nào thuộc nhóm này!"); return; }
+  if (filteredData.length === 0) { 
+    alert("No questions found for this category!"); 
+    return; 
+  }
   
-  // Đảo ngẫu nhiên các lựa chọn cho bài thi
+  // Xáo trộn vị trí đáp án để luyện thi
   originalQuizData = filteredData.map(q => {
     const opts = Array.isArray(q[2]) ? q[2] : [];
     let correctIdx = typeof q[3] === 'string' ? q[3].toUpperCase().charCodeAt(0) - 65 : parseInt(q[3], 10);
@@ -426,7 +445,7 @@ function renderQuestion() {
   document.getElementById('btnPrev').disabled = (currentRoundIndex === 0);
   document.getElementById('btnNext').disabled = (currentRoundIndex === currentRoundData.length - 1);
 
-  // CHẾ ĐỘ 1: THI THỬ (EXAM) - CHO PHÉP SỬA THOẢI MÁI
+  // EXAM MODE: MODIFY ANSWERS FREELY
   if (examMode === 'EXAM') {
     const answeredCount = Object.keys(userAnswers).length;
     document.getElementById('statAnswered').innerText = `${answeredCount}/${globalTotal}`;
@@ -443,7 +462,6 @@ function renderQuestion() {
           </button>`;
       }).join('');
     } else {
-      // Đã nộp bài -> Hiện kết quả chấm điểm & lời giải
       const myAnswer = userAnswers[currentRoundIndex];
       const correctIdx = q[3];
       const isCorrect = (myAnswer === correctIdx);
@@ -461,10 +479,10 @@ function renderQuestion() {
       }).join('');
 
       if (isCorrect) {
-        document.getElementById('feedbackBox').innerText = "✓ Chính xác!";
+        document.getElementById('feedbackBox').innerText = "✓ Correct!";
         document.getElementById('feedbackBox').className = 'feedback show success';
       } else {
-        document.getElementById('feedbackBox').innerHTML = `<strong>✗ Chưa chính xác!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || 'Đáp án đúng là ' + String.fromCharCode(65 + correctIdx)}</span>`;
+        document.getElementById('feedbackBox').innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || 'Correct key is ' + String.fromCharCode(65 + correctIdx)}</span>`;
         document.getElementById('feedbackBox').className = 'feedback show error';
       }
     }
@@ -472,7 +490,7 @@ function renderQuestion() {
     return;
   }
 
-  // CHẾ ĐỘ 2 & 3: LUYỆN TỪNG CÂU HOẶC CUỘN PHẢN XẠ
+  // ONE BY ONE & SCROLL MODES
   const acc = totalAttempts === 0 ? 100 : Math.round((totalCorrectAttempts / totalAttempts) * 100);
   document.getElementById('statAnswered').innerText = `${Object.keys(userAnswers).length}/${globalTotal}`;
   document.getElementById('statAccuracy').innerText = `${acc}%`;
@@ -491,11 +509,12 @@ function renderQuestion() {
       document.getElementById('optionsList').querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
       if (history.isCorrect) {
         document.getElementById(`opt-${history.selected}`).classList.add('correct');
-        document.getElementById('feedbackBox').innerText = "✓ Chính xác!"; document.getElementById('feedbackBox').className = 'feedback show success';
+        document.getElementById('feedbackBox').innerText = "✓ Correct!"; 
+        document.getElementById('feedbackBox').className = 'feedback show success';
       } else {
         document.getElementById(`opt-${history.selected}`).classList.add('wrong');
         document.getElementById(`opt-${history.correct}`).classList.add('correct');
-        document.getElementById('feedbackBox').innerHTML = `<strong>✗ Chưa chính xác!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || ''}</span>`;
+        document.getElementById('feedbackBox').innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || ''}</span>`;
         document.getElementById('feedbackBox').className = 'feedback show error';
       }
     }
@@ -503,10 +522,9 @@ function renderQuestion() {
   }
 }
 
-// XỬ LÝ CHỌN CÂU VÀ ĐỔI ĐÁP ÁN (EXAM MODE)
 function selectExamOption(selectedIndex) {
   if (examSubmitted) return;
-  userAnswers[currentRoundIndex] = selectedIndex; // Lưu hoặc sửa đáp án câu hiện tại
+  userAnswers[currentRoundIndex] = selectedIndex;
   renderQuestion();
 }
 
@@ -543,11 +561,10 @@ function renderPalette() {
   grid.appendChild(fragment);
 }
 
-// NỘP BÀI THI (EXAM MODE)
 function submitExam() {
   const answeredCount = Object.keys(userAnswers).length;
   if (!examSubmitted) {
-    const confirmSubmit = confirm(`Bạn đã làm ${answeredCount}/${globalTotal} câu.\nBạn có chắc chắn muốn nộp bài để chấm điểm không?`);
+    const confirmSubmit = confirm(`You have answered ${answeredCount}/${globalTotal} questions.\nAre you sure you want to submit for final evaluation?`);
     if (!confirmSubmit) return;
   }
 
@@ -562,22 +579,20 @@ function submitExam() {
   document.getElementById('paletteCard').classList.add('hidden');
   document.getElementById('endView').classList.remove('hidden');
   document.getElementById('progressBar').style.width = '100%';
-  document.getElementById('endTitle').innerText = "Kết Quả Làm Bài";
-  document.getElementById('endDesc').innerHTML = `Điểm số: <strong>${score}/${globalTotal} câu (${accuracy}%)</strong><br>Số câu đã trả lời: ${answeredCount}/${globalTotal}`;
+  document.getElementById('endTitle').innerText = "Assessment Results";
+  document.getElementById('endDesc').innerHTML = `Final Score: <strong>${score}/${globalTotal} (${accuracy}%)</strong><br>Answered: ${answeredCount}/${globalTotal}`;
 }
 
-// XEM LẠI CHI TIẾT TỪNG CÂU SAU KHI NỘP
 function reviewExamDetail() {
   document.getElementById('endView').classList.add('hidden');
   document.getElementById('quizView').classList.remove('hidden');
   document.getElementById('paletteCard').classList.remove('hidden');
-  document.getElementById('btnSubmitExam').style.display = 'none'; // Ẩn nút nộp bài
-  document.getElementById('paletteStatusText').innerText = "Xanh = Đúng | Đỏ = Sai";
+  document.getElementById('btnSubmitExam').style.display = 'none';
+  document.getElementById('paletteStatusText').innerText = "Green = Correct | Red = Incorrect";
   currentRoundIndex = 0;
   renderQuestion();
 }
 
-// XỬ LÝ CHẾ ĐỘ BÌNH THƯỜNG / CUỘN
 function checkAnswer(selIdx, corIdx, btn) {
   const allBtns = document.getElementById('optionsList').querySelectorAll('.opt-btn');
   allBtns.forEach(b => b.disabled = true); 
@@ -589,11 +604,12 @@ function checkAnswer(selIdx, corIdx, btn) {
 
   if (isCorrect) {
     totalCorrectAttempts++; btn.classList.add('correct');
-    document.getElementById('feedbackBox').innerText = "✓ Chính xác!"; document.getElementById('feedbackBox').className = 'feedback show success';
+    document.getElementById('feedbackBox').innerText = "✓ Correct!"; 
+    document.getElementById('feedbackBox').className = 'feedback show success';
     allBtns.forEach((b, i) => { if(i !== selIdx) b.classList.add('dimmed'); });
   } else {
     btn.classList.add('wrong'); if (allBtns[corIdx]) allBtns[corIdx].classList.add('correct'); 
-    document.getElementById('feedbackBox').innerHTML = `<strong>✗ Chưa chính xác!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || ''}</span>`;
+    document.getElementById('feedbackBox').innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13px; opacity:0.9;">${q[4] || ''}</span>`;
     document.getElementById('feedbackBox').className = 'feedback show error';
     allBtns.forEach((b, i) => { if(i !== selIdx && i !== corIdx) b.classList.add('dimmed'); });
   }
@@ -608,11 +624,12 @@ function navNext() { if (currentRoundIndex < currentRoundData.length - 1) { curr
 function navPrev() { if (currentRoundIndex > 0) { currentRoundIndex--; renderQuestion(); } }
 
 function showEndScreen() {
-  document.getElementById('quizView').classList.add('hidden'); document.getElementById('paletteCard').classList.add('hidden');
+  document.getElementById('quizView').classList.add('hidden'); 
+  document.getElementById('paletteCard').classList.add('hidden');
   document.getElementById('endView').classList.remove('hidden');
   document.getElementById('progressBar').style.width = '100%';
-  document.getElementById('endTitle').innerText = "Hoàn Thành!";
-  document.getElementById('endDesc').innerHTML = `Độ chính xác: <strong>${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%</strong><br>Tổng số lượt chọn: ${totalAttempts}`;
+  document.getElementById('endTitle').innerText = "Assessment Completed!";
+  document.getElementById('endDesc').innerHTML = `Accuracy: <strong>${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%</strong><br>Total attempts: ${totalAttempts}`;
 }
 
 function exitQuiz() {
@@ -624,7 +641,7 @@ function exitQuiz() {
   document.getElementById('progressBar').style.width = '0%';
 }
 
-/* ==================== PHẦN 2: CHỈNH SỬA & FIX DỮ LIỆU (EDITOR) ==================== */
+/* ==================== EDITOR / JSON FIXER ==================== */
 function openEditor() {
   document.getElementById('adminActionModal').classList.add('hidden');
   document.getElementById('menuView').classList.add('hidden');
