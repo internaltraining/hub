@@ -3,42 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <title>Internal Training</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#007aff">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icon.png">
-<link rel="preload" as="image" href="bg.jpg">
 
 <style>
+  /* =========================================================
+     APPLE DESIGN SYSTEM (LIGHT & DARK MODE)
+     ========================================================= */
   :root { 
+    /* LIGHT MODE VARIABLES */
     --bg-color: #f5f5f7; 
-    --card-bg: rgba(255, 255, 255, 0.85); 
+    --card-bg: #ffffff;
+    --modal-bg: #ffffff;
     --text-main: #1d1d1f; 
     --text-sub: #86868b; 
+    --border: rgba(0, 0, 0, 0.1); 
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --hover-bg: rgba(0, 0, 0, 0.04);
+    
     --accent: #007aff; 
+    --accent-bg: #e5f1ff;
     --success: #34c759; 
     --success-bg: #e8f9ec; 
     --danger: #ff3b30; 
     --danger-bg: #ffecec; 
-    --border: rgba(0, 0, 0, 0.08); 
-    --glass-border: rgba(255, 255, 255, 0.5);
+    --warning: #ff9500;
+    --warning-bg: #fff5e5;
+    
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-modal: 0 20px 40px rgba(0,0,0,0.12);
   }
   
+  @media (prefers-color-scheme: dark) {
+    :root { 
+      /* DARK MODE VARIABLES */
+      --bg-color: #000000; 
+      --card-bg: #1c1c1e;
+      --modal-bg: #1c1c1e;
+      --text-main: #f5f5f7; 
+      --text-sub: #98989d; 
+      --border: rgba(255, 255, 255, 0.15); 
+      --glass-bg: rgba(28, 28, 30, 0.72);
+      --hover-bg: rgba(255, 255, 255, 0.08);
+      
+      --accent: #0a84ff; 
+      --accent-bg: rgba(10, 132, 255, 0.15);
+      --success: #30d158; 
+      --success-bg: rgba(48, 209, 88, 0.15); 
+      --danger: #ff453a; 
+      --danger-bg: rgba(255, 69, 58, 0.15); 
+      --warning: #ff9f0a;
+      --warning-bg: rgba(255, 159, 10, 0.15);
+      
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-modal: 0 24px 48px rgba(0,0,0,0.6);
+    }
+  }
+
+  /* RESET & TYPOGRAPHY */
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   
   body { 
-    background-color: #d1d1d6; 
-    background-image: url('bg.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: var(--bg-color); 
     color: var(--text-main); 
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; 
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif; 
     line-height: 1.5; 
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
     min-height: 100vh; 
     display: flex; 
@@ -46,63 +83,164 @@
     overscroll-behavior-y: none; 
   }
 
-  .glass-effect {
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    transform: translateZ(0); 
+  /* UTILITIES & EFFECTS */
+  .glass-effect { 
+    background: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(20px); 
+    -webkit-backdrop-filter: saturate(180%) blur(20px); 
+    transform: translateZ(0);
+  }
+  .hidden { display: none !important; }
+  .text-center { text-align: center; }
+  
+  /* CUBIC-BEZIER ANIMATIONS (Apple Spring) */
+  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
+
+  /* TOPBAR */
+  .topbar { 
+    position: sticky; top: 0; 
+    border-bottom: 1px solid var(--border); 
+    padding: 12px 20px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    z-index: 100; 
+  }
+  .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
+  
+  .btn-header { 
+    background: var(--hover-bg); 
+    color: var(--accent); 
+    border: none; 
+    padding: 8px 16px; 
+    border-radius: 98px; /* Viên thuốc Apple */
+    font-weight: 600; font-size: 14px; 
+    cursor: pointer; 
+    display: inline-flex; align-items: center; justify-content: center;
   }
 
-  .topbar { position: sticky; top: 0; background: rgba(255, 255, 255, 0.75); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
-  .brand { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; letter-spacing: -0.3px; }
-  .btn-header { background: var(--bg-color); color: var(--accent); border: 1px solid var(--border); padding: 8px 16px; border-radius: 14px; font-weight: 600; font-size: 14px; cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .btn-header:active { transform: scale(0.92); }
-  
+  /* MENU DROPDOWN */
   .menu-wrapper { position: relative; }
   .dropdown-menu {
     position: absolute; top: calc(100% + 10px); right: 0; width: 220px;
-    background: rgba(255, 255, 255, 0.9); border-radius: 16px; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--border);
+    background: var(--glass-bg); border-radius: 16px; 
+    box-shadow: var(--shadow-modal); border: 1px solid var(--border);
     padding: 6px; display: flex; flex-direction: column; gap: 2px; z-index: 200; 
-    animation: dropDown 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: dropDown 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     transform-origin: top right;
   }
   @keyframes dropDown { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
   
-  .dropdown-item { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 14px; background: transparent; border: none; border-radius: 12px; font-size: 14px; font-weight: 600; color: var(--text-main); cursor: pointer; text-align: left; transition: background 0.2s; }
-  .dropdown-item:hover, .dropdown-item:active { background: rgba(0,0,0,0.05); }
-  .dropdown-item.dev { color: #4f46e5; border-top: 1px solid var(--border); margin-top: 4px; padding-top: 10px; border-radius: 0 0 12px 12px; }
+  .dropdown-item { 
+    display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; 
+    background: transparent; border: none; border-radius: 12px; font-size: 15px; 
+    font-weight: 500; color: var(--text-main); cursor: pointer; text-align: left; 
+    transition: background 0.2s; 
+  }
+  .dropdown-item:active { background: var(--hover-bg); }
+  .dropdown-item.dev { color: var(--accent); border-top: 1px solid var(--border); margin-top: 4px; padding-top: 12px; border-radius: 0 0 12px 12px; font-weight: 600; }
 
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 999; padding: 20px; animation: fadeIn 0.2s ease; }
-  .modal-box { background: white; width: 100%; max-width: 380px; border-radius: 28px; padding: 28px 24px; box-shadow: 0 24px 48px rgba(0,0,0,0.2); max-height: 85vh; overflow-y: auto; animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+  /* MAIN CONTAINER & CARD */
+  .container { flex: 1; width: 100%; max-width: 720px; margin: 0 auto; padding: 24px 20px 40px; display: flex; flex-direction: column; }
+  .container.center-mode { justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px; }
   
-  .modal-title { font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 4px; color: var(--text-main); letter-spacing: -0.4px; }
-  .modal-sub { font-size: 13.5px; color: var(--text-sub); text-align: center; margin-bottom: 20px; line-height: 1.4; }
+  .card { 
+    background: var(--card-bg); 
+    border-radius: 24px; 
+    padding: 24px; 
+    box-shadow: var(--shadow-card); 
+    border: 1px solid var(--border); 
+    width: 100%; 
+  }
+  @media (min-width: 768px) { .card { padding: 32px; border-radius: 28px; } }
 
-  .input-field { width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 14px; font-size: 15px; margin-bottom: 12px; outline: none; transition: 0.2s; background: var(--bg-color); }
-  .input-field:focus { border-color: var(--accent); background: white; }
-  .btn-primary { width: 100%; padding: 14px; background: var(--accent); color: white; border: none; border-radius: 14px; font-weight: 600; font-size: 16px; cursor: pointer; transition: transform 0.2s; }
-  .btn-primary:active { transform: scale(0.96); }
-  .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 14px; font-weight: 600; margin-top: 10px; cursor: pointer; padding: 10px; transition: color 0.2s; }
+  /* MODALS (BOTTOM SHEET ON MOBILE, CENTER ON DESKTOP) */
+  .modal-overlay { 
+    position: fixed; inset: 0; 
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); 
+    display: flex; align-items: center; justify-content: center; 
+    z-index: 999; padding: 20px; 
+    animation: fadeIn 0.3s ease; 
+  }
+
+  .modal-box { 
+    background: var(--modal-bg); 
+    width: 100%; max-width: 440px; 
+    border-radius: 24px; 
+    padding: 28px 24px; 
+    box-shadow: var(--shadow-modal); 
+    border: 1px solid var(--border);
+    max-height: 90vh; overflow-y: auto; 
+    animation: popCenter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+  }
+  @keyframes popCenter { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+  /* Mobile Bottom Sheet */
+  @media (max-width: 600px) {
+    .modal-overlay { align-items: flex-end; padding: 0; }
+    .modal-box { 
+      border-radius: 32px 32px 0 0; 
+      padding-bottom: calc(28px + env(safe-area-inset-bottom));
+      animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+      border-bottom: none;
+    }
+  }
+  @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+  .modal-title { font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 6px; letter-spacing: -0.022em; }
+  .modal-sub { font-size: 14px; color: var(--text-sub); text-align: center; margin-bottom: 24px; line-height: 1.4; }
+
+  /* FORMS & BUTTONS IN MODAL */
+  .input-field { 
+    width: 100%; padding: 14px 16px; 
+    border: 1px solid var(--border); border-radius: 14px; 
+    font-size: 15px; margin-bottom: 12px; outline: none; 
+    background: var(--bg-color); color: var(--text-main);
+    transition: 0.2s; font-family: inherit; 
+  }
+  .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
   
-  .mode-btn { width: 100%; padding: 16px; background: var(--bg-color); border: 2px solid transparent; border-radius: 18px; margin-bottom: 12px; text-align: left; cursor: pointer; transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .mode-btn:active { transform: scale(0.96); background: #e0f0ff; border-color: var(--accent); }
-  .mode-title { font-size: 15.5px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-  .mode-desc { font-size: 13px; color: var(--text-sub); line-height: 1.4; }
+  .error-msg { color: var(--danger); font-size: 13px; font-weight: 600; margin-bottom: 12px; text-align: center; display: none; }
 
-  /* BANNER THÔNG BÁO HOÀN TOÀN KHÔNG CÓ NỀN */
-  .marquee-box { background: transparent; border: none; padding: 10px 0; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; overflow: hidden; box-shadow: none; }
-  .marquee-icon { font-size: 18px; flex-shrink: 0; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+  .mode-btn { 
+    width: 100%; padding: 16px; 
+    background: var(--hover-bg); 
+    border: 2px solid transparent; 
+    border-radius: 18px; margin-bottom: 12px; 
+    text-align: left; cursor: pointer; 
+  }
+  .mode-btn:active { background: var(--border); }
+  .mode-btn.highlight-accent { background: var(--accent-bg); border-color: transparent; }
+  .mode-btn.highlight-accent .mode-title { color: var(--accent); }
+
+  .mode-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .mode-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.4; }
+
+  .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 15px; font-weight: 600; margin-top: 8px; cursor: pointer; padding: 14px; }
+  .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px; }
+
+  /* BANNER THÔNG BÁO */
+  .marquee-box { 
+    background: var(--card-bg); border: 1px solid var(--border); 
+    border-radius: 16px; padding: 12px 16px; margin-bottom: 20px; 
+    display: flex; align-items: center; gap: 12px; overflow: hidden; 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+  }
+  .marquee-icon { font-size: 18px; flex-shrink: 0; }
   .marquee-track { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
-  .marquee-text { display: inline-block; padding-left: 100%; animation: scrollMarquee 18s linear infinite; font-size: 14px; font-weight: 700; color: #ffffff; text-shadow: 0 1px 6px rgba(0,0,0,0.8); letter-spacing: 0.3px; }
+  .marquee-text { 
+    display: inline-block; padding-left: 100%; 
+    animation: scrollMarquee 15s linear infinite; 
+    font-size: 14.5px; font-weight: 600; color: var(--text-main); letter-spacing: 0.01em; 
+  }
   @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
   /* BANNER QUẢNG CÁO */
   .ad-container { 
     position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 24px; 
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15); border: 1px solid var(--glass-border); 
+    box-shadow: var(--shadow-card); border: 1px solid var(--border); 
     animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    background: rgba(255,255,255,0.15); display: flex; flex-direction: column;
+    background: var(--hover-bg); display: flex; flex-direction: column;
   }
   .ad-image { width: 100%; height: auto; display: block; }
   .btn-close-ad { 
@@ -113,114 +251,137 @@
   }
   .btn-close-ad:active { transform: scale(0.85); background: rgba(0, 0, 0, 0.7); }
 
-  .progress-container { width: 100%; height: 5px; background: rgba(0,0,0,0.05); }
-  .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 0 5px 5px 0; }
-
-  .container { flex: 1; width: 100%; max-width: 720px; margin: 0 auto; padding: 24px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; transition: all 0.3s ease; }
-  .container.center-mode { justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px; }
-  
-  .card { background: var(--card-bg); border-radius: 28px; padding: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); border: 1px solid var(--glass-border); width: 100%; box-sizing: border-box; overflow: hidden; }
-  @media (min-width: 768px) { .card { padding: 36px; border-radius: 32px; } }
-
+  /* HUB VIEW (MENU) */
   #menuView { width: 100%; display: flex; flex-direction: column; }
-  .hub-title { font-size: 30px; font-weight: 800; margin-bottom: 4px; color: #ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.8); letter-spacing: -0.5px; }
-  .hub-sub { color: rgba(255, 255, 255, 0.95); margin-bottom: 24px; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,0.8); font-weight: 500; }
+  .hub-title { font-size: 32px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
+  .hub-sub { color: var(--text-sub); margin-bottom: 24px; font-size: 15px; }
   
   .module-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
   @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  .module-btn { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 22px; cursor: pointer; text-align: left; transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 8px 32px rgba(0,0,0,0.2); word-break: normal; hyphens: auto; transform: translateZ(0); }
-  .module-btn:active { transform: scale(0.96); background: rgba(255, 255, 255, 0.25); }
-  .m-title { font-size: 16.5px; font-weight: 700; color: #ffffff; margin-bottom: 8px; text-shadow: 0 1px 4px rgba(0,0,0,0.6); line-height: 1.35; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
-  .m-desc { font-size: 13.5px; color: rgba(255, 255, 255, 0.9); line-height: 1.45; text-shadow: 0 1px 2px rgba(0,0,0,0.5); font-weight: 500; }
+  .module-btn { 
+    background: var(--card-bg); border: 1px solid var(--border); 
+    border-radius: 20px; padding: 22px; cursor: pointer; text-align: left; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02); transform: translateZ(0); 
+  }
+  .module-btn:active { background: var(--hover-bg); }
+  .m-title { font-size: 17px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; line-height: 1.35; letter-spacing: -0.02em; display: flex; align-items: center; flex-wrap: wrap; gap: 6px;}
+  .m-desc { font-size: 14px; color: var(--text-sub); line-height: 1.45; }
 
-  .weak-badge { background: var(--danger); color: white; font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: 700; box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4); animation: pulse 2s infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4); } 70% { box-shadow: 0 0 0 6px rgba(255, 59, 48, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); } }
+  .weak-badge { 
+    background: var(--danger-bg); color: var(--danger); font-size: 12px; 
+    padding: 4px 10px; border-radius: 98px; font-weight: 600; 
+  }
 
-  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; background: rgba(0,0,0,0.03); padding: 12px 8px; border-radius: 18px; margin-bottom: 24px; text-align: center; border: 1px solid var(--border); }
+  /* QUIZ UI */
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-color); padding: 12px; border-radius: 18px; margin-bottom: 24px; text-align: center; }
   .stat-card { display: flex; flex-direction: column; justify-content: center; align-items: center; }
   .stat-card:not(:last-child) { border-right: 1px solid var(--border); }
-  .stat-label { font-size: 11px; font-weight: 700; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
-  .stat-val { font-size: 16px; font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums; }
+  .stat-label { font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .stat-val { font-size: 16px; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
   .stat-card.active .stat-val { color: var(--accent); }
   .stat-card.passed .stat-val { color: var(--success); }
 
-  .q-text { font-size: 19px; font-weight: 600; margin-bottom: 24px; line-height: 1.5; color: var(--text-main); letter-spacing: -0.3px; }
+  .q-text { font-size: 19px; font-weight: 600; margin-bottom: 24px; line-height: 1.45; letter-spacing: -0.022em; }
 
-  #paletteCard { margin-top: 16px; }
-  .grid-title { font-size: 13px; font-weight: 700; margin-bottom: 14px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; }
-  .palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; max-height: 200px; overflow-y: auto; padding-right: 4px; }
-  @media (min-width: 600px) { .palette-grid { grid-template-columns: repeat(10, 1fr); } }
-  .palette-btn { height: 38px; border: 1px solid var(--border); background: var(--bg-color); border-radius: 10px; font-weight: 600; font-size: 13.5px; color: var(--text-main); cursor: pointer; transition: all 0.2s; font-variant-numeric: tabular-nums; }
-  .palette-btn:active { transform: scale(0.9); }
-  .palette-btn.active { background: var(--accent); color: white; border-color: var(--accent); box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3); }
-  .palette-btn.done { background: var(--success-bg); color: var(--success); border-color: var(--success); }
-  .palette-btn.wrong-done { background: var(--danger-bg); color: var(--danger); border-color: var(--danger); }
-
-  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
-  .btn-nav { flex: 1; padding: 15px; border-radius: 16px; border: none; font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .btn-prev { background: rgba(0,0,0,0.05); color: var(--text-main); }
-  .btn-next { background: var(--accent); color: white; display: none; box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3); }
-  .btn-nav:active:not(:disabled) { transform: scale(0.96); }
-  .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 18px; padding: 16px 18px; margin-bottom: 12px; text-align: left; font-size: 15.5px; font-weight: 500; color: var(--text-main); cursor: pointer; display: flex; gap: 14px; align-items: flex-start; transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); user-select: none; word-break: break-word; line-height: 1.4; }
-  @media (hover: hover) { .opt-btn:hover:not(:disabled) { background: #e8e8ed; } }
-  .opt-btn:active:not(:disabled) { transform: scale(0.97); background: #e0e0e5; }
-  .opt-label { font-weight: 700; color: var(--accent); flex-shrink: 0; }
-  .opt-btn.correct { background: var(--success-bg); border-color: var(--success); color: #0e5c22; }
+  .opt-btn { 
+    width: 100%; background: var(--bg-color); border: 2px solid transparent; 
+    border-radius: 16px; padding: 16px 18px; margin-bottom: 12px; 
+    text-align: left; font-size: 16px; font-weight: 400; color: var(--text-main); 
+    cursor: pointer; display: flex; gap: 14px; align-items: flex-start; line-height: 1.4; word-break: break-word;
+  }
+  @media (hover: hover) { .opt-btn:hover:not(:disabled) { background: var(--hover-bg); } }
+  .opt-label { font-weight: 600; color: var(--text-sub); flex-shrink: 0; }
+  
+  /* State Classes for Quiz */
+  .opt-btn.correct { background: var(--success-bg); border-color: transparent; color: var(--success); font-weight: 500;}
   .opt-btn.correct .opt-label { color: var(--success); }
-  .opt-btn.wrong { background: var(--danger-bg); border-color: var(--danger); color: #8a1510; }
+  .opt-btn.wrong { background: var(--danger-bg); border-color: transparent; color: var(--danger); }
   .opt-btn.wrong .opt-label { color: var(--danger); }
   .opt-btn:disabled { cursor: default; }
-  .opt-btn.dimmed { opacity: 0.45; filter: grayscale(100%); }
+  .opt-btn.dimmed { opacity: 0.5; filter: grayscale(100%); }
 
-  .feedback { margin-top: 24px; padding: 18px; border-radius: 16px; font-size: 14.5px; font-weight: 500; display: none; line-height: 1.5; animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  /* Feedback box */
+  .feedback { margin-top: 24px; padding: 18px; border-radius: 16px; font-size: 15px; display: none; line-height: 1.5; animation: popCenter 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
   .feedback.show { display: block; }
-  .feedback.success { background: var(--success-bg); color: #0e5c22; border: 1px solid rgba(52, 199, 89, 0.2); }
-  .feedback.error { background: var(--danger-bg); color: #8a1510; border: 1px solid rgba(255, 59, 48, 0.2); }
-  
-  .loader-spinner { border: 4px solid var(--border); border-top: 4px solid var(--accent); border-radius: 50%; width: 44px; height: 44px; animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin: 0 auto 16px auto; }
+  .feedback.success { background: var(--success-bg); color: var(--success); }
+  .feedback.error { background: var(--danger-bg); color: var(--danger); }
+
+  /* PALETTE CARD */
+  #paletteCard { margin-top: 16px; }
+  .grid-title { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; }
+  .palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-height: 220px; overflow-y: auto; padding-right: 4px; }
+  @media (min-width: 600px) { .palette-grid { grid-template-columns: repeat(10, 1fr); } }
+  .palette-btn { 
+    height: 42px; background: var(--bg-color); border: none; border-radius: 12px; 
+    font-weight: 600; font-size: 14px; color: var(--text-main); 
+    cursor: pointer; font-variant-numeric: tabular-nums; 
+  }
+  .palette-btn.active { outline: 2.5px solid var(--accent); outline-offset: 2px; }
+  .palette-btn.done { background: var(--success-bg); color: var(--success); }
+  .palette-btn.wrong-done { background: var(--danger-bg); color: var(--danger); }
+
+  /* PROGRESS BAR & NAVIGATION */
+  .progress-container { width: 100%; height: 4px; background: transparent; position: absolute; top: 100%; left: 0; }
+  .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; border-radius: 0 4px 4px 0; }
+
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
+  .btn-nav { flex: 1; padding: 16px; border-radius: 16px; border: none; font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; }
+  .btn-prev { background: var(--bg-color); color: var(--text-main); }
+  .btn-next { background: var(--accent); color: white; display: none; }
+  .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* LOADER */
+  .loader-spinner { 
+    border: 3px solid var(--border); border-top: 3px solid var(--accent); 
+    border-radius: 50%; width: 36px; height: 36px; 
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin: 0 auto 16px auto; 
+  }
   @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-  .hidden { display: none !important; }
-  .text-center { text-align: center; }
+  /* Scrollbar Style for Editor/Palette */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 </style>
 </head>
 <body>
 
 <!-- THANH HEADER -->
 <div class="topbar glass-effect">
-  <div class="brand">✈️ Internal Training</div>
+  <div class="brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    Internal Training
+  </div>
   <div class="menu-wrapper">
-    <button class="btn-header" id="btnMenu" onclick="toggleMenu(event)">☰ Menu</button>
+    <button class="btn-header anim-btn" id="btnMenu" onclick="toggleMenu(event)">☰ Menu</button>
     <div id="dropdownMenu" class="dropdown-menu hidden glass-effect">
-      <button class="dropdown-item" onclick="handleMenuHome()"><span>🏠</span> Home</button>
-      <button class="dropdown-item dev" onclick="openDevLoginModal()"><span>🛠️</span> Developer Login</button>
+      <button class="dropdown-item anim-btn" onclick="handleMenuHome()"><span>🏠</span> Home</button>
+      <button class="dropdown-item dev anim-btn" onclick="openDevLoginModal()"><span>🛠️</span> Developer Login</button>
     </div>
   </div>
+  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
 </div>
-<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
 
 <!-- POPUP CHỌN CHẾ ĐỘ THI -->
 <div id="modeModal" class="modal-overlay hidden">
   <div class="modal-box">
     <div class="modal-title">Select Mode</div>
     <div class="modal-sub">Choose your preferred training format.</div>
-    <button class="mode-btn" onclick="confirmMode('SCROLL')">
+    <button class="mode-btn highlight-accent anim-btn" onclick="confirmMode('SCROLL')">
       <div class="mode-title">🚀 Continuous Training</div>
-      <div class="mode-desc">Build rapid reflexes through uninterrupted practice. The system auto-advances upon answer selection.</div>
+      <div class="mode-desc">Build rapid reflexes through uninterrupted practice. Auto-advances upon answer selection.</div>
     </button>
-    <button class="mode-btn" onclick="confirmMode('ONE_BY_ONE')">
+    <button class="mode-btn anim-btn" onclick="confirmMode('ONE_BY_ONE')">
       <div class="mode-title">🎯 Standard Assessment</div>
-      <div class="mode-desc">Standalone evaluation interface. Navigate manually via the "Next" button and the question palette.</div>
+      <div class="mode-desc">Standalone evaluation interface. Navigate manually via the "Next" button and the palette.</div>
     </button>
-    <button class="mode-btn" onclick="confirmMode('WEAK_REVIEW')">
+    <button class="mode-btn anim-btn" onclick="confirmMode('WEAK_REVIEW')">
       <div class="mode-title">🔄 Review Weak Questions</div>
-      <div class="mode-desc">Practice exclusively the questions you've previously answered incorrectly, saved locally on your device.</div>
+      <div class="mode-desc">Practice exclusively the questions you've previously answered incorrectly.</div>
     </button>
-    <button class="btn-close-modal" onclick="closeModeModal()">Cancel</button>
+    <button class="btn-close-modal anim-btn" onclick="closeModeModal()">Cancel</button>
   </div>
 </div>
 
@@ -233,8 +394,8 @@
       <input type="text" id="adminUser" placeholder="Username" class="input-field" required autocomplete="username" />
       <input type="password" id="adminPass" placeholder="Password" class="input-field" required autocomplete="current-password" />
       <div id="loginError" class="error-msg">Invalid username or password!</div>
-      <button type="submit" class="btn-primary">Login</button>
-      <button type="button" class="btn-close-modal" onclick="closeDevLoginModal()">Close</button>
+      <button type="submit" class="btn-primary anim-btn">Login</button>
+      <button type="button" class="btn-close-modal anim-btn" onclick="closeDevLoginModal()">Close</button>
     </form>
   </div>
 </div>
@@ -250,10 +411,9 @@
       </div>
     </div>
 
-        <!-- BANNER QUẢNG CÁO -->
+    <!-- BANNER QUẢNG CÁO -->
     <div id="adBanner" class="ad-container hidden" style="display: none !important;">
       <button class="btn-close-ad" onclick="closeAd()">✕</button>
-      <!-- Thay file banner.jpg bằng hình ảnh thực tế bạn tải lên kho GitHub -->
       <a href="#" target="_blank">
         <img src="banner.jpg" alt="Advertisement" class="ad-image">
       </a>
@@ -266,14 +426,14 @@
     </div>
   </div>
 
-  <div id="loadingView" class="card hidden text-center glass-effect">
+  <div id="loadingView" class="card hidden text-center">
     <div class="loader-spinner"></div>
-    <h3 style="font-size: 18px; color: var(--text-main);">Loading Module...</h3>
+    <h3 style="font-size: 18px; font-weight: 600; color: var(--text-main);">Loading Module...</h3>
     <p style="color: var(--text-sub); font-size: 14px; margin-top: 6px;">Preparing questions, please wait.</p>
   </div>
 
   <!-- BÀI LÀM QUIZ -->
-  <div id="quizView" class="card hidden glass-effect">
+  <div id="quizView" class="card hidden">
     <div class="stats-grid" id="qStatsGrid">
       <div class="stat-card active"><span class="stat-label">Progress</span><span class="stat-val" id="statCurrentQ">1/0</span></div>
       <div class="stat-card passed"><span class="stat-label">Correct</span><span class="stat-val" id="statPassed">0/0</span></div>
@@ -285,26 +445,27 @@
     <div class="feedback" id="feedbackBox"></div>
 
     <div class="nav-bar" id="navBar" style="display: none;">
-      <button onclick="navPrev()" id="btnPrev" class="btn-nav btn-prev">‹ Previous</button>
-      <button onclick="navNext()" id="btnNext" class="btn-nav btn-next">Next ›</button>
+      <button onclick="navPrev()" id="btnPrev" class="btn-nav btn-prev anim-btn">‹ Previous</button>
+      <button onclick="navNext()" id="btnNext" class="btn-nav btn-next anim-btn">Next ›</button>
     </div>
   </div>
 
   <!-- LƯỚI BẢNG CÂU HỎI -->
-  <div id="paletteCard" class="card hidden glass-effect">
+  <div id="paletteCard" class="card hidden">
     <div class="grid-title">Question Palette</div>
     <div id="paletteGrid" class="palette-grid"></div>
   </div>
 
-  <div id="endView" class="card hidden text-center glass-effect">
-    <div style="font-size: 70px; margin-bottom: 12px; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));">🏆</div>
-    <h2 style="font-size: 30px; margin-bottom: 10px; letter-spacing: -0.5px;" id="endTitle">100% Completed!</h2>
-    <p style="color: var(--text-sub); margin-bottom: 28px; font-size: 15px;" id="endDesc">Calculating score...</p>
-    <button class="btn-primary" onclick="goHome()">Back to Home</button>
+  <div id="endView" class="card hidden text-center">
+    <div style="font-size: 80px; margin-bottom: 16px; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));">🏆</div>
+    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em;" id="endTitle">100% Completed!</h2>
+    <p style="color: var(--text-sub); margin-bottom: 32px; font-size: 16px;" id="endDesc">Calculating score...</p>
+    <button class="btn-primary anim-btn" style="border-radius: 16px;" onclick="goHome()">Back to Home</button>
   </div>
 
 </div>
 
+<!-- GIỮ NGUYÊN 100% SCRIPT GỐC -->
 <script>
 const DOM = {
   noticeText: document.getElementById('noticeText'), noticeBox: document.getElementById('noticeBox'), moduleList: document.getElementById('moduleList'),
@@ -319,12 +480,10 @@ const DOM = {
   adBanner: document.getElementById('adBanner')
 };
 
-// Khôi phục trạng thái Quảng cáo (Nếu chưa tắt thì mới hiện ra)
 if (sessionStorage.getItem('adHidden') !== 'true' && DOM.adBanner) {
   DOM.adBanner.classList.remove('hidden');
 }
 
-// Hàm tắt và ghi nhớ trạng thái Quảng cáo
 function closeAd() {
   if (DOM.adBanner) {
     DOM.adBanner.classList.add('hidden');
@@ -386,9 +545,9 @@ async function init() {
     DOM.moduleList.innerHTML = modules.map(m => {
       const weakCount = getWeakQuestions(m.file).length;
       const weakBadge = weakCount > 0 ? `<span class="weak-badge">${weakCount} weak</span>` : '';
-      return `<button class="module-btn" onclick="openModeModal('${m.file}')"><div class="m-title">${m.title} ${weakBadge}</div><div class="m-desc">${m.desc}</div></button>`;
+      return `<button class="module-btn anim-btn" onclick="openModeModal('${m.file}')"><div class="m-title">${m.title} ${weakBadge}</div><div class="m-desc">${m.desc}</div></button>`;
     }).join('');
-  } catch (error) { DOM.moduleList.innerHTML = '<p style="color:red; text-align:center;">⚠️ Error loading module list!</p>'; }
+  } catch (error) { DOM.moduleList.innerHTML = '<p style="color:var(--danger); text-align:center; font-weight:600;">⚠️ Error loading module list!</p>'; }
 }
 
 function openModeModal(fileUrl) { selectedFileUrl = fileUrl; DOM.modeModal.classList.remove('hidden'); }
@@ -453,7 +612,7 @@ function renderQuestion() {
   
   const options = Array.isArray(q[2]) ? q[2] : [];
   DOM.optionsList.innerHTML = options.map((optText, i) => `
-    <button class="opt-btn" onclick="checkAnswer(${i}, ${q[3]}, this)" id="opt-${i}">
+    <button class="opt-btn anim-btn" onclick="checkAnswer(${i}, ${q[3]}, this)" id="opt-${i}">
       <span class="opt-label">${String.fromCharCode(65 + i)}.</span>
       <span style="flex: 1;">${optText}</span>
     </button>
@@ -522,7 +681,7 @@ function renderPalette() {
   const fragment = document.createDocumentFragment();
   currentRoundData.forEach((_, idx) => {
     const btn = document.createElement('button'); btn.innerText = idx + 1;
-    let className = 'palette-btn';
+    let className = 'palette-btn anim-btn';
     if (idx === currentRoundIndex) className += ' active';
     else if (userAnswers[idx]) className += userAnswers[idx].isCorrect ? ' done' : ' wrong-done';
     btn.className = className; btn.onclick = () => jumpToQuestion(idx);
