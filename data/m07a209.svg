@@ -1,0 +1,88 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Phối màu Kim loại Bạc (Titanium) -->
+    <linearGradient id="metal" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#E5E5EA"/>
+      <stop offset="50%" stop-color="#8E8E93"/>
+      <stop offset="100%" stop-color="#3A3A3C"/>
+    </linearGradient>
+    
+    <!-- Phối màu Thép Tối (Dark Steel) -->
+    <linearGradient id="metalDark" x1="0" y1="400" x2="400" y2="0">
+      <stop offset="0%" stop-color="#1C1C1E"/>
+      <stop offset="100%" stop-color="#636366"/>
+    </linearGradient>
+    
+    <!-- Màu phát sáng Cam Đỏ (Precision/Heat Glow) -->
+    <linearGradient id="neonOrange" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#FF9500"/>
+      <stop offset="100%" stop-color="#FF2A54"/>
+    </linearGradient>
+    
+    <!-- Hiệu ứng tỏa sáng (Glow Filter) -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Định nghĩa 1 lá cánh quạt Tuabin (Turbine Blade) -->
+    <path id="blade" d="M 192 180 Q 170 100 200 60 Q 230 100 208 180 Z" fill="url(#metalDark)" stroke="#8E8E93" stroke-width="1.5"/>
+  </defs>
+
+  <!-- VÒNG ĐO LƯỜNG HUD (Advanced Diagnostics) -->
+  <g filter="url(#glow)">
+    <!-- Vòng đứt khúc phát sáng -->
+    <circle cx="200" cy="220" r="140" fill="none" stroke="url(#neonOrange)" stroke-width="3" stroke-dasharray="4 12"/>
+    <!-- Thước đo góc (Góc phần tư) -->
+    <path d="M 200 80 A 140 140 0 0 1 340 220" fill="none" stroke="url(#neonOrange)" stroke-width="6"/>
+  </g>
+  <!-- Trục tọa độ laser mờ -->
+  <line x1="40" y1="220" x2="360" y2="220" stroke="rgba(255,149,0,0.2)" stroke-width="2"/>
+  <line x1="200" y1="60" x2="200" y2="380" stroke="rgba(255,149,0,0.2)" stroke-width="2"/>
+
+  <!-- CÁNH QUẠT ĐỘNG CƠ TUABIN (Turbine Engine Fan) -->
+  <circle cx="200" cy="220" r="130" fill="none" stroke="url(#metalDark)" stroke-width="10"/>
+  <!-- 8 Lá cánh quạt xoay quanh tâm -->
+  <use href="#blade" transform="rotate(0 200 220)"/>
+  <use href="#blade" transform="rotate(45 200 220)"/>
+  <use href="#blade" transform="rotate(90 200 220)"/>
+  <use href="#blade" transform="rotate(135 200 220)"/>
+  <use href="#blade" transform="rotate(180 200 220)"/>
+  <use href="#blade" transform="rotate(225 200 220)"/>
+  <use href="#blade" transform="rotate(270 200 220)"/>
+  <use href="#blade" transform="rotate(315 200 220)"/>
+  
+  <!-- Lõi chóp động cơ (Spinner Cone) -->
+  <circle cx="200" cy="220" r="45" fill="url(#metal)"/>
+  <circle cx="200" cy="220" r="20" fill="#1C1C1E"/>
+  <circle cx="200" cy="220" r="10" fill="url(#neonOrange)" filter="url(#glow)"/>
+
+  <!-- CỜ LÊ CÂN LỰC ĐIỆN TỬ (Digital Torque Wrench) -->
+  <!-- Xoay nghiêng -45 độ tạo sự năng động -->
+  <g transform="rotate(-45 200 220)">
+    <!-- Thân cờ lê -->
+    <rect x="182" y="30" width="36" height="320" rx="18" fill="url(#metal)"/>
+    
+    <!-- Cán cầm bằng cao su chống trượt -->
+    <rect x="178" y="230" width="44" height="110" rx="10" fill="#1C1C1E"/>
+    <!-- Các rãnh cắt trên cán cầm -->
+    <line x1="178" y1="250" x2="222" y2="250" stroke="#3A3A3C" stroke-width="4"/>
+    <line x1="178" y1="270" x2="222" y2="270" stroke="#3A3A3C" stroke-width="4"/>
+    <line x1="178" y1="290" x2="222" y2="290" stroke="#3A3A3C" stroke-width="4"/>
+    <line x1="178" y1="310" x2="222" y2="310" stroke="#3A3A3C" stroke-width="4"/>
+
+    <!-- Đầu cờ lê (Ratchet Head) -->
+    <circle cx="200" cy="50" r="30" fill="url(#metalDark)"/>
+    <circle cx="200" cy="50" r="16" fill="url(#metal)"/>
+    <!-- Lõi vuông gắn tuýp (Square Drive) -->
+    <rect x="193" y="43" width="14" height="14" rx="2" fill="#1C1C1E"/>
+
+    <!-- Màn hình điện tử hiển thị lực siết (Digital Display) -->
+    <rect x="186" y="130" width="28" height="60" rx="6" fill="#121214"/>
+    <rect x="186" y="130" width="28" height="60" rx="6" fill="none" stroke="url(#neonOrange)" stroke-width="2" filter="url(#glow)"/>
+    
+    <!-- Chữ số hiển thị lực siết (vd: 120 Nm) -->
+    <!-- Xoay ngược lại 90 độ để đọc dọc theo thân cờ lê -->
+    <text x="-160" y="206" fill="#FF9500" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" transform="rotate(-90)">120</text>
+  </g>
+</svg>
