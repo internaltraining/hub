@@ -1,0 +1,84 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ĐỊNH NGHĨA MÀU GRADIENT VÀ HIỆU ỨNG PHÁT SÁNG -->
+  <defs>
+    <!-- Viền Titanium của thiết bị -->
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0%" stop-color="#555557"/>
+      <stop offset="100%" stop-color="#1A1A1C"/>
+    </linearGradient>
+    
+    <!-- Màn hình OLED -->
+    <linearGradient id="screen" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#121214"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    
+    <!-- Màu đường Sine (Đỏ hồng sang Cam) -->
+    <linearGradient id="pinkOrange" x1="0" y1="0" x2="400" y2="0">
+      <stop offset="0%" stop-color="#FF2A54"/>
+      <stop offset="100%" stop-color="#FF9500"/>
+    </linearGradient>
+    
+    <!-- Màu đường Parabola (Xanh lơ sang Xanh biển) -->
+    <linearGradient id="cyanBlue" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+    
+    <!-- Hiệu ứng Glow (Phát sáng) cho biểu đồ -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- KHUNG VIỀN THIẾT BỊ (Ngoi từ dưới lên) -->
+  <!-- y="60" và height="380" làm cho thiết bị tràn mượt mà qua khỏi cạnh dưới (400) -->
+  <rect x="40" y="60" width="320" height="380" rx="48" fill="url(#bezel)" stroke="#777779" stroke-width="2"/>
+  
+  <!-- MÀN HÌNH BÊN TRONG -->
+  <rect x="52" y="72" width="296" height="368" rx="36" fill="url(#screen)"/>
+  
+  <!-- Viền đen kẹp giữa màn hình và viền thép -->
+  <rect x="52" y="72" width="296" height="368" rx="36" fill="none" stroke="#000" stroke-width="4"/>
+
+  <!-- NỘI DUNG TOÁN HỌC HIỂN THỊ TRÊN MÀN HÌNH -->
+  <g opacity="0.95">
+    <!-- Trục tọa độ X - Y -->
+    <line x1="52" y1="230" x2="348" y2="230" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <line x1="200" y1="72" x2="200" y2="440" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    
+    <!-- Các đường lưới tọa độ mờ -->
+    <path d="M 52 130 L 348 130 M 52 330 L 348 330 M 100 72 L 100 440 M 300 72 L 300 440" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    
+    <!-- Chữ số Pi chìm làm hình nền (Watermark) -->
+    <text x="210" y="380" fill="rgba(255,255,255,0.03)" font-family="Georgia, serif" font-size="180" font-weight="bold">π</text>
+
+    <!-- Biểu đồ Parabola -->
+    <path d="M 80 80 Q 200 380 320 80" stroke="url(#cyanBlue)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    
+    <!-- Biểu đồ Hình Sin (Sine wave) -->
+    <path d="M 52 230 C 100 130, 150 130, 200 230 C 250 330, 300 330, 348 230" stroke="url(#pinkOrange)" stroke-width="8" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+
+    <!-- Chấm tròn giao điểm phát sáng rực rỡ -->
+    <circle cx="200" cy="230" r="8" fill="#fff" filter="url(#glowSoft)"/>
+    <circle cx="200" cy="230" r="4" fill="#fff"/>
+    
+    <!-- Công thức Toán học -->
+    <text x="215" y="115" fill="#4FACFE" font-family="-apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5">y = x²</text>
+    <text x="75" y="315" fill="#FF2A54" font-family="-apple-system, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5">sin(x)</text>
+  </g>
+
+  <!-- LỚP KÍNH PHẢN QUANG (Tạo độ bóng cong cho màn hình) -->
+  <path d="M 52 72 Q 250 200 348 72 L 348 180 Q 150 300 52 180 Z" fill="rgba(255,255,255,0.03)" pointer-events="none"/>
+  
+  <!-- KHUYẾT CAMERA TRÊN ĐỈNH (DYNAMIC ISLAND CỦA APPLE) -->
+  <rect x="150" y="86" width="100" height="24" rx="12" fill="#000"/>
+  <!-- Ống kính camera tàng hình bên trong Dynamic Island -->
+  <circle cx="230" cy="98" r="5" fill="#111"/>
+  <circle cx="230" cy="98" r="2" fill="#082A52"/>
+</svg>
