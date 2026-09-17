@@ -1,100 +1,138 @@
 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Màu vỏ ngoài Titanium -->
-    <linearGradient id="titanium" x1="0" y1="0" x2="400" y2="400">
-      <stop offset="0%" stop-color="#F2F2F7"/>
-      <stop offset="50%" stop-color="#8E8E93"/>
+    <!-- Vỏ ngoài Titanium (Nacelle Lip) -->
+    <linearGradient id="pwNacelle" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#D1D1D6"/>
+      <stop offset="60%" stop-color="#8E8E93"/>
       <stop offset="100%" stop-color="#1C1C1E"/>
     </linearGradient>
 
-    <!-- Màu lá cánh quạt (Thép xám bóng) -->
-    <linearGradient id="bladeGrad" x1="0" y1="90" x2="0" y2="220">
-      <stop offset="0%" stop-color="#D1D1D6"/>
-      <stop offset="100%" stop-color="#3A3A3C"/>
+    <!-- Hợp kim lá cánh Titanium uốn 3D (3D Swept Blade) -->
+    <linearGradient id="pwBlade" x1="180" y1="60" x2="220" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F2F2F7"/>
+      <stop offset="25%" stop-color="#D8D8DC"/>
+      <stop offset="65%" stop-color="#636366"/>
+      <stop offset="100%" stop-color="#2C2C2E"/>
     </linearGradient>
 
-    <!-- Vành đai Kevlar bên trong (Màu vàng kim loại) -->
-    <linearGradient id="kevlar" x1="0" y1="0" x2="400" y2="400">
-      <stop offset="0%" stop-color="#D4C07B"/>
-      <stop offset="100%" stop-color="#8B7B3E"/>
+    <!-- Viền phản chiếu mép lá cánh (Leading Edge) -->
+    <linearGradient id="bladeHighlight" x1="165" y1="60" x2="190" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#E5E5EA" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8E8E93" stop-opacity="0.1"/>
     </linearGradient>
 
-    <!-- Màu chóp nón trung tâm (Spinner) -->
-    <radialGradient id="spinner" cx="40%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#48484A"/>
+    <!-- Nón nón trung tâm (PW Conical Spinner) -->
+    <radialGradient id="pwSpinner" cx="42%" cy="40%" r="58%">
+      <stop offset="0%" stop-color="#3A3A3C"/>
+      <stop offset="55%" stop-color="#1C1C1E"/>
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
 
-    <!-- Ánh sáng xanh hắt từ lõi động cơ ra -->
-    <radialGradient id="backGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#0A84FF"/>
-      <stop offset="100%" stop-color="transparent"/>
+    <!-- Ánh sáng lõi hút sâu -->
+    <radialGradient id="deepIntake" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="85%" stop-color="#050508"/>
+      <stop offset="100%" stop-color="#1C1C1E"/>
     </radialGradient>
 
-    <!-- Định nghĩa 1 lá cánh quạt với độ cong khí động học -->
-    <path id="fan" d="M196 220 C 160 160, 170 100, 205 90 C 220 120, 210 180, 204 220 Z" 
-          fill="url(#bladeGrad)" stroke="#1C1C1E" stroke-width="1"/>
-          
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="12" result="blur"/>
+    <!-- Đổ bóng 3D cánh xếp lớp -->
+    <filter id="bladeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
+
+    <!-- 1 LÁ CÁNH PW1100G (Khí động học uốn cong - Swept Profile) -->
+    <g id="singleBlade" filter="url(#bladeShadow)">
+      <!-- Bản thân lá cánh -->
+      <path d="M 194 195 
+               C 186 160, 168 120, 162 76 
+               C 161 70, 172 65, 182 66 
+               C 198 68, 222 96, 218 135 
+               C 214 165, 206 188, 206 195 Z" 
+            fill="url(#pwBlade)"/>
+      <!-- Mép cắt gió phản quang (Leading Edge Sheath) -->
+      <path d="M 194 195 
+               C 186 160, 168 120, 162 76 
+               C 161 70, 168 67, 173 66
+               C 178 105, 192 150, 199 195 Z" 
+            fill="url(#bladeHighlight)"/>
+      <!-- Gờ tán âm/cứng đầu cánh -->
+      <path d="M 162 76 C 170 70, 192 68, 200 70" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" fill="none"/>
+    </g>
   </defs>
 
-  <!-- Ánh sáng Xanh Dương (Ice Blue) mờ ảo tỏa ra từ lõi -->
-  <circle cx="200" cy="220" r="110" fill="url(#backGlow)" opacity="0.5" filter="url(#glow)"/>
-
-  <!-- Lớp vành trong cùng (Inner Ring / Kevlar) -->
-  <circle cx="200" cy="220" r="126" fill="#1C1C1E" stroke="url(#kevlar)" stroke-width="4"/>
-
-  <!-- 24 LÁ CÁNH QUẠT (Fan Blades) XOAY TRÒN ĐỀU KHUNG -->
-  <g>
-    <use href="#fan" transform="rotate(0 200 220)"/>
-    <use href="#fan" transform="rotate(15 200 220)"/>
-    <use href="#fan" transform="rotate(30 200 220)"/>
-    <use href="#fan" transform="rotate(45 200 220)"/>
-    <use href="#fan" transform="rotate(60 200 220)"/>
-    <use href="#fan" transform="rotate(75 200 220)"/>
-    <use href="#fan" transform="rotate(90 200 220)"/>
-    <use href="#fan" transform="rotate(105 200 220)"/>
-    <use href="#fan" transform="rotate(120 200 220)"/>
-    <use href="#fan" transform="rotate(135 200 220)"/>
-    <use href="#fan" transform="rotate(150 200 220)"/>
-    <use href="#fan" transform="rotate(165 200 220)"/>
-    <use href="#fan" transform="rotate(180 200 220)"/>
-    <use href="#fan" transform="rotate(195 200 220)"/>
-    <use href="#fan" transform="rotate(210 200 220)"/>
-    <use href="#fan" transform="rotate(225 200 220)"/>
-    <use href="#fan" transform="rotate(240 200 220)"/>
-    <use href="#fan" transform="rotate(255 200 220)"/>
-    <use href="#fan" transform="rotate(270 200 220)"/>
-    <use href="#fan" transform="rotate(285 200 220)"/>
-    <use href="#fan" transform="rotate(300 200 220)"/>
-    <use href="#fan" transform="rotate(315 200 220)"/>
-    <use href="#fan" transform="rotate(330 200 220)"/>
-    <use href="#fan" transform="rotate(345 200 220)"/>
+  <!-- VÒNG NGOẠI VI / HUD KỸ THUẬT SIÊU MẢNH -->
+  <g opacity="0.35">
+    <circle cx="200" cy="200" r="186" fill="none" stroke="#8E8E93" stroke-width="1" stroke-dasharray="3 6"/>
+    <circle cx="200" cy="200" r="168" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <!-- 4 vạch chuẩn cân bằng động học -->
+    <line x1="200" y1="12" x2="200" y2="22" stroke="#0A84FF" stroke-width="2"/>
+    <line x1="200" y1="378" x2="200" y2="388" stroke="#0A84FF" stroke-width="2"/>
+    <line x1="12" y1="200" x2="22" y2="200" stroke="#0A84FF" stroke-width="2"/>
+    <line x1="378" y1="200" x2="388" y2="200" stroke="#0A84FF" stroke-width="2"/>
   </g>
 
-  <!-- CHÓP NÓN TRUNG TÂM (Spinner) -->
-  <circle cx="200" cy="220" r="38" fill="url(#spinner)"/>
-  <circle cx="200" cy="220" r="38" fill="none" stroke="#3A3A3C" stroke-width="1.5"/>
+  <!-- LÒNG ỐNG DẪN KHÍ (INTAKE DUCT) -->
+  <circle cx="200" cy="200" r="148" fill="url(#deepIntake)"/>
   
-  <!-- Đường gân xoắn màu trắng đuổi chim (Spinner Swirl) -->
-  <path d="M 200 220 Q 225 195, 212 186" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
-  
-  <!-- LỚP VỎ ĐỘNG CƠ NGOÀI CÙNG (Outer Nacelle Lip) -->
-  <circle cx="200" cy="220" r="132" fill="none" stroke="url(#titanium)" stroke-width="16"/>
-  
-  <!-- Bóng râm đổ xuống cánh quạt tạo độ sâu -->
-  <circle cx="200" cy="220" r="124" fill="none" stroke="#000000" stroke-width="3" opacity="0.6"/>
-  <!-- Vạch viền sáng bóng ngoài cùng -->
-  <circle cx="200" cy="220" r="140" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-  
-  <!-- CÁC ĐINH TÁN LẮP RÁP (Rivets) TRÊN VỎ -->
-  <g fill="#48484A">
-    <circle cx="200" cy="84" r="2"/><circle cx="200" cy="356" r="2"/>
-    <circle cx="64" cy="220" r="2"/><circle cx="336" cy="220" r="2"/>
-    <circle cx="103.5" cy="123.5" r="2"/><circle cx="296.5" cy="316.5" r="2"/>
-    <circle cx="103.5" cy="316.5" r="2"/><circle cx="296.5" cy="123.5" r="2"/>
+  <!-- VÀNH KEVLAR BẢO VỆ (CONTAINMENT CASING) -->
+  <circle cx="200" cy="200" r="146" fill="none" stroke="#2C2C2E" stroke-width="4"/>
+  <circle cx="200" cy="200" r="144" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.45"/>
+
+  <!-- ================= 18 LÁ CÁNH PW1100G (XOAY 20 ĐỘ MỖI LÁ) ================= -->
+  <g>
+    <use href="#singleBlade" transform="rotate(0 200 200)"/>
+    <use href="#singleBlade" transform="rotate(20 200 200)"/>
+    <use href="#singleBlade" transform="rotate(40 200 200)"/>
+    <use href="#singleBlade" transform="rotate(60 200 200)"/>
+    <use href="#singleBlade" transform="rotate(80 200 200)"/>
+    <use href="#singleBlade" transform="rotate(100 200 200)"/>
+    <use href="#singleBlade" transform="rotate(120 200 200)"/>
+    <use href="#singleBlade" transform="rotate(140 200 200)"/>
+    <use href="#singleBlade" transform="rotate(160 200 200)"/>
+    <use href="#singleBlade" transform="rotate(180 200 200)"/>
+    <use href="#singleBlade" transform="rotate(200 200 200)"/>
+    <use href="#singleBlade" transform="rotate(220 200 200)"/>
+    <use href="#singleBlade" transform="rotate(240 200 200)"/>
+    <use href="#singleBlade" transform="rotate(260 200 200)"/>
+    <use href="#singleBlade" transform="rotate(280 200 200)"/>
+    <use href="#singleBlade" transform="rotate(300 200 200)"/>
+    <use href="#singleBlade" transform="rotate(320 200 200)"/>
+    <use href="#singleBlade" transform="rotate(340 200 200)"/>
+  </g>
+
+  <!-- GỐC RỄ CHÂN CÁNH (HUB FAIRING DISC) -->
+  <circle cx="200" cy="200" r="46" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
+  <circle cx="200" cy="200" r="43" fill="none" stroke="#000000" stroke-width="3" opacity="0.6"/>
+
+  <!-- ================= CHÓP NÓN NHỌN (PW CONE SPINNER) ================= -->
+  <circle cx="200" cy="200" r="36" fill="url(#pwSpinner)"/>
+  <circle cx="200" cy="200" r="36" fill="none" stroke="#2C2C2E" stroke-width="1"/>
+
+  <!-- VỆT SƠN XOẮN ĐUỔI CHIM (WHITE SPINNER SWIRL) -->
+  <path d="M 200 200 
+           C 204 186, 218 184, 222 174 
+           C 225 166, 214 162, 206 166 
+           C 194 172, 198 188, 201 198" 
+        stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <circle cx="200" cy="200" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- MÔI VỎ ĐỘNG CƠ TITANIUM (OUTER INLET COWL LIP) -->
+  <circle cx="200" cy="200" r="154" fill="none" stroke="url(#pwNacelle)" stroke-width="16"/>
+  <circle cx="200" cy="200" r="162" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.4"/>
+  <circle cx="200" cy="200" r="146" fill="none" stroke="#000000" stroke-width="2" opacity="0.7"/>
+
+  <!-- CÁC ĐINH TÁN KHÍ ĐỘNG HỌC QUANH VÀNH (NACELLE RIVETS) -->
+  <g fill="#8E8E93" opacity="0.7">
+    <circle cx="200" cy="40" r="1.5"/><circle cx="200" cy="360" r="1.5"/>
+    <circle cx="40" cy="200" r="1.5"/><circle cx="360" cy="200" r="1.5"/>
+    <circle cx="87" cy="87" r="1.5"/><circle cx="313" cy="313" r="1.5"/>
+    <circle cx="87" cy="313" r="1.5"/><circle cx="313" cy="87" r="1.5"/>
   </g>
 </svg>
