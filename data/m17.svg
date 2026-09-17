@@ -1,92 +1,78 @@
 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Phối màu Cánh quạt Titanium (Sáng kim loại sang trọng) -->
-    <linearGradient id="titaniumBlade" x1="0" y1="40" x2="0" y2="220">
-      <stop offset="0%" stop-color="#F2F2F7"/>
-      <stop offset="50%" stop-color="#8E8E93"/>
-      <stop offset="100%" stop-color="#1C1C1E"/>
+    <!-- Phối màu Kim loại Bạc Sáng cho Cánh quạt (Propeller Blade) -->
+    <linearGradient id="bladeGrad" x1="180" y1="80" x2="220" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#E5E5EA"/>
+      <stop offset="80%" stop-color="#D1D1D6"/>
+      <stop offset="100%" stop-color="#8E8E93"/>
     </linearGradient>
 
-    <!-- Phối màu Vỏ động cơ phía sau (Nacelle Intake) -->
-    <linearGradient id="cowlGrad" x1="0" y1="0" x2="400" y2="400">
-      <stop offset="0%" stop-color="#3A3A3C"/>
-      <stop offset="50%" stop-color="#1C1C1E"/>
-      <stop offset="100%" stop-color="#000000"/>
-    </linearGradient>
-
-    <!-- Khối cầu 3D cho Chóp nón (Spinner) -->
-    <radialGradient id="spinner3D" cx="35%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#D1D1D6"/>
-      <stop offset="30%" stop-color="#636366"/>
+    <!-- Phối màu Vỏ động cơ tuabin phía sau (Turboprop Cowling) -->
+    <radialGradient id="engineCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2C2C2E"/>
+      <stop offset="75%" stop-color="#1C1C1E"/>
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
 
-    <!-- Màu Xanh Cyan phát sáng (Hiệu ứng vòng xoay HUD) -->
-    <linearGradient id="neonCyan" x1="0" y1="0" x2="400" y2="400">
-      <stop offset="0%" stop-color="#00F2FE"/>
-      <stop offset="100%" stop-color="#4FACFE"/>
-    </linearGradient>
+    <!-- Phối màu Chóp nón trung tâm 3D (Spinner Hub) -->
+    <radialGradient id="spinnerHub" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#48484A"/>
+      <stop offset="60%" stop-color="#1C1C1E"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
 
-    <!-- Hiệu ứng tỏa sáng mờ -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    <!-- Hiệu ứng đổ bóng 3D cho cánh quạt -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
     </filter>
 
-    <!-- Định nghĩa 1 Lá cánh quạt lớn (Propeller Blade) -->
-    <!-- Dáng cánh xòe rộng ở giữa, thuôn tròn ở đỉnh và hẹp ở gốc (Root) -->
-    <path id="propBlade" d="M 190 220 C 150 160, 160 80, 192 40 C 198 32, 208 32, 214 40 C 240 80, 230 160, 210 220 Z" 
-          fill="url(#titaniumBlade)" stroke="#3A3A3C" stroke-width="1.5"/>
+    <!-- 1 LÁ CÁNH QUẠT CHUẨN TỈ LỆ (Hướng thẳng lên trên, tâm quay ở 200,200) -->
+    <g id="propBlade" filter="url(#dropShadow)">
+      <!-- Thân lá cánh bầu bĩnh, gọn gàng, không bị dài quá cỡ -->
+      <path d="M 188 200 
+               C 182 150, 172 105, 184 72 
+               C 190 55, 210 55, 216 72 
+               C 228 105, 218 150, 212 200 Z" 
+            fill="url(#bladeGrad)"/>
+      <!-- Đường gân phản quang sống lưng cánh -->
+      <path d="M 200 200 L 200 70" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+      <!-- Viền cạnh sắc nét -->
+      <path d="M 188 200 C 182 150, 172 105, 184 72" stroke="#C7C7CC" stroke-width="1" fill="none"/>
+    </g>
   </defs>
 
-  <!-- ================= VỎ ĐỘNG CƠ & CỬA NẠP (PHÍA SAU) ================= -->
-  <!-- Vành ngoài cùng của vỏ động cơ (Nacelle) -->
-  <circle cx="200" cy="220" r="130" fill="url(#cowlGrad)" stroke="#636366" stroke-width="2"/>
-  
-  <!-- Lỗ hút gió (Air Intake) màu đen sâu thẳm -->
-  <circle cx="200" cy="220" r="105" fill="#0A0A0A" stroke="#1C1C1E" stroke-width="4"/>
-  <circle cx="200" cy="220" r="105" fill="none" stroke="#000000" stroke-width="8" opacity="0.6"/>
-
-  <!-- ================= VÒNG QUAY KHÍ ĐỘNG HỌC (HUD RINGS) ================= -->
-  <!-- Quỹ đạo đầu cánh (Tip Path Plane) phát sáng -->
-  <g filter="url(#glow)">
-    <circle cx="200" cy="220" r="165" fill="none" stroke="url(#neonCyan)" stroke-width="2" stroke-dasharray="8 16" opacity="0.7"/>
-    <circle cx="200" cy="220" r="165" fill="none" stroke="url(#neonCyan)" stroke-width="4" stroke-dasharray="100 200" stroke-linecap="round"/>
+  <!-- VÒNG TRÒN HUD KỸ THUẬT MỜ LÓT NỀN -->
+  <g opacity="0.35">
+    <circle cx="200" cy="200" r="130" fill="none" stroke="#0A84FF" stroke-width="1" stroke-dasharray="4 8"/>
+    <circle cx="200" cy="200" r="148" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
   </g>
 
-  <!-- ================= HỆ THỐNG 4 CÁNH QUẠT LỚN (PROPELLERS) ================= -->
-  <!-- Xoay đều 4 góc 90 độ, đổ bóng nhẹ để nổi khối -->
+  <!-- ỐNG ĐỘNG CƠ TURBOPROP PHÍA SAU -->
+  <circle cx="200" cy="200" r="110" fill="url(#engineCore)"/>
+  <circle cx="200" cy="200" r="110" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+
+  <!-- ================= 4 LÁ CÁNH QUẠT (XOAY ĐỀU 90 ĐỘ) ================= -->
   <g>
-    <!-- Đổ bóng (Drop shadow) cho toàn bộ cụm cánh -->
-    <g opacity="0.4" transform="translate(4, 6)">
-      <use href="#propBlade" fill="#000" transform="rotate(0 200 220)"/>
-      <use href="#propBlade" fill="#000" transform="rotate(90 200 220)"/>
-      <use href="#propBlade" fill="#000" transform="rotate(180 200 220)"/>
-      <use href="#propBlade" fill="#000" transform="rotate(270 200 220)"/>
-    </g>
-    
-    <!-- Cánh quạt chính -->
-    <use href="#propBlade" transform="rotate(0 200 220)"/>
-    <use href="#propBlade" transform="rotate(90 200 220)"/>
-    <use href="#propBlade" transform="rotate(180 200 220)"/>
-    <use href="#propBlade" transform="rotate(270 200 220)"/>
+    <!-- Cánh trên -->
+    <use href="#propBlade" transform="rotate(0 200 200)"/>
+    <!-- Cánh phải -->
+    <use href="#propBlade" transform="rotate(90 200 200)"/>
+    <!-- Cánh dưới (Đã được thu ngắn, nằm gọn trong vòng 400px tuyệt đối) -->
+    <use href="#propBlade" transform="rotate(180 200 200)"/>
+    <!-- Cánh trái -->
+    <use href="#propBlade" transform="rotate(270 200 200)"/>
   </g>
 
-  <!-- ================= CHÓP NÓN (SPINNER) ================= -->
-  <!-- Chóp nón trung tâm siêu to đặc trưng của Propeller -->
-  <circle cx="200" cy="220" r="48" fill="url(#spinner3D)"/>
-  <circle cx="200" cy="220" r="48" fill="none" stroke="#636366" stroke-width="1.5"/>
+  <!-- BỆ ĐỠ TRUNG TÂM -->
+  <circle cx="200" cy="200" r="40" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
 
-  <!-- Đường gân xoắn ốc (Swirl Line) sơn trắng trên chóp nón -->
-  <path d="M 200 220 Q 235 180, 222 174" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.9"/>
-  <!-- Lỗ ốc vít lục giác ở đỉnh chóp -->
-  <circle cx="200" cy="220" r="4" fill="#1C1C1E"/>
+  <!-- CHÓP NÓN TRUNG TÂM (SPINNER HUB) -->
+  <circle cx="200" cy="200" r="30" fill="url(#spinnerHub)"/>
+  <circle cx="200" cy="200" r="30" fill="none" stroke="#48484A" stroke-width="1"/>
 
-  <!-- ================= LABELS KỸ THUẬT (HUD OVERLAY) ================= -->
-  <g opacity="0.8">
-    <line x1="30" y1="220" x2="60" y2="220" stroke="#4FACFE" stroke-width="2"/>
-    <line x1="340" y1="220" x2="370" y2="220" stroke="#4FACFE" stroke-width="2"/>
-    <text x="50" y="60" fill="#4FACFE" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" filter="url(#glow)">TURBOPROP</text>
-    <text x="50" y="75" fill="#8E8E93" font-family="-apple-system, sans-serif" font-size="9" font-weight="600" letter-spacing="1">VARIABLE PITCH</text>
-  </g>
+  <!-- VỆT XOẮN TRẮNG ĐẶC TRƯNG TRÊN NÓN (SPINNER SWIRL) -->
+  <path d="M 200 200 C 203 185, 218 182, 215 170 C 212 161, 201 161, 196 166 C 190 172, 193 185, 198 196" 
+        stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+  <circle cx="200" cy="200" r="2.5" fill="#FFFFFF"/>
 </svg>
