@@ -1,73 +1,80 @@
 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Phối màu Kim loại Bạc Sáng cho Cánh quạt (Propeller Blade) -->
-    <linearGradient id="bladeGrad" x1="180" y1="80" x2="220" y2="200" gradientUnits="userSpaceOnUse">
+    <!-- Phối màu Kim loại Bạc Sáng cho Cánh quạt -->
+    <linearGradient id="bladeGrad" x1="180" y1="90" x2="220" y2="200" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="40%" stop-color="#E5E5EA"/>
-      <stop offset="80%" stop-color="#D1D1D6"/>
-      <stop offset="100%" stop-color="#8E8E93"/>
+      <stop offset="50%" stop-color="#F2F2F7"/>
+      <stop offset="100%" stop-color="#D1D1D6"/>
     </linearGradient>
 
-    <!-- Phối màu Vỏ động cơ tuabin phía sau -->
+    <!-- Phối màu Vỏ động cơ phía sau -->
     <radialGradient id="engineCore" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#2C2C2E"/>
-      <stop offset="75%" stop-color="#1C1C1E"/>
+      <stop offset="70%" stop-color="#111111"/>
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
 
-    <!-- Phối màu Chóp nón trung tâm 3D (Spinner Hub) -->
-    <radialGradient id="spinnerHub" cx="40%" cy="40%" r="60%">
+    <!-- Phối màu Chóp nón trung tâm (Spinner) -->
+    <radialGradient id="spinner" cx="38%" cy="38%" r="62%">
       <stop offset="0%" stop-color="#48484A"/>
-      <stop offset="60%" stop-color="#1C1C1E"/>
+      <stop offset="50%" stop-color="#1C1C1E"/>
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
 
-    <!-- Hiệu ứng đổ bóng 3D cho cánh quạt -->
-    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.3"/>
+    <!-- Hiệu ứng đổ bóng 3D -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.3"/>
     </filter>
 
-    <!-- 1 LÁ CÁNH QUẠT CHUẨN TỈ LỆ -->
-    <g id="propBlade" filter="url(#dropShadow)">
-      <path d="M 189 200 
-               C 184 150, 172 105, 183 75 
-               C 188 60, 212 60, 217 75 
-               C 228 105, 216 150, 211 200 Z" 
-            fill="url(#bladeGrad)"/>
-      <path d="M 200 200 L 200 72" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8" stroke-linecap="round"/>
-      <path d="M 189 200 C 184 150, 172 105, 183 75" stroke="#C7C7CC" stroke-width="1" fill="none"/>
+    <!-- 1 LÁ CÁNH QUẠT (Đã thu gọn đầu mút để an toàn tuyệt đối trong khung 400x400) -->
+    <g id="blade" filter="url(#shadow)">
+      <path d="M 188 200 
+               C 183 150, 172 105, 184 75 
+               C 189 60, 211 60, 216 75 
+               C 228 105, 217 150, 212 200 Z" 
+            fill="url(#bladeGrad)" stroke="#C7C7CC" stroke-width="1"/>
+      <!-- Đường gân sống lưng cánh -->
+      <path d="M 200 200 L 200 78" stroke="#E5E5EA" stroke-width="1.5" stroke-linecap="round"/>
     </g>
   </defs>
 
-  <!-- VÒNG TRÒN HUD MÀU XANH LÁ ĐẶC TRƯNG NHƯ CŨ -->
-  <g opacity="0.65">
-    <circle cx="200" cy="200" r="135" fill="none" stroke="#30D158" stroke-width="1.5" stroke-dasharray="6 6"/>
-    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(48,209,88,0.2)" stroke-width="1"/>
+  <!-- VÒNG HUD VÀ THÔNG SỐ KỸ THUẬT (Màu xanh Cyan đặc trưng) -->
+  <g opacity="0.85">
+    <!-- Vòng tròn nét đứt -->
+    <circle cx="200" cy="200" r="130" fill="none" stroke="#00E5FF" stroke-width="1.5" stroke-dasharray="6 6"/>
+    <circle cx="200" cy="200" r="142" fill="none" stroke="rgba(0,229,255,0.2)" stroke-width="1"/>
+    
+    <!-- Vạch định vị trái / phải -->
+    <line x1="60" y1="200" x2="72" y2="200" stroke="#00E5FF" stroke-width="1.5"/>
+    <line x1="328" y1="200" x2="340" y2="200" stroke="#00E5FF" stroke-width="1.5"/>
+
+    <!-- Chữ thông số kỹ thuật góc trái -->
+    <text x="85" y="156" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" font-weight="700" fill="#00E5FF" letter-spacing="0.5">TURBOPROP</text>
+    <text x="85" y="166" font-family="-apple-system, sans-serif" font-size="6" font-weight="600" fill="#86868B" letter-spacing="0.3">VARIABLE PITCH</text>
   </g>
 
-  <!-- ỐNG ĐỘNG CƠ TUABIN PHÍA SAU -->
-  <circle cx="200" cy="200" r="115" fill="url(#engineCore)"/>
-  <circle cx="200" cy="200" r="115" fill="none" stroke="#3A3A3C" stroke-width="3"/>
-  <circle cx="200" cy="200" r="112" fill="none" stroke="#30D158" stroke-width="1" opacity="0.4"/>
+  <!-- ỐNG ĐỘNG CƠ TURBOPROP PHÍA SAU -->
+  <circle cx="200" cy="200" r="110" fill="url(#engineCore)"/>
+  <circle cx="200" cy="200" r="110" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+  <circle cx="200" cy="200" r="107" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.5"/>
 
-  <!-- ================= ĐÚNG 5 LÁ CÁNH QUẠT (XOAY ĐỀU 72 ĐỘ) ================= -->
+  <!-- ================= 4 LÁ CÁNH QUẠT (XOAY ĐỀU 90 ĐỘ) ================= -->
   <g>
-    <use href="#propBlade" transform="rotate(0 200 200)"/>
-    <use href="#propBlade" transform="rotate(72 200 200)"/>
-    <use href="#propBlade" transform="rotate(144 200 200)"/>
-    <use href="#propBlade" transform="rotate(216 200 200)"/>
-    <use href="#propBlade" transform="rotate(288 200 200)"/>
+    <use href="#blade" transform="rotate(0 200 200)"/>
+    <use href="#blade" transform="rotate(90 200 200)"/>
+    <use href="#blade" transform="rotate(180 200 200)"/>
+    <use href="#blade" transform="rotate(270 200 200)"/>
   </g>
 
   <!-- BỆ ĐỠ TRUNG TÂM -->
-  <circle cx="200" cy="200" r="40" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
+  <circle cx="200" cy="200" r="38" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
 
-  <!-- CHÓP NÓN TRUNG TÂM (SPINNER HUB) -->
-  <circle cx="200" cy="200" r="30" fill="url(#spinnerHub)"/>
-  <circle cx="200" cy="200" r="30" fill="none" stroke="#48484A" stroke-width="1"/>
+  <!-- CHÓP NÓN TRUNG TÂM (SPINNER) -->
+  <circle cx="200" cy="200" r="28" fill="url(#spinner)"/>
+  <circle cx="200" cy="200" r="28" fill="none" stroke="#545456" stroke-width="1"/>
 
   <!-- VỆT XOẮN TRẮNG TRÊN NÓN (SPINNER SWIRL) -->
-  <path d="M 200 200 C 203 185, 218 182, 215 170 C 212 161, 201 161, 196 166 C 190 172, 193 185, 198 196" 
-        stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
-  <circle cx="200" cy="200" r="2.5" fill="#FFFFFF"/>
+  <path d="M 200 200 C 203 186, 216 183, 213 172 C 210 163, 201 163, 196 168 C 191 173, 194 185, 198 196" 
+        stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.95"/>
+  <circle cx="200" cy="200" r="2" fill="#FFFFFF"/>
 </svg>
