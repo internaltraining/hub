@@ -108,414 +108,6 @@
   .menu-wrapper { position: relative; }
   .dropdown-menu {
     position: absolute; top: calc(100% + 10px); right: 0; width: 220px;
-    background: var(--glass-bg); border-radius: 166px; 
-    box-shadow: var(--shadow-modal); border: 1px solid var(--border);
-    padding: 6px; display: flex; flex-direction: column; gap: 2px; z-index: 200; 
-    animation: dropDown 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    transform-origin: top right;
-  }
-  @keyframes dropDown { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-  
-  .dropdown-item { 
-    display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; 
-    background: transparent; border: none; border-radius: 12px; font-size: 15px; 
-    font-weight: 500; color: var(--text-main); cursor: pointer; text-align: left; 
-    transition: background 0.2s; 
-  }
-  .dropdown-item:active { background: var(--hover-bg); }
-  .dropdown-item.dev { color: var(--accent); border-top: 1px solid var(--border); margin-top: 4px; padding-top: 12px; border-radius: 0 0 12px 12px; font-weight: 600; }
-
-  /* MAIN CONTAINER */
-  .container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; display: flex; flex-direction: column; }
-  .container.center-mode { justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px; max-width: 720px; }
-  
-  .card { 
-    background: var(--card-bg); border-radius: 24px; padding: 24px; 
-    box-shadow: var(--shadow-card); border: 1px solid var(--border); width: 100%; 
-  }
-  @media (min-width: 768px) { .card { padding: 32px; border-radius: 28px; } }
-
-  /* MODALS */
-  .modal-overlay { 
-    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); 
-    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); 
-    display: flex; align-items: center; justify-content: center; z-index: 999; padding: 20px; 
-    animation: fadeIn 0.3s ease; 
-  }
-  .modal-box { 
-    background: var(--modal-bg); width: 100%; max-width: 440px; border-radius: 24px; padding: 28px 24px; 
-    box-shadow: var(--shadow-modal); border: 1px solid var(--border); max-height: 90vh; overflow-y: auto; 
-    animation: popCenter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
-  }
-  @keyframes popCenter { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-
-  @media (max-width: 600px) {
-    .modal-overlay { align-items: flex-end; padding: 0; }
-    .modal-box { border-radius: 32px 32px 0 0; padding-bottom: calc(28px + env(safe-area-inset-bottom)); animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); border-bottom: none; }
-  }
-  @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-  .modal-title { font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 6px; letter-spacing: -0.022em; }
-  .modal-sub { font-size: 14px; color: var(--text-sub); text-align: center; margin-bottom: 24px; line-height: 1.4; }
-
-  .input-field { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px; font-size: 15px; margin-bottom: 12px; outline: none; background: var(--bg-color); color: var(--text-main); font-family: inherit; }
-  .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
-  .error-msg { color: var(--danger); font-size: 13px; font-weight: 600; margin-bottom: 12px; text-align: center; display: none; }
-
-  .mode-btn { width: 100%; padding: 16px; background: var(--hover-bg); border: 2px solid transparent; border-radius: 18px; margin-bottom: 12px; text-align: left; cursor: pointer; }
-  .mode-btn:active { background: var(--border); }
-  .mode-btn.highlight-accent { background: var(--accent-bg); border-color: transparent; }
-  .mode-btn.highlight-accent .mode-title { color: var(--accent); }
-  .mode-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-  .mode-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.4; }
-  .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 15px; font-weight: 600; margin-top: 8px; cursor: pointer; padding: 14px; }
-  .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px; }
-
-  /* NOTICE & AD BANNER */
-  .marquee-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 166px; padding: 12px 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
-  .marquee-icon { font-size: 18px; flex-shrink: 0; }
-  .marquee-track { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
-  .marquee-text { display: inline-block; padding-left: 100%; animation: scrollMarquee 15s linear infinite; font-size: 14.5px; font-weight: 600; color: var(--text-main); letter-spacing: 0.01em; }
-  @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-  .ad-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--border); background: var(--hover-bg); display: flex; flex-direction: column; }
-  .ad-image { width: 100%; height: auto; display: block; }
-  .btn-close-ad { position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.4); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10; }
-
-  /* =========================================================
-     APPLE STORE CARDS UI (ALTERNATING BLACK & WHITE)
-     ========================================================= */
-  #menuView { width: 100%; display: flex; flex-direction: column; }
-  .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
-  .hub-sub { color: var(--text-sub); margin-bottom: 32px; font-size: 16px; }
-  
-  .module-grid { 
-    display: grid; 
-    gap: 24px; 
-    grid-template-columns: 1fr; 
-  }
-  @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 900px) { .module-grid { grid-template-columns: repeat(3, 1fr); } }
-
-  .module-btn { 
-    position: relative;
-    border: none; 
-    border-radius: 28px; 
-    padding: 32px 28px 220px 28px; 
-    cursor: pointer; 
-    text-align: left; 
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    min-height: 420px; 
-  }
-  @media (hover: hover) {
-    .module-btn:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
-    .module-btn:hover .m-image { transform: scale(1.05) translateY(-5px); }
-  }
-  .module-btn:active { transform: scale(0.97); }
-
-  /* ----- ODD CARDS: DARK THEME (ĐEN) ----- */
-  .module-btn:nth-child(odd) {
-    background: #000000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-  .module-btn:nth-child(odd) .m-title { color: #f5f5f7; }
-  .module-btn:nth-child(odd) .m-desc { color: #a1a1a6; }
-
-  /* ----- EVEN CARDS: LIGHT THEME (TRẮNG) ----- */
-  .module-btn:nth-child(even) {
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .module-btn:nth-child(even) .m-title { color: #1d1d1f; }
-  .module-btn:nth-child(even) .m-desc { color: #86868b; }
-
-  /* Global Label and Structure */
-  .m-label { font-size: 11px; font-weight: 700; color: #ff6800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; z-index: 2; }
-  .m-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.02em; z-index: 2; display: flex; flex-direction: column; gap: 4px;}
-  .m-desc { font-size: 14.5px; line-height: 1.45; font-weight: 500; z-index: 2; }
-
-  /* IMAGE CONTAINER (Mặc định nhấc bổng 5% cho tất cả SVG) */
-  .m-image {
-    position: absolute;
-    bottom: 5%; 
-    left: 10%;
-    width: 80%; 
-    height: 45%; 
-    object-fit: contain;
-    object-position: center center;
-    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  /* NGOẠI LỆ CHO RIÊNG BÀI M1 (iPhone lún xuống đáy) */
-  img[src*="m1.png"], img[src*="m1.svg"] {
-    bottom: -5% !important; 
-    height: 55% !important;
-    object-position: center bottom !important;
-  }
-
-  .weak-badge { background: var(--danger-bg); color: var(--danger); font-size: 11px; padding: 4px 10px; border-radius: 98px; font-weight: 700; display: inline-block; width: fit-content; margin-top: 4px; }
-
-  /* QUIZ UI */
-  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-color); padding: 12px; border-radius: 18px; margin-bottom: 24px; text-align: center; }
-  .stat-card { display: flex; flex-direction: column; justify-content: center; align-items: center; }
-  .stat-card:not(:last-child) { border-right: 1px solid var(--border); }
-  .stat-label { font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-  .stat-val { font-size: 16px; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
-  .stat-card.active .stat-val { color: var(--accent); }
-  .stat-card.passed .stat-val { color: var(--success); }
-
-  .q-text { font-size: 19px; font-weight: 600; margin-bottom: 24px; line-height: 1.45; letter-spacing: -0.022em; }
-
-  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 16px; padding: 16px 18px; margin-bottom: 12px; text-align: left; font-size: 16px; font-weight: 400; color: var(--text-main); cursor: pointer; display: flex; gap: 14px; align-items: flex-start; line-height: 1.4; word-break: break-word; }
-  @media (hover: hover) { .opt-btn:hover:not(:disabled) { background: var(--hover-bg); } }
-  .opt-label { font-weight: 600; color: var(--text-sub); flex-shrink: 0; }
-  
-  .opt-btn.correct { background: var(--success-bg); border-color: transparent; color: var(--success); font-weight: 500;}
-  .opt-btn.correct .opt-label { color: var(--success); }
-  .opt-btn.wrong { background: var(--danger-bg); border-color: transparent; color: var(--danger); }
-  .opt-btn.wrong .opt-label { color: var(--danger); }
-  .opt-btn:disabled { cursor: default; }
-  .opt-btn.dimmed { opacity: 0.5; filter: grayscale(100%); }
-
-  .feedback { margin-top: 24px; padding: 18px; border-radius: 16px; font-size: 15px; display: none; line-height: 1.5; animation: popCenter 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .feedback.show { display: block; }
-  .feedback.success { background: var(--success-bg); color: var(--success); }
-  .feedback.error { background: var(--danger-bg); color: var(--danger); }
-
-  /* PALETTE & NAV */
-  #paletteCard { margin-top: 16px; }
-  .grid-title { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; }
-  .palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-height: 220px; overflow-y: auto; padding-right: 4px; }
-  @media (min-width: 600px) { .palette-grid { grid-template-columns: repeat(10, 1fr); } }
-  .palette-btn { height: 42px; background: var(--bg-color); border: none; border-radius: 12px; font-weight: 600; font-size: 14px; color: var(--text-main); cursor: pointer; font-variant-numeric: tabular-nums; }
-  .palette-btn.active { outline: 2.5px solid var(--accent); outline-offset: 2px; }
-  .palette-btn.done { background: var(--success-bg); color: var(--success); }
-  .palette-btn.wrong-done { background: var(--danger-bg); color: var(--danger); }
-
-  .progress-container { width: 100%; height: 4px; background: transparent; position: absolute; top: 100%; left: 0; }
-  .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; border-radius: 0 4px 4px 0; }
-  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
-  .btn-nav { flex: 1; padding: 16px; border-radius: 16px; border: none; font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; }
-  .btn-prev { background: var(--bg-color); color: var(--text-main); }
-  .btn-next { background: var(--accent); color: white; display: none; }
-  .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  /* =========================================================
-     APPLE FOOTER
-     ========================================================= */
-  .footer { margin-top: 40px; padding: 24px 20px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--text-sub); line-height: 1.6; }
-  .footer-copyright { margin-bottom: 8px; }
-  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
-  .footer-links a { color: var(--text-sub); text-decoration: none; transition: color 0.2s; }
-  @media (hover: hover) { .footer-links a:hover { color: var(--text-main); text-decoration: underline; } }
-  .footer-divider { color: var(--border); font-size: 10px; margin: 0 2px; }
-
-  /* LOADER & SCROLLBAR */
-  .loader-spinner { border: 3px solid var(--border); border-top: 3px solid var(--accent); border-radius: 50%; width: 36px; height: 36px; animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin: 0 auto 166px auto; }
-  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
-</style>
-</head>
-<body>
-
-<div class="topbar glass-effect">
-  <div class="brand">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-    Internal Training
-  </div>
-  <div class="menu-wrapper">
-    <button class="btn-header anim-btn" id="btnMenu" onclick="toggleMenu(event)">☰ Menu</button>
-    <div id="dropdownMenu" class="dropdown-menu hidden glass-effect">
-      <button class="dropdown-item anim-btn" onclick="handleMenuHome()"><span>🏠</span> Home</button>
-      <button class="dropdown-item dev anim-btn" onclick="openDevLoginModal()"><span>🛠️</span> Developer Login</button>
-    </div>
-  </div>
-  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
-</div>
-
-<div id="modeModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <div class="modal-title">Select Mode</div>
-    <div class="modal-sub">Choose your preferred training format.</div>
-    <button class="mode-btn highlight-accent anim-btn" onclick="confirmMode('SCROLL')">
-      <div class="mode-title">🚀 Continuous Training</div>
-      <div class="mode-desc">Build rapid reflexes through uninterrupted practice. Auto-advances upon answer selection.</div>
-    </button>
-    <button class="mode-btn anim-btn" onclick="confirmMode('ONE_BY_ONE')">
-      <div class="mode-title">🎯 Standard Assessment</div>
-      <div class="mode-desc">Standalone evaluation interface. Navigate manually via the "Next" button and the palette.</div>
-    </button>
-    <button class="mode-btn anim-btn" onclick="confirmMode('WEAK_REVIEW')">
-      <div class="mode-title">🔄 Review Weak Questions</div>
-      <div class="mode-desc">Practice exclusively the questions you've previously answered incorrectly.</div>
-    </button>
-    <button class="btn-close-modal anim-btn" onclick="closeModeModal()">Cancel</button>
-  </div>
-</div>
-
-<div id="loginModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <div class="modal-title">🔐 Administrator</div>
-    <div class="modal-sub">For Developers Only</div>
-    <form onsubmit="handleAdminLogin(event)">
-      <input type="text" id="adminUser" placeholder="Username" class="input-field" required autocomplete="username" />
-      <input type="password" id="adminPass" placeholder="Password" class="input-field" required autocomplete="current-password" />
-      <div id="loginError" class="error-msg">Invalid username or password!</div>
-      <button type="submit" class="btn-primary anim-btn">Login</button>
-      <button type="button" class="btn-close-modal anim-btn" onclick="closeDevLoginModal()">Close</button>
-    </form>
-  </div>
-</div>
-
-<div class="container" id="mainContainer">
-  
-  <div id="menuView">
-    <div class="marquee-box" id="noticeBox">
-      <span class="marquee-icon">📢</span>
-      <div class="marquee-track">
-        <span class="marquee-text" id="noticeText">Loading notice...</span>
-      </div>
-    </div>
-
-    <!-- Quảng cáo: Đã xóa style="display: none !important;" -->
-    <div id="adBanner" class="ad-container hidden">
-      <button class="btn-close-ad" onclick="closeAd()">✕</button>
-      <a href="#" target="_blank">
-        <img src="banner.jpg" alt="Advertisement" class="ad-image">
-      </a>
-    </div>
-
-    <div class="hub-title">ModulesTuyệt vời! File `index.html` của bạn hiện đã được cập nhật hoàn chỉnh.
-
-### Các thay đổi quan trọng:
-
-1.  **Vị trí hình ảnh (Quan trọng nhất):** Tớ đã dùng CSS để nhấc bổng tất cả các hình đồ họa (`m07a.svg`, `m11.svg`, `m15.svg`, `m17.svg`) lên **lơ lửng ngay chính giữa nửa dưới thẻ Card**, tạo cảm giác thoáng đãng và sang trọng. **Riêng chiếc iPhone của bài M1** vẫn được giữ nguyên hiệu ứng dính chặt xuống mép đáy như cũ.
-2.  **Quảng cáo thông minh:** Web sẽ tự động kiểm tra xem file `banner.jpg` có tồn tại trên GitHub không. Nếu **Có**, quảng cáo sẽ tự bật. Nếu **Không có**, nó sẽ ẩn đi hoàn toàn và không để lại khoảng trống. Tính năng "Bấm X mất luôn" vẫn được giữ nguyên.
-3.  **Apple Footer:** Đã thêm cuối trang với giao diện chuẩn Apple, dịch sang tiếng Anh chuyên ngành Hàng không nội bộ để phù hợp với web.
-
-Hãy copy toàn bộ mã dưới đây và dán đè vào file **`index.html`** trên GitHub của bạn nhé:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<title>Internal Training</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="icon.png">
-
-<style>
-  /* =========================================================
-     APPLE DESIGN SYSTEM (LIGHT & DARK MODE)
-     ========================================================= */
-  :root { 
-    --bg-color: #f5f5f7; 
-    --card-bg: #ffffff; 
-    --modal-bg: #ffffff;
-    --text-main: #1d1d1f; 
-    --text-sub: #86868b; 
-    --border: rgba(0, 0, 0, 0.05); 
-    --glass-bg: rgba(255, 255, 255, 0.72);
-    --hover-bg: rgba(0, 0, 0, 0.04);
-    
-    --accent: #007aff; 
-    --accent-bg: #e5f1ff;
-    --success: #34c759; 
-    --success-bg: #e8f9ec; 
-    --danger: #ff3b30; 
-    --danger-bg: #ffecec; 
-    
-    --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-modal: 0 20px 40px rgba(0,0,0,0.12);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    :root { 
-      --bg-color: #000000; 
-      --card-bg: #1c1c1e; 
-      --modal-bg: #1c1c1e;
-      --text-main: #f5f5f7; 
-      --text-sub: #98989d; 
-      --border: rgba(255, 255, 255, 0.1); 
-      --glass-bg: rgba(28, 28, 30, 0.72);
-      --hover-bg: rgba(255, 255, 255, 0.08);
-      
-      --accent: #0a84ff; 
-      --accent-bg: rgba(10, 132, 255, 0.15);
-      --success: #30d158; 
-      --success-bg: rgba(48, 209, 88, 0.15); 
-      --danger: #ff453a; 
-      --danger-bg: rgba(255, 69, 58, 0.15); 
-      
-      --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
-      --shadow-modal: 0 24px 48px rgba(0,0,0,0.6);
-    }
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  
-  body { 
-    background-color: var(--bg-color); 
-    color: var(--text-main); 
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif; 
-    line-height: 1.5; 
-    letter-spacing: -0.015em;
-    -webkit-font-smoothing: antialiased;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
-    overscroll-behavior-y: none; 
-  }
-
-  .glass-effect { 
-    background: var(--glass-bg);
-    backdrop-filter: saturate(180%) blur(20px); 
-    -webkit-backdrop-filter: saturate(180%) blur(20px); 
-    transform: translateZ(0);
-  }
-  .hidden { display: none !important; }
-  .text-center { text-align: center; }
-  
-  .anim-btn { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
-
-  /* TOPBAR */
-  .topbar { 
-    position: sticky; top: 0; 
-    border-bottom: 1px solid var(--border); 
-    padding: 12px 20px; 
-    display: flex; justify-content: space-between; align-items: center; 
-    z-index: 100; 
-  }
-  .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
-  
-  .btn-header { 
-    background: var(--hover-bg); color: var(--accent); border: none; 
-    padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; 
-    cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
-  }
-
-  /* MENU DROPDOWN */
-  .menu-wrapper { position: relative; }
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 10px); right: 0; width: 220px;
     background: var(--glass-bg); border-radius: 16px; 
     box-shadow: var(--shadow-modal); border: 1px solid var(--border);
     padding: 6px; display: flex; flex-direction: column; gap: 2px; z-index: 200; 
@@ -579,16 +171,12 @@ Hãy copy toàn bộ mã dưới đây và dán đè vào file **`index.html`** 
   .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 15px; font-weight: 600; margin-top: 8px; cursor: pointer; padding: 14px; }
   .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px; }
 
-  /* NOTICE & AD BANNER */
+  /* NOTICE BANNER */
   .marquee-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 12px 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
   .marquee-icon { font-size: 18px; flex-shrink: 0; }
   .marquee-track { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
   .marquee-text { display: inline-block; padding-left: 100%; animation: scrollMarquee 15s linear infinite; font-size: 14.5px; font-weight: 600; color: var(--text-main); letter-spacing: 0.01em; }
   @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-  .ad-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--border); background: var(--hover-bg); display: flex; flex-direction: column; }
-  .ad-image { width: 100%; height: auto; display: block; }
-  .btn-close-ad { position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.4); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10; }
 
   /* =========================================================
      APPLE STORE CARDS UI (ALTERNATING BLACK & WHITE)
@@ -715,7 +303,7 @@ Hãy copy toàn bộ mã dưới đây và dán đè vào file **`index.html`** 
   .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
 
   /* =========================================================
-     APPLE FOOTER
+     FOOTER
      ========================================================= */
   .footer { margin-top: 40px; padding: 24px 20px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--text-sub); line-height: 1.6; }
   .footer-copyright { margin-bottom: 8px; }
@@ -795,14 +383,6 @@ Hãy copy toàn bộ mã dưới đây và dán đè vào file **`index.html`** 
       </div>
     </div>
 
-    <!-- Quảng cáo đã được bật (Xóa style display none) -->
-    <div id="adBanner" class="ad-container hidden">
-      <button class="btn-close-ad" onclick="closeAd()">✕</button>
-      <a href="#" target="_blank">
-        <img src="banner.jpg" alt="Advertisement" class="ad-image">
-      </a>
-    </div>
-
     <div class="hub-title">Modules</div>
     <div class="hub-sub">Elevate your technical expertise with the latest maintenance modules.</div>
     <div class="module-grid" id="moduleList">
@@ -845,19 +425,19 @@ Hãy copy toàn bộ mã dưới đây và dán đè vào file **`index.html`** 
 
 </div>
 
-<!-- FOOTER CHUẨN APPLE -->
+<!-- AVIATION TRAINING FOOTER -->
 <div class="footer">
-  <div class="footer-copyright">Copyright © 2026 Internal Training Hub. VN Aviation Basic Standard.</div>
+  <div class="footer-copyright">Copyright © 2026 Aviation Training. All rights reserved.</div>
   <div class="footer-links">
-    <a href="#">Privacy Policy</a>
+    <a href="#">Basic Cat A</a>
     <span class="footer-divider">|</span>
-    <a href="#">Terms of Use</a>
+    <a href="#">EASA Part-66 Standard</a>
     <span class="footer-divider">|</span>
-    <a href="#">Aviation Standards</a>
+    <a href="#">Maintenance Practices</a>
     <span class="footer-divider">|</span>
-    <a href="#">Legal</a>
+    <a href="#">Technical Hub</a>
     <span class="footer-divider">|</span>
-    <a href="#">Site Map</a>
+    <a href="#">Support</a>
   </div>
 </div>
 
@@ -871,35 +451,8 @@ const DOM = {
   statPassed: document.getElementById('statPassed'), statAccuracy: document.getElementById('statAccuracy'), qText: document.getElementById('qText'),
   optionsList: document.getElementById('optionsList'), feedbackBox: document.getElementById('feedbackBox'), btnPrev: document.getElementById('btnPrev'),
   btnNext: document.getElementById('btnNext'), paletteGrid: document.getElementById('paletteGrid'), endDesc: document.getElementById('endDesc'),
-  dropdownMenu: document.getElementById('dropdownMenu'), btnMenu: document.getElementById('btnMenu'), loginError: document.getElementById('loginError'),
-  adBanner: document.getElementById('adBanner')
+  dropdownMenu: document.getElementById('dropdownMenu'), btnMenu: document.getElementById('btnMenu'), loginError: document.getElementById('loginError')
 };
-
-// Khởi động quảng cáo thông minh
-checkAdImage();
-
-function checkAdImage() {
-  // Tạo một đối tượng ảnh tạm thời để kiểm tra sự tồn tại của file
-  var img = new Image();
-  img.onload = function() {
-    // Nếu ảnh tồn tại và người dùng chưa tắt nó trong phiên này
-    if (sessionStorage.getItem('adHidden') !== 'true') {
-      DOM.adBanner.classList.remove('hidden');
-    }
-  };
-  img.onerror = function() {
-    // Nếu ảnh không tồn tại, ẩn quảng cáo vĩnh viễn
-    DOM.adBanner.classList.add('hidden');
-  };
-  img.src = "banner.jpg";
-}
-
-function closeAd() { 
-  if (DOM.adBanner) { 
-    DOM.adBanner.classList.add('hidden'); 
-    sessionStorage.setItem('adHidden', 'true'); 
-  } 
-}
 
 let originalQuizData = [], currentRoundData = [], nextRoundData = [];    
 let globalTotal = 0, globalCompleted = 0, currentRoundIndex = 0; 
