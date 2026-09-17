@@ -4,13 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Internal Training</title>
-<link rel="manifest" href="manifest.json">
+<title>Control Panel - Internal Training</title>
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="icon.png">
 
 <style>
   /* =========================================================
@@ -19,7 +15,6 @@
   :root { 
     --bg-color: #f5f5f7; 
     --card-bg: #ffffff; 
-    --modal-bg: #ffffff;
     --text-main: #1d1d1f; 
     --text-sub: #86868b; 
     --border: rgba(0, 0, 0, 0.05); 
@@ -29,19 +24,16 @@
     --accent: #007aff; 
     --accent-bg: #e5f1ff;
     --success: #34c759; 
-    --success-bg: #e8f9ec; 
     --danger: #ff3b30; 
-    --danger-bg: #ffecec; 
+    --danger-bg: rgba(255, 59, 48, 0.1);
     
     --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-modal: 0 20px 40px rgba(0,0,0,0.12);
   }
   
   @media (prefers-color-scheme: dark) {
     :root { 
       --bg-color: #000000; 
       --card-bg: #1c1c1e; 
-      --modal-bg: #1c1c1e;
       --text-main: #f5f5f7; 
       --text-sub: #98989d; 
       --border: rgba(255, 255, 255, 0.1); 
@@ -51,12 +43,208 @@
       --accent: #0a84ff; 
       --accent-bg: rgba(10, 132, 255, 0.15);
       --success: #30d158; 
-      --success-bg: rgba(48, 209, 88, 0.15); 
       --danger: #ff453a; 
-      --danger-bg: rgba(255, 69, 58, 0.15); 
+      --danger-bg: rgba(255, 69, 58, 0.15);
       
       --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
-      --shadow-modal: 0 24px 48px rgba(0,0,0,0.6);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  
+  body { 
+    background-color: var(--bg-color); 
+    color: var(--text-main); 
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif; 
+    line-height: 1.5; 
+    -webkit-font-smoothing: antialiased;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+  }
+
+  .glass-effect { 
+    background: var(--glass-bg);
+    backdrop-filter: saturate(180%) blur(20px); 
+    -webkit-backdrop-filter: saturate(180%) blur(20px); 
+  }
+  
+  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .anim-btn:active { transform: scale(0.96); opacity: 0.85; }
+
+  /* TOPBAR */
+  .topbar { 
+    position: sticky; top: 0; 
+    border-bottom: 1px solid var(--border); 
+    padding: 12px 20px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    z-index: 100; 
+  }
+  .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
+  
+  .btn-logout { 
+    background: var(--danger-bg); color: var(--danger); border: none; 
+    padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; 
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  }
+
+  /* LAYOUT */
+  .container { flex: 1; width: 100%; max-width: 800px; margin: 0 auto; padding: 32px 20px; display: flex; flex-direction: column; gap: 24px; }
+  
+  .header-section { margin-bottom: 8px; }
+  .page-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; margin-bottom: 4px; }
+  .page-sub { color: var(--text-sub); font-size: 16px; }
+
+  .card { 
+    background: var(--card-bg); border-radius: 24px; padding: 28px; 
+    box-shadow: var(--shadow-card); border: 1px solid var(--border); width: 100%; 
+  }
+
+  .card-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  
+  /* FORMS & INPUTS */
+  .input-field { 
+    width: 100%; padding: 16px; border: 1px solid var(--border); 
+    border-radius: 16px; font-size: 15px; margin-bottom: 16px; 
+    outline: none; background: var(--bg-color); color: var(--text-main); 
+    font-family: inherit; resize: vertical; min-height: 120px; line-height: 1.5;
+  }
+  .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
+
+  .btn-primary { 
+    width: 100%; padding: 16px; background: var(--accent); color: #fff; 
+    border: none; border-radius: 16px; font-weight: 600; font-size: 16px; 
+    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  
+  /* DASHBOARD STATS */
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-box { background: var(--bg-color); padding: 20px; border-radius: 18px; border: 1px solid var(--border); }
+  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .stat-value { font-size: 24px; font-weight: 700; color: var(--text-main); }
+  
+  /* ALERTS */
+  .alert-toast {
+    position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--success); color: white; padding: 14px 24px; border-radius: 98px;
+    font-weight: 600; font-size: 15px; box-shadow: 0 10px 30px rgba(52, 199, 89, 0.3);
+    opacity: 0; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 1000;
+  }
+  .alert-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- BẢO MẬT ADMIN (Chặn truy cập trái phép) -->
+<script>
+  if (sessionStorage.getItem("isAdmin") !== "true") {
+    window.location.href = "index.html";
+  }
+</script>
+
+<div class="topbar glass-effect">
+  <div class="brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    Control Panel
+  </div>
+  <button class="btn-logout anim-btn" onclick="handleLogout()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+    Logout
+  </button>
+</div>
+
+<div class="container">
+  
+  <div class="header-section">
+    <div class="page-title">Hello, <span id="adminName" style="color: var(--accent);">Admin</span>.</div>
+    <div class="page-sub">Manage your training modules and system settings here.</div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-label">System Status</div>
+      <div class="stat-value" style="color: var(--success); display: flex; align-items: center; gap: 8px;">
+        <span style="width: 10px; height: 10px; background: var(--success); border-radius: 50%; display: inline-block;"></span> Online
+      </div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Active Modules</div>
+      <div class="stat-value">5</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+      System Notice Broadcast
+    </div>
+    <p style="color: var(--text-sub); font-size: 14.5px; margin-bottom: 16px;">Update the scrolling announcement text shown on the home screen. To apply changes permanently to GitHub, update the <code>notice.txt</code> file in your repository.</p>
+    
+    <textarea id="noticeInput" class="input-field" placeholder="Enter your announcement here..."></textarea>
+    
+    <button class="btn-primary anim-btn" onclick="generateNoticeFile()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 2Dưới đây là toàn bộ mã nguồn cho file **`admin.html`**. 
+
+Giao diện đã được thiết kế đồng bộ 100% với `index.html` (chuẩn Apple Design System, hỗ trợ Light/Dark mode tự động, Glassmorphism). Đồng thời, tớ đã tích hợp sẵn một **bộ công cụ AI Parser (Trình phân tích thông minh)** giúp bạn dán trực tiếp dữ liệu thô (từ Word/PDF) vào và nó sẽ tự động nhận diện câu hỏi, đáp án, dấu tick ✅, và ghi chú để tạo ra chuẩn file JSON ngay lập tức.
+
+Bạn chỉ cần tạo (hoặc mở) file `admin.html`, xóa toàn bộ code cũ và dán đoạn mã này vào:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Admin Console | Internal Training</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<script>
+  // BẢO MẬT: KIỂM TRA ĐĂNG NHẬP (Chạy ngay khi load để tránh chớp màn hình)
+  if (sessionStorage.getItem("isAdmin") !== "true") {
+    window.location.replace("index.html");
+  }
+</script>
+
+<style>
+  /* =========================================================
+     APPLE DESIGN SYSTEM (LIGHT & DARK MODE)
+     ========================================================= */
+  :root { 
+    --bg-color: #f5f5f7; 
+    --card-bg: #ffffff; 
+    --text-main: #1d1d1f; 
+    --text-sub: #86868b; 
+    --border: rgba(0, 0, 0, 0.1); 
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --hover-bg: rgba(0, 0, 0, 0.04);
+    
+    --accent: #007aff; 
+    --accent-bg: #e5f1ff;
+    --success: #34c759; 
+    --danger: #ff3b30; 
+    
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root { 
+      --bg-color: #000000; 
+      --card-bg: #1c1c1e; 
+      --text-main: #f5f5f7; 
+      --text-sub: #98989d; 
+      --border: rgba(255, 255, 255, 0.15); 
+      --glass-bg: rgba(28, 28, 30, 0.72);
+      --hover-bg: rgba(255, 255, 255, 0.08);
+      
+      --accent: #0a84ff; 
+      --accent-bg: rgba(10, 132, 255, 0.15);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
     }
   }
 
@@ -73,19 +261,15 @@
     min-height: 100vh; 
     display: flex; 
     flex-direction: column; 
-    overscroll-behavior-y: none; 
   }
 
   .glass-effect { 
     background: var(--glass-bg);
     backdrop-filter: saturate(180%) blur(20px); 
     -webkit-backdrop-filter: saturate(180%) blur(20px); 
-    transform: translateZ(0);
   }
-  .hidden { display: none !important; }
-  .text-center { text-align: center; }
-  
-  .anim-btn { transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
   .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
 
   /* TOPBAR */
@@ -99,212 +283,63 @@
   .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
   
   .btn-header { 
-    background: var(--hover-bg); color: var(--accent); border: none; 
+    background: var(--danger); color: white; border: none; 
     padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; 
-    cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+    cursor: pointer; display: inline-flex; align-items: center; 
   }
 
-  /* MENU DROPDOWN */
-  .menu-wrapper { position: relative; }
-  .dropdown-menu {
-    position: absolute; top: calc(100% + 10px); right: 0; width: 220px;
-    background: var(--glass-bg); border-radius: 16px; 
-    box-shadow: var(--shadow-modal); border: 1px solid var(--border);
-    padding: 6px; display: flex; flex-direction: column; gap: 2px; z-index: 200; 
-    animation: dropDown 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    transform-origin: top right;
+  /* MAIN LAYOUT */
+  .container { 
+    flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; 
+    padding: 24px 20px 40px; display: flex; flex-direction: column; 
   }
-  @keyframes dropDown { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
   
-  .dropdown-item { 
-    display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; 
-    background: transparent; border: none; border-radius: 12px; font-size: 15px; 
-    font-weight: 500; color: var(--text-main); cursor: pointer; text-align: left; 
-    transition: background 0.2s; 
-  }
-  .dropdown-item:active { background: var(--hover-bg); }
-  .dropdown-item.dev { color: var(--accent); border-top: 1px solid var(--border); margin-top: 4px; padding-top: 12px; border-radius: 0 0 12px 12px; font-weight: 600; }
+  .header-section { margin-bottom: 24px; }
+  .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
+  .hub-sub { color: var(--text-sub); font-size: 16px; }
 
-  /* MAIN CONTAINER */
-  .container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; display: flex; flex-direction: column; }
-  .container.center-mode { justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px; max-width: 720px; }
-  
+  /* TOOL GRID */
+  .grid-layout { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 900px) { .grid-layout { grid-template-columns: 1fr 1fr; } }
+
   .card { 
     background: var(--card-bg); border-radius: 24px; padding: 24px; 
-    box-shadow: var(--shadow-card); border: 1px solid var(--border); width: 100%; 
+    box-shadow: var(--shadow-card); border: 1px solid var(--border); 
+    display: flex; flex-direction: column;
   }
-  @media (min-width: 768px) { .card { padding: 32px; border-radius: 28px; } }
 
-  /* MODALS */
-  .modal-overlay { 
-    position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); 
-    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); 
-    display: flex; align-items: center; justify-content: center; z-index: 999; padding: 20px; 
-    animation: fadeIn 0.3s ease; 
-  }
-  .modal-box { 
-    background: var(--modal-bg); width: 100%; max-width: 440px; border-radius: 24px; padding: 28px 24px; 
-    box-shadow: var(--shadow-modal); border: 1px solid var(--border); max-height: 90vh; overflow-y: auto; 
-    animation: popCenter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
-  }
-  @keyframes popCenter { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-
-  @media (max-width: 600px) {
-    .modal-overlay { align-items: flex-end; padding: 0; }
-    .modal-box { border-radius: 32px 32px 0 0; padding-bottom: calc(28px + env(safe-area-inset-bottom)); animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); border-bottom: none; }
-  }
-  @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-  .modal-title { font-size: 20px; font-weight: 600; text-align: center; margin-bottom: 6px; letter-spacing: -0.022em; }
-  .modal-sub { font-size: 14px; color: var(--text-sub); text-align: center; margin-bottom: 24px; line-height: 1.4; }
-
-  .input-field { width: 100%; padding: 14px 16px; border: 1px solid var(--border); border-radius: 14px; font-size: 15px; margin-bottom: 12px; outline: none; background: var(--bg-color); color: var(--text-main); font-family: inherit; }
-  .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
-  .error-msg { color: var(--danger); font-size: 13px; font-weight: 600; margin-bottom: 12px; text-align: center; display: none; }
-
-  .mode-btn { width: 100%; padding: 16px; background: var(--hover-bg); border: 2px solid transparent; border-radius: 18px; margin-bottom: 12px; text-align: left; cursor: pointer; }
-  .mode-btn:active { background: var(--border); }
-  .mode-btn.highlight-accent { background: var(--accent-bg); border-color: transparent; }
-  .mode-btn.highlight-accent .mode-title { color: var(--accent); }
-  .mode-title { font-size: 16px; font-weight: 600; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
-  .mode-desc { font-size: 13.5px; color: var(--text-sub); line-height: 1.4; }
-  .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 15px; font-weight: 600; margin-top: 8px; cursor: pointer; padding: 14px; }
-  .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px; }
-
-  /* NOTICE & AD BANNER */
-  .marquee-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 12px 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
-  .marquee-icon { font-size: 18px; flex-shrink: 0; }
-  .marquee-track { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
-  .marquee-text { display: inline-block; padding-left: 100%; animation: scrollMarquee 15s linear infinite; font-size: 14.5px; font-weight: 600; color: var(--text-main); letter-spacing: 0.01em; }
-  @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
-
-  .ad-container { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--border); background: var(--hover-bg); display: flex; flex-direction: column; }
-  .ad-image { width: 100%; height: auto; display: block; }
-  .btn-close-ad { position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.4); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10; }
-
-  /* =========================================================
-     APPLE STORE CARDS UI (ALTERNATING BLACK & WHITE)
-     ========================================================= */
-  #menuView { width: 100%; display: flex; flex-direction: column; }
-  .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
-  .hub-sub { color: var(--text-sub); margin-bottom: 32px; font-size: 16px; }
+  .card-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;}
   
-  .module-grid { 
-    display: grid; 
-    gap: 24px; 
-    grid-template-columns: 1fr; 
+  textarea.input-field { 
+    width: 100%; height: 400px; padding: 16px; 
+    border: 1px solid var(--border); border-radius: 16px; 
+    font-size: 14px; outline: none; background: var(--bg-color); 
+    color: var(--text-main); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
+    resize: vertical; line-height: 1.5;
   }
-  @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 900px) { .module-grid { grid-template-columns: repeat(3, 1fr); } }
+  textarea.input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); background: var(--card-bg); }
 
-  .module-btn { 
-    position: relative;
-    border: none; 
-    border-radius: 28px; 
-    padding: 32px 28px 220px 28px; 
-    cursor: pointer; 
-    text-align: left; 
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
-    overflow: hidden; 
-    display: flex;
-    flex-direction: column;
-    min-height: 420px; 
+  .btn-group { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .btn { 
+    flex: 1; padding: 14px; border: none; border-radius: 14px; 
+    font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; 
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   }
-  @media (hover: hover) {
-    .module-btn:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
-    .module-btn:hover .m-image { transform: scale(1.05) translateY(-5px); }
-  }
-  .module-btn:active { transform: scale(0.97); }
-
-  /* ----- ODD CARDS: DARK THEME (ĐEN) ----- */
-  .module-btn:nth-child(odd) {
-    background: #000000;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  }
-  .module-btn:nth-child(odd) .m-title { color: #f5f5f7; }
-  .module-btn:nth-child(odd) .m-desc { color: #a1a1a6; }
-
-  /* ----- EVEN CARDS: LIGHT THEME (TRẮNG) ----- */
-  .module-btn:nth-child(even) {
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05);
-  }
-  .module-btn:nth-child(even) .m-title { color: #1d1d1f; }
-  .module-btn:nth-child(even) .m-desc { color: #86868b; }
-
-  /* Global Label and Structure */
-  .m-label { font-size: 11px; font-weight: 700; color: #ff6800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; z-index: 2; }
-  .m-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.02em; z-index: 2; display: flex; flex-direction: column; gap: 4px;}
-  .m-desc { font-size: 14.5px; line-height: 1.45; font-weight: 500; z-index: 2; }
-
-  /* IMAGE CONTAINER */
-  .m-image {
-    position: absolute;
-    bottom: -5%; 
-    left: 10%;
-    width: 80%; 
-    height: 55%; 
-    object-fit: contain;
-    object-position: center bottom;
-    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .weak-badge { background: var(--danger-bg); color: var(--danger); font-size: 11px; padding: 4px 10px; border-radius: 98px; font-weight: 700; display: inline-block; width: fit-content; margin-top: 4px; }
-
-  /* QUIZ UI */
-  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--bg-color); padding: 12px; border-radius: 18px; margin-bottom: 24px; text-align: center; }
-  .stat-card { display: flex; flex-direction: column; justify-content: center; align-items: center; }
-  .stat-card:not(:last-child) { border-right: 1px solid var(--border); }
-  .stat-label { font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-  .stat-val { font-size: 16px; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
-  .stat-card.active .stat-val { color: var(--accent); }
-  .stat-card.passed .stat-val { color: var(--success); }
-
-  .q-text { font-size: 19px; font-weight: 600; margin-bottom: 24px; line-height: 1.45; letter-spacing: -0.022em; }
-
-  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 16px; padding: 16px 18px; margin-bottom: 12px; text-align: left; font-size: 16px; font-weight: 400; color: var(--text-main); cursor: pointer; display: flex; gap: 14px; align-items: flex-start; line-height: 1.4; word-break: break-word; }
-  @media (hover: hover) { .opt-btn:hover:not(:disabled) { background: var(--hover-bg); } }
-  .opt-label { font-weight: 600; color: var(--text-sub); flex-shrink: 0; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--hover-bg); color: var(--text-main); }
   
-  .opt-btn.correct { background: var(--success-bg); border-color: transparent; color: var(--success); font-weight: 500;}
-  .opt-btn.correct .opt-label { color: var(--success); }
-  .opt-btn.wrong { background: var(--danger-bg); border-color: transparent; color: var(--danger); }
-  .opt-btn.wrong .opt-label { color: var(--danger); }
-  .opt-btn:disabled { cursor: default; }
-  .opt-btn.dimmed { opacity: 0.5; filter: grayscale(100%); }
+  /* TOAST NOTIFICATION */
+  .toast {
+    position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--text-main); color: var(--bg-color);
+    padding: 12px 24px; border-radius: 98px; font-weight: 600; font-size: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1000; opacity: 0;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-  .feedback { margin-top: 24px; padding: 18px; border-radius: 16px; font-size: 15px; display: none; line-height: 1.5; animation: popCenter 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .feedback.show { display: block; }
-  .feedback.success { background: var(--success-bg); color: var(--success); }
-  .feedback.error { background: var(--danger-bg); color: var(--danger); }
-
-  /* PALETTE & NAV */
-  #paletteCard { margin-top: 16px; }
-  .grid-title { font-size: 13px; font-weight: 600; margin-bottom: 14px; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; }
-  .palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-height: 220px; overflow-y: auto; padding-right: 4px; }
-  @media (min-width: 600px) { .palette-grid { grid-template-columns: repeat(10, 1fr); } }
-  .palette-btn { height: 42px; background: var(--bg-color); border: none; border-radius: 12px; font-weight: 600; font-size: 14px; color: var(--text-main); cursor: pointer; font-variant-numeric: tabular-nums; }
-  .palette-btn.active { outline: 2.5px solid var(--accent); outline-offset: 2px; }
-  .palette-btn.done { background: var(--success-bg); color: var(--success); }
-  .palette-btn.wrong-done { background: var(--danger-bg); color: var(--danger); }
-
-  .progress-container { width: 100%; height: 4px; background: transparent; position: absolute; top: 100%; left: 0; }
-  .progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; border-radius: 0 4px 4px 0; }
-  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 24px; gap: 12px; }
-  .btn-nav { flex: 1; padding: 16px; border-radius: 16px; border: none; font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; }
-  .btn-prev { background: var(--bg-color); color: var(--text-main); }
-  .btn-next { background: var(--accent); color: white; display: none; }
-  .btn-nav:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  /* LOADER & SCROLLBAR */
-  .loader-spinner { border: 3px solid var(--border); border-top: 3px solid var(--accent); border-radius: 50%; width: 36px; height: 36px; animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin: 0 auto 16px auto; }
-  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-  ::-webkit-scrollbar { width: 6px; }
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
 </style>
@@ -313,344 +348,162 @@
 
 <div class="topbar glass-effect">
   <div class="brand">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-    Internal Training
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 9.36l-7.1 7.1a1 1 0 0 1-1.42 0l-1.41-1.42a1 1 0 0 1 0-1.41l7.1-7.1a6 6 0 0 1 9.36-7.94l-3.77 3.77a1 1 0 0 0 0 1.4z"/></svg>
+    Developer Console
   </div>
-  <div class="menu-wrapper">
-    <button class="btn-header anim-btn" id="btnMenu" onclick="toggleMenu(event)">☰ Menu</button>
-    <div id="dropdownMenu" class="dropdown-menu hidden glass-effect">
-      <button class="dropdown-item anim-btn" onclick="handleMenuHome()"><span>🏠</span> Home</button>
-      <button class="dropdown-item dev anim-btn" onclick="openDevLoginModal()"><span>🛠️</span> Developer Login</button>
-    </div>
-  </div>
-  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+  <button class="btn-header anim-btn" onclick="handleLogout()">Logout</button>
 </div>
 
-<div id="modeModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <div class="modal-title">Select Mode</div>
-    <div class="modal-sub">Choose your preferred training format.</div>
-    <button class="mode-btn highlight-accent anim-btn" onclick="confirmMode('SCROLL')">
-      <div class="mode-title">🚀 Continuous Training</div>
-      <div class="mode-desc">Build rapid reflexes through uninterrupted practice. Auto-advances upon answer selection.</div>
-    </button>
-    <button class="mode-btn anim-btn" onclick="confirmMode('ONE_BY_ONE')">
-      <div class="mode-title">🎯 Standard Assessment</div>
-      <div class="mode-desc">Standalone evaluation interface. Navigate manually via the "Next" button and the palette.</div>
-    </button>
-    <button class="mode-btn anim-btn" onclick="confirmMode('WEAK_REVIEW')">
-      <div class="mode-title">🔄 Review Weak Questions</div>
-      <div class="mode-desc">Practice exclusively the questions you've previously answered incorrectly.</div>
-    </button>
-    <button class="btn-close-modal anim-btn" onclick="closeModeModal()">Cancel</button>
+<div class="container">
+  <div class="header-section">
+    <div class="hub-title">Data Architect.</div>
+    <div class="hub-sub">Parse raw text into Apple-ready JSON structures.</div>
   </div>
-</div>
 
-<div id="loginModal" class="modal-overlay hidden">
-  <div class="modal-box">
-    <div class="modal-title">🔐 Administrator</div>
-    <div class="modal-sub">For Developers Only</div>
-    <form onsubmit="handleAdminLogin(event)">
-      <input type="text" id="adminUser" placeholder="Username" class="input-field" required autocomplete="username" />
-      <input type="password" id="adminPass" placeholder="Password" class="input-field" required autocomplete="current-password" />
-      <div id="loginError" class="error-msg">Invalid username or password!</div>
-      <button type="submit" class="btn-primary anim-btn">Login</button>
-      <button type="button" class="btn-close-modal anim-btn" onclick="closeDevLoginModal()">Close</button>
-    </form>
-  </div>
-</div>
-
-<div class="container" id="mainContainer">
-  
-  <div id="menuView">
-    <div class="marquee-box" id="noticeBox">
-      <span class="marquee-icon">📢</span>
-      <div class="marquee-track">
-        <span class="marquee-text" id="noticeText">Loading notice...</span>
+  <div class="grid-layout">
+    <!-- KHU VỰC NHẬP TEXT THÔ -->
+    <div class="card">
+      <div class="card-title">
+        Raw Input
+        <span style="font-size: 12px; color: var(--text-sub); font-weight: 500;">Word / PDF Text</span>
+      </div>
+      <textarea id="rawInput" class="input-field" placeholder="Paste your raw questions here...&#10;&#10;Example format:&#10;What is the primary function of a propeller? (Lvl 1)&#10;a) To generate electricity&#10;b) To convert engine power into thrust ✅&#10;c) To reduce aerodynamic drag&#10;Note: Reference content page 8"></textarea>
+      
+      <div class="btn-group">
+        <button class="btn btn-secondary anim-btn" onclick="document.getElementById('rawInput').value = ''">Clear</button>
+        <button class="btn btn-primary anim-btn" onclick="processText()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Convert to JSON
+        </button>
       </div>
     </div>
 
-    <div id="adBanner" class="ad-container hidden" style="display: none !important;">
-      <button class="btn-close-ad" onclick="closeAd()">✕</button>
-      <a href="#" target="_blank">
-        <img src="banner.jpg" alt="Advertisement" class="ad-image">
-      </a>
-    </div>
-
-    <div class="hub-title">The latest.</div>
-    <div class="hub-sub">Take a look at what's new in your training modules.</div>
-    <div class="module-grid" id="moduleList">
-      <div class="loader-spinner" style="margin-top: 20px;"></div>
-    </div>
-  </div>
-
-  <div id="loadingView" class="card hidden text-center">
-    <div class="loader-spinner"></div>
-    <h3 style="font-size: 18px; font-weight: 600; color: var(--text-main);">Loading Module...</h3>
-    <p style="color: var(--text-sub); font-size: 14px; margin-top: 6px;">Preparing questions, please wait.</p>
-  </div>
-
-  <div id="quizView" class="card hidden">
-    <div class="stats-grid" id="qStatsGrid">
-      <div class="stat-card active"><span class="stat-label">Progress</span><span class="stat-val" id="statCurrentQ">1/0</span></div>
-      <div class="stat-card passed"><span class="stat-label">Correct</span><span class="stat-val" id="statPassed">0/0</span></div>
-      <div class="stat-card"><span class="stat-label">Accuracy</span><span class="stat-val" id="statAccuracy">100%</span></div>
-    </div>
-    <div class="q-text" id="qText">Loading question...</div>
-    <div id="optionsList"></div>
-    <div class="feedback" id="feedbackBox"></div>
-    <div class="nav-bar" id="navBar" style="display: none;">
-      <button onclick="navPrev()" id="btnPrev" class="btn-nav btn-prev anim-btn">‹ Previous</button>
-      <button onclick="navNext()" id="btnNext" class="btn-nav btn-next anim-btn">Next ›</button>
+    <!-- KHU VỰC XUẤT JSON -->
+    <div class="card">
+      <div class="card-title">
+        Output JSON
+        <span style="font-size: 12px; color: var(--text-sub); font-weight: 500;">Ready for Deployment</span>
+      </div>
+      <textarea id="jsonOutput" class="input-field" placeholder="Formatted JSON array will appear here..."></textarea>
+      
+      <div class="btn-group">
+        <button class="btn btn-secondary anim-btn" onclick="copyToClipboard()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+        <button class="btn btn-primary anim-btn" onclick="downloadJSON()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download
+        </button>
+      </div>
     </div>
   </div>
-
-  <div id="paletteCard" class="card hidden">
-    <div class="grid-title">Question Palette</div>
-    <div id="paletteGrid" class="palette-grid"></div>
-  </div>
-
-  <div id="endView" class="card hidden text-center">
-    <div style="font-size: 80px; margin-bottom: 16px; filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));">🏆</div>
-    <h2 style="font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em;" id="endTitle">100% Completed!</h2>
-    <p style="color: var(--text-sub); margin-bottom: 32px; font-size: 16px;" id="endDesc">Calculating score...</p>
-    <button class="btn-primary anim-btn" style="border-radius: 16px;" onclick="goHome()">Back to Home</button>
-  </div>
-
 </div>
 
+<div id="toast" class="toast">Copied to clipboard!</div>
+
 <script>
-const DOM = {
-  noticeText: document.getElementById('noticeText'), noticeBox: document.getElementById('noticeBox'), moduleList: document.getElementById('moduleList'),
-  modeModal: document.getElementById('modeModal'), loginModal: document.getElementById('loginModal'), menuView: document.getElementById('menuView'),
-  endView: document.getElementById('endView'), quizView: document.getElementById('quizView'), paletteCard: document.getElementById('paletteCard'),
-  navBar: document.getElementById('navBar'), loadingView: document.getElementById('loadingView'), mainContainer: document.getElementById('mainContainer'),
-  progressBar: document.getElementById('progressBar'), qStatsGrid: document.getElementById('qStatsGrid'), statCurrentQ: document.getElementById('statCurrentQ'),
-  statPassed: document.getElementById('statPassed'), statAccuracy: document.getElementById('statAccuracy'), qText: document.getElementById('qText'),
-  optionsList: document.getElementById('optionsList'), feedbackBox: document.getElementById('feedbackBox'), btnPrev: document.getElementById('btnPrev'),
-  btnNext: document.getElementById('btnNext'), paletteGrid: document.getElementById('paletteGrid'), endDesc: document.getElementById('endDesc'),
-  dropdownMenu: document.getElementById('dropdownMenu'), btnMenu: document.getElementById('btnMenu'), loginError: document.getElementById('loginError'),
-  adBanner: document.getElementById('adBanner')
-};
-
-if (sessionStorage.getItem('adHidden') !== 'true' && DOM.adBanner) { DOM.adBanner.classList.remove('hidden'); }
-function closeAd() { if (DOM.adBanner) { DOM.adBanner.classList.add('hidden'); sessionStorage.setItem('adHidden', 'true'); } }
-
-let originalQuizData = [], currentRoundData = [], nextRoundData = [];    
-let globalTotal = 0, globalCompleted = 0, currentRoundIndex = 0; 
-let totalAttempts = 0, totalCorrectAttempts = 0, advanceTimer;
-let selectedFileUrl = "", examMode = "SCROLL", userAnswers = {}; 
-
-async function loadNotice() {
-  try {
-    const res = await fetch('notice.txt?v=' + Date.now());
-    if (!res.ok) throw new Error();
-    const text = (await res.text()).trim();
-    if (text) DOM.noticeText.innerText = text; else DOM.noticeBox.style.display = 'none';
-  } catch (err) { DOM.noticeBox.style.display = 'none'; }
-}
-
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; }
-  return arr;
-}
-function shuffleOnlyOptions(data) {
-  return data.map(q => {
-    const opts = Array.isArray(q[2]) ? q[2] : [];
-    let correctIdx = (typeof q[3] === 'string' && isNaN(q[3])) ? q[3].toUpperCase().charCodeAt(0) - 65 : parseInt(q[3], 10);
-    const labeledOpts = opts.map((opt, idx) => ({ text: opt, isCorrect: (idx === correctIdx) }));
-    const shuffledOpts = shuffleArray([...labeledOpts]);
-    const newCorrectIdx = shuffledOpts.findIndex(item => item.isCorrect);
-    return [q[0], q[1], shuffledOpts.map(item => item.text), newCorrectIdx >= 0 ? newCorrectIdx : 0, q[4] || ''];
-  });
-}
-function getWeakQuestions(fileUrl) { try { return JSON.parse(localStorage.getItem('weak_' + fileUrl)) || []; } catch(e) { return []; } }
-function saveWeakQuestion(q, fileUrl) {
-  try { let list = getWeakQuestions(fileUrl); if (!list.some(item => item[1] === q[1])) { list.push(q); localStorage.setItem('weak_' + fileUrl, JSON.stringify(list)); } } catch(e) {}
-}
-function removeWeakQuestion(q, fileUrl) {
-  try { let list = getWeakQuestions(fileUrl).filter(item => item[1] !== q[1]); localStorage.setItem('weak_' + fileUrl, JSON.stringify(list)); } catch(e) {}
-}
-
-const moduleTags = { "m1": "FUNDAMENTALS", "m07a": "PRACTICES", "m07a209": "ADVANCED", "m11": "AERODYNAMICS", "m15": "TURBINE ENGINES", "m17": "PROPELLERS" };
-
-async function init() {
-  loadNotice();
-  try {
-    const res = await fetch('data/modules.json');
-    if (!res.ok) throw new Error();
-    const modules = await res.json();
-    
-    DOM.moduleList.innerHTML = modules.map(m => {
-      const weakCount = getWeakQuestions(m.file).length;
-      const weakBadge = weakCount > 0 ? `<span class="weak-badge">${weakCount} weak questions</span>` : '';
-      const tagLabel = moduleTags[m.id] || "MODULE";
-
-      return `
-      <button class="module-btn anim-btn" onclick="openModeModal('${m.file}')">
-        <div class="m-label">${tagLabel}</div>
-        <div class="m-title">
-          ${m.title}
-          ${weakBadge}
-        </div>
-        <div class="m-desc">${m.desc}</div>
-        <img class="m-image" src="data/${m.id}.png" alt="icon" onerror="this.style.display='none'">
-        <img class="m-image" src="data/${m.id}.svg" alt="icon" onerror="this.style.display='none'">
-      </button>`;
-    }).join('');
-  } catch (error) { DOM.moduleList.innerHTML = '<p style="color:var(--danger); text-align:center; font-weight:600;">⚠️ Error loading module list!</p>'; }
-}
-
-function openModeModal(fileUrl) { selectedFileUrl = fileUrl; DOM.modeModal.classList.remove('hidden'); }
-function closeModeModal() { DOM.modeModal.classList.add('hidden'); }
-function confirmMode(mode) { examMode = mode; closeModeModal(); startQuiz(); }
-
-async function startQuiz() {
-  DOM.menuView.classList.add('hidden'); DOM.endView.classList.add('hidden'); DOM.quizView.classList.add('hidden'); DOM.paletteCard.classList.add('hidden');
-  DOM.navBar.style.display = 'none'; DOM.loadingView.classList.remove('hidden'); DOM.mainContainer.classList.add('center-mode');
-
-  try {
-    if (examMode === 'WEAK_REVIEW') {
-      const weakList = getWeakQuestions(selectedFileUrl);
-      if (weakList.length === 0) { alert("No weak questions saved for this module yet!"); goHome(); return; }
-      originalQuizData = shuffleOnlyOptions(weakList);
-    } else {
-      const res = await fetch(selectedFileUrl);
-      if (!res.ok) throw new Error();
-      originalQuizData = shuffleOnlyOptions(await res.json());
-    }
-
-    currentRoundData = [...originalQuizData]; nextRoundData = []; globalTotal = originalQuizData.length; globalCompleted = 0; currentRoundIndex = 0;
-    totalAttempts = 0; totalCorrectAttempts = 0; userAnswers = {};
-    
-    DOM.loadingView.classList.add('hidden'); DOM.quizView.classList.remove('hidden');
-
-    if (examMode === 'ONE_BY_ONE' || examMode === 'WEAK_REVIEW') { DOM.mainContainer.classList.remove('center-mode'); DOM.paletteCard.classList.remove('hidden'); DOM.navBar.style.display = 'flex'; }
-    renderQuestion();
-  } catch (error) { DOM.loadingView.innerHTML = `<h3 style="color:var(--danger)">Error loading quiz file!</h3>`; }
-}
-
-function renderQuestion() {
-  if (currentRoundIndex >= currentRoundData.length) {
-    if (nextRoundData.length === 0) return showEndScreen();
-    DOM.qStatsGrid.style.display = 'none'; DOM.paletteCard.classList.add('hidden');
-    DOM.qText.innerHTML = `<span style="color:var(--accent)">🔄 Preparing to review ${nextRoundData.length} weak questions...</span>`;
-    DOM.optionsList.innerHTML = ''; DOM.feedbackBox.className = 'feedback';
-    
-    currentRoundData = [...nextRoundData]; nextRoundData = []; currentRoundIndex = 0; userAnswers = {}; 
-    setTimeout(() => { DOM.qStatsGrid.style.display = 'grid'; if(examMode !== 'SCROLL') DOM.paletteCard.classList.remove('hidden'); renderQuestion(); }, 1500);
-    return;
+  function handleLogout() {
+    sessionStorage.removeItem("isAdmin");
+    sessionStorage.removeItem("adminUser");
+    window.location.replace("index.html");
   }
 
-  const q = currentRoundData[currentRoundIndex];
-  const accuracy = totalAttempts === 0 ? 100 : Math.round((totalCorrectAttempts / totalAttempts) * 100);
-  const isReviewRound = (currentRoundData.length !== globalTotal);
-  
-  DOM.statCurrentQ.innerText = isReviewRound ? `Review ${currentRoundIndex + 1}/${currentRoundData.length}` : `${currentRoundIndex + 1}/${globalTotal}`;
-  DOM.statPassed.innerText = `${globalCompleted}/${globalTotal}`;
-  DOM.statAccuracy.innerText = `${accuracy}%`;
-  DOM.progressBar.style.width = ((globalCompleted) / globalTotal * 100) + '%';
-  DOM.qText.innerText = q[1];
-  DOM.feedbackBox.className = 'feedback'; 
-  
-  const options = Array.isArray(q[2]) ? q[2] : [];
-  DOM.optionsList.innerHTML = options.map((optText, i) => `
-    <button class="opt-btn anim-btn" onclick="checkAnswer(${i}, ${q[3]}, this)" id="opt-${i}">
-      <span class="opt-label">${String.fromCharCode(65 + i)}.</span>
-      <span style="flex: 1;">${optText}</span>
-    </button>
-  `).join('');
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.innerText = message;
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 2500);
+  }
 
-  if (examMode !== 'SCROLL') {
-    DOM.btnPrev.disabled = (currentRoundIndex === 0); DOM.btnNext.style.display = 'none'; renderPalette();
-    if (userAnswers[currentRoundIndex]) {
-      const history = userAnswers[currentRoundIndex];
-      DOM.optionsList.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
-      DOM.btnNext.style.display = 'block';
-      if (history.isCorrect) {
-        document.getElementById(`opt-${history.selected}`).classList.add('correct');
-        DOM.feedbackBox.innerText = "✓ Correct!"; DOM.feedbackBox.className = 'feedback show success';
-      } else {
-        document.getElementById(`opt-${history.selected}`).classList.add('wrong');
-        document.getElementById(`opt-${history.correct}`).classList.add('correct');
-        DOM.feedbackBox.innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${q[4] || ''}</span>`;
-        DOM.feedbackBox.className = 'feedback show error';
+  function copyToClipboard() {
+    const output = document.getElementById('jsonOutput');
+    if (!output.value) return;
+    output.select();
+    document.execCommand('copy');
+    showToast('JSON Copied to clipboard!');
+  }
+
+  function downloadJSON() {
+    const output = document.getElementById('jsonOutput').value;
+    if (!output) { alert("Nothing to download!"); return; }
+    
+    const blob = new Blob([output], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'module_questions.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Download started!');
+  }
+
+  // BỘ PHÂN TÍCH THÔNG MINH (AI PARSER)
+  function processText() {
+    const rawText = document.getElementById('rawInput').value.trim();
+    if (!rawText) return;
+
+    const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+    const result = [];
+    
+    let currentId = 1;
+    let currentQ = null;
+    let currentOptions = [];
+    let correctIndex = 0;
+    let currentRef = "None";
+
+    // Ký hiệu nhận dạng câu hỏi, đáp án
+    const optionRegex = /^[a-d]\)|\^[A-D]\./i; 
+    const checkmarkRegex = /✅|\[x\]|\[v\]/i;
+
+    lines.forEach((line) => {
+      // Nhận diện Ghi chú / Reference
+      if (line.toLowerCase().startsWith("note:") || line.toLowerCase().startsWith("reference:")) {
+        if (currentQ) {
+          currentRef = line.replace(/^(note|reference):\s*/i, '').trim();
+          // Đóng gói câu hỏi hiện tại
+          result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
+          currentId++;
+          currentQ = null; currentOptions = []; correctIndex = 0; currentRef = "None";
+        }
+      } 
+      // Nhận diện Đáp án
+      else if (optionRegex.test(line)) {
+        let optText = line.replace(optionRegex, '').trim();
+        // Kiểm tra xem đáp án có chứa dấu ✅ không
+        if (checkmarkRegex.test(optText)) {
+          correctIndex = currentOptions.length;
+          optText = optText.replace(checkmarkRegex, '').trim();
+        }
+        currentOptions.push(optText);
+      } 
+      // Nhận diện Câu hỏi mới
+      else {
+        // Nếu đã có câu hỏi đang phân tích dở dang mà không có Note, tiến hành đóng gói
+        if (currentQ && currentOptions.length > 0) {
+          result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
+          currentId++;
+          currentOptions = []; correctIndex = 0; currentRef = "None";
+        }
+        // Ghi nhận câu hỏi mới
+        currentQ = line;
       }
+    });
+
+    // Đóng gói câu hỏi cuối cùng nếu chưa được đẩy vào mảng
+    if (currentQ && currentOptions.length > 0) {
+      result.push([currentId, currentQ, currentOptions, correctIndex, currentRef]);
+    }
+
+    if (result.length > 0) {
+      document.getElementById('jsonOutput').value = JSON.stringify(result, null, 2);
+      showToast('Successfully parsed ' + result.length + ' questions!');
+    } else {
+      document.getElementById('jsonOutput').value = "[\n  // Could not parse the text automatically. Please check your format.\n]";
     }
   }
-}
-
-function checkAnswer(selectedIndex, correctIndex, btnClicked) {
-  const allBtns = DOM.optionsList.querySelectorAll('.opt-btn');
-  allBtns.forEach(b => b.disabled = true); 
-
-  const isCorrect = (selectedIndex === correctIndex);
-  const currentQ = currentRoundData[currentRoundIndex];
-  totalAttempts++; userAnswers[currentRoundIndex] = { selected: selectedIndex, correct: correctIndex, isCorrect: isCorrect };
-
-  if (isCorrect) {
-    totalCorrectAttempts++; globalCompleted++; btnClicked.classList.add('correct');
-    DOM.feedbackBox.innerText = "✓ Correct!"; DOM.feedbackBox.className = 'feedback show success';
-    allBtns.forEach((b, i) => { if(i !== selectedIndex) b.classList.add('dimmed'); });
-    removeWeakQuestion(currentQ, selectedFileUrl);
-  } else {
-    nextRoundData.push(currentQ); btnClicked.classList.add('wrong');
-    if (allBtns[correctIndex]) allBtns[correctIndex].classList.add('correct'); 
-    DOM.feedbackBox.innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${currentQ[4] || ''}</span>`;
-    DOM.feedbackBox.className = 'feedback show error';
-    allBtns.forEach((b, i) => { if(i !== selectedIndex && i !== correctIndex) b.classList.add('dimmed'); });
-    saveWeakQuestion(currentQ, selectedFileUrl);
-  }
-
-  DOM.statPassed.innerText = `${globalCompleted}/${globalTotal}`; DOM.statAccuracy.innerText = `${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%`;
-
-  if (examMode === 'SCROLL') { clearTimeout(advanceTimer); advanceTimer = setTimeout(() => { currentRoundIndex++; renderQuestion(); }, 1200); } 
-  else { DOM.btnNext.style.display = 'block'; renderPalette(); }
-}
-
-function navNext() { if (currentRoundIndex < currentRoundData.length) { currentRoundIndex++; renderQuestion(); } }
-function navPrev() { if (currentRoundIndex > 0) { currentRoundIndex--; renderQuestion(); } }
-function jumpToQuestion(idx) { currentRoundIndex = idx; renderQuestion(); }
-
-function renderPalette() {
-  DOM.paletteGrid.innerHTML = ''; const fragment = document.createDocumentFragment();
-  currentRoundData.forEach((_, idx) => {
-    const btn = document.createElement('button'); btn.innerText = idx + 1;
-    let className = 'palette-btn anim-btn';
-    if (idx === currentRoundIndex) className += ' active';
-    else if (userAnswers[idx]) className += userAnswers[idx].isCorrect ? ' done' : ' wrong-done';
-    btn.className = className; btn.onclick = () => jumpToQuestion(idx); fragment.appendChild(btn);
-  });
-  DOM.paletteGrid.appendChild(fragment);
-}
-
-function showEndScreen() {
-  DOM.quizView.classList.add('hidden'); DOM.paletteCard.classList.add('hidden'); DOM.endView.classList.remove('hidden'); DOM.progressBar.style.width = '100%';
-  DOM.endDesc.innerHTML = `Accuracy: <strong>${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%</strong><br>Total attempts: ${totalAttempts}`;
-}
-
-function goHome() {
-  clearTimeout(advanceTimer);
-  DOM.quizView.classList.add('hidden'); DOM.endView.classList.add('hidden'); DOM.loadingView.classList.add('hidden'); DOM.paletteCard.classList.add('hidden');
-  DOM.menuView.classList.remove('hidden'); DOM.progressBar.style.width = '0%'; DOM.mainContainer.classList.remove('center-mode');
-  init();
-}
-
-function toggleMenu(e) { e.stopPropagation(); DOM.dropdownMenu.classList.toggle('hidden'); }
-document.addEventListener('click', (e) => { if (!DOM.dropdownMenu.classList.contains('hidden') && !DOM.dropdownMenu.contains(e.target) && e.target !== DOM.btnMenu) DOM.dropdownMenu.classList.add('hidden'); });
-function handleMenuHome() { DOM.dropdownMenu.classList.add('hidden'); goHome(); }
-function openDevLoginModal() { DOM.dropdownMenu.classList.add('hidden'); DOM.loginModal.classList.remove('hidden'); DOM.loginError.style.display = 'none'; }
-function closeDevLoginModal() { DOM.loginModal.classList.add('hidden'); }
-
-const VALID_ACCOUNTS = { "admin": "admin123", "quockiet": "adminquockiet" };
-function handleAdminLogin(e) {
-  e.preventDefault();
-  const u = document.getElementById('adminUser').value.trim(); const p = document.getElementById('adminPass').value.trim();
-  if (VALID_ACCOUNTS[u] && VALID_ACCOUNTS[u] === p) { sessionStorage.setItem("isAdmin", "true"); sessionStorage.setItem("adminUser", u); window.location.href = "admin.html"; } 
-  else DOM.loginError.style.display = 'block';
-}
-
-init();
 </script>
 </body>
 </html>
