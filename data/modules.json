@@ -1,4 +1,11 @@
 [
+  
+  {
+    "id": "m1",
+    "title": "MODULE 1 MATHEMATICS",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m1.json"
+  },
   {
     "id": "m07a",
     "title": "Module 7A: Maintenance Practices(72)",
