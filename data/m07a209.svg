@@ -1,176 +1,115 @@
 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Phối màu Nhựa Nhám Đen của thân máy -->
-    <linearGradient id="bodyColor" x1="0" y1="0" x2="400" y2="400">
+    <linearGradient id="bodyDark" x1="0" y1="0" x2="400" y2="400">
       <stop offset="0%" stop-color="#3A3A3C"/>
-      <stop offset="50%" stop-color="#1C1C1E"/>
-      <stop offset="100%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#1C1C1E"/>
     </linearGradient>
 
-    <!-- Phối màu Ốp viền Cao su Cam (Chống sốc đặc trưng của máy VOM) -->
-    <linearGradient id="rubberEdge" x1="0" y1="0" x2="400" y2="400">
+    <!-- Phối màu Ốp Cao su Cam -->
+    <linearGradient id="rubberOrange" x1="0" y1="0" x2="400" y2="400">
       <stop offset="0%" stop-color="#FFB340"/>
-      <stop offset="50%" stop-color="#FF9500"/>
-      <stop offset="100%" stop-color="#D97A00"/>
+      <stop offset="100%" stop-color="#FF9500"/>
     </linearGradient>
 
-    <!-- Phối màu Màn hình LCD -->
-    <linearGradient id="lcdColor" x1="0" y1="0" x2="0" y2="100">
+    <!-- Phối màu Màn hình LCD xanh -->
+    <linearGradient id="lcdScreen" x1="0" y1="0" x2="0" y2="100">
       <stop offset="0%" stop-color="#A9C2A0"/>
       <stop offset="100%" stop-color="#8DA785"/>
     </linearGradient>
 
-    <!-- Vòng xoay chọn chế độ (Dial) -->
-    <radialGradient id="dialGradient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#48484A"/>
-      <stop offset="90%" stop-color="#1C1C1E"/>
-      <stop offset="100%" stop-color="#000000"/>
-    </radialGradient>
-
-    <!-- Ánh sáng LED mờ ảo -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    
-    <!-- Bóng 3D sâu -->
+    <!-- Bóng râm Drop Shadow để nổi bật máy -->
     <filter id="shadow">
-      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
     </filter>
   </defs>
 
-  <!-- BACKGROUND: Vòng Radar / HUD Mờ ảo đằng sau -->
-  <g opacity="0.4">
-    <circle cx="200" cy="220" r="140" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-    <circle cx="200" cy="220" r="90" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" stroke-dasharray="4 8"/>
-    <!-- Đường điện sóng Sin (Sine wave) mờ sau lưng máy -->
-    <path d="M 40 220 Q 80 150, 120 220 T 200 220 T 280 220 T 360 220" fill="none" stroke="#0A84FF" stroke-width="2" opacity="0.2"/>
+  <!-- BACKGROUND: Dấu chữ thập tâm (Crosshair) mờ lót nền -->
+  <g opacity="0.3">
+    <line x1="200" y1="100" x2="200" y2="300" stroke="#8E8E93" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="100" y1="200" x2="300" y2="200" stroke="#8E8E93" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="200" cy="200" r="130" fill="none" stroke="#8E8E93" stroke-width="1" stroke-dasharray="2 6"/>
   </g>
 
-  <!-- KHỐI MÁY VOM CHÍNH (Đổ bóng 3D sâu) -->
-  <g filter="url(#shadow)" transform="translate(0, 10)">
+  <!-- ================= TOÀN BỘ MÁY (VUÔNG VỨC & ĐƠN GIẢN) ================= -->
+  <g filter="url(#shadow)">
     
-    <!-- Lớp 1: Viền Cao Su Cam Chống Sốc (Rubber Holster) -->
-    <!-- Dáng máy hơi thon ở giữa, phình ra ở trên và dưới -->
-    <path d="M 125 50 C 135 50, 265 50, 275 50 C 290 50, 290 80, 285 150 C 280 200, 280 280, 285 330 C 290 380, 280 390, 265 390 L 135 390 C 120 390, 110 380, 115 330 C 120 280, 120 200, 115 150 C 110 80, 110 50, 125 50 Z" fill="url(#rubberEdge)"/>
+    <!-- 1. ỐP CAO SU CAM (RUBBER HOLSTER) - Chữ nhật bo tròn -->
+    <rect x="120" y="40" width="160" height="320" rx="16" fill="url(#rubberOrange)"/>
     
-    <!-- Các rãnh cắt trên viền cao su để tạo khối chống trượt -->
-    <g fill="#D97A00" opacity="0.6">
-      <rect x="110" y="110" width="8" height="20" rx="3"/><rect x="282" y="110" width="8" height="20" rx="3"/>
-      <rect x="115" y="140" width="6" height="20" rx="3"/><rect x="279" y="140" width="6" height="20" rx="3"/>
-      <rect x="115" y="270" width="6" height="20" rx="3"/><rect x="279" y="270" width="6" height="20" rx="3"/>
-      <rect x="110" y="300" width="8" height="20" rx="3"/><rect x="282" y="300" width="8" height="20" rx="3"/>
+    <!-- 2. THÂN MÁY NHỰA ĐEN - Nhỏ hơn viền cao su một chút -->
+    <rect x="130" y="50" width="140" height="300" rx="10" fill="url(#bodyDark)" stroke="#48484A" stroke-width="1.5"/>
+
+    <!-- ================= MÀN HÌNH LCD (TOP) ================= -->
+    <rect x="145" y="70" width="110" height="46" rx="4" fill="#111"/>
+    <rect x="148" y="73" width="104" height="40" rx="2" fill="url(#lcdScreen)"/>
+    <!-- Bóng viền màn hình -->
+    <rect x="148" y="73" width="104" height="4" fill="#000" opacity="0.15"/>
+    
+    <!-- Dữ liệu hiển thị gọn gàng, không bị chồng chữ -->
+    <text x="156" y="88" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#2C3E26">AC</text>
+    <text x="200" y="106" font-family="-apple-system, sans-serif" font-size="30" font-weight="800" fill="#1C2E16" text-anchor="middle" letter-spacing="1">115.2</text>
+    <text x="242" y="106" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#1C2E16">V</text>
+
+    <!-- ================= NÚT BẤM CHỨC NĂNG (GIỮA) ================= -->
+    <g transform="translate(0, 134)">
+      <!-- Nút 1: HOLD (Cam) -->
+      <circle cx="160" cy="0" r="6" fill="#FF9500"/>
+      <text x="160" y="14" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">HOLD</text>
+
+      <!-- Nút 2: MAX (Xám) -->
+      <circle cx="200" cy="0" r="6" fill="#636366"/>
+      <text x="200" y="14" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">MAX</text>
+
+      <!-- Nút 3: Hz (Xanh) -->
+      <circle cx="240" cy="0" r="6" fill="#0A84FF"/>
+      <text x="240" y="14" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">Hz</text>
     </g>
 
-    <!-- Lớp 2: Thân Máy Nhựa Đen -->
-    <path d="M 135 60 C 145 60, 255 60, 265 60 C 275 60, 275 80, 270 150 C 265 200, 265 280, 270 330 C 275 380, 265 380, 255 380 L 145 380 C 135 380, 125 380, 130 330 C 135 280, 135 200, 130 150 C 125 80, 125 60, 135 60 Z" fill="url(#bodyColor)" stroke="#48484A" stroke-width="1.5"/>
-    <!-- Line phản quang nhẹ dọc viền nhựa -->
-    <path d="M 140 65 L 260 65" stroke="#FFFFFF" stroke-width="2" opacity="0.15" stroke-linecap="round"/>
+    <!-- ================= NÚM VẶN DIAL (TRUNG TÂM) ================= -->
+    <g transform="translate(200, 215)">
+      <!-- Vòng phân độ (Các mức đo) sắp xếp xa núm vặn ra để không bị đè -->
+      <!-- OFF (Trái) -->
+      <line x1="-50" y1="-25" x2="-58" y2="-29" stroke="#FF3B30" stroke-width="2"/>
+      <text x="-62" y="-32" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" fill="#FF3B30" text-anchor="end">OFF</text>
 
-    <!-- ================= MÀN HÌNH LCD (Digital Display) ================= -->
-    <rect x="145" y="75" width="110" height="45" rx="6" fill="#1C1C1E"/>
-    <rect x="148" y="78" width="104" height="39" rx="4" fill="url(#lcdColor)" stroke="#48484A" stroke-width="1"/>
-    
-    <!-- Bóng đen mờ quanh viền màn hình tạo chiều sâu -->
-    <rect x="148" y="78" width="104" height="4" fill="#000000" opacity="0.2"/>
-    
-    <!-- Dữ liệu hiển thị trên LCD -->
-    <!-- Hiển thị "115.2 V" (Ký hiệu đo dòng xoay chiều AC) -->
-    <text x="156" y="94" font-family="'Courier New', monospace" font-size="10" font-weight="700" fill="#2C3E26" letter-spacing="1">AC</text>
-    <text x="210" y="110" font-family="-apple-system, sans-serif" font-size="28" font-weight="800" fill="#1C2E16" text-anchor="middle" letter-spacing="2">115.2</text>
-    <text x="240" y="110" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#1C2E16">V</text>
-    <!-- Bar graph analog giả lập ở đáy màn LCD -->
-    <line x1="154" y1="113" x2="190" y2="113" stroke="#1C2E16" stroke-width="2" stroke-dasharray="3 2"/>
+      <!-- V AC (Trên cùng) -->
+      <line x1="0" y1="-55" x2="0" y2="-62" stroke="#FFF" stroke-width="2"/>
+      <text x="0" y="-68" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">V~</text>
 
-    <!-- Nút bấm chức năng (Function Buttons) -->
-    <circle cx="160" cy="140" r="6" fill="#FF9500"/> <!-- Nút Hold Cam -->
-    <text x="160" y="153" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">HOLD</text>
+      <!-- Ohm / Điện trở (Phải) -->
+      <line x1="50" y1="-25" x2="58" y2="-29" stroke="#FFF" stroke-width="2"/>
+      <text x="62" y="-32" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#FFF" text-anchor="start">Ω</text>
 
-    <circle cx="186" cy="140" r="6" fill="#636366"/>
-    <text x="186" y="153" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">MIN/MAX</text>
+      <!-- Ampe (Dưới) -->
+      <line x1="0" y1="55" x2="0" y2="62" stroke="#FFF" stroke-width="2"/>
+      <text x="0" y="74" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" fill="#FFF" text-anchor="middle">A</text>
 
-    <circle cx="214" cy="140" r="6" fill="#636366"/>
-    <text x="214" y="153" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">REL</text>
-
-    <circle cx="240" cy="140" r="6" fill="#0A84FF"/> <!-- Nút Hz Xanh Lam -->
-    <text x="240" y="153" font-family="-apple-system, sans-serif" font-size="6" font-weight="700" fill="#8E8E93" text-anchor="middle">Hz/%</text>
-
-    <!-- ================= VÒNG XOAY CHỌN CHẾ ĐỘ (Rotary Dial) ================= -->
-    <g transform="translate(200, 225)">
+      <!-- Khối núm vặn chính -->
+      <circle cx="0" cy="0" r="42" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
+      <circle cx="0" cy="0" r="32" fill="#2C2C2E"/>
       
-      <!-- Viền chia vạch xung quanh Dial (Các mức đo) -->
-      <g stroke="#D1D1D6" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
-        <!-- OFF (Màu Đỏ) -->
-        <line x1="-55" y1="-30" x2="-62" y2="-34" stroke="#FF3B30" stroke-width="2"/>
-        <text x="-70" y="-36" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#FF3B30">OFF</text>
-
-        <!-- V AC (Sóng sin) -->
-        <line x1="-35" y1="-55" x2="-40" y2="-62"/>
-        <text x="-40" y="-68" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">V~</text>
-        
-        <!-- V DC (Đường thẳng và nét đứt) -->
-        <line x1="0" y1="-65" x2="0" y2="-72"/>
-        <text x="-4" y="-76" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">V</text>
-        <line x1="-4" y1="-86" x2="4" y2="-86" stroke="#FFF" stroke-width="1"/><line x1="-4" y1="-84" x2="4" y2="-84" stroke="#FFF" stroke-width="1" stroke-dasharray="2 1"/>
-        
-        <!-- Điện trở / Đo thông mạch (Ohm/Buzzer) -->
-        <line x1="35" y1="-55" x2="40" y2="-62"/>
-        <text x="35" y="-68" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Ω</text>
-
-        <!-- Tụ điện (Capacitance) / Diode -->
-        <line x1="55" y1="-30" x2="62" y2="-34"/>
-        <text x="65" y="-30" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">C</text>
-        
-        <!-- Ampe (A) -->
-        <line x1="60" y1="0" x2="68" y2="0"/>
-        <text x="72" y="3" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">A</text>
-        
-        <!-- mA -->
-        <line x1="55" y1="30" x2="62" y2="34"/>
-        <text x="65" y="38" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">mA</text>
-      </g>
-
-      <!-- Khối nút vặn Dial 3D -->
-      <circle cx="0" cy="0" r="45" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
-      <circle cx="0" cy="0" r="40" fill="url(#dialGradient)"/>
-      <circle cx="0" cy="0" r="30" fill="#111" stroke="#2C2C2E" stroke-width="1"/>
-      
-      <!-- Viền cao su khía rãnh trên núm vặn -->
-      <g fill="#2C2C2E">
-        <circle cx="0" cy="-35" r="2"/><circle cx="0" cy="35" r="2"/><circle cx="-35" cy="0" r="2"/><circle cx="35" cy="0" r="2"/>
-        <circle cx="-25" cy="-25" r="2"/><circle cx="25" cy="-25" r="2"/><circle cx="-25" cy="25" r="2"/><circle cx="25" cy="25" r="2"/>
-      </g>
-
-      <!-- Mũi tên chỉ thị của núm vặn (Đang trỏ góc -35 độ vào V AC) -->
-      <g transform="rotate(-35)">
-        <polygon points="-4,-10 4,-10 0,-38" fill="#FFFFFF"/>
-        <rect x="-2" y="-10" width="4" height="30" rx="1" fill="#FFFFFF"/>
-      </g>
+      <!-- Kim chỉ thị của núm vặn (Đang trỏ thẳng lên V AC) -->
+      <polygon points="-4,-6 4,-6 0,-34" fill="#FFFFFF"/>
+      <rect x="-2" y="-6" width="4" height="25" fill="#FFFFFF"/>
     </g>
 
-    <!-- ================= CÁC LỖ CẮM DÂY ĐO (Jacks) ================= -->
-    <g transform="translate(0, 345)">
-      <!-- Khung lõm bọc 3 lỗ cắm -->
-      <rect x="140" y="-12" width="120" height="44" rx="10" fill="#111" stroke="#3A3A3C" stroke-width="1"/>
-      
-      <!-- Lỗ COM (Đen - Mass) -->
-      <circle cx="200" cy="10" r="12" fill="#1C1C1E" stroke="#8E8E93" stroke-width="2"/>
-      <circle cx="200" cy="10" r="6" fill="#000"/>
-      <text x="200" y="-16" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#8E8E93" text-anchor="middle">COM</text>
+    <!-- ================= 3 LỖ CẮM DÂY ĐO (BOTTOM) ================= -->
+    <g transform="translate(0, 316)">
+      <!-- Lỗ trái: 10A (Đỏ) -->
+      <circle cx="160" cy="0" r="10" fill="#111" stroke="#FF3B30" stroke-width="2"/>
+      <circle cx="160" cy="0" r="5" fill="#000"/>
+      <text x="160" y="-15" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#FF3B30" text-anchor="middle">10A</text>
 
-      <!-- Lỗ V/Ohm (Đỏ - Đo áp/Trở) -->
-      <circle cx="236" cy="10" r="12" fill="#1C1C1E" stroke="#FF3B30" stroke-width="2"/>
-      <circle cx="236" cy="10" r="6" fill="#000"/>
-      <text x="236" y="-16" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#FF3B30" text-anchor="middle">V/Ω</text>
+      <!-- Lỗ giữa: COM (Xám) -->
+      <circle cx="200" cy="0" r="10" fill="#111" stroke="#8E8E93" stroke-width="2"/>
+      <circle cx="200" cy="0" r="5" fill="#000"/>
+      <text x="200" y="-15" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#8E8E93" text-anchor="middle">COM</text>
 
-      <!-- Lỗ A (Đỏ - Đo dòng điện lớn) -->
-      <circle cx="164" cy="10" r="12" fill="#1C1C1E" stroke="#FF3B30" stroke-width="2"/>
-      <circle cx="164" cy="10" r="6" fill="#000"/>
-      <text x="164" y="-16" font-family="-apple-system, sans-serif" font-size="7" font-weight="700" fill="#FF3B30" text-anchor="middle">10A</text>
-      
-      <!-- Đường Cảnh báo giới hạn nối giữa các lỗ -->
-      <path d="M 164 25 L 164 28 L 200 28 L 200 25" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.4"/>
-      <text x="182" y="36" font-family="-apple-system, sans-serif" font-size="6" font-weight="600" fill="#FFFFFF" text-anchor="middle" opacity="0.4">MAX 10A FUSED</text>
+      <!-- Lỗ phải: V/Ohm (Đỏ) -->
+      <circle cx="240" cy="0" r="10" fill="#111" stroke="#FF3B30" stroke-width="2"/>
+      <circle cx="240" cy="0" r="5" fill="#000"/>
+      <text x="240" y="-15" font-family="-apple-system, sans-serif" font-size="8" font-weight="700" fill="#FF3B30" text-anchor="middle">V/Ω</text>
     </g>
 
   </g>
