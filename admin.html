@@ -8,9 +8,16 @@
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
+<script>
+  // BẢO MẬT: KIỂM TRA ĐĂNG NHẬP
+  if (sessionStorage.getItem("isAdmin") !== "true") {
+    window.location.replace("index.html");
+  }
+</script>
+
 <style>
   /* =========================================================
-     APPLE DESIGN SYSTEM (LIGHT & DARK MODE)
+     APPLE DESIGN SYSTEM
      ========================================================= */
   :root { 
     --bg-color: #f5f5f7; 
@@ -36,16 +43,12 @@
       --card-bg: #1c1c1e; 
       --text-main: #f5f5f7; 
       --text-sub: #98989d; 
-      --border: rgba(255, 255, 255, 0.1); 
+      --border: rgba(255, 255, 255, 0.15); 
       --glass-bg: rgba(28, 28, 30, 0.72);
       --hover-bg: rgba(255, 255, 255, 0.08);
       
       --accent: #0a84ff; 
       --accent-bg: rgba(10, 132, 255, 0.15);
-      --success: #30d158; 
-      --danger: #ff453a; 
-      --danger-bg: rgba(255, 69, 58, 0.15);
-      
       --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
     }
   }
@@ -90,58 +93,56 @@
   }
 
   /* LAYOUT */
-  .container { flex: 1; width: 100%; max-width: 800px; margin: 0 auto; padding: 32px 20px; display: flex; flex-direction: column; gap: 24px; }
+  .container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 32px 20px; display: flex; flex-direction: column; gap: 24px; }
   
   .header-section { margin-bottom: 8px; }
   .page-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; margin-bottom: 4px; }
   .page-sub { color: var(--text-sub); font-size: 16px; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+  .stat-box { background: var(--card-bg); padding: 20px; border-radius: 18px; border: 1px solid var(--border); box-shadow: var(--shadow-card); }
+  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .stat-value { font-size: 24px; font-weight: 700; color: var(--text-main); }
 
   .card { 
     background: var(--card-bg); border-radius: 24px; padding: 28px; 
     box-shadow: var(--shadow-card); border: 1px solid var(--border); width: 100%; 
   }
 
-  .card-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .card-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   
   /* FORMS & INPUTS */
   .input-field { 
     width: 100%; padding: 16px; border: 1px solid var(--border); 
-    border-radius: 16px; font-size: 15px; margin-bottom: 16px; 
-    outline: none; background: var(--bg-color); color: var(--text-main); 
-    font-family: inherit; resize: vertical; min-height: 120px; line-height: 1.5;
+    border-radius: 16px; font-size: 14px; outline: none; background: var(--bg-color); 
+    color: var(--text-main); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
+    resize: vertical; line-height: 1.5;
   }
   .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
 
-  .btn-primary { 
-    width: 100%; padding: 16px; background: var(--accent); color: #fff; 
-    border: none; border-radius: 16px; font-weight: 600; font-size: 16px; 
-    cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+  .btn-group { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .btn { 
+    flex: 1; padding: 16px; border: none; border-radius: 16px; 
+    font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; 
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   }
-  
-  /* DASHBOARD STATS */
-  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
-  .stat-box { background: var(--bg-color); padding: 20px; border-radius: 18px; border: 1px solid var(--border); }
-  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  .stat-value { font-size: 24px; font-weight: 700; color: var(--text-main); }
-  
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--hover-bg); color: var(--text-main); }
+
   /* ALERTS */
-  .alert-toast {
+  .toast {
     position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
-    background: var(--success); color: white; padding: 14px 24px; border-radius: 98px;
-    font-weight: 600; font-size: 15px; box-shadow: 0 10px 30px rgba(52, 199, 89, 0.3);
+    background: var(--text-main); color: var(--bg-color); padding: 14px 24px; border-radius: 98px;
+    font-weight: 600; font-size: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     opacity: 0; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 1000;
   }
-  .alert-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  
+  .grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  @media (min-width: 800px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 </style>
 </head>
 <body>
-
-<!-- BẢO MẬT ADMIN (Chặn truy cập trái phép) -->
-<script>
-  if (sessionStorage.getItem("isAdmin") !== "true") {
-    window.location.href = "index.html";
-  }
-</script>
 
 <div class="topbar glass-effect">
   <div class="brand">
@@ -161,248 +162,69 @@
     <div class="page-sub">Manage your training modules and system settings here.</div>
   </div>
 
+  <!-- BẢNG THỐNG KÊ (Tính năng gốc) -->
   <div class="stats-grid">
     <div class="stat-box">
       <div class="stat-label">System Status</div>
       <div class="stat-value" style="color: var(--success); display: flex; align-items: center; gap: 8px;">
-        <span style="width: 10px; height: 10px; background: var(--success); border-radius: 50%; display: inline-block;"></span> Online
+        <span style="width: 10px; height: 10px; background: var(--success); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--success);"></span> Online
       </div>
     </div>
     <div class="stat-box">
       <div class="stat-label">Active Modules</div>
-      <div class="stat-value">5</div>
+      <div class="stat-value">6 Modules</div>
     </div>
   </div>
 
+  <!-- KHU VỰC THÔNG BÁO (Tính năng gốc) -->
   <div class="card">
     <div class="card-title">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-      System Notice Broadcast
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+        System Notice Broadcast
+      </div>
     </div>
-    <p style="color: var(--text-sub); font-size: 14.5px; margin-bottom: 16px;">Update the scrolling announcement text shown on the home screen. To apply changes permanently to GitHub, update the <code>notice.txt</code> file in your repository.</p>
+    <p style="color: var(--text-sub); font-size: 14.5px; margin-bottom: 16px;">Update the scrolling announcement text shown on the home screen. Generate the <code>notice.txt</code> file and upload it to GitHub to apply.</p>
     
-    <textarea id="noticeInput" class="input-field" placeholder="Enter your announcement here..."></textarea>
+    <textarea id="noticeInput" class="input-field" style="min-height: 100px;" placeholder="Enter your announcement here..."></textarea>
     
-    <button class="btn-primary anim-btn" onclick="generateNoticeFile()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 2Dưới đây là toàn bộ mã nguồn cho file **`admin.html`**. 
-
-Giao diện đã được thiết kế đồng bộ 100% với `index.html` (chuẩn Apple Design System, hỗ trợ Light/Dark mode tự động, Glassmorphism). Đồng thời, tớ đã tích hợp sẵn một **bộ công cụ AI Parser (Trình phân tích thông minh)** giúp bạn dán trực tiếp dữ liệu thô (từ Word/PDF) vào và nó sẽ tự động nhận diện câu hỏi, đáp án, dấu tick ✅, và ghi chú để tạo ra chuẩn file JSON ngay lập tức.
-
-Bạn chỉ cần tạo (hoặc mở) file `admin.html`, xóa toàn bộ code cũ và dán đoạn mã này vào:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
-<title>Admin Console | Internal Training</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<script>
-  // BẢO MẬT: KIỂM TRA ĐĂNG NHẬP (Chạy ngay khi load để tránh chớp màn hình)
-  if (sessionStorage.getItem("isAdmin") !== "true") {
-    window.location.replace("index.html");
-  }
-</script>
-
-<style>
-  /* =========================================================
-     APPLE DESIGN SYSTEM (LIGHT & DARK MODE)
-     ========================================================= */
-  :root { 
-    --bg-color: #f5f5f7; 
-    --card-bg: #ffffff; 
-    --text-main: #1d1d1f; 
-    --text-sub: #86868b; 
-    --border: rgba(0, 0, 0, 0.1); 
-    --glass-bg: rgba(255, 255, 255, 0.72);
-    --hover-bg: rgba(0, 0, 0, 0.04);
-    
-    --accent: #007aff; 
-    --accent-bg: #e5f1ff;
-    --success: #34c759; 
-    --danger: #ff3b30; 
-    
-    --shadow-card: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04);
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    :root { 
-      --bg-color: #000000; 
-      --card-bg: #1c1c1e; 
-      --text-main: #f5f5f7; 
-      --text-sub: #98989d; 
-      --border: rgba(255, 255, 255, 0.15); 
-      --glass-bg: rgba(28, 28, 30, 0.72);
-      --hover-bg: rgba(255, 255, 255, 0.08);
-      
-      --accent: #0a84ff; 
-      --accent-bg: rgba(10, 132, 255, 0.15);
-      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
-    }
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  
-  body { 
-    background-color: var(--bg-color); 
-    color: var(--text-main); 
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif; 
-    line-height: 1.5; 
-    letter-spacing: -0.015em;
-    -webkit-font-smoothing: antialiased;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
-  }
-
-  .glass-effect { 
-    background: var(--glass-bg);
-    backdrop-filter: saturate(180%) blur(20px); 
-    -webkit-backdrop-filter: saturate(180%) blur(20px); 
-  }
-
-  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
-
-  /* TOPBAR */
-  .topbar { 
-    position: sticky; top: 0; 
-    border-bottom: 1px solid var(--border); 
-    padding: 12px 20px; 
-    display: flex; justify-content: space-between; align-items: center; 
-    z-index: 100; 
-  }
-  .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
-  
-  .btn-header { 
-    background: var(--danger); color: white; border: none; 
-    padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; 
-    cursor: pointer; display: inline-flex; align-items: center; 
-  }
-
-  /* MAIN LAYOUT */
-  .container { 
-    flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; 
-    padding: 24px 20px 40px; display: flex; flex-direction: column; 
-  }
-  
-  .header-section { margin-bottom: 24px; }
-  .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
-  .hub-sub { color: var(--text-sub); font-size: 16px; }
-
-  /* TOOL GRID */
-  .grid-layout { display: grid; grid-template-columns: 1fr; gap: 24px; }
-  @media (min-width: 900px) { .grid-layout { grid-template-columns: 1fr 1fr; } }
-
-  .card { 
-    background: var(--card-bg); border-radius: 24px; padding: 24px; 
-    box-shadow: var(--shadow-card); border: 1px solid var(--border); 
-    display: flex; flex-direction: column;
-  }
-
-  .card-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;}
-  
-  textarea.input-field { 
-    width: 100%; height: 400px; padding: 16px; 
-    border: 1px solid var(--border); border-radius: 16px; 
-    font-size: 14px; outline: none; background: var(--bg-color); 
-    color: var(--text-main); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
-    resize: vertical; line-height: 1.5;
-  }
-  textarea.input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); background: var(--card-bg); }
-
-  .btn-group { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
-  .btn { 
-    flex: 1; padding: 14px; border: none; border-radius: 14px; 
-    font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; 
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-secondary { background: var(--hover-bg); color: var(--text-main); }
-  
-  /* TOAST NOTIFICATION */
-  .toast {
-    position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
-    background: var(--text-main); color: var(--bg-color);
-    padding: 12px 24px; border-radius: 98px; font-weight: 600; font-size: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    z-index: 1000; opacity: 0;
-  }
-  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
-  /* SCROLLBAR */
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
-</style>
-</head>
-<body>
-
-<div class="topbar glass-effect">
-  <div class="brand">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 9.36l-7.1 7.1a1 1 0 0 1-1.42 0l-1.41-1.42a1 1 0 0 1 0-1.41l7.1-7.1a6 6 0 0 1 9.36-7.94l-3.77 3.77a1 1 0 0 0 0 1.4z"/></svg>
-    Developer Console
+    <button class="btn btn-primary anim-btn" onclick="generateNoticeFile()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 2"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+      Generate notice.txt
+    </button>
   </div>
-  <button class="btn-header anim-btn" onclick="handleLogout()">Logout</button>
+
+  <!-- CÔNG CỤ TẠO JSON ĐỂ LÀM MODULE MỚI -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Data Architect / Word Parser</div>
+      <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 12px;">Paste raw text from Word/PDF. The AI will format it.</p>
+      <textarea id="rawInput" class="input-field" style="height: 300px;" placeholder="Paste raw questions here...&#10;Q: What is Apple?&#10;A) Fruit&#10;B) Tech company ✅"></textarea>
+      <button class="btn btn-secondary anim-btn" onclick="processText()" style="width:100%; margin-top:8px;">Convert to JSON</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Output JSON</div>
+      <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 12px;">Ready for GitHub deployment.</p>
+      <textarea id="jsonOutput" class="input-field" style="height: 300px;" placeholder="Formatted JSON will appear here..."></textarea>
+      <div class="btn-group">
+        <button class="btn btn-secondary anim-btn" onclick="copyToClipboard()">Copy</button>
+        <button class="btn btn-primary anim-btn" onclick="downloadJSON()">Download JSON</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
-<div class="container">
-  <div class="header-section">
-    <div class="hub-title">Data Architect.</div>
-    <div class="hub-sub">Parse raw text into Apple-ready JSON structures.</div>
-  </div>
-
-  <div class="grid-layout">
-    <!-- KHU VỰC NHẬP TEXT THÔ -->
-    <div class="card">
-      <div class="card-title">
-        Raw Input
-        <span style="font-size: 12px; color: var(--text-sub); font-weight: 500;">Word / PDF Text</span>
-      </div>
-      <textarea id="rawInput" class="input-field" placeholder="Paste your raw questions here...&#10;&#10;Example format:&#10;What is the primary function of a propeller? (Lvl 1)&#10;a) To generate electricity&#10;b) To convert engine power into thrust ✅&#10;c) To reduce aerodynamic drag&#10;Note: Reference content page 8"></textarea>
-      
-      <div class="btn-group">
-        <button class="btn btn-secondary anim-btn" onclick="document.getElementById('rawInput').value = ''">Clear</button>
-        <button class="btn btn-primary anim-btn" onclick="processText()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          Convert to JSON
-        </button>
-      </div>
-    </div>
-
-    <!-- KHU VỰC XUẤT JSON -->
-    <div class="card">
-      <div class="card-title">
-        Output JSON
-        <span style="font-size: 12px; color: var(--text-sub); font-weight: 500;">Ready for Deployment</span>
-      </div>
-      <textarea id="jsonOutput" class="input-field" placeholder="Formatted JSON array will appear here..."></textarea>
-      
-      <div class="btn-group">
-        <button class="btn btn-secondary anim-btn" onclick="copyToClipboard()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          Copy
-        </button>
-        <button class="btn btn-primary anim-btn" onclick="downloadJSON()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Download
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="toast" class="toast">Copied to clipboard!</div>
+<div id="toast" class="toast">Action completed!</div>
 
 <script>
+  // Chào tên Admin
+  document.addEventListener('DOMContentLoaded', () => {
+    const adminUser = sessionStorage.getItem("adminUser");
+    if (adminUser) { document.getElementById('adminName').innerText = adminUser; }
+  });
+
   function handleLogout() {
     sessionStorage.removeItem("isAdmin");
     sessionStorage.removeItem("adminUser");
@@ -413,9 +235,27 @@ Bạn chỉ cần tạo (hoặc mở) file `admin.html`, xóa toàn bộ code c�
     const toast = document.getElementById('toast');
     toast.innerText = message;
     toast.classList.add('show');
-    setTimeout(() => { toast.classList.remove('show'); }, 2500);
+    setTimeout(() => { toast.classList.remove('show'); }, 3000);
   }
 
+  // TÍNH NĂNG ĐĂNG THÔNG BÁO (NOTICE)
+  function generateNoticeFile() {
+    const text = document.getElementById('noticeInput').value.trim();
+    if (!text) { alert("Please enter an announcement first!"); return; }
+    
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'notice.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('notice.txt generated! Please upload to GitHub data folder.');
+  }
+
+  // TÍNH NĂNG SAO CHÉP & TẢI JSON
   function copyToClipboard() {
     const output = document.getElementById('jsonOutput');
     if (!output.value) return;
@@ -437,71 +277,51 @@ Bạn chỉ cần tạo (hoặc mở) file `admin.html`, xóa toàn bộ code c�
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    showToast('Download started!');
+    showToast('JSON downloaded successfully!');
   }
 
-  // BỘ PHÂN TÍCH THÔNG MINH (AI PARSER)
+  // TÍNH NĂNG PARSE RAW TEXT THÀNH JSON
   function processText() {
     const rawText = document.getElementById('rawInput').value.trim();
     if (!rawText) return;
 
     const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
     const result = [];
+    let currentId = 1, currentQ = null, currentOptions = [], correctIndex = 0, currentRef = "None";
     
-    let currentId = 1;
-    let currentQ = null;
-    let currentOptions = [];
-    let correctIndex = 0;
-    let currentRef = "None";
-
-    // Ký hiệu nhận dạng câu hỏi, đáp án
     const optionRegex = /^[a-d]\)|\^[A-D]\./i; 
     const checkmarkRegex = /✅|\[x\]|\[v\]/i;
 
     lines.forEach((line) => {
-      // Nhận diện Ghi chú / Reference
       if (line.toLowerCase().startsWith("note:") || line.toLowerCase().startsWith("reference:")) {
         if (currentQ) {
           currentRef = line.replace(/^(note|reference):\s*/i, '').trim();
-          // Đóng gói câu hỏi hiện tại
           result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
-          currentId++;
-          currentQ = null; currentOptions = []; correctIndex = 0; currentRef = "None";
+          currentId++; currentQ = null; currentOptions = []; correctIndex = 0; currentRef = "None";
         }
-      } 
-      // Nhận diện Đáp án
-      else if (optionRegex.test(line)) {
+      } else if (optionRegex.test(line)) {
         let optText = line.replace(optionRegex, '').trim();
-        // Kiểm tra xem đáp án có chứa dấu ✅ không
         if (checkmarkRegex.test(optText)) {
           correctIndex = currentOptions.length;
           optText = optText.replace(checkmarkRegex, '').trim();
         }
         currentOptions.push(optText);
-      } 
-      // Nhận diện Câu hỏi mới
-      else {
-        // Nếu đã có câu hỏi đang phân tích dở dang mà không có Note, tiến hành đóng gói
+      } else {
         if (currentQ && currentOptions.length > 0) {
           result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
-          currentId++;
-          currentOptions = []; correctIndex = 0; currentRef = "None";
+          currentId++; currentOptions = []; correctIndex = 0; currentRef = "None";
         }
-        // Ghi nhận câu hỏi mới
         currentQ = line;
       }
     });
 
-    // Đóng gói câu hỏi cuối cùng nếu chưa được đẩy vào mảng
-    if (currentQ && currentOptions.length > 0) {
-      result.push([currentId, currentQ, currentOptions, correctIndex, currentRef]);
-    }
+    if (currentQ && currentOptions.length > 0) result.push([currentId, currentQ, currentOptions, correctIndex, currentRef]);
 
     if (result.length > 0) {
       document.getElementById('jsonOutput').value = JSON.stringify(result, null, 2);
       showToast('Successfully parsed ' + result.length + ' questions!');
     } else {
-      document.getElementById('jsonOutput').value = "[\n  // Could not parse the text automatically. Please check your format.\n]";
+      document.getElementById('jsonOutput').value = "[\n  // Format not recognized.\n]";
     }
   }
 </script>
