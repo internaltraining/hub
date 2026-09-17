@@ -1,0 +1,111 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Phối màu Kim loại Tối (Vỏ động cơ & Lõi) -->
+    <linearGradient id="metalDark" x1="0" y1="100" x2="400" y2="300">
+      <stop offset="0%" stop-color="#2C2C2E"/>
+      <stop offset="50%" stop-color="#1C1C1E"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    
+    <!-- Phối màu Kim loại Bạc (Trục xoay & Nón mũi) -->
+    <linearGradient id="metalLight" x1="0" y1="200" x2="0" y2="240">
+      <stop offset="0%" stop-color="#8E8E93"/>
+      <stop offset="50%" stop-color="#D1D1D6"/>
+      <stop offset="100%" stop-color="#3A3A3C"/>
+    </linearGradient>
+
+    <!-- Màu Xanh Lạnh (Khí nạp & Luồng khí vòng Bypass) -->
+    <linearGradient id="neonCyan" x1="0" y1="0" x2="400" y2="0">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+
+    <!-- Màu Đỏ Cam Lửa (Buồng đốt & Khí xả Tuabin) -->
+    <linearGradient id="neonFire" x1="0" y1="0" x2="400" y2="0">
+      <stop offset="0%" stop-color="#FF9500"/>
+      <stop offset="50%" stop-color="#FF2A54"/>
+      <stop offset="100%" stop-color="#FF0040"/>
+    </linearGradient>
+
+    <!-- Hiệu ứng tỏa sáng Neon (Glow Filter) -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- MÀN HÌNH HUD BẢN VẼ KỸ THUẬT (Blueprint Grid) -->
+  <circle cx="200" cy="220" r="130" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <circle cx="200" cy="220" r="70" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="20" y1="220" x2="380" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="6 6"/>
+
+  <!-- ================= CẤU TRÚC KIM LOẠI ĐỘNG CƠ ================= -->
+
+  <!-- Nón mũi (Spinner / Nose Cone) -->
+  <path d="M 35 220 Q 85 190 95 190 L 95 250 Q 85 250 35 220 Z" fill="url(#metalLight)"/>
+  
+  <!-- Trục trung tâm (Main Shaft) -->
+  <rect x="95" y="216" width="200" height="8" fill="url(#metalLight)"/>
+  
+  <!-- Nón xả phía sau (Exhaust Cone) -->
+  <path d="M 295 205 L 370 217 L 370 223 L 295 235 Z" fill="url(#metalLight)"/>
+
+  <!-- Vỏ ngoài động cơ (Nacelle Outer Cowl - Mặt trên & dưới) -->
+  <path d="M 50 120 C 150 90 320 120 340 130 L 340 145 C 200 135 120 145 100 155 Z" fill="url(#metalDark)" stroke="#8E8E93" stroke-width="1.5"/>
+  <path d="M 50 320 C 150 350 320 320 340 310 L 340 295 C 200 305 120 295 100 285 Z" fill="url(#metalDark)" stroke="#8E8E93" stroke-width="1.5"/>
+
+  <!-- Lõi động cơ (Engine Core Structure - Casing trên & dưới) -->
+  <path d="M 115 170 L 260 170 L 350 185 L 350 195 L 280 195 L 115 185 Z" fill="url(#metalDark)" stroke="#636366" stroke-width="1.5"/>
+  <path d="M 115 270 L 260 270 L 350 255 L 350 245 L 280 245 L 115 255 Z" fill="url(#metalDark)" stroke="#636366" stroke-width="1.5"/>
+
+  <!-- ================= CÁC TẦNG CÁNH QUẠT VÀ ROTOR ================= -->
+
+  <!-- Cánh quạt chính (Bypass Fan Blade) - Khổng lồ, cắt gió -->
+  <path d="M 95 130 L 95 205" stroke="url(#neonCyan)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 95 310 L 95 235" stroke="url(#neonCyan)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Máy nén khí (Compressors - LPC & HPC) - Nhỏ dần vào trong -->
+  <g stroke="#00F2FE" stroke-width="2.5" opacity="0.85">
+    <line x1="130" y1="172" x2="130" y2="187"/> <line x1="130" y1="268" x2="130" y2="253"/>
+    <line x1="145" y1="172" x2="145" y2="189"/> <line x1="145" y1="268" x2="145" y2="251"/>
+    <line x1="160" y1="172" x2="160" y2="191"/> <line x1="160" y1="268" x2="160" y2="249"/>
+    <line x1="175" y1="172" x2="175" y2="193"/> <line x1="175" y1="268" x2="175" y2="247"/>
+  </g>
+
+  <!-- Buồng đốt (Combustion Chamber) - Phản ứng cháy cực mạnh -->
+  <ellipse cx="215" cy="182" rx="24" ry="10" fill="url(#neonFire)" filter="url(#glowStrong)"/>
+  <ellipse cx="215" cy="258" rx="24" ry="10" fill="url(#neonFire)" filter="url(#glowStrong)"/>
+  
+  <!-- Lõi lửa trắng cực nóng bên trong buồng đốt -->
+  <ellipse cx="210" cy="182" rx="10" ry="4" fill="#FFFFFF"/>
+  <ellipse cx="210" cy="258" rx="10" ry="4" fill="#FFFFFF"/>
+
+  <!-- Tuabin (Turbines - HPT & LPT) - Đỏ rực vì chịu nhiệt cao -->
+  <g stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+    <line x1="250" y1="172" x2="250" y2="195" stroke="#FF9500"/>
+    <line x1="265" y1="175" x2="265" y2="195" stroke="#FF2A54"/>
+    <line x1="250" y1="268" x2="250" y2="245" stroke="#FF9500"/>
+    <line x1="265" y1="265" x2="265" y2="245" stroke="#FF2A54"/>
+  </g>
+
+  <!-- ================= ĐƯỜNG VECTOR LUỒNG KHÍ (AIRFLOW DYNAMICS) ================= -->
+
+  <!-- Khí nạp & Khí vòng lạnh (Bypass Cold Airflow) - Màu Cyan -->
+  <path d="M 30 145 C 150 110, 250 140, 380 145" stroke="url(#neonCyan)" stroke-width="3" stroke-dasharray="12 8" fill="none" filter="url(#glow)"/>
+  <path d="M 30 295 C 150 330, 250 300, 380 295" stroke="url(#neonCyan)" stroke-width="3" stroke-dasharray="12 8" fill="none" filter="url(#glow)"/>
+
+  <!-- Khí xả lõi nóng (Core Hot Exhaust Flow) - Lực Thrust đẩy ra sau -->
+  <path d="M 230 182 Q 300 185 390 195" stroke="url(#neonFire)" stroke-width="4" stroke-dasharray="16 8" stroke-linecap="round" fill="none" filter="url(#glowStrong)"/>
+  <path d="M 230 258 Q 300 255 390 245" stroke="url(#neonFire)" stroke-width="4" stroke-dasharray="16 8" stroke-linecap="round" fill="none" filter="url(#glowStrong)"/>
+
+  <!-- ================= LABELS KỸ THUẬT ================= -->
+  <!-- Dòng chữ nhỏ (HUD Overlay) tăng độ ngầu -->
+  <text x="50" y="105" fill="#00F2FE" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1">BYPASS RATIO 8:1</text>
+  <text x="180" y="223" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="9" font-weight="800" opacity="0.6" letter-spacing="2">TURBOFAN CORE</text>
+  <text x="340" y="223" fill="#FF2A54" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="1" filter="url(#glow)">THRUST</text>
+  
+</svg>
