@@ -1,0 +1,58 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Phối màu Titanium Bạc -->
+    <linearGradient id="metal" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#D1D1D6"/>
+      <stop offset="50%" stop-color="#8E8E93"/>
+      <stop offset="100%" stop-color="#3A3A3C"/>
+    </linearGradient>
+    <!-- Phối màu Thép Đen (Dark Steel) -->
+    <linearGradient id="metalDark" x1="0" y1="400" x2="400" y2="0">
+      <stop offset="0%" stop-color="#1C1C1E"/>
+      <stop offset="100%" stop-color="#636366"/>
+    </linearGradient>
+    <!-- Màu phát sáng Xanh Lam (Báo hiệu hệ thống đang hoạt động) -->
+    <linearGradient id="glowBlue" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#0A84FF"/>
+      <stop offset="100%" stop-color="#30D158"/>
+    </linearGradient>
+    <!-- Hiệu ứng toả sáng mờ (Glow) -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Bánh răng (Gear) lớp nền -->
+  <circle cx="200" cy="220" r="140" fill="none" stroke="url(#metal)" stroke-width="12"/>
+  <!-- Các răng cưa của bánh răng -->
+  <circle cx="200" cy="220" r="120" fill="none" stroke="url(#metalDark)" stroke-width="24" stroke-dasharray="24 16"/>
+
+  <!-- Tua vít (Screwdriver) -->
+  <g transform="rotate(-45 200 220)">
+    <!-- Trục kim loại -->
+    <rect x="188" y="50" width="24" height="200" rx="10" fill="url(#metalDark)"/>
+    <!-- Cán cầm -->
+    <rect x="175" y="230" width="50" height="120" rx="16" fill="url(#metal)"/>
+    <rect x="185" y="240" width="30" height="100" rx="8" fill="#1C1C1E" opacity="0.3"/>
+    <!-- Đầu vít phát sáng -->
+    <path d="M 188 50 L 196 20 L 204 20 L 212 50 Z" fill="url(#glowBlue)" filter="url(#glow)"/>
+  </g>
+
+  <!-- Cờ lê (Wrench) -->
+  <g transform="rotate(45 200 220)">
+    <!-- Thân cờ lê -->
+    <rect x="184" y="50" width="32" height="340" rx="16" fill="url(#metal)"/>
+    <!-- Đầu cờ lê (Khoét lỗ chữ U) -->
+    <path d="M 160 80 C 160 40, 240 40, 240 80 C 240 100, 220 120, 200 120 C 180 120, 160 100, 160 80 Z" fill="url(#metal)"/>
+    <!-- Lỗ khoét đen bên trong đầu cờ lê -->
+    <circle cx="200" cy="70" r="20" fill="#1C1C1E"/>
+    <rect x="170" y="40" width="60" height="40" fill="#1C1C1E"/>
+  </g>
+
+  <!-- Trục trung tâm (Center Hub) -->
+  <circle cx="200" cy="220" r="45" fill="url(#metalDark)"/>
+  <circle cx="200" cy="220" r="25" fill="url(#metal)"/>
+  <!-- Đèn báo hiệu trung tâm -->
+  <circle cx="200" cy="220" r="12" fill="url(#glowBlue)" filter="url(#glow)"/>
+</svg>
