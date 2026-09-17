@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Admin Console | Internal Training</title>
+<title>Admin Panel - Internal Training</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
 <script>
-  // BẢO MẬT ADMIN
+  // BẢO MẬT: CHỈ ADMIN MỚI ĐƯỢC VÀO
   if (sessionStorage.getItem("isAdmin") !== "true") {
     window.location.replace("index.html");
   }
@@ -21,368 +21,453 @@
   :root { 
     --bg-color: #f5f5f7; --card-bg: #ffffff; 
     --text-main: #1d1d1f; --text-sub: #86868b; 
-    --border: rgba(0, 0, 0, 0.1); --glass-bg: rgba(255, 255, 255, 0.72);
+    --border: rgba(0, 0, 0, 0.05); --glass-bg: rgba(255, 255, 255, 0.72);
     --hover-bg: rgba(0, 0, 0, 0.04);
     --accent: #007aff; --accent-bg: #e5f1ff;
     --success: #34c759; --success-bg: #e8f9ec;
     --danger: #ff3b30; --danger-bg: rgba(255, 59, 48, 0.1);
-    --shadow-card: 0 4px 24px rgba(0,0,0,0.04);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   }
   
   @media (prefers-color-scheme: dark) {
     :root { 
       --bg-color: #000000; --card-bg: #1c1c1e; 
       --text-main: #f5f5f7; --text-sub: #98989d; 
-      --border: rgba(255, 255, 255, 0.15); --glass-bg: rgba(28, 28, 30, 0.72);
+      --border: rgba(255, 255, 255, 0.1); --glass-bg: rgba(28, 28, 30, 0.72);
       --hover-bg: rgba(255, 255, 255, 0.08);
       --accent: #0a84ff; --accent-bg: rgba(10, 132, 255, 0.15);
       --success: #30d158; --success-bg: rgba(48, 209, 88, 0.15);
-      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+      --danger: #ff453a; --danger-bg: rgba(255, 69, 58, 0.15);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
     }
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
-  body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.5; padding: env(safe-area-inset-top) 0 0 0; min-height: 100vh; }
-  .anim-btn { transition: all 0.2s; }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; -webkit-tap-highlight-color: transparent;}
+  body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+  
+  .glass-effect { background: var(--glass-bg); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+  .hidden { display: none !important; }
+  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
   .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
 
   /* TOPBAR */
-  .topbar { position: sticky; top: 0; border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-  .brand { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-  .btn-logout { background: var(--danger); color: white; border: none; padding: 8px 16px; border-radius: 98px; font-weight: 600; cursor: pointer; }
+  .topbar { position: sticky; top: 0; border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .brand { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; }
+  .btn-logout { background: var(--danger-bg); color: var(--danger); border: none; padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; cursor: pointer; }
 
-  /* TABS MENU */
-  .tab-menu { display: flex; gap: 8px; padding: 16px 20px; overflow-x: auto; background: var(--bg-color); border-bottom: 1px solid var(--border); }
-  .tab-btn { padding: 10px 20px; border: none; background: var(--hover-bg); border-radius: 98px; font-weight: 600; color: var(--text-sub); cursor: pointer; white-space: nowrap; }
-  .tab-btn.active { background: var(--text-main); color: var(--bg-color); }
-  .tab-content { display: none; padding: 24px 20px; max-width: 1000px; margin: 0 auto; width: 100%; }
-  .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  /* LAYOUT */
+  .container { flex: 1; width: 100%; max-width: 900px; margin: 0 auto; padding: 24px 20px 40px; }
+  .page-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; margin-bottom: 4px; }
+  .page-sub { color: var(--text-sub); font-size: 16px; margin-bottom: 24px; }
 
-  /* CARDS & FORMS */
-  .card { background: var(--card-bg); border-radius: 24px; padding: 24px; border: 1px solid var(--border); box-shadow: var(--shadow-card); margin-bottom: 24px; }
-  .card-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-  .input-field { width: 100%; padding: 16px; border: 1px solid var(--border); border-radius: 16px; font-size: 14px; background: var(--bg-color); color: var(--text-main); margin-bottom: 16px; outline: none; }
-  .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); }
-  
+  .card { background: var(--card-bg); border-radius: 24px; padding: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--border); margin-bottom: 20px; }
+  .card-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
+
+  /* BUTTONS & INPUTS */
   .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; }
-  .btn-secondary { width: 100%; padding: 16px; background: var(--hover-bg); color: var(--text-main); border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; }
+  .btn-secondary { width: 100%; padding: 14px; background: var(--hover-bg); color: var(--text-main); border: none; border-radius: 14px; font-weight: 600; font-size: 15px; cursor: pointer; }
+  .input-field { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--bg-color); color: var(--text-main); outline: none; margin-bottom: 12px; }
+  .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); }
 
-  /* MODULE EDITOR UI */
-  .edit-q-box { background: var(--bg-color); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
-  .edit-q-title { font-weight: 700; margin-bottom: 12px; color: var(--accent); }
-  .edit-row { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
-  .edit-label { font-size: 13px; font-weight: 600; color: var(--text-sub); width: 60px; flex-shrink: 0; }
-  .edit-input { flex: 1; padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--card-bg); color: var(--text-main); }
+  /* MODULE GRID (DASHBOARD) */
+  .module-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
+  .mod-card { background: var(--bg-color); border: 1px solid var(--border); border-radius: 20px; padding: 20px; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+  .mod-card:hover { border-color: var(--accent); }
+  .mod-title { font-weight: 700; font-size: 18px; color: var(--text-main); }
+  .mod-sub { font-size: 13px; color: var(--text-sub); }
+
+  /* GIAO DIỆN CÂU HỎI (CHUẨN TRANG CHÍNH) */
+  .q-text { font-size: 18px; font-weight: 600; margin-bottom: 16px; line-height: 1.45; letter-spacing: -0.022em; }
+  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; text-align: left; font-size: 15px; color: var(--text-main); cursor: pointer; display: flex; gap: 12px; align-items: flex-start; line-height: 1.4; }
+  .opt-label { font-weight: 600; color: var(--text-sub); flex-shrink: 0; }
   
-  /* EXAM & ANALYZER UI */
-  .q-text { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
-  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 14px; padding: 14px; margin-bottom: 10px; text-align: left; font-size: 15px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; }
-  
-  /* Trạng thái chọn trước khi nộp bài */
+  /* Trạng thái thi thử (Mock Exam) */
   .opt-btn.selected { border-color: var(--accent); background: var(--accent-bg); }
+  .opt-btn.correct { background: var(--success-bg); border-color: transparent; color: var(--success); font-weight: 500; }
+  .opt-btn.correct .opt-label { color: var(--success); }
+  .opt-btn.wrong { background: var(--danger-bg); border-color: transparent; color: var(--danger); font-weight: 500; }
+  .opt-btn.wrong .opt-label { color: var(--danger); }
+  .opt-btn.dimmed { opacity: 0.5; filter: grayscale(100%); }
+
+  .nav-bar { display: flex; gap: 12px; margin-top: 24px; }
+  .palette-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 16px; max-height: 200px; overflow-y: auto; padding-right: 4px; }
+  @media (min-width: 600px) { .palette-grid { grid-template-columns: repeat(10, 1fr); } }
+  .palette-btn { height: 40px; background: var(--bg-color); border: none; border-radius: 12px; font-weight: 600; color: var(--text-main); cursor: pointer; }
+  .palette-btn.active { outline: 2.5px solid var(--accent); outline-offset: 2px; }
+  .palette-btn.answered { background: var(--text-sub); color: white; }
+  .palette-btn.done-correct { background: var(--success-bg); color: var(--success); }
+  .palette-btn.done-wrong { background: var(--danger-bg); color: var(--danger); }
+
+  /* TABS HỆ THỐNG */
+  .tab-menu { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+  .tab-btn { padding: 10px 16px; border: none; background: var(--card-bg); border-radius: 98px; font-weight: 600; color: var(--text-sub); cursor: pointer; white-space: nowrap; border: 1px solid var(--border); }
+  .tab-btn.active { background: var(--text-main); color: var(--bg-color); border-color: transparent; }
   
-  /* Trạng thái sau khi nộp bài */
-  .opt-btn.correct { background: var(--success-bg); color: var(--success); font-weight: 600; }
-  .opt-btn.wrong { background: var(--danger-bg); color: var(--danger); font-weight: 600; }
-  .opt-btn.dimmed { opacity: 0.5; }
+  /* EDITOR UI */
+  .edit-box { background: var(--bg-color); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+  .edit-row { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+  .edit-label { font-size: 13px; font-weight: 600; color: var(--text-sub); width: 65px; flex-shrink: 0; }
+  .edit-input { flex: 1; padding: 10px; border: 1px solid var(--border); border-radius: 10px; background: var(--card-bg); color: var(--text-main); font-family: inherit; }
 
-  .nav-bar { display: flex; gap: 12px; margin-top: 20px; }
-  .palette-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 16px; }
-  .palette-btn { height: 36px; border: none; border-radius: 8px; font-weight: 600; background: var(--bg-color); color: var(--text-main); cursor: pointer; }
-  .palette-btn.active { outline: 2px solid var(--accent); }
-  .palette-btn.answered { background: var(--text-main); color: var(--bg-color); }
-  .palette-btn.done-correct { background: var(--success); color: white; }
-  .palette-btn.done-wrong { background: var(--danger); color: white; }
-
-  .toast { position: fixed; bottom: 40px; left: 50%; transform: translate(-50%, 100px); background: var(--text-main); color: var(--bg-color); padding: 12px 24px; border-radius: 98px; font-weight: 600; opacity: 0; transition: all 0.3s; z-index: 1000; }
+  .top-action-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  
+  /* TOAST */
+  .toast { position: fixed; bottom: 40px; left: 50%; transform: translate(-50%, 100px); background: var(--text-main); color: var(--bg-color); padding: 12px 24px; border-radius: 98px; font-weight: 600; font-size: 15px; opacity: 0; transition: all 0.3s; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
   .toast.show { transform: translate(-50%, 0); opacity: 1; }
 </style>
 </head>
 <body>
 
 <div class="topbar glass-effect">
-  <div class="brand">Control Panel</div>
+  <div class="brand">Developer Console</div>
   <button class="btn-logout anim-btn" onclick="handleLogout()">Logout</button>
 </div>
 
-<!-- ĐIỀU HƯỚNG TABS -->
-<div class="tab-menu">
-  <button class="tab-btn active anim-btn" onclick="switchTab('tab-dash', this)">🚀 Dashboard</button>
-  <button class="tab-btn anim-btn" onclick="switchTab('tab-editor', this)">✏️ Chỉnh sửa JSON</button>
-  <button class="tab-btn anim-btn" onclick="switchTab('tab-analyzer', this)">🔍 Lọc câu dài nhất</button>
-  <button class="tab-btn anim-btn" onclick="switchTab('tab-exam', this)">🎯 Thi thử (Nộp sau)</button>
-</div>
+<div class="container" id="mainContainer">
 
-<!-- ================= TAB 1: DASHBOARD (Cũ) ================= -->
-<div id="tab-dash" class="tab-content active">
-  <div class="card">
-    <div class="card-title">System Notice Broadcast</div>
-    <textarea id="noticeInput" class="input-field" style="height: 100px;" placeholder="Nhập nội dung thông báo..."></textarea>
-    <button class="btn-primary anim-btn" onclick="generateNoticeFile()">Tạo file notice.txt</button>
-  </div>
-  <div class="card">
-    <div class="card-title">Data Architect (Word -> JSON)</div>
-    <textarea id="rawInput" class="input-field" style="height: 200px;" placeholder="Dán câu hỏi thô vào đây..."></textarea>
-    <button class="btn-secondary anim-btn" onclick="processText()" style="margin-bottom: 12px;">Chuyển đổi sang JSON</button>
-    <textarea id="jsonOutput" class="input-field" style="height: 200px;" placeholder="Kết quả JSON..."></textarea>
-    <button class="btn-primary anim-btn" onclick="downloadJSON()">Tải JSON</button>
-  </div>
-</div>
+  <!-- ================= VIEW 1: DASHBOARD (CHỌN MODULE) ================= -->
+  <div id="view-dashboard">
+    <div class="page-title">Chào, Admin.</div>
+    <div class="page-sub">Quản lý trực tiếp từ thư mục `data/` của hệ thống.</div>
 
-<!-- ================= TAB 2: CHỈNH SỬA JSON (YÊU CẦU 1) ================= -->
-<div id="tab-editor" class="tab-content">
-  <div class="card">
-    <div class="card-title">JSON Editor (Chỉnh sửa ngân hàng câu hỏi)</div>
-    <p style="color:var(--text-sub); margin-bottom:16px;">Dán file <code>.json</code> cũ của bạn vào đây để chỉnh sửa.</p>
-    <textarea id="editorRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
-    <button class="btn-primary anim-btn" onclick="loadEditor()">Tải dữ liệu để sửa</button>
-  </div>
-  
-  <div id="editorArea" style="display: none;">
     <div class="card">
-      <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
-        <h3 class="card-title" style="margin:0;">Danh sách câu hỏi</h3>
-        <button class="btn-primary anim-btn" style="width: auto; padding: 8px 16px;" onclick="exportEditorJSON()">💾 Lưu & Xuất JSON</button>
+      <div class="card-title">📢 Đăng Thông Báo (Notice)</div>
+      <textarea id="noticeInput" class="input-field" style="height: 80px;" placeholder="Nhập thông báo..."></textarea>
+      <button class="btn-primary anim-btn" onclick="generateNoticeFile()">Tải file notice.txt</button>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📚 Ngân Hàng Câu Hỏi</div>
+      <p style="color:var(--text-sub); font-size:14px; margin-bottom:16px;">Chọn một Module để mở bộ công cụ quản lý.</p>
+      <div class="module-grid" id="adminModuleList">
+        <p style="color:var(--text-sub);">Đang tải dữ liệu từ data/modules.json...</p>
       </div>
-      <div id="editorList"></div>
     </div>
   </div>
-</div>
 
-<!-- ================= TAB 3: ANALYZER - LỌC CÂU DÀI NHẤT (YÊU CẦU 2) ================= -->
-<div id="tab-analyzer" class="tab-content">
-  <div class="card">
-    <div class="card-title">Lọc: Câu Dài Nhất Là Đáp Án Đúng</div>
-    <textarea id="analyzerRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
-    <button class="btn-primary anim-btn" onclick="runAnalyzer()">Phân tích dữ liệu</button>
-  </div>
-
-  <div id="analyzerArea" style="display: none;">
-    <div class="tab-menu" style="background:transparent; padding:0; margin-bottom:16px; border:none;">
-      <button class="tab-btn active anim-btn" onclick="switchAnalyzerTab('group1', this)">✅ Nhóm 1: Câu dài nhất ĐÚNG (<span id="countG1">0</span>)</button>
-      <button class="tab-btn anim-btn" onclick="switchAnalyzerTab('group2', this)">⚠️ Nhóm 2: Các câu còn lại (<span id="countG2">0</span>)</button>
-    </div>
+  <!-- ================= VIEW 2: MODULE WORKSPACE ================= -->
+  <div id="view-workspace" class="hidden">
     
-    <div id="group1" class="analyzer-tab card"></div>
-    <div id="group2" class="analyzer-tab card" style="display: none;"></div>
+    <div class="top-action-bar">
+      <div>
+        <div class="page-title" id="ws-title" style="font-size:24px;">Tên Module</div>
+        <div class="page-sub" id="ws-sub" style="margin-bottom:0;">Đang xử lý file...</div>
+      </div>
+      <button class="btn-secondary anim-btn" style="width: auto; padding: 10px 20px;" onclick="goBackToDashboard()">🔙 Quay Lại</button>
+    </div>
+
+    <div class="tab-menu">
+      <button class="tab-btn active anim-btn" onclick="switchWsTab('ws-editor', this)">✏️ Chỉnh Sửa JSON</button>
+      <button class="tab-btn anim-btn" onclick="switchWsTab('ws-analyzer', this)">🔍 Phân Tích Bẫy</button>
+      <button class="tab-btn anim-btn" onclick="switchWsTab('ws-mock', this)">🎯 Thi Thử (Nộp Sau)</button>
+    </div>
+
+    <!-- TAB 2.1: JSON EDITOR (Yêu cầu 1) -->
+    <div id="ws-editor" class="ws-content">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:16px; align-items:center;">
+          <span style="font-weight:700;">Danh sách câu hỏi</span>
+          <button class="btn-primary anim-btn" style="width:auto; padding:8px 16px;" onclick="exportEditorJSON()">💾 Lưu & Tải JSON</button>
+        </div>
+        <div id="editorListArea">Đang tải...</div>
+      </div>
+    </div>
+
+    <!-- TAB 2.2: ANALYZER - LỌC CÂU DÀI NHẤT (Yêu cầu 2) -->
+    <div id="ws-analyzer" class="ws-content hidden">
+      <div class="card">
+        <div class="tab-menu" style="background:transparent; padding:0; margin-bottom:16px; border:none;">
+          <button class="tab-btn active anim-btn" onclick="switchAnalyzerTab('g1', this)">✅ Dài Nhất Là ĐÚNG (<span id="countG1">0</span>)</button>
+          <button class="tab-btn anim-btn" onclick="switchAnalyzerTab('g2', this)">⚠️ Các câu còn lại (<span id="countG2">0</span>)</button>
+        </div>
+        <div id="g1" class="analyzer-tab"></div>
+        <div id="g2" class="analyzer-tab hidden"></div>
+      </div>
+    </div>
+
+    <!-- TAB 2.3: MOCK EXAM - THI THỬ (Yêu cầu 3) -->
+    <div id="ws-mock" class="ws-content hidden">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
+          <span style="color:var(--text-sub)">Câu <span id="mockCurrentIndex">1</span> / <span id="mockTotal">0</span></span>
+          <span id="mockScore" style="color:var(--accent); display:none;">Điểm: 0</span>
+        </div>
+
+        <div class="q-text" id="mockQText">Loading...</div>
+        <div id="mockOptions"></div>
+        
+        <div class="nav-bar">
+          <button class="btn-secondary anim-btn" onclick="mockPrev()" id="btnMockPrev">‹ Trở lại</button>
+          <button class="btn-secondary anim-btn" onclick="mockNext()" id="btnMockNext">Tiếp ›</button>
+        </div>
+
+        <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px; text-transform:uppercase; letter-spacing:0.05em;">Palette</h4>
+        <div class="palette-grid" id="mockPalette"></div>
+        
+        <button class="btn-primary anim-btn" style="margin-top:24px;" onclick="submitMockExam()" id="btnSubmitMock">Nộp Bài Chấm Điểm</button>
+        <button class="btn-secondary anim-btn" style="margin-top:12px; display:none;" onclick="startMockExam()" id="btnRetryMock">Thi Lại</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- ================= TAB 4: MOCK EXAM - THI THỬ NỘP SAU (YÊU CẦU 3) ================= -->
-<div id="tab-exam" class="tab-content">
-  <div class="card" id="examSetup">
-    <div class="card-title">Chế độ thi thử (Làm xong mới chấm)</div>
-    <textarea id="examRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
-    <button class="btn-primary anim-btn" onclick="startMockExam()">Bắt đầu thi</button>
-  </div>
-
-  <div class="card" id="examUI" style="display: none;">
-    <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
-      <span style="color:var(--text-sub)">Câu hỏi: <span id="mockCurrentIndex">1</span>/<span id="mockTotal">0</span></span>
-      <span id="mockScore" style="color:var(--accent); display:none;">Điểm: 0</span>
-    </div>
-
-    <div class="q-text" id="mockQText">Loading...</div>
-    <div id="mockOptions"></div>
-    <div class="nav-bar">
-      <button class="btn-secondary anim-btn" onclick="mockPrev()" id="btnMockPrev">Trở lại</button>
-      <button class="btn-secondary anim-btn" onclick="mockNext()" id="btnMockNext">Câu tiếp</button>
-    </div>
-
-    <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px;">Bảng câu hỏi (Palette)</h4>
-    <div class="palette-grid" id="mockPalette"></div>
-    
-    <button class="btn-primary anim-btn" style="margin-top:24px; background:var(--success);" onclick="submitMockExam()" id="btnSubmitMock">Nộp Bài Chấm Điểm</button>
-    <button class="btn-secondary anim-btn" style="margin-top:12px; display:none;" onclick="exitMockExam()" id="btnExitMock">Thoát</button>
-  </div>
-</div>
-
-<div id="toast" class="toast">Action completed!</div>
+<div id="toast" class="toast">Thành công!</div>
 
 <script>
-  // --- HỆ THỐNG CƠ BẢN ---
+  /* ================= HỆ THỐNG CƠ BẢN ================= */
+  let allModules = [];
+  let currentFileName = "";
+  let currentData = [];
+
   function handleLogout() { sessionStorage.clear(); window.location.replace("index.html"); }
   function showToast(msg) { const t = document.getElementById('toast'); t.innerText = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); }
-  
-  function switchTab(tabId, btn) {
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.tab-menu > .tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
+
+  // Khởi động: Lấy danh sách từ data/modules.json giống trang chính
+  async function initAdmin() {
+    try {
+      const res = await fetch('data/modules.json?v=' + Date.now());
+      allModules = await res.json();
+      document.getElementById('adminModuleList').innerHTML = allModules.map(m => `
+        <div class="mod-card anim-btn" onclick="openModule('${m.file}', '${m.title}')">
+          <div class="mod-title">${m.title}</div>
+          <div class="mod-sub">${m.file} • ${m.desc}</div>
+        </div>
+      `).join('');
+    } catch(e) {
+      document.getElementById('adminModuleList').innerHTML = '<p style="color:red">Lỗi tải data/modules.json!</p>';
+    }
+  }
+
+  // Tải file notice.txt
+  function generateNoticeFile() {
+    const text = document.getElementById('noticeInput').value.trim();
+    if (!text) return alert("Nhập nội dung thông báo!");
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'})); a.download = 'notice.txt'; a.click();
+    showToast('Đã tải notice.txt!');
+  }
+
+  /* ================= XỬ LÝ WORKSPACE CỦA MODULE ================= */
+  async function openModule(fileUrl, title) {
+    currentFileName = fileUrl.split('/').pop();
+    document.getElementById('ws-title').innerText = title;
+    document.getElementById('ws-sub').innerText = "Đang thao tác file: " + fileUrl;
+    
+    document.getElementById('view-dashboard').classList.add('hidden');
+    document.getElementById('view-workspace').classList.remove('hidden');
+
+    try {
+      const res = await fetch(fileUrl + '?v=' + Date.now());
+      if (!res.ok) throw new Error();
+      currentData = await res.json();
+      
+      // Khởi tạo cả 3 tab
+      renderEditor();
+      runAnalyzer();
+      startMockExam();
+    } catch(e) {
+      alert("Lỗi không tải được " + fileUrl + ". Hãy chắc chắn file tồn tại trong thư mục data/");
+      goBackToDashboard();
+    }
+  }
+
+  function goBackToDashboard() {
+    document.getElementById('view-workspace').classList.add('hidden');
+    document.getElementById('view-dashboard').classList.remove('hidden');
+  }
+
+  function switchWsTab(tabId, btn) {
+    document.querySelectorAll('.ws-content').forEach(c => c.classList.add('hidden'));
+    document.querySelectorAll('#view-workspace > .tab-menu > .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.remove('hidden');
     btn.classList.add('active');
   }
 
-  // --- TAB 1: DASHBOARD ---
-  function generateNoticeFile() {
-    const text = document.getElementById('noticeInput').value.trim();
-    if (!text) return alert("Nhập nội dung!");
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'})); a.download = 'notice.txt'; a.click();
-  }
-  function processText() { /* Giữ code cũ nếu bạn cần, hoặc bỏ qua vì đã có Editor */ }
+  /* ================= TAB 1: JSON EDITOR ================= */
+  function renderEditor() {
+    const list = document.getElementById('editorListArea');
+    list.innerHTML = currentData.map((q, idx) => {
+      let optsHTML = q[2].map((opt, i) => `
+        <div class="edit-row">
+          <span class="edit-label">Đáp án ${String.fromCharCode(65+i)}</span>
+          <textarea class="edit-input" id="q_${idx}_opt_${i}" style="height:40px;">${opt}</textarea>
+        </div>
+      `).join('');
+      
+      let selHTML = q[2].map((_, i) => `<option value="${i}" ${q[3] == i ? 'selected' : ''}>Đáp án ${String.fromCharCode(65+i)}</option>`).join('');
 
-  // --- TAB 2: JSON EDITOR (YÊU CẦU 1) ---
-  let editData = [];
-  function loadEditor() {
-    try {
-      editData = JSON.parse(document.getElementById('editorRaw').value);
-      const list = document.getElementById('editorList'); list.innerHTML = '';
-      editData.forEach((q, idx) => {
-        let optsHTML = q[2].map((opt, i) => `
+      return `
+        <div class="edit-box">
+          <div style="font-weight:700; color:var(--accent); margin-bottom:8px;">Câu ${idx + 1}</div>
+          <div class="edit-row"><span class="edit-label">Câu hỏi</span><textarea class="edit-input" id="q_${idx}_text" style="height:60px;">${q[1]}</textarea></div>
+          ${optsHTML}
           <div class="edit-row">
-            <span class="edit-label">Đáp án ${i}</span>
-            <input type="text" class="edit-input" id="q_${idx}_opt_${i}" value="${opt.replace(/"/g, '&quot;')}">
+            <span class="edit-label" style="color:var(--success);">Câu Đúng</span>
+            <select class="edit-input" id="q_${idx}_ans" style="font-weight:bold; background:var(--success-bg);">${selHTML}</select>
           </div>
-        `).join('');
-        
-        let selHTML = q[2].map((_, i) => `<option value="${i}" ${q[3] == i ? 'selected' : ''}>Đáp án ${i}</option>`).join('');
-
-        list.innerHTML += `
-          <div class="edit-q-box">
-            <div class="edit-q-title">Câu ${idx + 1}</div>
-            <div class="edit-row"><span class="edit-label">Câu hỏi</span><textarea class="edit-input" id="q_${idx}_text">${q[1]}</textarea></div>
-            ${optsHTML}
-            <div class="edit-row">
-              <span class="edit-label">Đúng</span>
-              <select class="edit-input" id="q_${idx}_ans" style="background:var(--success-bg); font-weight:bold;">${selHTML}</select>
-            </div>
-            <div class="edit-row"><span class="edit-label">Ref</span><input type="text" class="edit-input" id="q_${idx}_ref" value="${q[4] || ''}"></div>
-          </div>
-        `;
-      });
-      document.getElementById('editorArea').style.display = 'block';
-      showToast("Tải dữ liệu thành công!");
-    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
+          <div class="edit-row"><span class="edit-label">Ghi chú</span><input type="text" class="edit-input" id="q_${idx}_ref" value="${q[4] || ''}"></div>
+        </div>
+      `;
+    }).join('');
   }
 
   function exportEditorJSON() {
     let result = [];
-    editData.forEach((q, idx) => {
+    currentData.forEach((q, idx) => {
       let text = document.getElementById(`q_${idx}_text`).value;
       let opts = q[2].map((_, i) => document.getElementById(`q_${idx}_opt_${i}`).value);
       let ans = parseInt(document.getElementById(`q_${idx}_ans`).value);
       let ref = document.getElementById(`q_${idx}_ref`).value;
       result.push([q[0], text, opts, ans, ref]);
     });
+    
+    // Cập nhật lại data hiện tại trên RAM
+    currentData = result; 
+    
     const blob = new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = 'edited_module.json'; a.click();
-    showToast("Đã lưu & tải xuống JSON!");
+    a.href = URL.createObjectURL(blob); a.download = currentFileName; a.click();
+    
+    showToast("Đã lưu và tải file: " + currentFileName);
+    // Cập nhật lại các tab khác với data mới
+    runAnalyzer(); startMockExam();
   }
 
-  // --- TAB 3: ANALYZER LỌC CÂU DÀI NHẤT (YÊU CẦU 2) ---
+  /* ================= TAB 2: ANALYZER (LỌC BẪY) ================= */
   function switchAnalyzerTab(groupId, btn) {
-    document.querySelectorAll('.analyzer-tab').forEach(c => c.style.display = 'none');
-    document.querySelectorAll('#analyzerArea .tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(groupId).style.display = 'block'; btn.classList.add('active');
+    document.querySelectorAll('.analyzer-tab').forEach(c => c.classList.add('hidden'));
+    document.querySelectorAll('#ws-analyzer .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(groupId).classList.remove('hidden');
+    btn.classList.add('active');
   }
 
   function runAnalyzer() {
-    try {
-      let data = JSON.parse(document.getElementById('analyzerRaw').value);
-      let g1 = [], g2 = [];
-      data.forEach(q => {
-        let maxLen = Math.max(...q[2].map(o => o.length));
-        if (q[2][q[3]] && q[2][q[3]].length === maxLen) g1.push(q); else g2.push(q);
-      });
-      document.getElementById('countG1').innerText = g1.length;
-      document.getElementById('countG2').innerText = g2.length;
-      document.getElementById('group1').innerHTML = renderAnalyzerList(g1);
-      document.getElementById('group2').innerHTML = renderAnalyzerList(g2);
-      document.getElementById('analyzerArea').style.display = 'block';
-    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
+    let g1 = [], g2 = [];
+    currentData.forEach(q => {
+      let maxLen = Math.max(...q[2].map(o => o.length));
+      // Nếu đáp án đúng (q[3]) có độ dài bằng đáp án dài nhất -> Cho vào nhóm 1
+      if (q[2][q[3]] && q[2][q[3]].length === maxLen) g1.push(q); else g2.push(q);
+    });
+    document.getElementById('countG1').innerText = g1.length;
+    document.getElementById('countG2').innerText = g2.length;
+    document.getElementById('g1').innerHTML = renderAnalyzerUI(g1);
+    document.getElementById('g2').innerHTML = renderAnalyzerUI(g2);
   }
 
-  function renderAnalyzerList(list) {
+  function renderAnalyzerUI(list) {
+    if(list.length === 0) return "<p style='color:var(--text-sub)'>Không có câu hỏi nào trong nhóm này.</p>";
     return list.map(q => `
-      <div style="padding-bottom:16px; margin-bottom:16px; border-bottom:1px solid var(--border);">
-        <div class="q-text" style="font-size:16px;">${q[1]}</div>
-        ${q[2].map((opt, i) => `<div style="padding:6px 10px; margin-bottom:4px; border-radius:8px; background:${i==q[3] ? 'var(--success-bg)' : 'var(--bg-color)'}; color:${i==q[3] ? 'var(--success)' : 'var(--text-main)'}; font-size:14px; ${i==q[3] ? 'font-weight:bold; border:1px solid var(--success);' : ''}">${opt}</div>`).join('')}
+      <div style="margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--border);">
+        <div class="q-text">${q[1]}</div>
+        ${q[2].map((opt, i) => `
+          <div class="opt-btn ${i == q[3] ? 'correct' : ''}" style="cursor:default;">
+            <span class="opt-label">${String.fromCharCode(65+i)}.</span>
+            <span style="flex:1;">${opt}</span>
+          </div>
+        `).join('')}
       </div>
     `).join('');
   }
 
-  // --- TAB 4: MOCK EXAM - THI NỘP SAU (YÊU CẦU 3) ---
-  let mockData = [], mockAnswers = {}, mockCurrent = 0, isSubmitted = false;
+  /* ================= TAB 3: MOCK EXAM ================= */
+  let mockAnswers = {}, mockCurrent = 0, isMockSubmitted = false;
 
   function startMockExam() {
-    try {
-      mockData = JSON.parse(document.getElementById('examRaw').value);
-      mockAnswers = {}; mockCurrent = 0; isSubmitted = false;
-      document.getElementById('examSetup').style.display = 'none';
-      document.getElementById('examUI').style.display = 'block';
-      document.getElementById('btnSubmitMock').style.display = 'block';
-      document.getElementById('btnExitMock').style.display = 'none';
-      document.getElementById('mockScore').style.display = 'none';
-      document.getElementById('mockTotal').innerText = mockData.length;
-      renderMockQuestion();
-    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
+    mockAnswers = {}; mockCurrent = 0; isMockSubmitted = false;
+    document.getElementById('mockTotal').innerText = currentData.length;
+    document.getElementById('btnSubmitMock').style.display = 'block';
+    document.getElementById('btnRetryMock').style.display = 'none';
+    document.getElementById('mockScore').style.display = 'none';
+    renderMockQuestion();
   }
 
   function renderMockQuestion() {
-    let q = mockData[mockCurrent];
+    let q = currentData[mockCurrent];
     document.getElementById('mockCurrentIndex').innerText = mockCurrent + 1;
     document.getElementById('mockQText').innerText = q[1];
     
-    let html = q[2].map((opt, i) => {
+    // RENDER OPTIONS
+    document.getElementById('mockOptions').innerHTML = q[2].map((opt, i) => {
       let classes = "opt-btn anim-btn";
-      if (!isSubmitted && mockAnswers[mockCurrent] === i) classes += " selected";
-      if (isSubmitted) {
-        if (i === q[3]) classes += " correct";
-        else if (mockAnswers[mockCurrent] === i) classes += " wrong";
-        else classes += " dimmed";
+      
+      // Trạng thái chưa nộp (Chỉ highlight màu xanh dương khi tick)
+      if (!isMockSubmitted && mockAnswers[mockCurrent] === i) classes += " selected";
+      
+      // Trạng thái đã nộp (Hiện đúng/sai)
+      if (isMockSubmitted) {
+        if (i === q[3]) classes += " correct"; // Luôn xanh đáp án đúng
+        else if (mockAnswers[mockCurrent] === i) classes += " wrong"; // Nếu chọn sai thì đỏ
+        else classes += " dimmed"; // Còn lại làm mờ
       }
-      return `<button class="${classes}" onclick="selectMockOption(${i})"><span style="font-weight:bold; width:24px;">${String.fromCharCode(65+i)}.</span> <span>${opt}</span></button>`;
+      
+      return `
+        <button class="${classes}" onclick="selectMockOption(${i})" ${isMockSubmitted ? 'disabled' : ''}>
+          <span class="opt-label">${String.fromCharCode(65+i)}.</span> 
+          <span style="flex:1;">${opt}</span>
+        </button>
+      `;
     }).join('');
     
-    document.getElementById('mockOptions').innerHTML = html;
+    // NAV BUTTONS
     document.getElementById('btnMockPrev').disabled = (mockCurrent === 0);
-    document.getElementById('btnMockNext').disabled = (mockCurrent === mockData.length - 1);
+    document.getElementById('btnMockNext').disabled = (mockCurrent === currentData.length - 1);
+    
     renderMockPalette();
   }
 
   function selectMockOption(idx) {
-    if (isSubmitted) return;
+    if (isMockSubmitted) return; // Nộp rồi cấm sửa
     mockAnswers[mockCurrent] = idx;
-    renderMockQuestion();
+    renderMockQuestion(); // Render lại để bôi xanh đáp án vừa bấm
   }
 
-  function mockNext() { if (mockCurrent < mockData.length - 1) { mockCurrent++; renderMockQuestion(); } }
+  function mockNext() { if (mockCurrent < currentData.length - 1) { mockCurrent++; renderMockQuestion(); } }
   function mockPrev() { if (mockCurrent > 0) { mockCurrent--; renderMockQuestion(); } }
   function jumpMock(idx) { mockCurrent = idx; renderMockQuestion(); }
 
   function renderMockPalette() {
-    document.getElementById('mockPalette').innerHTML = mockData.map((q, i) => {
+    document.getElementById('mockPalette').innerHTML = currentData.map((q, i) => {
       let cls = "palette-btn anim-btn";
-      if (i === mockCurrent) cls += " active";
-      if (!isSubmitted && mockAnswers[i] !== undefined) cls += " answered";
-      if (isSubmitted) {
+      if (i === mockCurrent) cls += " active"; // Câu đang hiển thị
+      
+      if (!isMockSubmitted && mockAnswers[i] !== undefined) cls += " answered"; // Đã tick thì xám đen lại
+      
+      if (isMockSubmitted) {
         if (mockAnswers[i] === q[3]) cls += " done-correct";
         else cls += " done-wrong";
       }
+      
       return `<button class="${cls}" onclick="jumpMock(${i})">${i+1}</button>`;
     }).join('');
   }
 
   function submitMockExam() {
-    if(!confirm("Bạn chắc chắn muốn nộp bài chứ?")) return;
-    isSubmitted = true;
+    // Đếm số câu chưa làm
+    let unanswered = currentData.length - Object.keys(mockAnswers).length;
+    if(unanswered > 0) {
+      if(!confirm(`Bạn còn ${unanswered} câu chưa chọn đáp án. Có chắc chắn muốn nộp bài?`)) return;
+    } else {
+      if(!confirm("Bạn chắc chắn muốn nộp bài chứ?")) return;
+    }
+
+    isMockSubmitted = true;
     let score = 0;
-    mockData.forEach((q, i) => { if (mockAnswers[i] === q[3]) score++; });
+    currentData.forEach((q, i) => { if (mockAnswers[i] === q[3]) score++; });
     
-    document.getElementById('mockScore').innerText = `Đúng: ${score} / ${mockData.length}`;
+    document.getElementById('mockScore').innerText = `Đúng: ${score}/${currentData.length}`;
     document.getElementById('mockScore').style.display = 'inline';
-    document.getElementById('btnSubmitMock').style.display = 'none';
-    document.getElementById('btnExitMock').style.display = 'block';
     
-    renderMockQuestion();
-    showToast(`Đã nộp! Bạn đúng ${score} câu.`);
+    document.getElementById('btnSubmitMock').style.display = 'none';
+    document.getElementById('btnRetryMock').style.display = 'block';
+    
+    renderMockQuestion(); // Render lại câu hiện tại để hiện màu Xanh/Đỏ
+    showToast(`Đã nộp! Điểm của bạn: ${score}/${currentData.length}`);
   }
 
-  function exitMockExam() {
-    document.getElementById('examUI').style.display = 'none';
-    document.getElementById('examSetup').style.display = 'block';
-  }
+  // Khởi động
+  initAdmin();
 </script>
 </body>
 </html>
