@@ -8,7 +8,7 @@
       <stop offset="100%" stop-color="#8E8E93"/>
     </linearGradient>
 
-    <!-- Phối màu Vỏ động cơ tuabin phía sau (Turboprop Cowling) -->
+    <!-- Phối màu Vỏ động cơ tuabin phía sau -->
     <radialGradient id="engineCore" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#2C2C2E"/>
       <stop offset="75%" stop-color="#1C1C1E"/>
@@ -24,44 +24,39 @@
 
     <!-- Hiệu ứng đổ bóng 3D cho cánh quạt -->
     <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.3"/>
     </filter>
 
-    <!-- 1 LÁ CÁNH QUẠT CHUẨN TỈ LỆ (Hướng thẳng lên trên, tâm quay ở 200,200) -->
+    <!-- 1 LÁ CÁNH QUẠT CHUẨN TỈ LỆ -->
     <g id="propBlade" filter="url(#dropShadow)">
-      <!-- Thân lá cánh bầu bĩnh, gọn gàng, không bị dài quá cỡ -->
-      <path d="M 188 200 
-               C 182 150, 172 105, 184 72 
-               C 190 55, 210 55, 216 72 
-               C 228 105, 218 150, 212 200 Z" 
+      <path d="M 189 200 
+               C 184 150, 172 105, 183 75 
+               C 188 60, 212 60, 217 75 
+               C 228 105, 216 150, 211 200 Z" 
             fill="url(#bladeGrad)"/>
-      <!-- Đường gân phản quang sống lưng cánh -->
-      <path d="M 200 200 L 200 70" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
-      <!-- Viền cạnh sắc nét -->
-      <path d="M 188 200 C 182 150, 172 105, 184 72" stroke="#C7C7CC" stroke-width="1" fill="none"/>
+      <path d="M 200 200 L 200 72" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8" stroke-linecap="round"/>
+      <path d="M 189 200 C 184 150, 172 105, 183 75" stroke="#C7C7CC" stroke-width="1" fill="none"/>
     </g>
   </defs>
 
-  <!-- VÒNG TRÒN HUD KỸ THUẬT MỜ LÓT NỀN -->
-  <g opacity="0.35">
-    <circle cx="200" cy="200" r="130" fill="none" stroke="#0A84FF" stroke-width="1" stroke-dasharray="4 8"/>
-    <circle cx="200" cy="200" r="148" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <!-- VÒNG TRÒN HUD MÀU XANH LÁ ĐẶC TRƯNG NHƯ CŨ -->
+  <g opacity="0.65">
+    <circle cx="200" cy="200" r="135" fill="none" stroke="#30D158" stroke-width="1.5" stroke-dasharray="6 6"/>
+    <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(48,209,88,0.2)" stroke-width="1"/>
   </g>
 
-  <!-- ỐNG ĐỘNG CƠ TURBOPROP PHÍA SAU -->
-  <circle cx="200" cy="200" r="110" fill="url(#engineCore)"/>
-  <circle cx="200" cy="200" r="110" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+  <!-- ỐNG ĐỘNG CƠ TUABIN PHÍA SAU -->
+  <circle cx="200" cy="200" r="115" fill="url(#engineCore)"/>
+  <circle cx="200" cy="200" r="115" fill="none" stroke="#3A3A3C" stroke-width="3"/>
+  <circle cx="200" cy="200" r="112" fill="none" stroke="#30D158" stroke-width="1" opacity="0.4"/>
 
-  <!-- ================= 4 LÁ CÁNH QUẠT (XOAY ĐỀU 90 ĐỘ) ================= -->
+  <!-- ================= ĐÚNG 5 LÁ CÁNH QUẠT (XOAY ĐỀU 72 ĐỘ) ================= -->
   <g>
-    <!-- Cánh trên -->
     <use href="#propBlade" transform="rotate(0 200 200)"/>
-    <!-- Cánh phải -->
-    <use href="#propBlade" transform="rotate(90 200 200)"/>
-    <!-- Cánh dưới (Đã được thu ngắn, nằm gọn trong vòng 400px tuyệt đối) -->
-    <use href="#propBlade" transform="rotate(180 200 200)"/>
-    <!-- Cánh trái -->
-    <use href="#propBlade" transform="rotate(270 200 200)"/>
+    <use href="#propBlade" transform="rotate(72 200 200)"/>
+    <use href="#propBlade" transform="rotate(144 200 200)"/>
+    <use href="#propBlade" transform="rotate(216 200 200)"/>
+    <use href="#propBlade" transform="rotate(288 200 200)"/>
   </g>
 
   <!-- BỆ ĐỠ TRUNG TÂM -->
@@ -71,7 +66,7 @@
   <circle cx="200" cy="200" r="30" fill="url(#spinnerHub)"/>
   <circle cx="200" cy="200" r="30" fill="none" stroke="#48484A" stroke-width="1"/>
 
-  <!-- VỆT XOẮN TRẮNG ĐẶC TRƯNG TRÊN NÓN (SPINNER SWIRL) -->
+  <!-- VỆT XOẮN TRẮNG TRÊN NÓN (SPINNER SWIRL) -->
   <path d="M 200 200 C 203 185, 218 182, 215 170 C 212 161, 201 161, 196 166 C 190 172, 193 185, 198 196" 
         stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
   <circle cx="200" cy="200" r="2.5" fill="#FFFFFF"/>
