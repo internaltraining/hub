@@ -1,160 +1,100 @@
 <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Phối màu Vỏ Hợp kim (Outer Cowl & Casing) -->
-    <linearGradient id="metalCasing" x1="0" y1="200" x2="0" y2="400">
-      <stop offset="0%" stop-color="#E5E5EA"/>
+    <!-- Màu vỏ ngoài Titanium -->
+    <linearGradient id="titanium" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#F2F2F7"/>
       <stop offset="50%" stop-color="#8E8E93"/>
       <stop offset="100%" stop-color="#1C1C1E"/>
     </linearGradient>
-    
-    <!-- Phối màu Thép Tối (Internal Core) -->
-    <linearGradient id="metalDark" x1="0" y1="100" x2="400" y2="300">
-      <stop offset="0%" stop-color="#3A3A3C"/>
-      <stop offset="100%" stop-color="#000000"/>
+
+    <!-- Màu lá cánh quạt (Thép xám bóng) -->
+    <linearGradient id="bladeGrad" x1="0" y1="90" x2="0" y2="220">
+      <stop offset="0%" stop-color="#D1D1D6"/>
+      <stop offset="100%" stop-color="#3A3A3C"/>
     </linearGradient>
 
-    <!-- Phối màu Vành đai Kevlar (Đặc trưng màu Vàng Nhạt ở mũi động cơ) -->
-    <linearGradient id="kevlarRim" x1="0" y1="0" x2="0" y2="400">
-      <stop offset="0%" stop-color="#F2E3A9"/>
-      <stop offset="50%" stop-color="#D4C07B"/>
+    <!-- Vành đai Kevlar bên trong (Màu vàng kim loại) -->
+    <linearGradient id="kevlar" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#D4C07B"/>
       <stop offset="100%" stop-color="#8B7B3E"/>
     </linearGradient>
 
-    <!-- Phối màu Compressor Blades (Vàng Đồng) -->
-    <linearGradient id="goldBlades" x1="0" y1="100" x2="0" y2="200">
-      <stop offset="0%" stop-color="#D4C07B"/>
-      <stop offset="100%" stop-color="#A68D46"/>
-    </linearGradient>
+    <!-- Màu chóp nón trung tâm (Spinner) -->
+    <radialGradient id="spinner" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#48484A"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
 
-    <!-- Màu Lửa Neon (Buồng đốt) -->
-    <linearGradient id="neonFire" x1="0" y1="0" x2="400" y2="0">
-      <stop offset="0%" stop-color="#FF9500"/>
-      <stop offset="50%" stop-color="#FF2A54"/>
-      <stop offset="100%" stop-color="#FF0040"/>
-    </linearGradient>
+    <!-- Ánh sáng xanh hắt từ lõi động cơ ra -->
+    <radialGradient id="backGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0A84FF"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
 
+    <!-- Định nghĩa 1 lá cánh quạt với độ cong khí động học -->
+    <path id="fan" d="M196 220 C 160 160, 170 100, 205 90 C 220 120, 210 180, 204 220 Z" 
+          fill="url(#bladeGrad)" stroke="#1C1C1E" stroke-width="1"/>
+          
     <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
-    <filter id="glowStrong">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feGaussianBlur stdDeviation="12" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
   </defs>
 
-  <!-- ================= LƯỚI KHÔNG GIAN BẢN VẼ ================= -->
-  <g opacity="0.4">
-    <line x1="20" y1="220" x2="380" y2="220" stroke="#8E8E93" stroke-width="1" stroke-dasharray="8 8"/>
-    <circle cx="200" cy="220" r="140" stroke="rgba(255,255,255,0.05)" stroke-width="2" fill="none"/>
+  <!-- Ánh sáng Xanh Dương (Ice Blue) mờ ảo tỏa ra từ lõi -->
+  <circle cx="200" cy="220" r="110" fill="url(#backGlow)" opacity="0.5" filter="url(#glow)"/>
+
+  <!-- Lớp vành trong cùng (Inner Ring / Kevlar) -->
+  <circle cx="200" cy="220" r="126" fill="#1C1C1E" stroke="url(#kevlar)" stroke-width="4"/>
+
+  <!-- 24 LÁ CÁNH QUẠT (Fan Blades) XOAY TRÒN ĐỀU KHUNG -->
+  <g>
+    <use href="#fan" transform="rotate(0 200 220)"/>
+    <use href="#fan" transform="rotate(15 200 220)"/>
+    <use href="#fan" transform="rotate(30 200 220)"/>
+    <use href="#fan" transform="rotate(45 200 220)"/>
+    <use href="#fan" transform="rotate(60 200 220)"/>
+    <use href="#fan" transform="rotate(75 200 220)"/>
+    <use href="#fan" transform="rotate(90 200 220)"/>
+    <use href="#fan" transform="rotate(105 200 220)"/>
+    <use href="#fan" transform="rotate(120 200 220)"/>
+    <use href="#fan" transform="rotate(135 200 220)"/>
+    <use href="#fan" transform="rotate(150 200 220)"/>
+    <use href="#fan" transform="rotate(165 200 220)"/>
+    <use href="#fan" transform="rotate(180 200 220)"/>
+    <use href="#fan" transform="rotate(195 200 220)"/>
+    <use href="#fan" transform="rotate(210 200 220)"/>
+    <use href="#fan" transform="rotate(225 200 220)"/>
+    <use href="#fan" transform="rotate(240 200 220)"/>
+    <use href="#fan" transform="rotate(255 200 220)"/>
+    <use href="#fan" transform="rotate(270 200 220)"/>
+    <use href="#fan" transform="rotate(285 200 220)"/>
+    <use href="#fan" transform="rotate(300 200 220)"/>
+    <use href="#fan" transform="rotate(315 200 220)"/>
+    <use href="#fan" transform="rotate(330 200 220)"/>
+    <use href="#fan" transform="rotate(345 200 220)"/>
   </g>
 
-  <!-- ================= ĐƯỜNG ỐNG / WIRING BÊN NGOÀI (Như trong ảnh) ================= -->
-  <!-- Ống thủy lực/nhiên liệu màu Xanh lam chạy trên nóc động cơ -->
-  <g filter="url(#glow)">
-    <path d="M 120 70 C 160 50, 200 70, 250 85" stroke="#0A84FF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M 110 75 C 150 60, 190 75, 240 95" stroke="#30D158" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
-    <path d="M 130 80 C 170 70, 210 90, 280 110" stroke="#0A84FF" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <!-- Các mấu nối kim loại trên ống -->
-    <rect x="150" y="62" width="6" height="12" fill="#D1D1D6" transform="rotate(15 153 68)"/>
-    <rect x="210" y="74" width="6" height="12" fill="#D1D1D6" transform="rotate(25 213 80)"/>
-  </g>
-
-  <!-- ================= NỬA DƯỚI: LỚP VỎ HOÀN THIỆN ================= -->
-  <!-- Lớp vỏ Nacelle (Bọc ngoài cùng) -->
-  <path d="M 55 220 L 55 350 C 120 370, 250 360, 380 270 L 380 220 Z" fill="url(#metalCasing)"/>
-  <!-- Cửa xả (Exhaust lip dưới) -->
-  <path d="M 360 220 L 380 270 L 390 260 L 375 220 Z" fill="#8E8E93"/>
-
-  <!-- ================= NỬA TRÊN: MẶT CẮT (CUTAWAY) ================= -->
+  <!-- CHÓP NÓN TRUNG TÂM (Spinner) -->
+  <circle cx="200" cy="220" r="38" fill="url(#spinner)"/>
+  <circle cx="200" cy="220" r="38" fill="none" stroke="#3A3A3C" stroke-width="1.5"/>
   
-  <!-- Vành Kevlar màu Vàng (Kevlar Containment Ring - Đặc trưng trong ảnh) -->
-  <path d="M 45 60 L 65 55 L 65 220 L 45 220 Z" fill="url(#kevlarRim)"/>
-  <path d="M 45 220 L 65 220 L 65 350 C 60 350, 50 348, 45 345 Z" fill="url(#kevlarRim)"/>
-  <!-- Các đinh tán trên vành Kevlar -->
-  <g fill="#8E8E93">
-    <circle cx="55" cy="70" r="2"/><circle cx="55" cy="90" r="2"/><circle cx="55" cy="110" r="2"/>
-    <circle cx="55" cy="130" r="2"/><circle cx="55" cy="150" r="2"/><circle cx="55" cy="170" r="2"/>
-    <circle cx="55" cy="190" r="2"/><circle cx="55" cy="210" r="2"/>
-  </g>
-
-  <!-- Lớp vỏ Nacelle cắt ngang (Mặt trên) -->
-  <path d="M 65 55 C 130 40, 240 60, 360 140 L 360 150 C 240 70, 130 55, 65 65 Z" fill="#D1D1D6" stroke="#8E8E93"/>
-
-  <!-- Khoang Bypass (Bypass Duct) -->
-  <path d="M 100 130 C 150 110, 240 120, 350 160 L 350 165 C 240 130, 150 120, 100 140 Z" fill="url(#metalDark)"/>
-
-  <!-- Trục lõi (Center Shaft) -->
-  <rect x="80" y="216" width="260" height="8" fill="#E5E5EA"/>
-  <rect x="80" y="218" width="260" height="4" fill="#8E8E93"/>
-
-  <!-- Chóp nón (Spinner Cone) - Màu đen đặc trưng với vân xoắn -->
-  <path d="M 25 220 Q 75 160 95 220 Q 75 280 25 220 Z" fill="#111111"/>
-  <path d="M 35 220 Q 60 190 85 220" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.7"/>
-  <path d="M 35 220 Q 60 250 85 220" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.4"/>
-  <circle cx="95" cy="220" r="4" fill="#333"/>
-
-  <!-- ================= HỆ THỐNG CÁNH QUẠT (FAN & COMPRESSOR) ================= -->
+  <!-- Đường gân xoắn màu trắng đuổi chim (Spinner Swirl) -->
+  <path d="M 200 220 Q 225 195, 212 186" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
   
-  <!-- Cánh quạt chính (Bypass Fan Blades) - Hợp kim sáng -->
-  <g fill="url(#metalCasing)" stroke="#fff" stroke-width="1">
-    <path d="M 85 220 Q 60 120 75 60 Q 95 140 95 220 Z"/>
-    <path d="M 85 220 Q 100 130 115 75 Q 110 150 95 220 Z"/>
-    <!-- Nửa dưới (Chưa bị cắt) -->
-    <path d="M 85 220 Q 60 320 75 380 Q 95 300 95 220 Z"/>
-    <path d="M 85 220 Q 100 310 115 365 Q 110 290 95 220 Z"/>
+  <!-- LỚP VỎ ĐỘNG CƠ NGOÀI CÙNG (Outer Nacelle Lip) -->
+  <circle cx="200" cy="220" r="132" fill="none" stroke="url(#titanium)" stroke-width="16"/>
+  
+  <!-- Bóng râm đổ xuống cánh quạt tạo độ sâu -->
+  <circle cx="200" cy="220" r="124" fill="none" stroke="#000000" stroke-width="3" opacity="0.6"/>
+  <!-- Vạch viền sáng bóng ngoài cùng -->
+  <circle cx="200" cy="220" r="140" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  
+  <!-- CÁC ĐINH TÁN LẮP RÁP (Rivets) TRÊN VỎ -->
+  <g fill="#48484A">
+    <circle cx="200" cy="84" r="2"/><circle cx="200" cy="356" r="2"/>
+    <circle cx="64" cy="220" r="2"/><circle cx="336" cy="220" r="2"/>
+    <circle cx="103.5" cy="123.5" r="2"/><circle cx="296.5" cy="316.5" r="2"/>
+    <circle cx="103.5" cy="316.5" r="2"/><circle cx="296.5" cy="123.5" r="2"/>
   </g>
-
-  <!-- Các tầng Máy Nén Khí (Compressor Stages) - Màu Vàng Đồng (Đúng như ảnh) -->
-  <!-- Low Pressure Compressor (LPC) -->
-  <g fill="url(#metalCasing)">
-    <rect x="120" y="150" width="4" height="70" rx="1"/>
-    <rect x="130" y="155" width="4" height="65" rx="1"/>
-    <rect x="140" y="160" width="3" height="60" rx="1"/>
-  </g>
-  <!-- High Pressure Compressor (HPC) - Rất nhiều tầng nhỏ màu Vàng Đồng -->
-  <g fill="url(#goldBlades)">
-    <rect x="155" y="165" width="3" height="55" rx="1"/>
-    <rect x="165" y="168" width="3" height="52" rx="1"/>
-    <rect x="175" y="171" width="2" height="49" rx="1"/>
-    <rect x="183" y="174" width="2" height="46" rx="1"/>
-    <rect x="191" y="177" width="2" height="43" rx="1"/>
-    <rect x="199" y="180" width="2" height="40" rx="1"/>
-    <rect x="207" y="182" width="2" height="38" rx="1"/>
-  </g>
-
-  <!-- ================= BUỒNG ĐỐT & TUABIN ================= -->
-
-  <!-- Buồng đốt (Combustion Chamber) - Cấu trúc khoang -->
-  <path d="M 215 180 C 220 160, 245 160, 250 180 L 250 220 L 215 220 Z" fill="#1C1C1E" stroke="#8E8E93" stroke-width="2"/>
-  <!-- Lửa cuộn bên trong buồng đốt -->
-  <ellipse cx="232" cy="200" rx="12" ry="6" fill="url(#neonFire)" filter="url(#glowStrong)"/>
-  <ellipse cx="232" cy="200" rx="6" ry="2" fill="#FFFFFF"/>
-
-  <!-- Các tầng Tuabin (Turbine Stages) -->
-  <!-- High Pressure Turbine (HPT) - Đỏ rực -->
-  <rect x="255" y="175" width="5" height="45" rx="1" fill="#FF9500" filter="url(#glow)"/>
-  <rect x="265" y="170" width="5" height="50" rx="1" fill="#FF2A54" filter="url(#glow)"/>
-  <!-- Low Pressure Turbine (LPT) - Dài hơn, thép xám -->
-  <rect x="280" y="165" width="6" height="55" rx="1" fill="url(#metalCasing)"/>
-  <rect x="295" y="160" width="6" height="60" rx="1" fill="url(#metalCasing)"/>
-  <rect x="310" y="165" width="5" height="55" rx="1" fill="url(#metalCasing)"/>
-  <rect x="325" y="170" width="5" height="50" rx="1" fill="url(#metalCasing)"/>
-
-  <!-- ================= ĐƯỜNG BAY CỦA LUỒNG KHÍ ================= -->
-  <!-- Bypass Flow (Cyan) -->
-  <path d="M 50 110 C 130 80, 220 100, 360 160" stroke="#00F2FE" stroke-width="2" stroke-dasharray="10 6" fill="none" opacity="0.8" filter="url(#glow)"/>
-  <!-- Core Flow (Thrust - Lửa) -->
-  <path d="M 240 200 Q 300 200, 380 205" stroke="url(#neonFire)" stroke-width="4" stroke-dasharray="12 6" fill="none" filter="url(#glowStrong)"/>
-
-  <!-- ================= LABELS & CHÚ THÍCH (HUD) ================= -->
-  <!-- Các đường chỉ báo màu cam -->
-  <g stroke="#FF9500" stroke-width="1" opacity="0.6">
-    <line x1="80" y1="45" x2="80" y2="80"/>
-    <line x1="80" y1="45" x2="95" y2="45"/>
-    <line x1="180" y1="140" x2="180" y2="165"/>
-    <line x1="180" y1="140" x2="195" y2="140"/>
-  </g>
-  <text x="100" y="48" fill="#FF9500" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1">FAN SECTION</text>
-  <text x="200" y="143" fill="#FF9500" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" letter-spacing="1">COMPRESSOR CORE</text>
 </svg>
