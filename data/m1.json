@@ -1,0 +1,578 @@
+[
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the correct symbol for \"greater than or equal to\"?",
+    "options": [
+      "≠",
+      "≥",
+      "≤"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "Which of the following is an example of a natural number?",
+    "options": [
+      "-5",
+      "0",
+      "3"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 7"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "In multiplication, what is the first step in the traditional method?",
+    "options": [
+      "Multiply by the units",
+      "Multiply by the tens",
+      "Add the results together"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 8"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "In division, the traditional method is also known as:",
+    "options": [
+      "Short division",
+      "Long division",
+      "Simple subtraction"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 10"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What type of fraction has a numerator smaller than the denominator?",
+    "options": [
+      "Improper fraction",
+      "Mixed number",
+      "Proper fraction"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is 1 kilogram equivalent to in grams?",
+    "options": [
+      "10 grams",
+      "100 grams",
+      "1000 grams"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 16"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "How many inches are there in a foot?",
+    "options": [
+      "10",
+      "12",
+      "15"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 16"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the metric unit of capacity?",
+    "options": [
+      "Gallon",
+      "Pint",
+      "Litre"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 18"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the conversion factor from feet to meters?",
+    "options": [
+      "1 ft = 0.5 meters",
+      "1 ft = 0.3048 meters",
+      "1 ft = 2 meters"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 20"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "The ratio 3:1 means:",
+    "options": [
+      "3 parts of one thing and 1 part of another",
+      "3 parts in total",
+      "3 divided by 1"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 24"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "If a rope is 20 meters long and weighs 1 kg, how much will 40 meters of the same rope weigh?",
+    "options": [
+      "1 kg",
+      "2 kg",
+      "3 kg"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 26"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the formula for calculating an average?",
+    "options": [
+      "Total sum of values ÷ number of values",
+      "Highest value minus lowest value",
+      "Sum of even numbers only"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 28"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "How do you convert a fraction into a percentage?",
+    "options": [
+      "Multiply by 100",
+      "Divide by 100",
+      "Add 100"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 30"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the area of a rectangle?",
+    "options": [
+      "Length × Width",
+      "Length + Width",
+      "Length ÷ Width"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 32"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "The volume of a cube is calculated using:",
+    "options": [
+      "Side × Side",
+      "Side × Side × Side",
+      "Side + Side + Side"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "The square root of 36 is:",
+    "options": [
+      "4",
+      "6",
+      "9"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 40"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is the cube root of 27?",
+    "options": [
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 41"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "A gallon is approximately how many litres?",
+    "options": [
+      "3 litres",
+      "4.5 litres",
+      "6 litres"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 21"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is an example of an improper fraction?",
+    "options": [
+      "3/4",
+      "5/2",
+      "1/8"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 1,
+    "level": 1,
+    "question": "What is 10% of 30?",
+    "options": [
+      "3",
+      "10",
+      "30"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 31"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is algebra?",
+    "options": [
+      "A method for solving geometry problems",
+      "A branch of mathematics dealing with symbols and their rules",
+      "A technique for measuring angles"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is an equation?",
+    "options": [
+      "A statement showing that two expressions are equal",
+      "A mathematical rule for addition",
+      "A method for counting numbers"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "In the equation 4x - 7 = 5, what is x called?",
+    "options": [
+      "Constant",
+      "Coefficient",
+      "Variable"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What does the exponent in an expression like y² represent?",
+    "options": [
+      "The number of times y is multiplied by itself",
+      "The addition of y",
+      "The division of y"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 7"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "Which of the following are like terms?",
+    "options": [
+      "x², 2x, 3y",
+      "5xy², -2xy², 7xy²",
+      "4a, 3b, 2c"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 7"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is the result of (3 + 2) × (6 - 4)?",
+    "options": [
+      "11",
+      "10",
+      "12"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 8"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What happens when removing brackets in 4(y - 5)?",
+    "options": [
+      "4y - 5",
+      "4y - 20",
+      "4y + 20"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 8"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "How do you add algebraic fractions?",
+    "options": [
+      "Add numerators directly",
+      "Make denominators the same, then add numerators",
+      "Multiply numerators and denominators"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 10"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is the LCM (Lowest Common Multiple) of x, x², x³?",
+    "options": [
+      "x",
+      "x²",
+      "x³"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 10"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is the process of changing the subject of a formula called?",
+    "options": [
+      "Substitution",
+      "Transposition",
+      "Elimination"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "If A = LB, how can we make L the subject?",
+    "options": [
+      "Multiply both sides by B",
+      "Divide both sides by B",
+      "Add B to both sides"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is the correct way to transpose Y = X/Z to make X the subject?",
+    "options": [
+      "X = Y × Z",
+      "X = Y / Z",
+      "X = Z / Y"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "What is a coefficient in algebra?",
+    "options": [
+      "A number that multiplies a variable",
+      "A symbol representing an unknown value",
+      "The sum of all numbers in an equation"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 2,
+    "level": 1,
+    "question": "In algebra, what is a term?",
+    "options": [
+      "A single number, variable, or a combination of both",
+      "The total of all numbers in an equation",
+      "The final result of an equation"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What is a bar graph used for?",
+    "options": [
+      "Measuring angles",
+      "Comparing data between groups",
+      "Solving equations"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 6"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What does a pie chart represent?",
+    "options": [
+      "Changes over time",
+      "Parts of a whole",
+      "Frequency distribution"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 10"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "Which two lines form a coordinate system?",
+    "options": [
+      "Diagonal and vertical lines",
+      "Horizontal and curved lines",
+      "X-axis and Y-axis"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What is the purpose of a frequency histogram?",
+    "options": [
+      "To show how often each value appears",
+      "To compare two different variables",
+      "To display equations graphically"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 8"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What type of graph is used to track changes over time?",
+    "options": [
+      "Bar graph",
+      "Line graph",
+      "Pie chart"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 8"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What is the intersection point of the X and Y axes called?",
+    "options": [
+      "Endpoint",
+      "Center",
+      "Origin"
+    ],
+    "correctIndex": 2,
+    "reference": "Reference content page 12"
+  },
+  {
+    "chapter": 3,
+    "level": 1,
+    "question": "What is the equation of a straight line?",
+    "options": [
+      "y = mx + c",
+      "y = x² + bx + c",
+      "y = a sin(x)"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 36"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "What does the slope (m) in the equation y = mx + c represent?",
+    "options": [
+      "The point where the line crosses the x-axis",
+      "The steepness of the line",
+      "The total length of the line"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "Which function represents a parabolic curve?",
+    "options": [
+      "y = mx + c",
+      "y = ax² + bx + c",
+      "y = a/x"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "How do you determine the x-intercept of a straight line equation?",
+    "options": [
+      "Set x = 0 and solve for y",
+      "Set y = 0 and solve for x",
+      "Multiply the slope by the y-intercept"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "Which function is used to model exponential growth?",
+    "options": [
+      "y = a ln(x) + b",
+      "y = ab^x",
+      "y = ax² + bx + c"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "What is the purpose of an asymptote in a rational function graph?",
+    "options": [
+      "It represents a value the function approaches but never reaches",
+      "It indicates where the function has no solution",
+      "It determines the maximum value of the function"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "What does a sinusoidal function represent?",
+    "options": [
+      "A function with increasing and decreasing waves",
+      "A straight-line function",
+      "A function with exponential decay"
+    ],
+    "correctIndex": 0,
+    "reference": "Reference content page 38"
+  },
+  {
+    "chapter": 3,
+    "level": 2,
+    "question": "How do you determine the equation of a straight line passing through two given points?",
+    "options": [
+      "Use the midpoint formula",
+      "Calculate the slope and solve for c",
+      "Use only the x-coordinates of both points"
+    ],
+    "correctIndex": 1,
+    "reference": "Reference content page 38"
+  }
+]
