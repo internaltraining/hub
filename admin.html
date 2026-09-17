@@ -77,12 +77,12 @@
   .mod-title { font-weight: 700; font-size: 18px; color: var(--text-main); }
   .mod-sub { font-size: 13px; color: var(--text-sub); }
 
-  /* GIAO DIỆN CÂU HỎI (CHUẨN TRANG CHÍNH) */
+  /* GIAO DIỆN CÂU HỎI TRẮC NGHIỆM */
   .q-text { font-size: 18px; font-weight: 600; margin-bottom: 16px; line-height: 1.45; letter-spacing: -0.022em; }
   .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 16px; padding: 14px 18px; margin-bottom: 10px; text-align: left; font-size: 15px; color: var(--text-main); cursor: pointer; display: flex; gap: 12px; align-items: flex-start; line-height: 1.4; }
   .opt-label { font-weight: 600; color: var(--text-sub); flex-shrink: 0; }
   
-  /* Trạng thái thi thử (Mock Exam) */
+  /* Trạng thái đáp án */
   .opt-btn.selected { border-color: var(--accent); background: var(--accent-bg); }
   .opt-btn.correct { background: var(--success-bg); border-color: transparent; color: var(--success); font-weight: 500; }
   .opt-btn.correct .opt-label { color: var(--success); }
@@ -152,14 +152,14 @@
     <div class="top-action-bar">
       <div>
         <div class="page-title" id="ws-title" style="font-size:24px;">Tên Module</div>
-        <div class="page-sub" id="ws-sub" style="margin-bottom:0;">Đang xử lý file...</div>
+        <div class="page-sub" id="ws-sub" style="margin-bottom:0; font-weight:600; color:var(--accent);">Chế độ Admin</div>
       </div>
       <button class="btn-secondary anim-btn" style="width: auto; padding: 10px 20px;" onclick="goBackToDashboard()">🔙 Quay Lại</button>
     </div>
 
     <div class="tab-menu">
-      <button class="tab-btn active anim-btn" onclick="switchWsTab('ws-editor', this)">✏️ Chỉnh Sửa JSON</button>
-      <button class="tab-btn anim-btn" onclick="switchWsTab('ws-analyzer', this)">🔍 Phân Tích Bẫy</button>
+      <button class="tab-btn active anim-btn" onclick="switchWsTab('ws-editor', this)">✏️ Chỉnh Sửa Câu Hỏi</button>
+      <button class="tab-btn anim-btn" onclick="switchWsTab('ws-analyzer', this)">🔍 Lọc Phân Tích (Test)</button>
       <button class="tab-btn anim-btn" onclick="switchWsTab('ws-mock', this)">🎯 Thi Thử (Nộp Sau)</button>
     </div>
 
@@ -167,26 +167,41 @@
     <div id="ws-editor" class="ws-content">
       <div class="card">
         <div style="display:flex; justify-content:space-between; margin-bottom:16px; align-items:center;">
-          <span style="font-weight:700;">Danh sách câu hỏi</span>
-          <button class="btn-primary anim-btn" style="width:auto; padding:8px 16px;" onclick="exportEditorJSON()">💾 Lưu & Tải JSON</button>
+          <span style="font-weight:700;">Ngân hàng dữ liệu</span>
+          <button class="btn-primary anim-btn" style="width:auto; padding:8px 16px;" onclick="exportEditorJSON()">💾 Lưu & Tải JSON mới</button>
         </div>
         <div id="editorListArea">Đang tải...</div>
       </div>
     </div>
 
-    <!-- TAB 2.2: ANALYZER - LỌC CÂU DÀI NHẤT (Yêu cầu 2) -->
+    <!-- TAB 2.2: ANALYZER (THỰC HÀNH TRÊN NHÓM ĐÃ LỌC) -->
     <div id="ws-analyzer" class="ws-content hidden">
       <div class="card">
         <div class="tab-menu" style="background:transparent; padding:0; margin-bottom:16px; border:none;">
-          <button class="tab-btn active anim-btn" onclick="switchAnalyzerTab('g1', this)">✅ Dài Nhất Là ĐÚNG (<span id="countG1">0</span>)</button>
-          <button class="tab-btn anim-btn" onclick="switchAnalyzerTab('g2', this)">⚠️ Các câu còn lại (<span id="countG2">0</span>)</button>
+          <button class="tab-btn active anim-btn" id="btnTabG1" onclick="startAnalyzerQuiz('g1')">✅ Nhóm 1: Dài nhất là ĐÚNG (<span id="countG1">0</span>)</button>
+          <button class="tab-btn anim-btn" id="btnTabG2" onclick="startAnalyzerQuiz('g2')">⚠️ Nhóm 2: Các câu còn lại (<span id="countG2">0</span>)</button>
         </div>
-        <div id="g1" class="analyzer-tab"></div>
-        <div id="g2" class="analyzer-tab hidden"></div>
+        
+        <div id="analyzerEmpty" class="hidden" style="text-align:center; padding:20px; color:var(--text-sub);">Không có câu hỏi nào trong nhóm này.</div>
+
+        <!-- Trình chơi Quiz cho Analyzer (Báo đúng/sai ngay lập tức) -->
+        <div id="analyzerQuizUI">
+          <div style="font-weight:700; margin-bottom:16px; color:var(--text-sub);">
+            Câu <span id="azCurrentText">1</span> / <span id="azTotalText">0</span>
+          </div>
+          <div class="q-text" id="azQText">Loading...</div>
+          <div id="azOptions"></div>
+          <div class="nav-bar">
+            <button class="btn-secondary anim-btn" onclick="azPrev()" id="btnAzPrev">‹ Trở lại</button>
+            <button class="btn-secondary anim-btn" onclick="azNext()" id="btnAzNext">Tiếp ›</button>
+          </div>
+          <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px; text-transform:uppercase;">Palette (Lọc)</h4>
+          <div class="palette-grid" id="azPalette"></div>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 2.3: MOCK EXAM - THI THỬ (Yêu cầu 3) -->
+    <!-- TAB 2.3: MOCK EXAM - THI THỬ (Yêu cầu 3 - Nộp mới chấm) -->
     <div id="ws-mock" class="ws-content hidden">
       <div class="card">
         <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
@@ -202,11 +217,11 @@
           <button class="btn-secondary anim-btn" onclick="mockNext()" id="btnMockNext">Tiếp ›</button>
         </div>
 
-        <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px; text-transform:uppercase; letter-spacing:0.05em;">Palette</h4>
+        <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px; text-transform:uppercase;">Bảng câu hỏi (Thi thử)</h4>
         <div class="palette-grid" id="mockPalette"></div>
         
         <button class="btn-primary anim-btn" style="margin-top:24px;" onclick="submitMockExam()" id="btnSubmitMock">Nộp Bài Chấm Điểm</button>
-        <button class="btn-secondary anim-btn" style="margin-top:12px; display:none;" onclick="startMockExam()" id="btnRetryMock">Thi Lại</button>
+        <button class="btn-secondary anim-btn" style="margin-top:12px; display:none;" onclick="startMockExam()" id="btnRetryMock">Thi Lại (Xóa Kết Quả)</button>
       </div>
     </div>
 
@@ -224,7 +239,7 @@
   function handleLogout() { sessionStorage.clear(); window.location.replace("index.html"); }
   function showToast(msg) { const t = document.getElementById('toast'); t.innerText = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); }
 
-  // Khởi động: Lấy danh sách từ data/modules.json giống trang chính
+  // KHỞI ĐỘNG: LOAD MODULES.JSON ĐÃ SỬA CÁI LỖI HIỂN THỊ CHỮ
   async function initAdmin() {
     try {
       const res = await fetch('data/modules.json?v=' + Date.now());
@@ -232,7 +247,7 @@
       document.getElementById('adminModuleList').innerHTML = allModules.map(m => `
         <div class="mod-card anim-btn" onclick="openModule('${m.file}', '${m.title}')">
           <div class="mod-title">${m.title}</div>
-          <div class="mod-sub">${m.file} • ${m.desc}</div>
+          <div class="mod-sub">${m.desc}</div> <!-- Xóa chữ data/m1.json đi rồi nhé -->
         </div>
       `).join('');
     } catch(e) {
@@ -240,7 +255,6 @@
     }
   }
 
-  // Tải file notice.txt
   function generateNoticeFile() {
     const text = document.getElementById('noticeInput').value.trim();
     if (!text) return alert("Nhập nội dung thông báo!");
@@ -253,7 +267,6 @@
   async function openModule(fileUrl, title) {
     currentFileName = fileUrl.split('/').pop();
     document.getElementById('ws-title').innerText = title;
-    document.getElementById('ws-sub').innerText = "Đang thao tác file: " + fileUrl;
     
     document.getElementById('view-dashboard').classList.add('hidden');
     document.getElementById('view-workspace').classList.remove('hidden');
@@ -265,10 +278,10 @@
       
       // Khởi tạo cả 3 tab
       renderEditor();
-      runAnalyzer();
+      prepareAnalyzer(); // Tách mảng G1 G2
       startMockExam();
     } catch(e) {
-      alert("Lỗi không tải được " + fileUrl + ". Hãy chắc chắn file tồn tại trong thư mục data/");
+      alert("Lỗi không tải được " + fileUrl);
       goBackToDashboard();
     }
   }
@@ -307,7 +320,6 @@
             <span class="edit-label" style="color:var(--success);">Câu Đúng</span>
             <select class="edit-input" id="q_${idx}_ans" style="font-weight:bold; background:var(--success-bg);">${selHTML}</select>
           </div>
-          <div class="edit-row"><span class="edit-label">Ghi chú</span><input type="text" class="edit-input" id="q_${idx}_ref" value="${q[4] || ''}"></div>
         </div>
       `;
     }).join('');
@@ -319,59 +331,106 @@
       let text = document.getElementById(`q_${idx}_text`).value;
       let opts = q[2].map((_, i) => document.getElementById(`q_${idx}_opt_${i}`).value);
       let ans = parseInt(document.getElementById(`q_${idx}_ans`).value);
-      let ref = document.getElementById(`q_${idx}_ref`).value;
+      let ref = q[4] || ""; // Giữ nguyên ref nếu có
       result.push([q[0], text, opts, ans, ref]);
     });
     
-    // Cập nhật lại data hiện tại trên RAM
-    currentData = result; 
-    
+    currentData = result; // Lưu vào RAM
     const blob = new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob); a.download = currentFileName; a.click();
     
     showToast("Đã lưu và tải file: " + currentFileName);
-    // Cập nhật lại các tab khác với data mới
-    runAnalyzer(); startMockExam();
+    prepareAnalyzer(); startMockExam(); // Refresh các tab khác
   }
 
-  /* ================= TAB 2: ANALYZER (LỌC BẪY) ================= */
-  function switchAnalyzerTab(groupId, btn) {
-    document.querySelectorAll('.analyzer-tab').forEach(c => c.classList.add('hidden'));
-    document.querySelectorAll('#ws-analyzer .tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(groupId).classList.remove('hidden');
-    btn.classList.add('active');
-  }
+  /* ================= TAB 2: ANALYZER (LÀM TRẮC NGHIỆM TRÊN TỪNG NHÓM) ================= */
+  let globalG1 = [], globalG2 = [];
+  let azData = [], azAnswers = {}, azCurrent = 0;
 
-  function runAnalyzer() {
-    let g1 = [], g2 = [];
+  function prepareAnalyzer() {
+    globalG1 = []; globalG2 = [];
     currentData.forEach(q => {
       let maxLen = Math.max(...q[2].map(o => o.length));
-      // Nếu đáp án đúng (q[3]) có độ dài bằng đáp án dài nhất -> Cho vào nhóm 1
-      if (q[2][q[3]] && q[2][q[3]].length === maxLen) g1.push(q); else g2.push(q);
+      if (q[2][q[3]] && q[2][q[3]].length === maxLen) globalG1.push(q); else globalG2.push(q);
     });
-    document.getElementById('countG1').innerText = g1.length;
-    document.getElementById('countG2').innerText = g2.length;
-    document.getElementById('g1').innerHTML = renderAnalyzerUI(g1);
-    document.getElementById('g2').innerHTML = renderAnalyzerUI(g2);
+    document.getElementById('countG1').innerText = globalG1.length;
+    document.getElementById('countG2').innerText = globalG2.length;
+    startAnalyzerQuiz('g1'); // Mặc định mở Nhóm 1
   }
 
-  function renderAnalyzerUI(list) {
-    if(list.length === 0) return "<p style='color:var(--text-sub)'>Không có câu hỏi nào trong nhóm này.</p>";
-    return list.map(q => `
-      <div style="margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--border);">
-        <div class="q-text">${q[1]}</div>
-        ${q[2].map((opt, i) => `
-          <div class="opt-btn ${i == q[3] ? 'correct' : ''}" style="cursor:default;">
-            <span class="opt-label">${String.fromCharCode(65+i)}.</span>
-            <span style="flex:1;">${opt}</span>
-          </div>
-        `).join('')}
-      </div>
-    `).join('');
+  function startAnalyzerQuiz(group) {
+    document.getElementById('btnTabG1').classList.toggle('active', group === 'g1');
+    document.getElementById('btnTabG2').classList.toggle('active', group === 'g2');
+    
+    azData = (group === 'g1') ? globalG1 : globalG2;
+    azAnswers = {}; azCurrent = 0;
+
+    if (azData.length === 0) {
+      document.getElementById('analyzerQuizUI').classList.add('hidden');
+      document.getElementById('analyzerEmpty').classList.remove('hidden');
+    } else {
+      document.getElementById('analyzerQuizUI').classList.remove('hidden');
+      document.getElementById('analyzerEmpty').classList.add('hidden');
+      renderAzQuestion();
+    }
   }
 
-  /* ================= TAB 3: MOCK EXAM ================= */
+  function renderAzQuestion() {
+    let q = azData[azCurrent];
+    document.getElementById('azCurrentText').innerText = azCurrent + 1;
+    document.getElementById('azTotalText').innerText = azData.length;
+    document.getElementById('azQText').innerText = q[1];
+    
+    let html = q[2].map((opt, i) => {
+      let classes = "opt-btn anim-btn";
+      let ans = azAnswers[azCurrent];
+      let isAnswered = (ans !== undefined);
+      
+      // Logic chấm điểm giống hệt trang chính
+      if (isAnswered) {
+        if (i === q[3]) classes += " correct";
+        else if (i === ans) classes += " wrong";
+        else classes += " dimmed";
+      }
+      
+      return `
+        <button class="${classes}" onclick="azSelect(${i})" ${isAnswered ? 'disabled' : ''}>
+          <span class="opt-label">${String.fromCharCode(65+i)}.</span> 
+          <span style="flex:1;">${opt}</span>
+        </button>
+      `;
+    }).join('');
+    
+    document.getElementById('azOptions').innerHTML = html;
+    document.getElementById('btnAzPrev').disabled = (azCurrent === 0);
+    document.getElementById('btnAzNext').disabled = (azCurrent === azData.length - 1);
+    renderAzPalette();
+  }
+
+  function azSelect(idx) {
+    if (azAnswers[azCurrent] !== undefined) return; // Đã trả lời thì cấm bấm
+    azAnswers[azCurrent] = idx;
+    renderAzQuestion();
+  }
+
+  function azNext() { if(azCurrent < azData.length - 1) { azCurrent++; renderAzQuestion(); } }
+  function azPrev() { if(azCurrent > 0) { azCurrent--; renderAzQuestion(); } }
+  function jumpAz(idx) { azCurrent = idx; renderAzQuestion(); }
+
+  function renderAzPalette() {
+    document.getElementById('azPalette').innerHTML = azData.map((q, i) => {
+      let cls = "palette-btn anim-btn";
+      if (i === azCurrent) cls += " active";
+      if (azAnswers[i] !== undefined) {
+        if (azAnswers[i] === q[3]) cls += " done-correct";
+        else cls += " done-wrong";
+      }
+      return `<button class="${cls}" onclick="jumpAz(${i})">${i+1}</button>`;
+    }).join('');
+  }
+
+  /* ================= TAB 3: MOCK EXAM (THI THỬ - NỘP MỚI CHẤM) ================= */
   let mockAnswers = {}, mockCurrent = 0, isMockSubmitted = false;
 
   function startMockExam() {
@@ -388,18 +447,17 @@
     document.getElementById('mockCurrentIndex').innerText = mockCurrent + 1;
     document.getElementById('mockQText').innerText = q[1];
     
-    // RENDER OPTIONS
     document.getElementById('mockOptions').innerHTML = q[2].map((opt, i) => {
       let classes = "opt-btn anim-btn";
       
-      // Trạng thái chưa nộp (Chỉ highlight màu xanh dương khi tick)
+      // Trước khi nộp: Chỉ sáng viền màu xanh (selected) nếu đã tick
       if (!isMockSubmitted && mockAnswers[mockCurrent] === i) classes += " selected";
       
-      // Trạng thái đã nộp (Hiện đúng/sai)
+      // Sau khi nộp: Mới hiện Xanh/Đỏ
       if (isMockSubmitted) {
-        if (i === q[3]) classes += " correct"; // Luôn xanh đáp án đúng
-        else if (mockAnswers[mockCurrent] === i) classes += " wrong"; // Nếu chọn sai thì đỏ
-        else classes += " dimmed"; // Còn lại làm mờ
+        if (i === q[3]) classes += " correct";
+        else if (mockAnswers[mockCurrent] === i) classes += " wrong";
+        else classes += " dimmed";
       }
       
       return `
@@ -410,17 +468,15 @@
       `;
     }).join('');
     
-    // NAV BUTTONS
     document.getElementById('btnMockPrev').disabled = (mockCurrent === 0);
     document.getElementById('btnMockNext').disabled = (mockCurrent === currentData.length - 1);
-    
     renderMockPalette();
   }
 
   function selectMockOption(idx) {
-    if (isMockSubmitted) return; // Nộp rồi cấm sửa
+    if (isMockSubmitted) return;
     mockAnswers[mockCurrent] = idx;
-    renderMockQuestion(); // Render lại để bôi xanh đáp án vừa bấm
+    renderMockQuestion(); // Render lại để bôi xanh ô vừa tick
   }
 
   function mockNext() { if (mockCurrent < currentData.length - 1) { mockCurrent++; renderMockQuestion(); } }
@@ -430,10 +486,12 @@
   function renderMockPalette() {
     document.getElementById('mockPalette').innerHTML = currentData.map((q, i) => {
       let cls = "palette-btn anim-btn";
-      if (i === mockCurrent) cls += " active"; // Câu đang hiển thị
+      if (i === mockCurrent) cls += " active";
       
-      if (!isMockSubmitted && mockAnswers[i] !== undefined) cls += " answered"; // Đã tick thì xám đen lại
+      // Bôi màu Xám Đen (Answered) nếu đã tick nhưng chưa nộp
+      if (!isMockSubmitted && mockAnswers[i] !== undefined) cls += " answered";
       
+      // Tô Xanh/Đỏ nếu đã nộp
       if (isMockSubmitted) {
         if (mockAnswers[i] === q[3]) cls += " done-correct";
         else cls += " done-wrong";
@@ -444,10 +502,9 @@
   }
 
   function submitMockExam() {
-    // Đếm số câu chưa làm
     let unanswered = currentData.length - Object.keys(mockAnswers).length;
     if(unanswered > 0) {
-      if(!confirm(`Bạn còn ${unanswered} câu chưa chọn đáp án. Có chắc chắn muốn nộp bài?`)) return;
+      if(!confirm(`Bạn còn ${unanswered} câu chưa làm. Bạn chắc chắn muốn nộp bài?`)) return;
     } else {
       if(!confirm("Bạn chắc chắn muốn nộp bài chứ?")) return;
     }
@@ -462,11 +519,11 @@
     document.getElementById('btnSubmitMock').style.display = 'none';
     document.getElementById('btnRetryMock').style.display = 'block';
     
-    renderMockQuestion(); // Render lại câu hiện tại để hiện màu Xanh/Đỏ
+    renderMockQuestion(); // Mở khóa đáp án Xanh/Đỏ
     showToast(`Đã nộp! Điểm của bạn: ${score}/${currentData.length}`);
   }
 
-  // Khởi động
+  // Khởi động khi vào trang Admin
   initAdmin();
 </script>
 </body>
