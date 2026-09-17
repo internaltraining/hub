@@ -1,0 +1,22 @@
+[
+  [1, "What is the primary function of a propeller in an aircraft? (Lvl 1)", ["To generate electricity", "To convert engine power into thrust", "To reduce aerodynamic drag"], 1, "M17"],
+  [2, "What is the main difference between a propeller and a gas turbine engine in terms of air movement? (Lvl 1)", ["A propeller moves a large mass of air slowly, while a gas turbine moves a small mass of air quickly", "A propeller uses fuel directly, while a gas turbine does not", "A gas turbine is always more efficient than a propeller"], 0, "M17"],
+  [3, "What is the blade angle of a propeller? (Lvl 1)", ["The angle between the propeller’s plane of rotation and the chord line of the blade", "The angle between the blade and the engine", "The angle between the aircraft’s fuselage and the propeller"], 0, "M17"],
+  [4, "What is the purpose of blade twist in a propeller? (Lvl 1)", ["To reduce the weight of the propeller", "To increase the propeller’s rotational speed", "To ensure an efficient angle of attack along the entire blade length"], 2, "M17"],
+  [5, "What is the term for a propeller that is freely rotating due to engine failure? (Lvl 1)", ["Windmilling", "Auto-rotation", "Freewheeling"], 0, "M17"],
+  [6, "What material is commonly used in modern propellers for strength and lightweight properties? (Lvl 1)", ["Steel", "Lead", "Carbon fiber"], 2, "M17"],
+  [7, "What is the main disadvantage of a fixed-pitch propeller? (Lvl 1)", ["It is too expensive", "It is efficient at only one airspeed and power setting", "It requires constant maintenance"], 1, "M17"],
+  [8, "What is the key feature of a double-acting propeller system? (Lvl 1)", ["It only operates at a single speed", "It uses oil pressure on both sides of the piston for movement", "It requires no lubrication"], 1, "M17"],
+  [9, "How does a constant-speed propeller maintain engine efficiency? (Lvl 1)", ["By automatically adjusting the blade pitch to maintain a constant RPM", "By using flexible blades", "By reducing propeller weight"], 0, "M17"],
+  [10, "What are the three main types of crankshafts used for propeller installation? (Lvl 1)", ["Splined, flanged, and tapered", "Threaded, riveted, and bolted", "Fixed, moving, and variable"], 0, "M17"],
+  [11, "What is the advantage of a variable-pitch propeller? (Lvl 1)", ["It makes the aircraft faster", "It reduces the aircraft's fuel consumption significantly", "It allows the propeller to operate efficiently under different flight conditions"], 2, "M17"],
+  [12, "What component is commonly used to regulate propeller pitch automatically? (Lvl 1)", ["The aircraft throttle", "The carburetor", "The governor"], 2, "M17"],
+  [13, "What is the purpose of feathering a propeller? (Lvl 1)", ["To reduce drag in case of an engine failure", "To increase aircraft speed", "To improve fuel efficiency"], 0, "M17"],
+  [14, "What is the main purpose of propeller ice protection systems? (Lvl 1)", ["To increase propeller speed", "To prevent or remove ice buildup on the propeller", "To lubricate the propeller blades"], 1, "M17"],
+  [15, "What is the primary function of electrical de-icing systems? (Lvl 1)", ["To prevent ice from forming on the aircraft fuselage", "To store electricity for emergency use", "To remove ice after it has already formed on the propeller blades"], 2, "M17"],
+  [16, "What is propeller tracking? (Lvl 1)", ["Checking the propeller’s rotation speed", "Ensuring all blades follow the same path during rotation", "Measuring the propeller’s weight"], 1, "M17"],
+  [17, "What is the purpose of static balancing in propeller maintenance? (Lvl 1)", ["To adjust the engine power", "To lubricate the propeller bearings", "To ensure the center of gravity is aligned with the axis of rotation"], 2, "M17"],
+  [18, "What is the main function of the propeller governor in engine operation? (Lvl 1)", ["To adjust the propeller’s weight", "To regulate propeller pitch and maintain constant RPM", "To increase engine power"], 1, "M17"],
+  [19, "What is the primary purpose of propeller storage and preservation? (Lvl 1)", ["To increase the efficiency of the propeller", "To prevent corrosion and damage", "To reduce engine noise"], 1, "M17"],
+  [20, "Where can specific instructions for propeller preservation and depreservation be found? (Lvl 1)", ["In the Component Maintenance Manual (CMM) and Service Bulletins (SB)", "In the aircraft logbook", "In the aircraft’s flight manual"], 0, "M17"]
+]
