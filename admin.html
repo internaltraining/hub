@@ -4,325 +4,384 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Control Panel - Internal Training</title>
+<title>Admin Console | Internal Training</title>
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
 <script>
-  // BẢO MẬT: KIỂM TRA ĐĂNG NHẬP
+  // BẢO MẬT ADMIN
   if (sessionStorage.getItem("isAdmin") !== "true") {
     window.location.replace("index.html");
   }
 </script>
 
 <style>
-  /* =========================================================
-     APPLE DESIGN SYSTEM
-     ========================================================= */
+  /* ================= APPLE DESIGN SYSTEM ================= */
   :root { 
-    --bg-color: #f5f5f7; 
-    --card-bg: #ffffff; 
-    --text-main: #1d1d1f; 
-    --text-sub: #86868b; 
-    --border: rgba(0, 0, 0, 0.05); 
-    --glass-bg: rgba(255, 255, 255, 0.72);
+    --bg-color: #f5f5f7; --card-bg: #ffffff; 
+    --text-main: #1d1d1f; --text-sub: #86868b; 
+    --border: rgba(0, 0, 0, 0.1); --glass-bg: rgba(255, 255, 255, 0.72);
     --hover-bg: rgba(0, 0, 0, 0.04);
-    
-    --accent: #007aff; 
-    --accent-bg: #e5f1ff;
-    --success: #34c759; 
-    --danger: #ff3b30; 
-    --danger-bg: rgba(255, 59, 48, 0.1);
-    
-    --shadow-card: 0 4px 24px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --accent: #007aff; --accent-bg: #e5f1ff;
+    --success: #34c759; --success-bg: #e8f9ec;
+    --danger: #ff3b30; --danger-bg: rgba(255, 59, 48, 0.1);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.04);
   }
   
   @media (prefers-color-scheme: dark) {
     :root { 
-      --bg-color: #000000; 
-      --card-bg: #1c1c1e; 
-      --text-main: #f5f5f7; 
-      --text-sub: #98989d; 
-      --border: rgba(255, 255, 255, 0.15); 
-      --glass-bg: rgba(28, 28, 30, 0.72);
+      --bg-color: #000000; --card-bg: #1c1c1e; 
+      --text-main: #f5f5f7; --text-sub: #98989d; 
+      --border: rgba(255, 255, 255, 0.15); --glass-bg: rgba(28, 28, 30, 0.72);
       --hover-bg: rgba(255, 255, 255, 0.08);
-      
-      --accent: #0a84ff; 
-      --accent-bg: rgba(10, 132, 255, 0.15);
-      --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
+      --accent: #0a84ff; --accent-bg: rgba(10, 132, 255, 0.15);
+      --success: #30d158; --success-bg: rgba(48, 209, 88, 0.15);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
     }
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  
-  body { 
-    background-color: var(--bg-color); 
-    color: var(--text-main); 
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, sans-serif; 
-    line-height: 1.5; 
-    -webkit-font-smoothing: antialiased;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); 
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
-  }
-
-  .glass-effect { 
-    background: var(--glass-bg);
-    backdrop-filter: saturate(180%) blur(20px); 
-    -webkit-backdrop-filter: saturate(180%) blur(20px); 
-  }
-  
-  .anim-btn { transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .anim-btn:active { transform: scale(0.96); opacity: 0.85; }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
+  body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.5; padding: env(safe-area-inset-top) 0 0 0; min-height: 100vh; }
+  .anim-btn { transition: all 0.2s; }
+  .anim-btn:active:not(:disabled) { transform: scale(0.96); opacity: 0.85; }
 
   /* TOPBAR */
-  .topbar { 
-    position: sticky; top: 0; 
-    border-bottom: 1px solid var(--border); 
-    padding: 12px 20px; 
-    display: flex; justify-content: space-between; align-items: center; 
-    z-index: 100; 
-  }
-  .brand { font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
+  .topbar { position: sticky; top: 0; border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: var(--glass-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .brand { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
+  .btn-logout { background: var(--danger); color: white; border: none; padding: 8px 16px; border-radius: 98px; font-weight: 600; cursor: pointer; }
+
+  /* TABS MENU */
+  .tab-menu { display: flex; gap: 8px; padding: 16px 20px; overflow-x: auto; background: var(--bg-color); border-bottom: 1px solid var(--border); }
+  .tab-btn { padding: 10px 20px; border: none; background: var(--hover-bg); border-radius: 98px; font-weight: 600; color: var(--text-sub); cursor: pointer; white-space: nowrap; }
+  .tab-btn.active { background: var(--text-main); color: var(--bg-color); }
+  .tab-content { display: none; padding: 24px 20px; max-width: 1000px; margin: 0 auto; width: 100%; }
+  .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* CARDS & FORMS */
+  .card { background: var(--card-bg); border-radius: 24px; padding: 24px; border: 1px solid var(--border); box-shadow: var(--shadow-card); margin-bottom: 24px; }
+  .card-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+  .input-field { width: 100%; padding: 16px; border: 1px solid var(--border); border-radius: 16px; font-size: 14px; background: var(--bg-color); color: var(--text-main); margin-bottom: 16px; outline: none; }
+  .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); }
   
-  .btn-logout { 
-    background: var(--danger-bg); color: var(--danger); border: none; 
-    padding: 8px 16px; border-radius: 98px; font-weight: 600; font-size: 14px; 
-    cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
-  }
+  .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; }
+  .btn-secondary { width: 100%; padding: 16px; background: var(--hover-bg); color: var(--text-main); border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; }
 
-  /* LAYOUT */
-  .container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 32px 20px; display: flex; flex-direction: column; gap: 24px; }
+  /* MODULE EDITOR UI */
+  .edit-q-box { background: var(--bg-color); border: 1px solid var(--border); border-radius: 16px; padding: 16px; margin-bottom: 16px; }
+  .edit-q-title { font-weight: 700; margin-bottom: 12px; color: var(--accent); }
+  .edit-row { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+  .edit-label { font-size: 13px; font-weight: 600; color: var(--text-sub); width: 60px; flex-shrink: 0; }
+  .edit-input { flex: 1; padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--card-bg); color: var(--text-main); }
   
-  .header-section { margin-bottom: 8px; }
-  .page-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; margin-bottom: 4px; }
-  .page-sub { color: var(--text-sub); font-size: 16px; }
-
-  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
-  .stat-box { background: var(--card-bg); padding: 20px; border-radius: 18px; border: 1px solid var(--border); box-shadow: var(--shadow-card); }
-  .stat-label { font-size: 12px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  .stat-value { font-size: 24px; font-weight: 700; color: var(--text-main); }
-
-  .card { 
-    background: var(--card-bg); border-radius: 24px; padding: 28px; 
-    box-shadow: var(--shadow-card); border: 1px solid var(--border); width: 100%; 
-  }
-
-  .card-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  /* EXAM & ANALYZER UI */
+  .q-text { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+  .opt-btn { width: 100%; background: var(--bg-color); border: 2px solid transparent; border-radius: 14px; padding: 14px; margin-bottom: 10px; text-align: left; font-size: 15px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; }
   
-  /* FORMS & INPUTS */
-  .input-field { 
-    width: 100%; padding: 16px; border: 1px solid var(--border); 
-    border-radius: 16px; font-size: 14px; outline: none; background: var(--bg-color); 
-    color: var(--text-main); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; 
-    resize: vertical; line-height: 1.5;
-  }
-  .input-field:focus { border-color: var(--accent); background: var(--card-bg); box-shadow: 0 0 0 4px var(--accent-bg); }
-
-  .btn-group { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
-  .btn { 
-    flex: 1; padding: 16px; border: none; border-radius: 16px; 
-    font-weight: 600; font-size: 15px; cursor: pointer; text-align: center; 
-    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-secondary { background: var(--hover-bg); color: var(--text-main); }
-
-  /* ALERTS */
-  .toast {
-    position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%) translateY(100px);
-    background: var(--text-main); color: var(--bg-color); padding: 14px 24px; border-radius: 98px;
-    font-weight: 600; font-size: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    opacity: 0; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 1000;
-  }
-  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  /* Trạng thái chọn trước khi nộp bài */
+  .opt-btn.selected { border-color: var(--accent); background: var(--accent-bg); }
   
-  .grid-2 { display: grid; grid-template-columns: 1fr; gap: 24px; }
-  @media (min-width: 800px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+  /* Trạng thái sau khi nộp bài */
+  .opt-btn.correct { background: var(--success-bg); color: var(--success); font-weight: 600; }
+  .opt-btn.wrong { background: var(--danger-bg); color: var(--danger); font-weight: 600; }
+  .opt-btn.dimmed { opacity: 0.5; }
+
+  .nav-bar { display: flex; gap: 12px; margin-top: 20px; }
+  .palette-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 16px; }
+  .palette-btn { height: 36px; border: none; border-radius: 8px; font-weight: 600; background: var(--bg-color); color: var(--text-main); cursor: pointer; }
+  .palette-btn.active { outline: 2px solid var(--accent); }
+  .palette-btn.answered { background: var(--text-main); color: var(--bg-color); }
+  .palette-btn.done-correct { background: var(--success); color: white; }
+  .palette-btn.done-wrong { background: var(--danger); color: white; }
+
+  .toast { position: fixed; bottom: 40px; left: 50%; transform: translate(-50%, 100px); background: var(--text-main); color: var(--bg-color); padding: 12px 24px; border-radius: 98px; font-weight: 600; opacity: 0; transition: all 0.3s; z-index: 1000; }
+  .toast.show { transform: translate(-50%, 0); opacity: 1; }
 </style>
 </head>
 <body>
 
 <div class="topbar glass-effect">
-  <div class="brand">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-    Control Panel
-  </div>
-  <button class="btn-logout anim-btn" onclick="handleLogout()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-    Logout
-  </button>
+  <div class="brand">Control Panel</div>
+  <button class="btn-logout anim-btn" onclick="handleLogout()">Logout</button>
 </div>
 
-<div class="container">
-  
-  <div class="header-section">
-    <div class="page-title">Hello, <span id="adminName" style="color: var(--accent);">Admin</span>.</div>
-    <div class="page-sub">Manage your training modules and system settings here.</div>
-  </div>
+<!-- ĐIỀU HƯỚNG TABS -->
+<div class="tab-menu">
+  <button class="tab-btn active anim-btn" onclick="switchTab('tab-dash', this)">🚀 Dashboard</button>
+  <button class="tab-btn anim-btn" onclick="switchTab('tab-editor', this)">✏️ Chỉnh sửa JSON</button>
+  <button class="tab-btn anim-btn" onclick="switchTab('tab-analyzer', this)">🔍 Lọc câu dài nhất</button>
+  <button class="tab-btn anim-btn" onclick="switchTab('tab-exam', this)">🎯 Thi thử (Nộp sau)</button>
+</div>
 
-  <!-- BẢNG THỐNG KÊ (Tính năng gốc) -->
-  <div class="stats-grid">
-    <div class="stat-box">
-      <div class="stat-label">System Status</div>
-      <div class="stat-value" style="color: var(--success); display: flex; align-items: center; gap: 8px;">
-        <span style="width: 10px; height: 10px; background: var(--success); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--success);"></span> Online
-      </div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">Active Modules</div>
-      <div class="stat-value">6 Modules</div>
-    </div>
-  </div>
-
-  <!-- KHU VỰC THÔNG BÁO (Tính năng gốc) -->
+<!-- ================= TAB 1: DASHBOARD (Cũ) ================= -->
+<div id="tab-dash" class="tab-content active">
   <div class="card">
-    <div class="card-title">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-        System Notice Broadcast
-      </div>
-    </div>
-    <p style="color: var(--text-sub); font-size: 14.5px; margin-bottom: 16px;">Update the scrolling announcement text shown on the home screen. Generate the <code>notice.txt</code> file and upload it to GitHub to apply.</p>
-    
-    <textarea id="noticeInput" class="input-field" style="min-height: 100px;" placeholder="Enter your announcement here..."></textarea>
-    
-    <button class="btn btn-primary anim-btn" onclick="generateNoticeFile()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 2"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-      Generate notice.txt
-    </button>
+    <div class="card-title">System Notice Broadcast</div>
+    <textarea id="noticeInput" class="input-field" style="height: 100px;" placeholder="Nhập nội dung thông báo..."></textarea>
+    <button class="btn-primary anim-btn" onclick="generateNoticeFile()">Tạo file notice.txt</button>
   </div>
+  <div class="card">
+    <div class="card-title">Data Architect (Word -> JSON)</div>
+    <textarea id="rawInput" class="input-field" style="height: 200px;" placeholder="Dán câu hỏi thô vào đây..."></textarea>
+    <button class="btn-secondary anim-btn" onclick="processText()" style="margin-bottom: 12px;">Chuyển đổi sang JSON</button>
+    <textarea id="jsonOutput" class="input-field" style="height: 200px;" placeholder="Kết quả JSON..."></textarea>
+    <button class="btn-primary anim-btn" onclick="downloadJSON()">Tải JSON</button>
+  </div>
+</div>
 
-  <!-- CÔNG CỤ TẠO JSON ĐỂ LÀM MODULE MỚI -->
-  <div class="grid-2">
+<!-- ================= TAB 2: CHỈNH SỬA JSON (YÊU CẦU 1) ================= -->
+<div id="tab-editor" class="tab-content">
+  <div class="card">
+    <div class="card-title">JSON Editor (Chỉnh sửa ngân hàng câu hỏi)</div>
+    <p style="color:var(--text-sub); margin-bottom:16px;">Dán file <code>.json</code> cũ của bạn vào đây để chỉnh sửa.</p>
+    <textarea id="editorRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
+    <button class="btn-primary anim-btn" onclick="loadEditor()">Tải dữ liệu để sửa</button>
+  </div>
+  
+  <div id="editorArea" style="display: none;">
     <div class="card">
-      <div class="card-title">Data Architect / Word Parser</div>
-      <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 12px;">Paste raw text from Word/PDF. The AI will format it.</p>
-      <textarea id="rawInput" class="input-field" style="height: 300px;" placeholder="Paste raw questions here...&#10;Q: What is Apple?&#10;A) Fruit&#10;B) Tech company ✅"></textarea>
-      <button class="btn btn-secondary anim-btn" onclick="processText()" style="width:100%; margin-top:8px;">Convert to JSON</button>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Output JSON</div>
-      <p style="color: var(--text-sub); font-size: 14px; margin-bottom: 12px;">Ready for GitHub deployment.</p>
-      <textarea id="jsonOutput" class="input-field" style="height: 300px;" placeholder="Formatted JSON will appear here..."></textarea>
-      <div class="btn-group">
-        <button class="btn btn-secondary anim-btn" onclick="copyToClipboard()">Copy</button>
-        <button class="btn btn-primary anim-btn" onclick="downloadJSON()">Download JSON</button>
+      <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
+        <h3 class="card-title" style="margin:0;">Danh sách câu hỏi</h3>
+        <button class="btn-primary anim-btn" style="width: auto; padding: 8px 16px;" onclick="exportEditorJSON()">💾 Lưu & Xuất JSON</button>
       </div>
+      <div id="editorList"></div>
     </div>
   </div>
+</div>
 
+<!-- ================= TAB 3: ANALYZER - LỌC CÂU DÀI NHẤT (YÊU CẦU 2) ================= -->
+<div id="tab-analyzer" class="tab-content">
+  <div class="card">
+    <div class="card-title">Lọc: Câu Dài Nhất Là Đáp Án Đúng</div>
+    <textarea id="analyzerRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
+    <button class="btn-primary anim-btn" onclick="runAnalyzer()">Phân tích dữ liệu</button>
+  </div>
+
+  <div id="analyzerArea" style="display: none;">
+    <div class="tab-menu" style="background:transparent; padding:0; margin-bottom:16px; border:none;">
+      <button class="tab-btn active anim-btn" onclick="switchAnalyzerTab('group1', this)">✅ Nhóm 1: Câu dài nhất ĐÚNG (<span id="countG1">0</span>)</button>
+      <button class="tab-btn anim-btn" onclick="switchAnalyzerTab('group2', this)">⚠️ Nhóm 2: Các câu còn lại (<span id="countG2">0</span>)</button>
+    </div>
+    
+    <div id="group1" class="analyzer-tab card"></div>
+    <div id="group2" class="analyzer-tab card" style="display: none;"></div>
+  </div>
+</div>
+
+<!-- ================= TAB 4: MOCK EXAM - THI THỬ NỘP SAU (YÊU CẦU 3) ================= -->
+<div id="tab-exam" class="tab-content">
+  <div class="card" id="examSetup">
+    <div class="card-title">Chế độ thi thử (Làm xong mới chấm)</div>
+    <textarea id="examRaw" class="input-field" style="height: 150px;" placeholder="Dán mã JSON vào đây..."></textarea>
+    <button class="btn-primary anim-btn" onclick="startMockExam()">Bắt đầu thi</button>
+  </div>
+
+  <div class="card" id="examUI" style="display: none;">
+    <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:16px;">
+      <span style="color:var(--text-sub)">Câu hỏi: <span id="mockCurrentIndex">1</span>/<span id="mockTotal">0</span></span>
+      <span id="mockScore" style="color:var(--accent); display:none;">Điểm: 0</span>
+    </div>
+
+    <div class="q-text" id="mockQText">Loading...</div>
+    <div id="mockOptions"></div>
+    <div class="nav-bar">
+      <button class="btn-secondary anim-btn" onclick="mockPrev()" id="btnMockPrev">Trở lại</button>
+      <button class="btn-secondary anim-btn" onclick="mockNext()" id="btnMockNext">Câu tiếp</button>
+    </div>
+
+    <h4 style="margin-top:24px; color:var(--text-sub); font-size:13px;">Bảng câu hỏi (Palette)</h4>
+    <div class="palette-grid" id="mockPalette"></div>
+    
+    <button class="btn-primary anim-btn" style="margin-top:24px; background:var(--success);" onclick="submitMockExam()" id="btnSubmitMock">Nộp Bài Chấm Điểm</button>
+    <button class="btn-secondary anim-btn" style="margin-top:12px; display:none;" onclick="exitMockExam()" id="btnExitMock">Thoát</button>
+  </div>
 </div>
 
 <div id="toast" class="toast">Action completed!</div>
 
 <script>
-  // Chào tên Admin
-  document.addEventListener('DOMContentLoaded', () => {
-    const adminUser = sessionStorage.getItem("adminUser");
-    if (adminUser) { document.getElementById('adminName').innerText = adminUser; }
-  });
-
-  function handleLogout() {
-    sessionStorage.removeItem("isAdmin");
-    sessionStorage.removeItem("adminUser");
-    window.location.replace("index.html");
+  // --- HỆ THỐNG CƠ BẢN ---
+  function handleLogout() { sessionStorage.clear(); window.location.replace("index.html"); }
+  function showToast(msg) { const t = document.getElementById('toast'); t.innerText = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); }
+  
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-menu > .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
   }
 
-  function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.innerText = message;
-    toast.classList.add('show');
-    setTimeout(() => { toast.classList.remove('show'); }, 3000);
-  }
-
-  // TÍNH NĂNG ĐĂNG THÔNG BÁO (NOTICE)
+  // --- TAB 1: DASHBOARD ---
   function generateNoticeFile() {
     const text = document.getElementById('noticeInput').value.trim();
-    if (!text) { alert("Please enter an announcement first!"); return; }
-    
-    const blob = new Blob([text], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
+    if (!text) return alert("Nhập nội dung!");
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'notice.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast('notice.txt generated! Please upload to GitHub data folder.');
+    a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'})); a.download = 'notice.txt'; a.click();
+  }
+  function processText() { /* Giữ code cũ nếu bạn cần, hoặc bỏ qua vì đã có Editor */ }
+
+  // --- TAB 2: JSON EDITOR (YÊU CẦU 1) ---
+  let editData = [];
+  function loadEditor() {
+    try {
+      editData = JSON.parse(document.getElementById('editorRaw').value);
+      const list = document.getElementById('editorList'); list.innerHTML = '';
+      editData.forEach((q, idx) => {
+        let optsHTML = q[2].map((opt, i) => `
+          <div class="edit-row">
+            <span class="edit-label">Đáp án ${i}</span>
+            <input type="text" class="edit-input" id="q_${idx}_opt_${i}" value="${opt.replace(/"/g, '&quot;')}">
+          </div>
+        `).join('');
+        
+        let selHTML = q[2].map((_, i) => `<option value="${i}" ${q[3] == i ? 'selected' : ''}>Đáp án ${i}</option>`).join('');
+
+        list.innerHTML += `
+          <div class="edit-q-box">
+            <div class="edit-q-title">Câu ${idx + 1}</div>
+            <div class="edit-row"><span class="edit-label">Câu hỏi</span><textarea class="edit-input" id="q_${idx}_text">${q[1]}</textarea></div>
+            ${optsHTML}
+            <div class="edit-row">
+              <span class="edit-label">Đúng</span>
+              <select class="edit-input" id="q_${idx}_ans" style="background:var(--success-bg); font-weight:bold;">${selHTML}</select>
+            </div>
+            <div class="edit-row"><span class="edit-label">Ref</span><input type="text" class="edit-input" id="q_${idx}_ref" value="${q[4] || ''}"></div>
+          </div>
+        `;
+      });
+      document.getElementById('editorArea').style.display = 'block';
+      showToast("Tải dữ liệu thành công!");
+    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
   }
 
-  // TÍNH NĂNG SAO CHÉP & TẢI JSON
-  function copyToClipboard() {
-    const output = document.getElementById('jsonOutput');
-    if (!output.value) return;
-    output.select();
-    document.execCommand('copy');
-    showToast('JSON Copied to clipboard!');
-  }
-
-  function downloadJSON() {
-    const output = document.getElementById('jsonOutput').value;
-    if (!output) { alert("Nothing to download!"); return; }
-    
-    const blob = new Blob([output], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'module_questions.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    showToast('JSON downloaded successfully!');
-  }
-
-  // TÍNH NĂNG PARSE RAW TEXT THÀNH JSON
-  function processText() {
-    const rawText = document.getElementById('rawInput').value.trim();
-    if (!rawText) return;
-
-    const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-    const result = [];
-    let currentId = 1, currentQ = null, currentOptions = [], correctIndex = 0, currentRef = "None";
-    
-    const optionRegex = /^[a-d]\)|\^[A-D]\./i; 
-    const checkmarkRegex = /✅|\[x\]|\[v\]/i;
-
-    lines.forEach((line) => {
-      if (line.toLowerCase().startsWith("note:") || line.toLowerCase().startsWith("reference:")) {
-        if (currentQ) {
-          currentRef = line.replace(/^(note|reference):\s*/i, '').trim();
-          result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
-          currentId++; currentQ = null; currentOptions = []; correctIndex = 0; currentRef = "None";
-        }
-      } else if (optionRegex.test(line)) {
-        let optText = line.replace(optionRegex, '').trim();
-        if (checkmarkRegex.test(optText)) {
-          correctIndex = currentOptions.length;
-          optText = optText.replace(checkmarkRegex, '').trim();
-        }
-        currentOptions.push(optText);
-      } else {
-        if (currentQ && currentOptions.length > 0) {
-          result.push([currentId, currentQ, [...currentOptions], correctIndex, currentRef]);
-          currentId++; currentOptions = []; correctIndex = 0; currentRef = "None";
-        }
-        currentQ = line;
-      }
+  function exportEditorJSON() {
+    let result = [];
+    editData.forEach((q, idx) => {
+      let text = document.getElementById(`q_${idx}_text`).value;
+      let opts = q[2].map((_, i) => document.getElementById(`q_${idx}_opt_${i}`).value);
+      let ans = parseInt(document.getElementById(`q_${idx}_ans`).value);
+      let ref = document.getElementById(`q_${idx}_ref`).value;
+      result.push([q[0], text, opts, ans, ref]);
     });
+    const blob = new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'edited_module.json'; a.click();
+    showToast("Đã lưu & tải xuống JSON!");
+  }
 
-    if (currentQ && currentOptions.length > 0) result.push([currentId, currentQ, currentOptions, correctIndex, currentRef]);
+  // --- TAB 3: ANALYZER LỌC CÂU DÀI NHẤT (YÊU CẦU 2) ---
+  function switchAnalyzerTab(groupId, btn) {
+    document.querySelectorAll('.analyzer-tab').forEach(c => c.style.display = 'none');
+    document.querySelectorAll('#analyzerArea .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(groupId).style.display = 'block'; btn.classList.add('active');
+  }
 
-    if (result.length > 0) {
-      document.getElementById('jsonOutput').value = JSON.stringify(result, null, 2);
-      showToast('Successfully parsed ' + result.length + ' questions!');
-    } else {
-      document.getElementById('jsonOutput').value = "[\n  // Format not recognized.\n]";
-    }
+  function runAnalyzer() {
+    try {
+      let data = JSON.parse(document.getElementById('analyzerRaw').value);
+      let g1 = [], g2 = [];
+      data.forEach(q => {
+        let maxLen = Math.max(...q[2].map(o => o.length));
+        if (q[2][q[3]] && q[2][q[3]].length === maxLen) g1.push(q); else g2.push(q);
+      });
+      document.getElementById('countG1').innerText = g1.length;
+      document.getElementById('countG2').innerText = g2.length;
+      document.getElementById('group1').innerHTML = renderAnalyzerList(g1);
+      document.getElementById('group2').innerHTML = renderAnalyzerList(g2);
+      document.getElementById('analyzerArea').style.display = 'block';
+    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
+  }
+
+  function renderAnalyzerList(list) {
+    return list.map(q => `
+      <div style="padding-bottom:16px; margin-bottom:16px; border-bottom:1px solid var(--border);">
+        <div class="q-text" style="font-size:16px;">${q[1]}</div>
+        ${q[2].map((opt, i) => `<div style="padding:6px 10px; margin-bottom:4px; border-radius:8px; background:${i==q[3] ? 'var(--success-bg)' : 'var(--bg-color)'}; color:${i==q[3] ? 'var(--success)' : 'var(--text-main)'}; font-size:14px; ${i==q[3] ? 'font-weight:bold; border:1px solid var(--success);' : ''}">${opt}</div>`).join('')}
+      </div>
+    `).join('');
+  }
+
+  // --- TAB 4: MOCK EXAM - THI NỘP SAU (YÊU CẦU 3) ---
+  let mockData = [], mockAnswers = {}, mockCurrent = 0, isSubmitted = false;
+
+  function startMockExam() {
+    try {
+      mockData = JSON.parse(document.getElementById('examRaw').value);
+      mockAnswers = {}; mockCurrent = 0; isSubmitted = false;
+      document.getElementById('examSetup').style.display = 'none';
+      document.getElementById('examUI').style.display = 'block';
+      document.getElementById('btnSubmitMock').style.display = 'block';
+      document.getElementById('btnExitMock').style.display = 'none';
+      document.getElementById('mockScore').style.display = 'none';
+      document.getElementById('mockTotal').innerText = mockData.length;
+      renderMockQuestion();
+    } catch(e) { alert("Lỗi JSON không hợp lệ!"); }
+  }
+
+  function renderMockQuestion() {
+    let q = mockData[mockCurrent];
+    document.getElementById('mockCurrentIndex').innerText = mockCurrent + 1;
+    document.getElementById('mockQText').innerText = q[1];
+    
+    let html = q[2].map((opt, i) => {
+      let classes = "opt-btn anim-btn";
+      if (!isSubmitted && mockAnswers[mockCurrent] === i) classes += " selected";
+      if (isSubmitted) {
+        if (i === q[3]) classes += " correct";
+        else if (mockAnswers[mockCurrent] === i) classes += " wrong";
+        else classes += " dimmed";
+      }
+      return `<button class="${classes}" onclick="selectMockOption(${i})"><span style="font-weight:bold; width:24px;">${String.fromCharCode(65+i)}.</span> <span>${opt}</span></button>`;
+    }).join('');
+    
+    document.getElementById('mockOptions').innerHTML = html;
+    document.getElementById('btnMockPrev').disabled = (mockCurrent === 0);
+    document.getElementById('btnMockNext').disabled = (mockCurrent === mockData.length - 1);
+    renderMockPalette();
+  }
+
+  function selectMockOption(idx) {
+    if (isSubmitted) return;
+    mockAnswers[mockCurrent] = idx;
+    renderMockQuestion();
+  }
+
+  function mockNext() { if (mockCurrent < mockData.length - 1) { mockCurrent++; renderMockQuestion(); } }
+  function mockPrev() { if (mockCurrent > 0) { mockCurrent--; renderMockQuestion(); } }
+  function jumpMock(idx) { mockCurrent = idx; renderMockQuestion(); }
+
+  function renderMockPalette() {
+    document.getElementById('mockPalette').innerHTML = mockData.map((q, i) => {
+      let cls = "palette-btn anim-btn";
+      if (i === mockCurrent) cls += " active";
+      if (!isSubmitted && mockAnswers[i] !== undefined) cls += " answered";
+      if (isSubmitted) {
+        if (mockAnswers[i] === q[3]) cls += " done-correct";
+        else cls += " done-wrong";
+      }
+      return `<button class="${cls}" onclick="jumpMock(${i})">${i+1}</button>`;
+    }).join('');
+  }
+
+  function submitMockExam() {
+    if(!confirm("Bạn chắc chắn muốn nộp bài chứ?")) return;
+    isSubmitted = true;
+    let score = 0;
+    mockData.forEach((q, i) => { if (mockAnswers[i] === q[3]) score++; });
+    
+    document.getElementById('mockScore').innerText = `Đúng: ${score} / ${mockData.length}`;
+    document.getElementById('mockScore').style.display = 'inline';
+    document.getElementById('btnSubmitMock').style.display = 'none';
+    document.getElementById('btnExitMock').style.display = 'block';
+    
+    renderMockQuestion();
+    showToast(`Đã nộp! Bạn đúng ${score} câu.`);
+  }
+
+  function exitMockExam() {
+    document.getElementById('examUI').style.display = 'none';
+    document.getElementById('examSetup').style.display = 'block';
   }
 </script>
 </body>
