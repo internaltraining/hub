@@ -18,7 +18,7 @@
      ========================================================= */
   :root { 
     --bg-color: #f5f5f7; 
-    --card-bg: #ffffff; /* Trắng chuẩn Apple cho ô Card */
+    --card-bg: #ffffff; 
     --modal-bg: #ffffff;
     --text-main: #1d1d1f; 
     --text-sub: #86868b; 
@@ -40,7 +40,7 @@
   @media (prefers-color-scheme: dark) {
     :root { 
       --bg-color: #000000; 
-      --card-bg: #1c1c1e; /* Đen nhám đặc trưng cho ô Card */
+      --card-bg: #1c1c1e; 
       --modal-bg: #1c1c1e;
       --text-main: #f5f5f7; 
       --text-sub: #98989d; 
@@ -171,7 +171,7 @@
   .btn-close-modal { width: 100%; background: none; border: none; color: var(--text-sub); font-size: 15px; font-weight: 600; margin-top: 8px; cursor: pointer; padding: 14px; }
   .btn-primary { width: 100%; padding: 16px; background: var(--accent); color: #fff; border: none; border-radius: 16px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px; }
 
-  /* THÔNG BÁO VÀ QUẢNG CÁO */
+  /* NOTICE & AD BANNER */
   .marquee-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 12px 16px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
   .marquee-icon { font-size: 18px; flex-shrink: 0; }
   .marquee-track { flex: 1; overflow: hidden; white-space: nowrap; position: relative; }
@@ -183,7 +183,7 @@
   .btn-close-ad { position: absolute; top: 10px; right: 10px; background: rgba(0, 0, 0, 0.4); color: white; border: none; border-radius: 50%; width: 28px; height: 28px; font-size: 13px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10; }
 
   /* =========================================================
-     APPLE STORE CARDS UI (GIAO DIỆN CHÍNH)
+     APPLE STORE CARDS UI (ALTERNATING BLACK & WHITE)
      ========================================================= */
   #menuView { width: 100%; display: flex; flex-direction: column; }
   .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
@@ -197,40 +197,53 @@
   @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 900px) { .module-grid { grid-template-columns: repeat(3, 1fr); } }
 
-  /* ĐÂY LÀ ĐOẠN Ô CHỮ NHẬT CHUẨN APPLE */
   .module-btn { 
     position: relative;
-    background: var(--card-bg); 
-    border: none; /* Bỏ viền cho sang trọng */
+    border: none; 
     border-radius: 28px; 
-    padding: 32px 28px 220px 28px; /* Đẩy nội dung lên trên, chừa 220px phía dưới cho hình */
+    padding: 32px 28px 220px 28px; 
     cursor: pointer; 
     text-align: left; 
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
-    box-shadow: var(--shadow-card); 
     overflow: hidden; 
     display: flex;
     flex-direction: column;
-    min-height: 420px; /* Thẻ rất cao, y hệt Apple Store */
+    min-height: 420px; 
   }
   @media (hover: hover) {
-    .module-btn:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 48px rgba(0,0,0,0.12); }
+    .module-btn:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
     .module-btn:hover .m-image { transform: scale(1.05) translateY(-5px); }
   }
   .module-btn:active { transform: scale(0.97); }
 
+  /* ----- ODD CARDS: DARK THEME (ĐEN) ----- */
+  .module-btn:nth-child(odd) {
+    background: #000000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .module-btn:nth-child(odd) .m-title { color: #f5f5f7; }
+  .module-btn:nth-child(odd) .m-desc { color: #a1a1a6; }
+
+  /* ----- EVEN CARDS: LIGHT THEME (TRẮNG) ----- */
+  .module-btn:nth-child(even) {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .module-btn:nth-child(even) .m-title { color: #1d1d1f; }
+  .module-btn:nth-child(even) .m-desc { color: #86868b; }
+
+  /* Global Label and Structure */
   .m-label { font-size: 11px; font-weight: 700; color: #ff6800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; z-index: 2; }
-  @media (prefers-color-scheme: dark) { .m-label { color: #ff9f0a; } }
+  .m-title { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.02em; z-index: 2; display: flex; flex-direction: column; gap: 4px;}
+  .m-desc { font-size: 14.5px; line-height: 1.45; font-weight: 500; z-index: 2; }
 
-  .m-title { font-size: 24px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; line-height: 1.2; letter-spacing: -0.02em; z-index: 2; display: flex; flex-direction: column; gap: 4px;}
-  .m-desc { font-size: 14.5px; color: var(--text-sub); line-height: 1.45; font-weight: 500; z-index: 2; }
-
-  /* KHUNG HÌNH CHỜ ĐƯỢC CHÈN (SẼ ẨN NẾU KO CÓ FILE) */
+  /* IMAGE CONTAINER */
   .m-image {
     position: absolute;
-    bottom: -5%; /* Tràn xuống đáy */
+    bottom: -5%; 
     left: 10%;
-    width: 80%; /* Nằm trọn khu vực dưới */
+    width: 80%; 
     height: 55%; 
     object-fit: contain;
     object-position: center bottom;
@@ -364,8 +377,8 @@
       </a>
     </div>
 
-    <div class="hub-title">Sản phẩm mới nhất.</div>
-    <div class="hub-sub">Hãy xem có gì mới trong các module đào tạo.</div>
+    <div class="hub-title">The latest.</div>
+    <div class="hub-sub">Take a look at what's new in your training modules.</div>
     <div class="module-grid" id="moduleList">
       <div class="loader-spinner" style="margin-top: 20px;"></div>
     </div>
@@ -459,7 +472,7 @@ function removeWeakQuestion(q, fileUrl) {
   try { let list = getWeakQuestions(fileUrl).filter(item => item[1] !== q[1]); localStorage.setItem('weak_' + fileUrl, JSON.stringify(list)); } catch(e) {}
 }
 
-const moduleTags = { "m1": "MỚI", "m07a": "THỰC HÀNH", "m07a209": "NÂNG CAO", "m11": "KHÍ ĐỘNG HỌC", "m15": "ĐỘNG CƠ JET", "m17": "CÁNH QUẠT" };
+const moduleTags = { "m1": "FUNDAMENTALS", "m07a": "PRACTICES", "m07a209": "ADVANCED", "m11": "AERODYNAMICS", "m15": "TURBINE ENGINES", "m17": "PROPELLERS" };
 
 async function init() {
   loadNotice();
@@ -470,8 +483,8 @@ async function init() {
     
     DOM.moduleList.innerHTML = modules.map(m => {
       const weakCount = getWeakQuestions(m.file).length;
-      const weakBadge = weakCount > 0 ? `<span class="weak-badge">${weakCount} câu hỏi sai</span>` : '';
-      const tagLabel = moduleTags[m.id] || "BÀI TẬP";
+      const weakBadge = weakCount > 0 ? `<span class="weak-badge">${weakCount} weak questions</span>` : '';
+      const tagLabel = moduleTags[m.id] || "MODULE";
 
       return `
       <button class="module-btn anim-btn" onclick="openModeModal('${m.file}')">
@@ -481,9 +494,8 @@ async function init() {
           ${weakBadge}
         </div>
         <div class="m-desc">${m.desc}</div>
-        
-        <!-- HÌNH CHỜ: Tự động tải ảnh từ thư mục data, nếu không có file ảnh thì tự động ẩn đi, để lại khung nền Trắng/Đen trơn -->
         <img class="m-image" src="data/${m.id}.png" alt="icon" onerror="this.style.display='none'">
+        <img class="m-image" src="data/${m.id}.svg" alt="icon" onerror="this.style.display='none'">
       </button>`;
     }).join('');
   } catch (error) { DOM.moduleList.innerHTML = '<p style="color:var(--danger); text-align:center; font-weight:600;">⚠️ Error loading module list!</p>'; }
@@ -500,7 +512,7 @@ async function startQuiz() {
   try {
     if (examMode === 'WEAK_REVIEW') {
       const weakList = getWeakQuestions(selectedFileUrl);
-      if (weakList.length === 0) { alert("Bạn chưa có câu hỏi sai nào lưu ở bài này!"); goHome(); return; }
+      if (weakList.length === 0) { alert("No weak questions saved for this module yet!"); goHome(); return; }
       originalQuizData = shuffleOnlyOptions(weakList);
     } else {
       const res = await fetch(selectedFileUrl);
@@ -522,7 +534,7 @@ function renderQuestion() {
   if (currentRoundIndex >= currentRoundData.length) {
     if (nextRoundData.length === 0) return showEndScreen();
     DOM.qStatsGrid.style.display = 'none'; DOM.paletteCard.classList.add('hidden');
-    DOM.qText.innerHTML = `<span style="color:var(--accent)">🔄 Chuẩn bị ôn lại ${nextRoundData.length} câu sai...</span>`;
+    DOM.qText.innerHTML = `<span style="color:var(--accent)">🔄 Preparing to review ${nextRoundData.length} weak questions...</span>`;
     DOM.optionsList.innerHTML = ''; DOM.feedbackBox.className = 'feedback';
     
     currentRoundData = [...nextRoundData]; nextRoundData = []; currentRoundIndex = 0; userAnswers = {}; 
@@ -557,11 +569,11 @@ function renderQuestion() {
       DOM.btnNext.style.display = 'block';
       if (history.isCorrect) {
         document.getElementById(`opt-${history.selected}`).classList.add('correct');
-        DOM.feedbackBox.innerText = "✓ Chính xác!"; DOM.feedbackBox.className = 'feedback show success';
+        DOM.feedbackBox.innerText = "✓ Correct!"; DOM.feedbackBox.className = 'feedback show success';
       } else {
         document.getElementById(`opt-${history.selected}`).classList.add('wrong');
         document.getElementById(`opt-${history.correct}`).classList.add('correct');
-        DOM.feedbackBox.innerHTML = `<strong>✗ Sai rồi!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${q[4] || ''}</span>`;
+        DOM.feedbackBox.innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${q[4] || ''}</span>`;
         DOM.feedbackBox.className = 'feedback show error';
       }
     }
@@ -578,13 +590,13 @@ function checkAnswer(selectedIndex, correctIndex, btnClicked) {
 
   if (isCorrect) {
     totalCorrectAttempts++; globalCompleted++; btnClicked.classList.add('correct');
-    DOM.feedbackBox.innerText = "✓ Chính xác!"; DOM.feedbackBox.className = 'feedback show success';
+    DOM.feedbackBox.innerText = "✓ Correct!"; DOM.feedbackBox.className = 'feedback show success';
     allBtns.forEach((b, i) => { if(i !== selectedIndex) b.classList.add('dimmed'); });
     removeWeakQuestion(currentQ, selectedFileUrl);
   } else {
     nextRoundData.push(currentQ); btnClicked.classList.add('wrong');
     if (allBtns[correctIndex]) allBtns[correctIndex].classList.add('correct'); 
-    DOM.feedbackBox.innerHTML = `<strong>✗ Sai rồi!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${currentQ[4] || ''}</span>`;
+    DOM.feedbackBox.innerHTML = `<strong>✗ Incorrect!</strong><br><span style="font-size:13.5px; opacity:0.9; display:block; margin-top:4px;">${currentQ[4] || ''}</span>`;
     DOM.feedbackBox.className = 'feedback show error';
     allBtns.forEach((b, i) => { if(i !== selectedIndex && i !== correctIndex) b.classList.add('dimmed'); });
     saveWeakQuestion(currentQ, selectedFileUrl);
@@ -614,7 +626,7 @@ function renderPalette() {
 
 function showEndScreen() {
   DOM.quizView.classList.add('hidden'); DOM.paletteCard.classList.add('hidden'); DOM.endView.classList.remove('hidden'); DOM.progressBar.style.width = '100%';
-  DOM.endDesc.innerHTML = `Độ chính xác: <strong>${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%</strong><br>Tổng số lần chọn: ${totalAttempts}`;
+  DOM.endDesc.innerHTML = `Accuracy: <strong>${Math.round((totalCorrectAttempts / totalAttempts) * 100)}%</strong><br>Total attempts: ${totalAttempts}`;
 }
 
 function goHome() {
@@ -630,7 +642,7 @@ function handleMenuHome() { DOM.dropdownMenu.classList.add('hidden'); goHome(); 
 function openDevLoginModal() { DOM.dropdownMenu.classList.add('hidden'); DOM.loginModal.classList.remove('hidden'); DOM.loginError.style.display = 'none'; }
 function closeDevLoginModal() { DOM.loginModal.classList.add('hidden'); }
 
-const VALID_ACCOUNTS = { "admin": "admin", "quockiet": "adminquockiet" };
+const VALID_ACCOUNTS = { "admin": "admin123", "quockiet": "adminquockiet" };
 function handleAdminLogin(e) {
   e.preventDefault();
   const u = document.getElementById('adminUser').value.trim(); const p = document.getElementById('adminPass').value.trim();
