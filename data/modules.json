@@ -23,6 +23,12 @@
     "title": "Module 11A: Turbine Aeroplane Aerodynamics (330)",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m11.json"
+ },
+   {
+    "id": "m15",
+    "title": "Module 15: Gas Turbine Engine",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m15.json"
    },
   {
     "id": "m17",
