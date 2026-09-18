@@ -512,8 +512,7 @@ async function init() {
           ${weakBadge}
         </div>
         <div class="m-desc">${m.desc}</div>
-        <img class="m-image" src="data/${m.id}.png" alt="icon" onerror="this.style.display='none'">
-        <img class="m-image" src="data/${m.id}.svg" alt="icon" onerror="this.style.display='none'">
+        <img class="m-image" src="data/${m.id}.png" alt="icon" onerror="if(!this.dataset.fallback){this.dataset.fallback='true';this.src='data/${m.id}.svg';}else{this.style.display='none';}">
       </button>`;
     }).join('');
   } catch (error) { DOM.moduleList.innerHTML = '<p style="color:var(--danger); text-align:center; font-weight:600;">⚠️ Error loading module list!</p>'; }
