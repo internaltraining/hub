@@ -8,19 +8,19 @@
   },
   {
     "id": "m07a",
-    "title": "Module 7A: Maintenance Practices(72)",
+    "title": "Module 7A: Maintenance Practices",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m07a.json"
   },
   {
     "id": "m07a209",
-    "title": "Module 7A: Maintenance Practices (211)",
+    "title": "Module 7A: Maintenance Practices",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m07a209.json"
   },
    {
     "id": "m11",
-    "title": "Module 11A: Turbine Aeroplane Aerodynamics (330)",
+    "title": "Module 11A: Turbine Aeroplane Aerodynamics",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m11.json"
  },
