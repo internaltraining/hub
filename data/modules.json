@@ -7,6 +7,12 @@
     "file": "data/m1.json"
   },
   {
+    "id": "m2",
+    "title": "Module M2: Physics",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m2.json"
+  },
+  {
     "id": "m07a",
     "title": "Module 7A: Maintenance Practices",
     "desc": "Basic Training for Aircraft Maintenance Technician",
