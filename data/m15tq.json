@@ -125,7 +125,7 @@
     "How many type of compressor?",
     [
       "Single-stage radial compressor and piston compressor",
-      "Have two basic type of compressor: Centrifugal flow compressor, Axial flow compressor",
+      "Centrifugal flow compressor, Axial flow compressor",
       "Hydraulic fluid compressor and pneumatic screw compressor"
     ],
     1,
