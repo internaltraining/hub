@@ -36,6 +36,12 @@
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m15.json"
    },
+   {
+    "id": "m15tq",
+    "title": "Module 15: Gas Turbine Engine by Tran Quoc",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m15tq.json"
+   },
   {
     "id": "m17",
     "title": "Module 17: Propeller",
