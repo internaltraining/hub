@@ -1,0 +1,717 @@
+[
+  [
+    1,
+    "What are the four primary types of gas turbine engines used in aviation?",
+    [
+      "Turbojet, Turbofan, Turboprop, and Turboshaft",
+      "Ramjet, Scramjet, Pulsejet, and Piston",
+      "Turbojet, Electric, Hybrid, and Reciprocating"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    2,
+    "What is the fundamental principle of thrust generation in a turbojet engine?",
+    [
+      "Accelerating a continuous mass of gas rearward to produce reaction force",
+      "Driving a large propeller to push ambient air backward",
+      "Converting chemical energy directly into mechanical shaft torque"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    3,
+    "How is Newton's Third Law of Motion applied to jet propulsion?",
+    [
+      "Every action force has an equal and opposite reaction force",
+      "Acceleration is inversely proportional to the mass of the engine",
+      "An object at rest remains at rest unless acted upon by a force"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    4,
+    "What is the primary purpose of an afterburner (reheat system) in a jet engine?",
+    [
+      "To significantly increase thrust by injecting and burning additional fuel in the exhaust gas",
+      "To reduce overall fuel consumption during long-range cruise flight",
+      "To cool the exhaust gas before it exits the final jet nozzle"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    5,
+    "How does a turboprop engine produce its useful propulsive output?",
+    [
+      "By using turbine power to drive a propeller, producing high shaft power plus small residual jet thrust",
+      "By relying entirely on high-velocity thermal jet exhaust thrust",
+      "By driving an internal fan duct to bypass 90% of airflow"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    6,
+    "What are the four strokes of the thermodynamic Otto cycle used in piston engines?",
+    [
+      "Induction, Compression, Power, and Exhaust",
+      "Suction, Ignition, Expansion, and Cooling",
+      "Injection, Combustion, Turbine Expansion, and Exhaust"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    7,
+    "What is the primary function of an aircraft engine air inlet duct?",
+    [
+      "To supply a smooth, uniform airflow to the compressor with minimum pressure loss",
+      "To compress incoming air to maximum operating temperature before combustion",
+      "To ignite incoming oxygen before entering the compressor rotor stages"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    8,
+    "How does a subsonic air inlet duct alter the properties of incoming air?",
+    [
+      "Acts as a divergent duct to decrease air velocity and increase static pressure",
+      "Acts as a convergent duct to accelerate airflow to supersonic speed",
+      "Keeps static pressure constant while dramatically increasing total air temperature"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    9,
+    "How does a supersonic air inlet decelerate airflow to subsonic speed before entering the compressor?",
+    [
+      "By creating a series of shock waves using convergent-divergent duct geometry",
+      "By spraying cooling water directly into the incoming supersonic airstream",
+      "By closing mechanical inlet guide vanes completely during supersonic flight"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    10,
+    "What is the specific function of an oblique shock wave in a supersonic inlet?",
+    [
+      "To slow down supersonic airflow with minimal loss in total pressure",
+      "To increase airflow speed to hypersonic Mach numbers",
+      "To heat incoming air to prevent fuel vaporization problems"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    11,
+    "Why are anti-icing and de-icing systems required for engine air inlets?",
+    [
+      "To prevent ice formation and accumulation which causes airflow restriction and FOD",
+      "To lower the humidity of incoming air before compression",
+      "To maintain high exhaust gas temperatures during cold weather operations"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    12,
+    "What are the two fundamental types of compressors used in gas turbine engines?",
+    [
+      "Centrifugal-flow and Axial-flow compressors",
+      "Reciprocating piston and Rotary screw compressors",
+      "Low-pressure turbine and High-pressure turbine compressors"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    13,
+    "What are the key operational features of an axial-flow compressor?",
+    [
+      "High air handling capacity, multi-stage pressure buildup, and airflow parallel to engine axis",
+      "Single stage high pressure ratio per stage with radial air discharge",
+      "Low manufacturing cost and total immunity to compressor stall"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    14,
+    "What is the primary function of a compressor bleed valve system?",
+    [
+      "To unload early compressor stages during engine starting and low RPM to prevent stall",
+      "To dump unburnt fuel out of the engine casing during acceleration",
+      "To increase total engine pressure ratio during high-speed cruise flight"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    15,
+    "Why is fan balancing essential during engine operation and maintenance?",
+    [
+      "To minimize mechanical vibration and prevent structural and bearing damage",
+      "To change the bypass ratio dynamically during flight",
+      "To increase the temperature of the secondary bypass airflow"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    16,
+    "What methods are implemented to prevent compressor stall and surge?",
+    [
+      "Variable stator vanes (VSV), bleed valves, and multi-spool shaft architecture",
+      "Increasing fuel nozzle orifice size and lowering turbine entry temperature",
+      "Removing stator blades from intermediate compressor stages"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    17,
+    "What is the primary function of the combustion section in a gas turbine engine?",
+    [
+      "To release heat energy from fuel-air mixture combustion to expand the gas",
+      "To increase air static pressure before entering the turbine section",
+      "To cool down the high-pressure air coming from the final compressor stage"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    18,
+    "What is the role of primary airflow in the combustion process?",
+    [
+      "Mixes with atomized fuel to support and maintain the core combustion flame (~20-25% air)",
+      "Forms a cooling air blanket over the turbine nozzle guide vanes",
+      "Bypasses the combustion liner to dilute exhaust emissions"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    19,
+    "What is the purpose of secondary (dilution and cooling) airflow in the combustor?",
+    [
+      "To cool the flame tube liner walls and dilute hot gases to safe turbine entry temperature",
+      "To initiate the spark ignition process at high altitudes",
+      "To prevent the high-pressure fuel pump from cavitating"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    20,
+    "How do Can, Can-Annular, and Annular combustion chambers differ in construction?",
+    [
+      "Can has individual cans; Can-Annular has individual cans inside a common casing; Annular has a continuous single inner/outer liner",
+      "Can is used only on rockets; Can-Annular has no fuel nozzles; Annular uses reciprocating pistons",
+      "Annular requires individual interconnectors; Can has no outer casing"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    21,
+    "What is a major advantage of an annular combustion chamber design?",
+    [
+      "Compact size, lighter weight, efficient thermal distribution, and minimal surface cooling needs",
+      "Ability to replace individual combustion cans without removing the engine",
+      "Complete resistance to flame blowout at extreme flight altitudes"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    22,
+    "Why is thermal liner cooling essential in combustion chambers?",
+    [
+      "To prevent the liner walls from exceeding material thermal limits and melting",
+      "To reduce the density of air entering the turbine stages",
+      "To keep fuel from vaporizing before reaching the spray nozzles"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    23,
+    "How does an impulse turbine stage extract power from the gas stream?",
+    [
+      "Gas expands across stationary nozzles converting pressure to velocity, with no pressure drop across rotor blades",
+      "Gas expands continuously and exclusively across the moving rotor blades",
+      "Gas pressure increases across the moving rotor blades during expansion"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    24,
+    "What is the primary operating principle of a reaction turbine stage?",
+    [
+      "Pressure drop occurs across both the stationary nozzle guide vanes and the moving rotor blades",
+      "Gas static pressure remains constant across the entire turbine section",
+      "Energy extraction is achieved without any change in gas velocity"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    25,
+    "Why is cooling air supplied to high-pressure turbine blades and nozzle guide vanes?",
+    [
+      "To keep blade metal temperatures below thermal damage limits while operating in extreme gas temperatures",
+      "To increase the rotational friction of the HP spool bearings",
+      "To lower the pressure of exhaust gas entering the jet pipe"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    26,
+    "How does creep deformation affect turbine blades over time?",
+    [
+      "Causes permanent elongation of blades under prolonged high temperature and centrifugal stress",
+      "Increases blade thickness and stiffness under low RPM operation",
+      "Fuses the rotor blades directly to the outer turbine casing"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    27,
+    "What is the primary function of an aircraft engine exhaust system?",
+    [
+      "To safely discharge gases and accelerate them to produce optimal propulsive thrust",
+      "To compress gas to higher static pressure before exiting into atmosphere",
+      "To filter out carbon particulates before gases hit the tailpipe"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    28,
+    "What is the function of a thrust reverser system during landing?",
+    [
+      "Redirects exhaust gas forward to provide decelerating force and shorten landing roll",
+      "Stops turbine rotation instantly upon wheel touchdown",
+      "Increases engine forward thrust to assist aerodynamic lift"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    29,
+    "How do chevrons on exhaust nozzle trailing edges reduce jet engine noise?",
+    [
+      "Promote smooth mixing between cold bypass air and hot core exhaust gases",
+      "Block high-frequency acoustic waves from escaping the tailpipe",
+      "Reduce turbine rotor RPM during high-speed takeoffs"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    30,
+    "What is the geometry and function of a convergent-divergent exhaust nozzle?",
+    [
+      "Converges to sonic speed at throat, then diverges to expand gases to supersonic velocity",
+      "Diverges first to slow gases down, then converges to create static pressure",
+      "Maintains constant cross-sectional area to prevent shock wave formation"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    31,
+    "What technical methods are utilized to attenuate jet exhaust noise?",
+    [
+      "High bypass ratio design, chevrons, and acoustic absorbent duct liners",
+      "Spraying engine oil into the jet pipe exhaust stream",
+      "Closing the exhaust nozzle area completely during climb"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    32,
+    "What are the three primary sources used for producing lubricating oils?",
+    [
+      "Animal/Vegetable, Mineral (Petroleum), and Synthetic sources",
+      "Synthetic, Alcohol, and Gaseous sources",
+      "Crude oil, Water-glycol, and Hydraulic fluid"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    33,
+    "What is considered the most critical physical property of an engine lubricating oil?",
+    [
+      "Viscosity (resistance to flow under temperature)",
+      "Octane rating and volatility",
+      "Color density and dielectric strength"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    34,
+    "What is the primary operational difference between Jet A and Jet A-1 aviation fuels?",
+    [
+      "Jet A-1 has a lower freezing point (-47°C) than Jet A (-40°C) for cold route operations",
+      "Jet A contains anti-icing additives while Jet A-1 does not",
+      "Jet A is used only on piston engines; Jet A-1 is used on turboprops"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    35,
+    "What essential safety precaution must be taken before and during aircraft refueling?",
+    [
+      "Electrically bond and ground the aircraft and refueling vehicle to prevent static sparks",
+      "Keep the engine running at high idle to pressurize fuel tanks",
+      "Disconnect all aircraft fire extinguishing bottles"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    36,
+    "What are the two basic oil storage arrangements used in gas turbine lubrication systems?",
+    [
+      "Wet-sump and Dry-sump systems",
+      "High-pressure and Low-pressure systems",
+      "Internal-sump and External-sump systems"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    37,
+    "What is the primary function of an engine lubrication system?",
+    [
+      "Reduce friction, cool bearing cavities, clean internal debris, and prevent corrosion",
+      "Increase gas temperature before combustion",
+      "Meter fuel flow into the primary spray nozzles"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    38,
+    "What is the function of the scavenge subsystem in a dry-sump lubrication arrangement?",
+    [
+      "Pumps used oil from bearing sumps back through cooler and filter to the main oil tank",
+      "Delivers high-pressure oil directly to the fuel spray nozzles",
+      "Discharges contaminated oil overboard during high power flight"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    39,
+    "What is the primary function of the engine oil filter?",
+    [
+      "To trap and remove solid foreign particles and contaminants from circulating oil",
+      "To regulate system oil operating pressure",
+      "To separate air bubbles from fuel prior to combustion"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    40,
+    "What is the function of an oil cooler in a gas turbine engine?",
+    [
+      "Dissipates excessive heat from engine oil to fuel or ambient air",
+      "Increases oil viscosity before entering hot bearing cavities",
+      "Heats incoming compressor air during winter takeoffs"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    41,
+    "What is the function of a magnetic chip detector in the oil scavenge lines?",
+    [
+      "Attracts ferrous metal particles to provide early warning of component wear",
+      "Filters out fine carbon deposits from fuel tanks",
+      "Measures total volume of oil remaining in the main tank"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    42,
+    "How do wet-sump and dry-sump lubrication systems fundamentally differ?",
+    [
+      "Wet-sump stores oil in the engine lower casing; Dry-sump stores oil in an external tank",
+      "Wet-sump uses synthetic oil; Dry-sump uses mineral oil",
+      "Dry-sump does not require an oil pump or filter"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    43,
+    "What is the function of a pressure relief valve in an engine oil system?",
+    [
+      "Maintains maximum system pressure within safe limits by bypassing excess oil",
+      "Shuts off oil flow completely if engine fire is detected",
+      "Automatically drains the oil tank after engine shutdown"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    44,
+    "What is the primary function of an engine fuel system?",
+    [
+      "To deliver clean, metered fuel at correct pressure and rate to the combustor under all flight conditions",
+      "To cool the compressor rotor stages during acceleration",
+      "To supply hydraulic fluid pressure to landing gear actuators"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    45,
+    "What are the roles of the Low-Pressure (LP) and High-Pressure (HP) fuel subsystems?",
+    [
+      "LP delivers fuel from tank through filters/coolers to HP pump; HP pressurizes fuel for metering and atomization",
+      "LP ignites primary fuel; HP ignites secondary fuel",
+      "HP operates only on ground; LP operates only in flight"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    46,
+    "How does a Fuel Cooled Oil Cooler (FCOC) serve a dual purpose?",
+    [
+      "Cools hot engine oil while heating fuel to prevent ice crystal formation",
+      "Filters oil and increases fuel pump pressure simultaneously",
+      "Vaporizes oil to lubricate fuel control unit gears"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    47,
+    "What is the primary function of the high-pressure (HP) fuel pump?",
+    [
+      "To supply fuel at sufficient pressure for proper metering and atomization at spray nozzles",
+      "To transfer fuel between aircraft wing tanks",
+      "To scavenge oil from the main bearing cavities"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    48,
+    "What is a Full Authority Digital Engine Control (FADEC) system?",
+    [
+      "A dual-channel electronic computer (EEC) managing all engine parameters with no manual override",
+      "A mechanical governor controlling fuel valve positions via cables",
+      "A manual pneumatic system operated directly by pilot thrust levers"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    49,
+    "What are the major advantages of a FADEC system?",
+    [
+      "Optimized fuel efficiency, automatic limit protection, reduced pilot workload, and engine health monitoring",
+      "Allows manual mechanical lever override during electrical failure",
+      "Eliminates the requirement for high-pressure fuel pumps"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    50,
+    "What is the function of a fuel spray nozzle in the combustor?",
+    [
+      "Atomizes fuel into fine spray pattern for rapid and complete combustion",
+      "Mixes air and oil to form a cooling film",
+      "Regulates bleed air flow to the cabin"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    51,
+    "What is engine bleed air?",
+    [
+      "High-pressure air extracted from compressor stages for aircraft system uses",
+      "Exhaust gas re-routed from the tailpipe to combustor",
+      "Air leaking past turbine seals into bearing cavities"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    52,
+    "What are the most common aircraft applications of engine bleed air?",
+    [
+      "Environmental Control System (ECS cabin air), anti-icing, engine starting, and pressurization",
+      "Ignition spark generation and battery charging",
+      "Main wheel braking and landing gear retraction"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    53,
+    "How does film cooling protect combustion liners and turbine blades?",
+    [
+      "Forms a thin layer of cool air over internal surfaces to form an insulating thermal barrier",
+      "Sprays liquid nitrogen through blade tip holes",
+      "Circulates cold synthetic oil inside hollow blade passages"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    54,
+    "What methods are used for internal turbine blade cooling?",
+    [
+      "Convection, impingement, and film cooling using compressor bleed air",
+      "Water injection and glycol circulation",
+      "External air blast from bypass duct only"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    55,
+    "What are the two primary types of engine starter systems used on modern aircraft?",
+    [
+      "Electric starters and Air/Pneumatic starters",
+      "Hydraulic starters and Manual hand crank starters",
+      "Pyrotechnic starters and Chemical starters"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    56,
+    "What is the primary objective of a starter motor during the start sequence?",
+    [
+      "Accelerates the engine shaft to self-sustaining speed where combustor power takes over",
+      "Maintains engine rotation continuously throughout the flight",
+      "Drives the main electrical generator during takeoff"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    57,
+    "What are the key features of an electric starter motor?",
+    [
+      "Uses DC electric current from battery/APU to drive engine shaft via accessory gearbox",
+      "Uses high-pressure bleed air to spin a small turbine wheel",
+      "Directly ignites fuel spray nozzles without mechanical rotation"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    58,
+    "What is the function of igniter plugs in a gas turbine engine?",
+    [
+      "Provides high-energy electrical spark to ignite fuel-air mixture during starting",
+      "Measures combustion chamber wall temperature continuously",
+      "Regulates fuel pressure entering the spray nozzles"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    59,
+    "What safety precaution is mandatory when handling or servicing igniter plugs?",
+    [
+      "Isolate power and allow ignition exciter capacitors time to discharge electrical hazard",
+      "Keep igniter plug immersed in aviation kerosene",
+      "Perform maintenance while ignition switch is ON"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    60,
+    "What are the two main primary thrust/power output indicators displayed on flight deck?",
+    [
+      "Low Pressure Rotor Speed (N1) and Engine Pressure Ratio (EPR)",
+      "Fuel flow rate and Oil quantity",
+      "Battery voltage and Cabin altitude"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    61,
+    "How are engine oil pressure and oil quantity measured and displayed?",
+    [
+      "Oil pressure via pressure transmitters; Oil quantity via capacitance or float sensors",
+      "Measured using mechanical dipsticks while in flight",
+      "Calculated indirectly from fuel consumption rates"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    62,
+    "What is the purpose of monitoring engine oil temperature on cockpit instruments?",
+    [
+      "Ensures oil operates within safe thermal viscosity limits and warns of cooler failure",
+      "Measures total propulsive efficiency of the exhaust nozzle",
+      "Indicates total thrust produced by the fan rotor"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    63,
+    "What sensor is used to measure engine shaft rotational speed (N1 / N2 RPM)?",
+    [
+      "Tachometer generator, phonic wheel, or variable reluctance speed probe",
+      "Thermocouple harness placed inside jet pipe",
+      "Pitot-static tube mounted on engine nose cone"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    64,
+    "What is the objective of monitoring engine vibration levels on flight deck instruments?",
+    [
+      "Detects mechanical imbalance, bearing distress, or blade damage early",
+      "Adjusts cabin air conditioning airflow",
+      "Measures exhaust gas velocity at jet nozzle exit"
+    ],
+    0,
+    "Reference content"
+  ],
+  [
+    65,
+    "How does the oil low-pressure warning system alert the flight crew?",
+    [
+      "Triggers a red Master Warning, visual CAS message, and aural chime when pressure drops below limit",
+      "Automatically shuts down engine fire extinguishers",
+      "Increases fuel flow to maximum takeoff power"
+    ],
+    0,
+    "Reference content"
+  ]
+]
