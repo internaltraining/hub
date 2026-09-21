@@ -47,7 +47,7 @@
     5,
     "How does a turboprop engine produce its useful propulsive output?",
     [
-      "By using turbine power to drive a propeller, producing high shaft power plus small residual jet thrust",
+      "By using turbine power to drive a propeller via reduction gearbox, producing high shaft power",
       "By relying entirely on high-velocity thermal jet exhaust thrust",
       "By driving an internal fan duct to bypass 90% of airflow"
     ],
@@ -146,7 +146,7 @@
     14,
     "What is the primary function of a compressor bleed valve system?",
     [
-      "To unload early compressor stages during engine starting and low RPM to prevent stall",
+      "To bleed excess air at low RPM to prevent compressor stall and surge",
       "To dump unburnt fuel out of the engine casing during acceleration",
       "To increase total engine pressure ratio during high-speed cruise flight"
     ],
@@ -705,11 +705,11 @@
   ],
   [
     65,
-    "How does the oil low-pressure warning system alert the flight crew?",
+    "What parameters must be monitored when advancing engine thrust levers during a power run?",
     [
-      "Triggers a red Master Warning, visual CAS message, and aural chime when pressure drops below limit",
-      "Automatically shuts down engine fire extinguishers",
-      "Increases fuel flow to maximum takeoff power"
+      "Oil temperature, oil pressure, and N1 vibration",
+      "Cabin altitude and passenger mask pressure",
+      "Hydraulic fluid reservoir color"
     ],
     0,
     "Reference content"
