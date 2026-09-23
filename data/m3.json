@@ -1,0 +1,442 @@
+[
+  [
+    1,
+    "What type of electrical charge do protons carry?",
+    [
+      "Protons do not carry any electrical charge",
+      "Protons carry a negative electrical charge",
+      "Protons are positively charged"
+    ],
+    2,
+    "Protons are positively charged"
+  ],
+  [
+    2,
+    "Which subatomic particle is considered to have the smallest relative mass?",
+    [
+      "Electron",
+      "Proton",
+      "Neutron"
+    ],
+    0,
+    "Electron"
+  ],
+  [
+    3,
+    "What is formed when an atom gains or loses an electrical charge?",
+    [
+      "Ion",
+      "Molecule",
+      "Isotope"
+    ],
+    0,
+    "Ion"
+  ],
+  [
+    4,
+    "Which letter designates the second energy shell level in an atom?",
+    [
+      "K",
+      "L",
+      "M"
+    ],
+    1,
+    "L"
+  ],
+  [
+    5,
+    "Which subatomic particle carries no electrical charge?",
+    [
+      "Proton",
+      "Neutron",
+      "Electron"
+    ],
+    1,
+    "Neutron"
+  ],
+  [
+    6,
+    "How many valence electrons do metal atoms typically have in their outermost shell?",
+    [
+      "1, 2, or 3",
+      "5, 6, or 7",
+      "4"
+    ],
+    0,
+    "1, 2, or 3"
+  ],
+  [
+    7,
+    "How do like and unlike electrical charges interact with each other?",
+    [
+      "Like charges repel and opposite charges attract",
+      "Like charges attract and opposite charges repel",
+      "Like and unlike charges have no interaction force"
+    ],
+    0,
+    "Like charges repel and opposite charges attract"
+  ],
+  [
+    8,
+    "How is a static electrical charge commonly created between two materials?",
+    [
+      "By applying a high-voltage magnetic induction coil directly across the surfaces",
+      "By friction when two materials are rubbed together and electrons are transferred",
+      "By heating the materials until thermal ionization takes place"
+    ],
+    1,
+    "By friction when two materials are rubbed together and electrons are transferred"
+  ],
+  [
+    9,
+    "What does Coulomb's Law calculate regarding charged bodies?",
+    [
+      "The attractive or repulsive force directly proportional to charge product and inversely proportional to squared distance",
+      "The total electrical resistance and thermal conductivity of metallic wires",
+      "The resonant frequency of alternating current in an LC circuit"
+    ],
+    0,
+    "The attractive or repulsive force directly proportional to charge product and inversely proportional to squared distance"
+  ],
+  [
+    10,
+    "What is the standard SI unit of electrical charge?",
+    [
+      "Coulomb",
+      "Ampere",
+      "Volt"
+    ],
+    0,
+    "Coulomb"
+  ],
+  [
+    11,
+    "What defines electrical conductance in solid materials?",
+    [
+      "The complete restriction of free electrons within covalent bonds",
+      "The heavy accumulation of stationary positive ions",
+      "The easy movement of valence electrons through the lattice structure"
+    ],
+    2,
+    "The easy movement of valence electrons through the lattice structure"
+  ],
+  [
+    12,
+    "Which of the following materials is known as the best standard electrical conductor?",
+    [
+      "Copper",
+      "Glass",
+      "Rubber"
+    ],
+    0,
+    "Copper"
+  ],
+  [
+    13,
+    "What causes electric current to flow through a liquid solution?",
+    [
+      "Ionisation of dissolved substances (ionic substances)",
+      "The friction of mechanical stirring paddles",
+      "Direct thermal radiation without chemical ions"
+    ],
+    0,
+    "Ionisation of dissolved substances (ionic substances)"
+  ],
+  [
+    14,
+    "What occurs when an atom acquires an extra electron?",
+    [
+      "It becomes a neutral molecule with zero charge",
+      "It becomes a negative ion with a negative electrical charge",
+      "It transforms into a positive proton"
+    ],
+    1,
+    "It becomes a negative ion with a negative electrical charge"
+  ],
+  [
+    15,
+    "What is a natural example of static electricity discharge in the atmosphere?",
+    [
+      "Thunder strike (lightning)",
+      "Ocean tidal wave propagation",
+      "Acoustic sound resonance"
+    ],
+    0,
+    "Thunder strike (lightning)"
+  ],
+  [
+    16,
+    "What is the basic concept of static electricity between two bodies?",
+    [
+      "An electric force is exerted between them because of their unequal charges",
+      "A steady magnetic field is generated without potential difference",
+      "A continuous direct current flows through the air gap"
+    ],
+    0,
+    "An electric force is exerted between them because of their unequal charges"
+  ],
+  [
+    17,
+    "What is the definition of electrical voltage?",
+    [
+      "The total rate of electron flow measured in amperes",
+      "The difference in electrical charge (potential difference) between two points",
+      "The opposition to current flow measured in ohms"
+    ],
+    1,
+    "The difference in electrical charge (potential difference) between two points"
+  ],
+  [
+    18,
+    "What is the standard unit of electromotive force (EMF)?",
+    [
+      "Coulomb",
+      "Volt",
+      "Ohm"
+    ],
+    1,
+    "Volt"
+  ],
+  [
+    19,
+    "What is the standard unit of electric current?",
+    [
+      "Volt",
+      "Ampere",
+      "Watt"
+    ],
+    1,
+    "Ampere"
+  ],
+  [
+    20,
+    "What is the difference between electron flow and conventional current flow?",
+    [
+      "Electrons flow from negative to positive, while conventional current flows from positive to negative",
+      "Electrons flow from positive to negative, while conventional current flows from negative to positive",
+      "Both electron flow and conventional current flow move in identical directions"
+    ],
+    0,
+    "Electrons flow from negative to positive, while conventional current flows from positive to negative"
+  ],
+  [
+    21,
+    "What is the standard unit of electrical resistance?",
+    [
+      "Volt",
+      "Ohm",
+      "Farad"
+    ],
+    1,
+    "Ohm"
+  ],
+  [
+    22,
+    "What term describes the ease with which a material conducts electric current?",
+    [
+      "Inductance",
+      "Capacitance",
+      "Conductance"
+    ],
+    2,
+    "Conductance"
+  ],
+  [
+    23,
+    "What is the mathematical relationship between Voltage (U) and Current (I) in a fixed resistance?",
+    [
+      "Directly proportional (U equals I times R)",
+      "Inversely proportional",
+      "Completely unrelated"
+    ],
+    0,
+    "Directly proportional (U equals I times R)"
+  ],
+  [
+    24,
+    "What is electricity fundamentally defined as?",
+    [
+      "The storage of thermal energy",
+      "The flow of electrons",
+      "The gravitational pull of atomic nuclei"
+    ],
+    1,
+    "The flow of electrons"
+  ],
+  [
+    25,
+    "How can voltage be produced via friction?",
+    [
+      "By heating a metallic junction",
+      "By rubbing a rubber rod with fur",
+      "By rotating a wire coil in a magnetic field"
+    ],
+    1,
+    "By rubbing a rubber rod with fur"
+  ],
+  [
+    26,
+    "What is the piezoelectric effect generated by?",
+    [
+      "Chemical batteries",
+      "Thermocouples",
+      "Crystals"
+    ],
+    2,
+    "Crystals"
+  ],
+  [
+    27,
+    "How is voltage produced by heat in aviation sensors?",
+    [
+      "Piezoelectric crystal",
+      "Thermocouple",
+      "Friction rod"
+    ],
+    1,
+    "Thermocouple"
+  ],
+  [
+    28,
+    "What three conditions are required to produce voltage using a magnetic field?",
+    [
+      "A conductor, a magnetic field, and relative motion between them",
+      "A battery, a resistor, and a capacitor",
+      "A heat source, a thermocouple, and a meter"
+    ],
+    0,
+    "A conductor, a magnetic field, and relative motion between them"
+  ],
+  [
+    29,
+    "What type of electrical output does a battery primarily produce?",
+    [
+      "Alternating Current (AC)",
+      "Direct Current (DC)",
+      "Pulsating RF frequency waves"
+    ],
+    1,
+    "Direct Current (DC)"
+  ],
+  [
+    30,
+    "What are the basic components that make up a battery?",
+    [
+      "Multiple cells connected together",
+      "A single metallic electrode and air",
+      "A transformer and rectifier bridge"
+    ],
+    0,
+    "Multiple cells connected together"
+  ],
+  [
+    31,
+    "What is the main difference between a primary cell and a secondary cell?",
+    [
+      "Primary cells cannot be recharged because chemical action consumes an electrode, whereas secondary cells are rechargeable",
+      "Primary cells use solar energy while secondary cells use nuclear fuel",
+      "Primary cells produce AC power while secondary cells produce DC power"
+    ],
+    0,
+    "Primary cells cannot be recharged because chemical action consumes an electrode, whereas secondary cells are rechargeable"
+  ],
+  [
+    32,
+    "What type of battery is commonly used on commercial aircraft for main power and engine starting?",
+    [
+      "Lithium-ion consumer cells",
+      "Lead-acid automotive batteries",
+      "Nickel-cadmium (Ni-Cd)"
+    ],
+    2,
+    "Nickel-cadmium (Ni-Cd)"
+  ],
+  [
+    33,
+    "How does internal resistance affect a battery during operation?",
+    [
+      "It increases the total physical weight of the casing",
+      "It converts all chemical energy directly into light",
+      "It affects the terminal voltage output under load"
+    ],
+    2,
+    "It affects the terminal voltage output under load"
+  ],
+  [
+    34,
+    "What energy source do solar panels use to generate electricity?",
+    [
+      "Thermal friction heat",
+      "Photon light energy",
+      "Magnetic induction rotation"
+    ],
+    1,
+    "Photon light energy"
+  ],
+  [
+    35,
+    "What does the acronym AC stand for in electrical systems?",
+    [
+      "Ambient Current",
+      "Alternating Current",
+      "Advanced Circuit"
+    ],
+    1,
+    "Alternating Current"
+  ],
+  [
+    36,
+    "What is the most common waveform used for AC power systems?",
+    [
+      "Square wave",
+      "Sine wave",
+      "Sawtooth wave"
+    ],
+    1,
+    "Sine wave"
+  ],
+  [
+    37,
+    "What is the standard unit of frequency in AC systems?",
+    [
+      "Volt (V)",
+      "Hertz (Hz)",
+      "Ampere (A)"
+    ],
+    1,
+    "Hertz (Hz)"
+  ],
+  [
+    38,
+    "What is the standard AC power frequency used in European aviation and electrical grids?",
+    [
+      "60 Hz",
+      "50 Hz",
+      "400 Hz"
+    ],
+    1,
+    "50 Hz"
+  ],
+  [
+    39,
+    "What does RMS stand for in AC electrical measurements?",
+    [
+      "Root Mean Square",
+      "Rotational Magnetic Speed",
+      "Resonant Minimum Signal"
+    ],
+    0,
+    "Root Mean Square"
+  ],
+  [
+    40,
+    "What are the main advantages of a 3-phase AC electrical system?",
+    [
+      "Higher fuel consumption, heavier wiring harnesses, and lower voltage output",
+      "Single-wire distribution and elimination of transformers",
+      "Reduction of copper consumption, greater conductor efficiency, and ability to run higher power loads"
+    ],
+    2,
+    "Reduction of copper consumption, greater conductor efficiency, and ability to run higher power loads"
+  ]
+]
