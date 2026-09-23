@@ -1,0 +1,222 @@
+[
+  [
+    1,
+    "What are the two main parts of an aircraft instrument?",
+    [
+      "Power supply unit and cooling fan",
+      "Sensing mechanism and display mechanism",
+      "Digital computer and hard disk drive"
+    ],
+    1,
+    "Sensing mechanism and display mechanism"
+  ],
+  [
+    2,
+    "What is the standard arrangement of a basic 6-pack flight instrument layout?",
+    [
+      "Altimeter in top center, airspeed to the right, attitude to the left, and compass on top",
+      "Attitude indicator in top center, airspeed to the left, altimeter to the right, and heading indicator underneath",
+      "Heading indicator in center with altimeter and airspeed below"
+    ],
+    1,
+    "Attitude indicator in top center, airspeed to the left, altimeter to the right, and heading indicator underneath"
+  ],
+  [
+    3,
+    "What does the acronym EFIS stand for in modern avionics?",
+    [
+      "Emergency Fuel Injection Sensor",
+      "Electronic Flight Instrument System",
+      "Engine Frequency Indicator Switch"
+    ],
+    1,
+    "Electronic Flight Instrument System"
+  ],
+  [
+    4,
+    "What information does an Air Data Computer (ADC) typically calculate and provide?",
+    [
+      "Engine oil temperature and fuel tank quantity",
+      "Hydraulic pressure and landing gear position",
+      "Airspeed, altitude, vertical speed, and outside air temperature"
+    ],
+    2,
+    "Airspeed, altitude, vertical speed, and outside air temperature"
+  ],
+  [
+    5,
+    "What is the primary purpose of an Attitude and Heading Reference System (AHRS)?",
+    [
+      "To calculate optimal flight route navigation coordinates",
+      "To measure aircraft attitude, rate of turn, and slip and skid",
+      "To control automatic engine throttle settings"
+    ],
+    1,
+    "To measure aircraft attitude, rate of turn, and slip and skid"
+  ],
+  [
+    6,
+    "What does a magnetometer measure in an aircraft navigation system?",
+    [
+      "Vertical climb rate and altitude",
+      "Outside ambient air temperature",
+      "Aircraft heading (modern version of a traditional magnetic compass)"
+    ],
+    2,
+    "Aircraft heading (modern version of a traditional magnetic compass)"
+  ],
+  [
+    7,
+    "What key flight parameters does a Primary Flight Display (PFD) typically show?",
+    [
+      "Airspeed indicator, altimeter, heading indicator, and attitude/course deviation",
+      "Cabin pressurization and air conditioning status",
+      "Passenger entertainment system controls"
+    ],
+    0,
+    "Airspeed indicator, altimeter, heading indicator, and attitude/course deviation"
+  ],
+  [
+    8,
+    "What pitot-static sources does an Air Data Computer (ADC) receive data from?",
+    [
+      "Pitot and static pressure lines",
+      "Fuel tank and hydraulic lines",
+      "Engine oil and bleed air lines"
+    ],
+    0,
+    "Pitot and static pressure lines"
+  ],
+  [
+    9,
+    "Which major aviation manufacturer developed the popular G1000 glass cockpit system?",
+    [
+      "Boeing",
+      "Garmin",
+      "Airbus"
+    ],
+    1,
+    "Garmin"
+  ],
+  [
+    10,
+    "What information does a Multi-Function Display (MFD) typically present to the flight crew?",
+    [
+      "Only primary flight attitude and airspeed gauges",
+      "Emergency checklist and hydraulic schematics only",
+      "A moving map on the right side, and engine instrumentation on the left"
+    ],
+    2,
+    "A moving map on the right side, and engine instrumentation on the left"
+  ],
+  [
+    11,
+    "What is the core processing component of a computer system called?",
+    [
+      "RAM memory module",
+      "CPU (Central Processing Unit)",
+      "Hard disk storage drive"
+    ],
+    1,
+    "CPU (Central Processing Unit)"
+  ],
+  [
+    12,
+    "What are the four basic components of a standard computer system architecture?",
+    [
+      "Monitor, keyboard, mouse, and printer",
+      "Battery, alternator, switch, and lamp",
+      "CPU, memory, input, and output devices"
+    ],
+    2,
+    "CPU, memory, input, and output devices"
+  ],
+  [
+    13,
+    "What is the primary function of the Arithmetic Logic Unit (ALU)?",
+    [
+      "Displaying graphical maps on the cockpit screen",
+      "Performing mathematical computations and binary logic operations",
+      "Storing long-term software programs without power"
+    ],
+    1,
+    "Performing mathematical computations and binary logic operations"
+  ],
+  [
+    14,
+    "What is the fundamental difference between volatile and non-volatile memories?",
+    [
+      "Volatile memory loses its data when power is removed, while non-volatile memory retains data without power",
+      "Volatile memory is made of glass while non-volatile memory is made of silicon",
+      "Volatile memory operates at high speed while non-volatile memory is extremely slow"
+    ],
+    0,
+    "Volatile memory loses its data when power is removed, while non-volatile memory retains data without power"
+  ],
+  [
+    15,
+    "What does the acronym ROM stand for in computer memory types?",
+    [
+      "Read-Only Memory",
+      "Random Operation Module",
+      "Rapid Output Monitor"
+    ],
+    0,
+    "Read-Only Memory"
+  ],
+  [
+    16,
+    "Which of the following components are classified as input and output devices respectively?",
+    [
+      "Hard drive (input) and CPU (output)",
+      "Printer (input) and Mouse (output)",
+      "Keyboard (input) and Monitor display (output)"
+    ],
+    2,
+    "Keyboard (input) and Monitor display (output)"
+  ],
+  [
+    17,
+    "What technology do optical discs use to read and write data?",
+    [
+      "Magnetic platters rotating at high speed",
+      "Laser beams to etch or read data pits",
+      "Solid-state flash transistors"
+    ],
+    1,
+    "Laser beams to etch or read data pits"
+  ],
+  [
+    18,
+    "What is the main functional advantage of an EEPROM compared to an EPROM?",
+    [
+      "EEPROM retains contents when power is off and can be electrically erased/reprogrammed without ultraviolet light",
+      "EEPROM requires ultraviolet light exposure to change stored data",
+      "EEPROM can store infinite terabytes of data instantly"
+    ],
+    0,
+    "EEPROM retains contents when power is off and can be electrically erased/reprogrammed without ultraviolet light"
+  ],
+  [
+    19,
+    "What is the primary purpose of a computer data bus burst transfer?",
+    [
+      "To cool down the central processor unit",
+      "To transfer data blocks rapidly between system components",
+      "To supply high voltage to peripheral screens"
+    ],
+    1,
+    "To transfer data blocks rapidly between system components"
+  ],
+  [
+    20,
+    "What is the primary function of a Hard Disk Drive (HDD) in a computer system?",
+    [
+      "Long-term data and program storage",
+      "Executing arithmetic logic calculations",
+      "Providing temporary cache workspace"
+    ],
+    0,
+    "Long-term data and program storage"
+  ]
+]
