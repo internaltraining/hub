@@ -126,7 +126,7 @@
   .dropdown-item.dev { color: var(--accent); border-top: 1px solid var(--border); margin-top: 4px; padding-top: 12px; border-radius: 0 0 12px 12px; font-weight: 600; }
 
   /* MAIN CONTAINER */
-  .container { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 24px 20px 40px; display: flex; flex-direction: column; }
+  .container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 24px 20px 40px; display: flex; flex-direction: column; }
   .container.center-mode { justify-content: center; align-items: center; padding-top: 15px; padding-bottom: 15px; max-width: 720px; }
   
   .card { 
@@ -179,32 +179,19 @@
   @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
   /* =========================================================
-     APPLE STORE HORIZONTAL CAROUSEL CARDS (KÉO NGANG)
+     APPLE STORE CARDS UI (VERTICAL GRID & OPTIMIZED FONT)
      ========================================================= */
   #menuView { width: 100%; display: flex; flex-direction: column; }
   .hub-title { font-size: 34px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.022em; }
-  .hub-sub { color: var(--text-sub); margin-bottom: 24px; font-size: 16px; }
+  .hub-sub { color: var(--text-sub); margin-bottom: 32px; font-size: 16px; }
   
   .module-grid { 
-    display: flex; 
+    display: grid; 
     gap: 24px; 
-    overflow-x: auto; 
-    scroll-snap-type: x mandatory; 
-    padding: 10px 4px 30px 4px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    grid-template-columns: 1fr; 
   }
-  .module-grid::-webkit-scrollbar {
-    height: 8px;
-  }
-  .module-grid::-webkit-scrollbar-track {
-    background: var(--border);
-    border-radius: 4px;
-  }
-  .module-grid::-webkit-scrollbar-thumb {
-    background: var(--text-sub);
-    border-radius: 4px;
-  }
+  @media (min-width: 600px) { .module-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .module-grid { grid-template-columns: repeat(3, 1fr); } }
 
   .module-btn { 
     position: relative;
@@ -217,16 +204,8 @@
     overflow: hidden; 
     display: flex;
     flex-direction: column;
-    flex: 0 0 320px; /* Cố định chiều rộng thẻ để trượt ngang mượt mà */
-    scroll-snap-align: start;
     min-height: 420px; 
   }
-  @media (min-width: 768px) {
-    .module-btn {
-      flex: 0 0 360px;
-    }
-  }
-
   @media (hover: hover) {
     .module-btn:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 24px 48px rgba(0,0,0,0.15); }
     .module-btn:hover .m-image { transform: scale(1.05) translateY(-5px); }
@@ -252,8 +231,10 @@
 
   /* Global Label and Structure */
   .m-label { font-size: 11px; font-weight: 700; color: #ff6800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; z-index: 2; }
+  
+  /* Cân chỉnh cỡ chữ tiêu đề mượt mà, không bị vỡ hàng ngang */
   .m-title { 
-    font-size: 21px; 
+    font-size: 20px; 
     font-weight: 700; 
     margin-bottom: 8px; 
     line-height: 1.3; 
@@ -262,7 +243,7 @@
     display: flex; 
     flex-direction: column; 
     gap: 4px;
-    word-break: break-word; /* Khắc phục triệt để lỗi ngắt dòng cụt */
+    word-break: break-word; 
   }
   .m-desc { font-size: 14.5px; line-height: 1.45; font-weight: 500; z-index: 2; }
 
