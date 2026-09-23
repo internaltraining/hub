@@ -1,87 +1,86 @@
 [
-  
   {
     "id": "m1",
     "title": "Module 1: Mathematics",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Arithmetic, Algebra & Geometry Essentials",
     "file": "data/m1.json"
   },
   {
     "id": "m2",
     "title": "Module 2: Physics",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Matter, Mechanics, Thermodynamics & Waves",
     "file": "data/m2.json"
-  },{
+  },
+  {
     "id": "m3",
     "title": "Module 3: Electrical Fundamentals",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Electron Flow, DC/AC Circuits & Magnetism",
     "file": "data/m3.json"
   },
   {
     "id": "m5",
-    "title": "Module 5: Instrument & Computer Syste",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "title": "Module 5: Instrument & Computer Systems",
+    "desc": "Avionics, Flight Instruments & Digital Processors",
     "file": "data/m5.json"
   },
-   {
+  {
     "id": "m6",
     "title": "Module 6: Materials and Hardware",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Ferrous/Non-Ferrous Metals, Composites & Fasteners",
     "file": "data/m6.json"
   },
   {
     "id": "m07a",
     "title": "Module 7A: Maintenance Practices",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Shop Safety, Hand Tools, Riveting & Inspection",
     "file": "data/m07a.json"
   },
   {
     "id": "m07a209",
-    "title": "Module 7A: Maintenance Practices",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "title": "Module 7A: Advanced Maintenance",
+    "desc": "Advanced Structural Repair & Special Procedures",
     "file": "data/m07a209.json"
-  }, 
+  },
   {
     "id": "m8",
     "title": "Module 8: Basic Aerodynamics",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Atmosphere, Airflow, Lift, Drag & Stability",
     "file": "data/m8.json"
   },
   {
     "id": "m9",
     "title": "Module 9: Human Factors",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Error Chains, SHEL/PEAR Model & Safety Culture",
     "file": "data/m9.json"
   },
-   {
+  {
     "id": "m10",
     "title": "Module 10: Aviation Legislation",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "ICAO Regulations, CAAV Laws & Airworthiness",
     "file": "data/m10.json"
   },
-   {
+  {
     "id": "m11",
-    "title": "Module 11A: Turbine Aeroplane Aerodynamics and Structures and Systems",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "title": "Module 11A: Aeroplanes Structures & Systems",
+    "desc": "Airframe Structures, Flight Controls & Systems",
     "file": "data/m11.json"
- },
-   {
+  },
+  {
     "id": "m15",
     "title": "Module 15: Gas Turbine Engine",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Compressors, Combustion, Turbines & Fuel Systems",
     "file": "data/m15.json"
-   },
-   {
+  },
+  {
     "id": "m15tq",
-    "title": "Module 15: Gas Turbine Engine by Tran Quoc",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "title": "Module 15: Gas Turbine Engine (Extended)",
+    "desc": "Advanced Turbine Operations & Deep Dive QSM15",
     "file": "data/m15tq.json"
-   },
+  },
   {
     "id": "m17",
     "title": "Module 17: Propeller",
-    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "desc": "Blade Aerodynamics, Pitch Control & Systems",
     "file": "data/m17.json"
   }
 ]
-
