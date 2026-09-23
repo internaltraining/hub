@@ -1,0 +1,1652 @@
+[
+  [
+    1,
+    "The Majority of Maintenance Errors are caused during: (Phần lớn các lỗi bảo dưỡng xảy ra trong quá trình:)",
+    [
+      "Installation. (Lắp đặt.)",
+      "Servicing. (Bảo dưỡng.)",
+      "Removal. (Tháo dỡ.)"
+    ],
+    0,
+    "Installation. (Lắp đặt.)"
+  ],
+  [
+    2,
+    "A latent failure is defined as: (Một hỏng hóc tiềm ẩn được định nghĩa là:)",
+    [
+      "A mistake that has already been made but has not yet caused an Incident or accident. (Một sai lầm đã được thực hiện nhưng chưa gây ra sự cố hoặc tai nạn.)",
+      "Receiving bad instruction from a manager who is out of touch with maintenance. (Nhận chỉ dẫn tồi từ một người quản lý không nắm rõ về bảo dưỡng.)",
+      "A failure which could not have been predicted. (Một hỏng hóc không thể dự đoán trước.)"
+    ],
+    0,
+    "A mistake that has already been made but has not yet caused an Incident or accident. (Một sai lầm đã được thực hiện nhưng chưa gây ra sự cố hoặc tai nạn.)"
+  ],
+  [
+    3,
+    "The incident where a B737 lost it cabin ceiling is a direct result of: (Sự cố máy bay B737 bị mất trần khoang hành khách là kết quả trực tiếp của:)",
+    [
+      "Engine vibration (Động cơ rung động)",
+      "Design factors (Các yếu tố thiết kế)",
+      "Human error (Lỗi do con người)"
+    ],
+    2,
+    "Human error (Lỗi do con người)"
+  ],
+  [
+    4,
+    "It was calculated that approximately 70-80% of all aircraft accidents were attributable to the: (Người ta tính toán rằng khoảng 70-80% tất cả các tai nạn máy bay là do:)",
+    [
+      "Human error (Lỗi do con người)",
+      "Maintenance error (Lỗi do bảo dưỡng)",
+      "Pilots error (Lỗi do phi công)"
+    ],
+    0,
+    "Human error (Lỗi do con người)"
+  ],
+  [
+    5,
+    "If you are given a task and you are not clear of the contents, then you should: (Nếu bạn được giao một nhiệm vụ và bạn không rõ nội dung, thì bạn nên:)",
+    [
+      "Consult the appropriate/relevant approved data (Tham khảo dữ liệu được phê duyệt thích hợp/có liên quan)",
+      "Ask someone who has done it before (Hỏi người đã từng làm việc đó)",
+      "Consult type course notes (Tham khảo tài liệu khóa học loại máy bay)"
+    ],
+    0,
+    "Consult the appropriate/relevant approved data (Tham khảo dữ liệu được phê duyệt thích hợp/có liên quan)"
+  ],
+  [
+    6,
+    "British Airways BAC-111; windscreen blown out is due to: (Sự cố máy bay BAC-111 của British Airways; kính chắn gió bị thổi bay là do:)",
+    [
+      "Flight crew mistakes. (Lỗi của phi hành đoàn.)",
+      "Shift maintenance team is responsible for installing the incorrect bolts during the windscreen replacement, (Đội bảo dưỡng theo ca chịu trách nhiệm lắp sai bu lông trong quá trình thay kính chắn gió,)",
+      "Stores In charge issued a wrong Part number of screws/bolts (Người phụ trách kho cấp phát sai mã số ốc vít/bu lông)"
+    ],
+    1,
+    "Shift maintenance team is responsible for installing the incorrect bolts during the windscreen replacement, (Đội bảo dưỡng theo ca chịu trách nhiệm lắp sai bu lông trong quá trình thay kính chắn gió,)"
+  ],
+  [
+    7,
+    "The famous Murphy's Law says: (Định luật Murphy nổi tiếng phát biểu rằng:)",
+    [
+      "If something can go wrong, it will. (Nếu một điều gì đó có thể diễn biến xấu, nó sẽ xảy ra.)",
+      "If something can go wrong, we can stop it (Nếu một điều gì đó có thể diễn biến xấu, chúng ta có thể ngăn chặn nó)",
+      "If something can go wrong, we can blame others (Nếu một điều gì đó có thể diễn biến xấu, chúng ta có thể đổ lỗi cho người khác)"
+    ],
+    0,
+    "If something can go wrong, it will. (Nếu một điều gì đó có thể diễn biến xấu, nó sẽ xảy ra.)"
+  ],
+  [
+    8,
+    "The environmental noise level has an effect on maintenance team it: (Mức độ tiếng ồn môi trường có tác động đến đội ngũ bảo dưỡng:)",
+    [
+      "Always improves concentration and quality of work. (Luôn cải thiện sự tập trung và chất lượng công việc.)",
+      "Always decreases concentration and quality of work. (Luôn làm giảm sự tập trung và chất lượng công việc.)",
+      "Has no effect on concentration of quality of work. (Không có ảnh hưởng đến sự tập trung vào chất lượng công việc.)"
+    ],
+    1,
+    "Always decreases concentration and quality of work. (Luôn làm giảm sự tập trung và chất lượng công việc.)"
+  ],
+  [
+    9,
+    "The eye receive optical signals and send them to the: (Mắt nhận tín hiệu quang học và gửi chúng đến:)",
+    [
+      "Blood vessels and right side of the brain for evaluation (Các mạch máu và não phải để đánh giá)",
+      "Brain and brain evaluates the information if the visual impressions of both eyes are matched (Não và não đánh giá thông tin xem ấn tượng thị giác của cả hai mắt có khớp nhau không)",
+      "Left side of the brain for evaluation (Não trái để đánh giá)"
+    ],
+    1,
+    "Brain and brain evaluates the information if the visual impressions of both eyes are matched (Não và não đánh giá thông tin xem ấn tượng thị giác của cả hai mắt có khớp nhau không)"
+  ],
+  [
+    10,
+    "One of the factors can affect and limit the clarity of sight are: (Một trong những yếu tố có thể ảnh hưởng và hạn chế độ rõ của tầm nhìn là:)",
+    [
+      "If the Technician wearing power glasses (Nếu Kỹ thuật viên đeo kính cận/viễn)",
+      "Hot or clod environment (Môi trường nóng hoặc lạnh)",
+      "The distance and the angle of the object from the viewer (Khoảng cách và góc của vật thể so với người nhìn)"
+    ],
+    2,
+    "The distance and the angle of the object from the viewer (Khoảng cách và góc của vật thể so với người nhìn)"
+  ],
+  [
+    11,
+    "The part of the eye controls the amount of light that is allowed to enter the eyes is called: (Bộ phận của mắt kiểm soát lượng ánh sáng được phép đi vào mắt được gọi là:)",
+    [
+      "The pupil. (Đồng tử.)",
+      "The iris. (Mống mắt.)",
+      "The cornea. (Giác mạc.)"
+    ],
+    1,
+    "The iris. (Mống mắt.)"
+  ],
+  [
+    12,
+    "The eyesight of an AMT/Engineer is the responsibility of: (Thị lực của Kỹ thuật viên bảo dưỡng/Kỹ sư là trách nhiệm của:)",
+    [
+      "The optician & Shift In-Charge (Bác sĩ nhãn khoa & Trưởng ca)",
+      "The Individual engineer (Cá nhân kỹ sư)",
+      "The Quality Manager & Company Doctor. (Giám đốc chất lượng & Bác sĩ công ty.)"
+    ],
+    1,
+    "The Individual engineer (Cá nhân kỹ sư)"
+  ],
+  [
+    13,
+    "Human performance is limited by: (Hiệu suất của con người bị giới hạn bởi:)",
+    [
+      "Physical factors only. (Chỉ các yếu tố thể chất.)",
+      "Mental factors only. (Chỉ các yếu tố tinh thần.)",
+      "Always Both physical factors and mental factors (Luôn luôn là cả yếu tố thể chất và yếu tố tinh thần)"
+    ],
+    2,
+    "Always Both physical factors and mental factors (Luôn luôn là cả yếu tố thể chất và yếu tố tinh thần)"
+  ],
+  [
+    14,
+    "At lower light levels, the visual sensing is performed mainly by the: (Ở mức ánh sáng thấp, cảm nhận thị giác chủ yếu được thực hiện bởi:)",
+    [
+      "Safety Cones (Tế bào nón an toàn)",
+      "Safety rods (Tế bào que an toàn)",
+      "Safety Cones, Safety barriers and/or reflective tapes. (Nón an toàn, Hàng rào an toàn và/hoặc băng phản quang.)"
+    ],
+    2,
+    "Safety Cones, Safety barriers and/or reflective tapes. (Nón an toàn, Hàng rào an toàn và/hoặc băng phản quang.)"
+  ],
+  [
+    15,
+    "When a person moves from a poorly lit area to a well-lit area, what is the minimum time they should allow for the eyes to adapt: (Khi một người di chuyển từ khu vực thiếu sáng sang khu vực đủ sáng, thời gian tối thiểu họ nên để mắt thích nghi là:)",
+    [
+      "7 minutes (7 phút)",
+      "7 seconds (7 giây)",
+      "30 seconds (30 giây)"
+    ],
+    0,
+    "7 minutes (7 phút)"
+  ],
+  [
+    16,
+    "The Extreme discomfort experienced by a maintenance engineer due to working in a confined space is known as: (Sự khó chịu tột độ mà một kỹ sư bảo dưỡng gặp phải do làm việc trong không gian hẹp được gọi là:)",
+    [
+      "Claustrophobia (Chứng sợ không gian hẹp)",
+      "Acrophobia (Chứng sợ độ cao)",
+      "Agoraphobia (Chứng sợ không gian rộng)"
+    ],
+    0,
+    "Claustrophobia (Chứng sợ không gian hẹp)"
+  ],
+  [
+    17,
+    "The 'working memory' is consider as: (Bộ nhớ 'làm việc' được coi là:)",
+    [
+      "Long term memory. (Trí nhớ dài hạn.)",
+      "Short term memory. (Trí nhớ ngắn hạn.)",
+      "Ultra-short-term memory (Trí nhớ siêu ngắn)"
+    ],
+    1,
+    "Short term memory. (Trí nhớ ngắn hạn.)"
+  ],
+  [
+    18,
+    "The Long-term memory capacity is usually: (Dung lượng trí nhớ dài hạn thường là:)",
+    [
+      "An unlimited memory. (Một bộ nhớ không giới hạn.)",
+      "Last for 4 - 8 years. (Kéo dài trong 4 - 8 năm.)",
+      "Last for 12 months (Kéo dài trong 12 tháng)"
+    ],
+    0,
+    "An unlimited memory. (Một bộ nhớ không giới hạn.)"
+  ],
+  [
+    19,
+    "Intense or loud noise may lead to: (Tiếng ồn lớn hoặc dữ dội có thể dẫn đến:)",
+    [
+      "Deafness. (Điếc.)",
+      "Fatigue. (Mệt mỏi.)",
+      "No effects (Không có tác động)"
+    ],
+    1,
+    "Fatigue. (Mệt mỏi.)"
+  ],
+  [
+    20,
+    "The human ear is used to detect: (Tai người được dùng để phát hiện:)",
+    [
+      "Audible frequency range of 20 and 20,000 Hertz (Dải tần số nghe được từ 20 đến 20.000 Hertz)",
+      "Above 2-20,000  MHz (Trên 2-20.000 MHz)",
+      "Between 2 KHz  to 20,000 GHz (Từ 2 KHz đến 20.000 GHz)"
+    ],
+    0,
+    "Audible frequency range of 20 and 20,000 Hertz (Dải tần số nghe được từ 20 đến 20.000 Hertz)"
+  ],
+  [
+    21,
+    "When working in different noise levels the Human Performance: (Khi làm việc ở các mức độ tiếng ồn khác nhau, Hiệu suất Con người:)",
+    [
+      "Has no effect on the number of errors or the speed of performance of an individual. (Không ảnh hưởng đến số lượng lỗi hoặc tốc độ làm việc của một cá nhân.)",
+      "An individual can find noise levels annoying but still perform well indefinitely. (Một cá nhân có thể thấy mức độ tiếng ồn khó chịu nhưng vẫn thực hiện tốt vô thời hạn.)",
+      "Is directly proportional to the number of errors and the speed of performance of an individual (Tỷ lệ thuận với số lượng lỗi và tốc độ làm việc của một cá nhân)"
+    ],
+    2,
+    "Is directly proportional to the number of errors and the speed of performance of an individual (Tỷ lệ thuận với số lượng lỗi và tốc độ làm việc của một cá nhân)"
+  ],
+  [
+    22,
+    "The normal human ear is sensitive to frequencies between: (Tai người bình thường nhạy cảm với các tần số từ:)",
+    [
+      "About 20 Hz and 20 000 Hz with greatest sensitivity at about 3000 Hz (Khoảng 20 Hz đến 20 000 Hz với độ nhạy cao nhất ở khoảng 3000 Hz)",
+      "About 20 KHz and 20 000 KHz with greatest sensitivity at about 3000 KHz (Khoảng 20 KHz đến 20 000 KHz với độ nhạy cao nhất ở khoảng 3000 KHz)",
+      "About 20 MHz and 20 000 MHz with greatest sensitivity at about 3000 MHz (Khoảng 20 MHz đến 20 000 MHz với độ nhạy cao nhất ở khoảng 3000 MHz)"
+    ],
+    0,
+    "About 20 Hz and 20 000 Hz with greatest sensitivity at about 3000 Hz (Khoảng 20 Hz đến 20 000 Hz với độ nhạy cao nhất ở khoảng 3000 Hz)"
+  ],
+  [
+    23,
+    "The Retina location on the eyeball Is: (Vị trí của Võng mạc trên nhãn cầu là:)",
+    [
+      "The retina is located on the forward of the eyeball. (Võng mạc nằm ở phía trước của nhãn cầu.)",
+      "The retina is located on the rear of the eyeball. (Võng mạc nằm ở phía sau của nhãn cầu.)",
+      "The retina is located on the middle of the eyeball (Võng mạc nằm ở giữa của nhãn cầu)"
+    ],
+    1,
+    "The retina is located on the rear of the eyeball. (Võng mạc nằm ở phía sau của nhãn cầu.)"
+  ],
+  [
+    24,
+    "The facial feature can contribute to the blind spot is: (Đặc điểm khuôn mặt có thể góp phần tạo ra điểm mù là:)",
+    [
+      "The nose can block the field of vision and contribute to the blind spot. (Mũi có thể cản trở tầm nhìn và góp phần tạo ra điểm mù.)",
+      "Below the feet contribute to the blind spot (Dưới chân góp phần tạo ra điểm mù)",
+      "The Right eye contribute to the blind spot (Mắt phải góp phần tạo ra điểm mù)"
+    ],
+    0,
+    "The nose can block the field of vision and contribute to the blind spot. (Mũi có thể cản trở tầm nhìn và góp phần tạo ra điểm mù.)"
+  ],
+  [
+    25,
+    "The shape of the lens  used for nearsightedness is: (Hình dạng của thấu kính dùng cho người cận thị là:)",
+    [
+      "Concave lens. It helps compensate by bending light outwards before it reaches the cornea. (Thấu kính phân kì (lõm). Nó giúp bù đắp bằng cách uốn cong ánh sáng ra ngoài trước khi chạm đến giác mạc.)",
+      "Convex lens. It helps compensate by bending light outwards before it reaches the cornea. (Thấu kính hội tụ (lồi). Nó giúp bù đắp bằng cách uốn cong ánh sáng ra ngoài trước khi chạm đến giác mạc.)",
+      "Only contact lens can be used (Chỉ có thể sử dụng kính áp tròng)"
+    ],
+    0,
+    "Concave lens. It helps compensate by bending light outwards before it reaches the cornea. (Thấu kính phân kì (lõm). Nó giúp bù đắp bằng cách uốn cong ánh sáng ra ngoài trước khi chạm đến giác mạc.)"
+  ],
+  [
+    26,
+    "When someone is working in an enclosed space like fuel tank/LG bay/THS another person should be outside the space and in constant communication is to: (Khi ai đó đang làm việc trong không gian kín như thùng nhiên liệu/khoang càng/THS, một người khác nên ở bên ngoài và liên lạc thường xuyên để:)",
+    [
+      "Ensure compliance with the maintenance manual (Đảm bảo tuân thủ tài liệu bảo dưỡng)",
+      "Provide instructions to the tradesman (Cung cấp hướng dẫn cho người thợ)",
+      "For safety reasons (Vì lý do an toàn)"
+    ],
+    2,
+    "For safety reasons (Vì lý do an toàn)"
+  ],
+  [
+    27,
+    "A Divided Attention is considered as: (Chú ý phân tán được coi là:)",
+    [
+      "Common in most work situations, where people are required to do more than one thing at the same time (Phổ biến trong hầu hết các tình huống công việc, nơi mọi người được yêu cầu làm nhiều việc cùng một lúc)",
+      "Divide the work with team members (Chia sẻ công việc với các thành viên trong nhóm)",
+      "Divide the work for next shift (Chia công việc cho ca sau)"
+    ],
+    0,
+    "Common in most work situations, where people are required to do more than one thing at the same time (Phổ biến trong hầu hết các tình huống công việc, nơi mọi người được yêu cầu làm nhiều việc cùng một lúc)"
+  ],
+  [
+    28,
+    "Learning of a routine by repeated practice is known as: (Việc học một thói quen thông qua thực hành lặp đi lặp lại được gọi là:)",
+    [
+      "Episodic memory (Trí nhớ theo giai đoạn)",
+      "Motor programming like Driving a car/motor bike (Lập trình vận động như Lái xe ô tô/xe máy)",
+      "Cognitive learning (Học tập nhận thức)"
+    ],
+    1,
+    "Motor programming like Driving a car/motor bike (Lập trình vận động như Lái xe ô tô/xe máy)"
+  ],
+  [
+    29,
+    "A Focused Attention is considered as: (Sự chú ý tập trung được coi là:)",
+    [
+      "The skill of focusing one's attention upon a single source and avoiding distraction and wrong doings (Kỹ năng tập trung sự chú ý của một người vào một nguồn duy nhất và tránh sự xao nhãng cũng như làm sai)",
+      "Doing multi tasking at the same time (Làm nhiều việc cùng lúc)",
+      "Just working along the team (Chỉ làm việc cùng nhóm)"
+    ],
+    0,
+    "The skill of focusing one's attention upon a single source and avoiding distraction and wrong doings (Kỹ năng tập trung sự chú ý của một người vào một nguồn duy nhất và tránh sự xao nhãng cũng như làm sai)"
+  ],
+  [
+    30,
+    "The Perception is considered as: (Nhận thức được xem là:)",
+    [
+      "Interpretation of sensory data to make it meaningful, discarding irrelevant data. (Diễn giải dữ liệu giác quan để làm cho nó có ý nghĩa, loại bỏ dữ liệu không liên quan.)",
+      "Using printed data (Sử dụng dữ liệu in)",
+      "Asking for team help (Yêu cầu nhóm giúp đỡ)"
+    ],
+    0,
+    "Interpretation of sensory data to make it meaningful, discarding irrelevant data. (Diễn giải dữ liệu giác quan để làm cho nó có ý nghĩa, loại bỏ dữ liệu không liên quan.)"
+  ],
+  [
+    31,
+    "Situation awareness for an AMT can be summarized as: (Nhận thức tình huống đối với một Kỹ thuật viên bảo dưỡng (AMT) có thể được tóm tắt là:)",
+    [
+      "The relationship between the reported defect and the intended rectification action. (Mối quan hệ giữa lỗi được báo cáo và hành động khắc phục dự kiến.)",
+      "Passing the defect to the next shift (Chuyển lỗi sang ca sau)",
+      "Carry forward the defect in logbook (Chuyển tiếp lỗi trong nhật ký bay)"
+    ],
+    0,
+    "The relationship between the reported defect and the intended rectification action. (Mối quan hệ giữa lỗi được báo cáo và hành động khắc phục dự kiến.)"
+  ],
+  [
+    32,
+    "The type of memory is most susceptible to interference from external influences is: (Loại trí nhớ dễ bị can thiệp nhất từ các tác động bên ngoài là:)",
+    [
+      "Long term memory (Trí nhớ dài hạn)",
+      "Ultra-short-term memory (Trí nhớ siêu ngắn)",
+      "Short term memory (Trí nhớ ngắn hạn)"
+    ],
+    2,
+    "Short term memory (Trí nhớ ngắn hạn)"
+  ],
+  [
+    33,
+    "The Sustained Attention in Human Performance is known as: (Sự chú ý duy trì trong Hiệu suất Con người được biết đến là:)",
+    [
+      "The ability to maintain attention and remain alert over long periods of time. (Khả năng duy trì sự chú ý và giữ tỉnh táo trong thời gian dài.)",
+      "Maintain attention only when doing the task (Chỉ duy trì sự chú ý khi thực hiện nhiệm vụ)",
+      "Do only one job/task at a time (Chỉ làm một việc/nhiệm vụ cùng lúc)"
+    ],
+    0,
+    "The ability to maintain attention and remain alert over long periods of time. (Khả năng duy trì sự chú ý và giữ tỉnh táo trong thời gian dài.)"
+  ],
+  [
+    34,
+    "Reference to memory of specific events is: (Việc tham chiếu đến trí nhớ về các sự kiện cụ thể là:)",
+    [
+      "Episodic Memory (Trí nhớ sự kiện/giai đoạn)",
+      "Long Term Memory (Trí nhớ dài hạn)",
+      "Ultra short-term Memory (Trí nhớ siêu ngắn)"
+    ],
+    0,
+    "Episodic Memory (Trí nhớ sự kiện/giai đoạn)"
+  ],
+  [
+    35,
+    "Human Memory depends on three processes. They are: (Trí nhớ con người phụ thuộc vào ba quá trình. Chúng là:)",
+    [
+      "Registration, storage and maintenance (Ghi nhận, lưu trữ và bảo trì)",
+      "Registration, capacity, and retrieval (Ghi nhận, dung lượng và truy xuất)",
+      "Registration, storage and retrieval (Ghi nhận, lưu trữ và truy xuất)"
+    ],
+    2,
+    "Registration, storage and retrieval (Ghi nhận, lưu trữ và truy xuất)"
+  ],
+  [
+    36,
+    "Reference to our memory of general, factual knowledge about the world is: (Tham chiếu đến trí nhớ của chúng ta về kiến thức thực tế, tổng quát về thế giới là:)",
+    [
+      "Long term Memory (Trí nhớ dài hạn)",
+      "General Knowledge (Kiến thức chung)",
+      "Short term Memory (Trí nhớ ngắn hạn)"
+    ],
+    0,
+    "Long term Memory (Trí nhớ dài hạn)"
+  ],
+  [
+    37,
+    "When you are performing a given a task and you are unsure of the task then you should: (Khi bạn đang thực hiện một nhiệm vụ được giao và bạn không chắc chắn về nhiệm vụ đó, bạn nên:)",
+    [
+      "Consult the appropriate approved data. (Tham khảo dữ liệu được phê duyệt thích hợp.)",
+      "Ask someone who has done it before. (Hỏi người đã từng làm việc đó.)",
+      "Consult type training course materials (Tham khảo tài liệu khóa học đào tạo loại máy bay)"
+    ],
+    0,
+    "Consult the appropriate approved data. (Tham khảo dữ liệu được phê duyệt thích hợp.)"
+  ],
+  [
+    38,
+    "If you are not done the job or inspected the work  or you are unsure of the task, then you should. (Nếu bạn chưa hoàn thành công việc hoặc chưa kiểm tra công việc hoặc bạn không chắc chắn về nhiệm vụ, thì bạn nên.)",
+    [
+      "Not sign for it (Không ký xác nhận)",
+      "Ask someone to sign who has done it before. (Nhờ ai đó đã từng làm việc đó ký.)",
+      "Consult with team leader to sign or not (Tham khảo ý kiến trưởng nhóm để ký hay không)"
+    ],
+    0,
+    "Not sign for it (Không ký xác nhận)"
+  ],
+  [
+    39,
+    "Distribution of responsibility may occur when: (Sự phân tán trách nhiệm có thể xảy ra khi:)",
+    [
+      "An individual working alone (Một cá nhân làm việc độc lập)",
+      "An individual working as a member of a team (Một cá nhân làm việc như một thành viên của nhóm)",
+      "With certain people whether they are working in a team or alone (Với một số người nhất định bất kể họ đang làm việc nhóm hay một mình)"
+    ],
+    1,
+    "An individual working as a member of a team (Một cá nhân làm việc như một thành viên của nhóm)"
+  ],
+  [
+    40,
+    "The difference between what a person 'can' do and what he 'will' do is largely determined by his: (Sự khác biệt giữa những gì một người 'có thể' làm và những gì anh ta 'sẽ' làm phần lớn được quyết định bởi:)",
+    [
+      "Motivation. (Động lực.)",
+      "Education and training. (Giáo dục và đào tạo.)",
+      "Physical and mental health (Sức khỏe thể chất và tinh thần)"
+    ],
+    0,
+    "Motivation. (Động lực.)"
+  ],
+  [
+    41,
+    "Group polarization can result in: (Sự phân cực nhóm có thể dẫn đến:)",
+    [
+      "A group making a more cautious or extreme decision (Nhóm đưa ra quyết định thận trọng hơn hoặc cực đoan hơn)",
+      "A group making a better decision than the individual (Nhóm đưa ra quyết định tốt hơn so với cá nhân)",
+      "Members of the group not talking to one another (Các thành viên trong nhóm không nói chuyện với nhau)"
+    ],
+    0,
+    "A group making a more cautious or extreme decision (Nhóm đưa ra quyết định thận trọng hơn hoặc cực đoan hơn)"
+  ],
+  [
+    42,
+    "A person can be said to be motivated if: (Một người có thể được cho là có động lực nếu:)",
+    [
+      "They are taking action to achieve something (Họ đang hành động để đạt được điều gì đó)",
+      "They cut corners to get the job done quickly (Họ làm tắt để hoàn thành công việc nhanh chóng)",
+      "They are on a productivity bonus (Họ đang nhận tiền thưởng năng suất)"
+    ],
+    0,
+    "They are taking action to achieve something (Họ đang hành động để đạt được điều gì đó)"
+  ],
+  [
+    43,
+    "The Motivation can be defined as: (Động lực có thể được định nghĩa là:)",
+    [
+      "A reward or punishment designed to reduce errors. (Một phần thưởng hoặc hình phạt được thiết kế để giảm thiểu lỗi.)",
+      "A reward or punishment designed to increase work rate. (Một phần thưởng hoặc hình phạt được thiết kế để tăng năng suất làm việc.)",
+      "The thing that drives someone to do something all the time (Điều thúc đẩy ai đó luôn làm một việc gì đó)"
+    ],
+    2,
+    "The thing that drives someone to do something all the time (Điều thúc đẩy ai đó luôn làm một việc gì đó)"
+  ],
+  [
+    44,
+    "The symptoms of Demotivation are very similar to the symptoms of: (Các triệu chứng của mất động lực rất giống với các triệu chứng của:)",
+    [
+      "Stress. (Căng thẳng.)",
+      "Tiredness. (Mệt mỏi.)",
+      "Mental illness. (Bệnh tâm lý.)"
+    ],
+    0,
+    "Stress. (Căng thẳng.)"
+  ],
+  [
+    45,
+    "A good team is one where every member has: (Một nhóm tốt là nhóm mà mỗi thành viên có:)",
+    [
+      "An opinion (Một ý kiến)",
+      "An input (Sự đóng góp)",
+      "A job (Một công việc)"
+    ],
+    1,
+    "An input (Sự đóng góp)"
+  ],
+  [
+    46,
+    "The Co-operation with another working team will always improve: (Sự hợp tác với một nhóm làm việc khác sẽ luôn cải thiện:)",
+    [
+      "Make good friendship. (Tạo ra tình bạn tốt.)",
+      "Good for weekend parties. (Tốt cho các bữa tiệc cuối tuần.)",
+      "Safety culture in work environment (Văn hóa an toàn trong môi trường làm việc)"
+    ],
+    2,
+    "Safety culture in work environment (Văn hóa an toàn trong môi trường làm việc)"
+  ],
+  [
+    47,
+    "An effective group work is the one when: (Một nhóm làm việc hiệu quả là khi:)",
+    [
+      "Everyone contributes in same way. (Mọi người đều đóng góp theo cùng một cách.)",
+      "Everyone discusses ideas and opinions. (Mọi người đều thảo luận các ý tưởng và quan điểm.)",
+      "Everyone has a job to do (Mọi người đều có một công việc để làm)"
+    ],
+    0,
+    "Everyone contributes in same way. (Mọi người đều đóng góp theo cùng một cách.)"
+  ],
+  [
+    48,
+    "Working in long extended shift work will: (Làm việc theo ca kéo dài sẽ:)",
+    [
+      "Initially decrease your diagnostic and maintenance ability but eventually increase your diagnostic and maintenance ability as you get used to it. (Ban đầu làm giảm khả năng chẩn đoán và bảo dưỡng của bạn nhưng cuối cùng làm tăng khả năng đó khi bạn đã quen.)",
+      "Always decrease your diagnostic and maintenance ability. (Luôn luôn làm giảm khả năng chẩn đoán và bảo dưỡng của bạn.)",
+      "Always increase your diagnostic and maintenance ability (Luôn luôn làm tăng khả năng chẩn đoán và bảo dưỡng của bạn)"
+    ],
+    1,
+    "Always decrease your diagnostic and maintenance ability. (Luôn luôn làm giảm khả năng chẩn đoán và bảo dưỡng của bạn.)"
+  ],
+  [
+    49,
+    "A Successful working teams have the following attributes: (Một nhóm làm việc thành công có các thuộc tính sau:)",
+    [
+      "All the Members participate in team activities but retain their own individual requirements. (Tất cả thành viên tham gia vào các hoạt động của nhóm nhưng vẫn giữ các yêu cầu cá nhân riêng của họ.)",
+      "All the members participate in team activities and discussions. (Tất cả thành viên tham gia vào các hoạt động và thảo luận của nhóm.)",
+      "All the team members work in isolation and therefore provide highly individual solutions to the same problems. (Tất cả thành viên nhóm làm việc độc lập và do đó đưa ra các giải pháp cá nhân cao cho cùng một vấn đề.)"
+    ],
+    0,
+    "All the Members participate in team activities but retain their own individual requirements. (Tất cả thành viên tham gia vào các hoạt động của nhóm nhưng vẫn giữ các yêu cầu cá nhân riêng của họ.)"
+  ],
+  [
+    50,
+    "The peer pressure can be defined as: (Áp lực đồng trang lứa có thể được định nghĩa là:)",
+    [
+      "When behavior is influenced by friends and colleagues. (Khi hành vi bị ảnh hưởng bởi bạn bè và đồng nghiệp.)",
+      "When behavior is influenced by company (Khi hành vi bị ảnh hưởng bởi công ty)",
+      "When behavior is influenced by friends and family members (Khi hành vi bị ảnh hưởng bởi bạn bè và thành viên gia đình)"
+    ],
+    0,
+    "When behavior is influenced by friends and colleagues. (Khi hành vi bị ảnh hưởng bởi bạn bè và đồng nghiệp.)"
+  ],
+  [
+    51,
+    "If you are given a task that you are unsure of the task, then you should. (Nếu bạn được giao một nhiệm vụ mà bạn không chắc chắn, bạn nên.)",
+    [
+      "Consult the appropriate approved data or Documents (Tham khảo dữ liệu hoặc tài liệu được phê duyệt thích hợp)",
+      "Skip the task someone will do it in the shift. (Bỏ qua nhiệm vụ đó sẽ có ai đó làm trong ca.)",
+      "Consult your training notes (Tham khảo ghi chép đào tạo của bạn)"
+    ],
+    0,
+    "Consult the appropriate approved data or Documents (Tham khảo dữ liệu hoặc tài liệu được phê duyệt thích hợp)"
+  ],
+  [
+    52,
+    "Workers perform better when they believe they are being: (Công nhân làm việc tốt hơn khi họ tin rằng họ đang bị:)",
+    [
+      "working alone (làm việc một mình)",
+      "Observed (Được quan sát)",
+      "Working in a team (Làm việc trong một nhóm)"
+    ],
+    1,
+    "Observed (Được quan sát)"
+  ],
+  [
+    53,
+    "If a maintenance engineer has a cold or flu, He/ She should: (Nếu một kỹ sư bảo dưỡng bị cảm hoặc cúm, anh ấy/cô ấy nên:)",
+    [
+      "Only absent himself from duty if his work contract includes sickness pay. (Chỉ vắng mặt nếu hợp đồng làm việc bao gồm lương ốm đau.)",
+      "Only absent himself from duty if there are no staff shortages at his workplace or within his work team. (Chỉ vắng mặt nếu nơi làm việc hoặc nhóm không bị thiếu nhân sự.)",
+      "Absent himself from duty until fully recovered, regardless of other factors (Xin nghỉ phép cho đến khi hồi phục hoàn toàn, bất kể các yếu tố khác)"
+    ],
+    2,
+    "Absent himself from duty until fully recovered, regardless of other factors (Xin nghỉ phép cho đến khi hồi phục hoàn toàn, bất kể các yếu tố khác)"
+  ],
+  [
+    54,
+    "The symptoms of stress are: (Các triệu chứng của căng thẳng là:)",
+    [
+      "Violence, sickness, absence from work, drug and alcohol abuse. (Bạo lực, ốm đau, nghỉ việc, lạm dụng ma túy và rượu.)",
+      "Indications of improved work performance. (Biểu hiện của hiệu suất làm việc được cải thiện.)",
+      "Irritability, forgetfulness, sickness, absence from work, drug and alcohol abuse (Dễ cáu gắt, hay quên, ốm đau, nghỉ việc, lạm dụng ma túy và rượu)"
+    ],
+    2,
+    "Irritability, forgetfulness, sickness, absence from work, drug and alcohol abuse (Dễ cáu gắt, hay quên, ốm đau, nghỉ việc, lạm dụng ma túy và rượu)"
+  ],
+  [
+    55,
+    "During maintenance “Attention Getters"like cone, safety barriers/Remove before flight etc.. are used for. (Trong quá trình bảo dưỡng, "Vật thu hút sự chú ý" như nón, hàng rào an toàn/Nhãn Remove before flight v.v.. được dùng để.)",
+    [
+      "To get the operators full attention at all times (Để thu hút toàn bộ sự chú ý của người thao tác vào mọi lúc)",
+      "To gain the operators attention whilst allowing them to continue with the task in hand (Để thu hút sự chú ý của người thao tác trong khi vẫn cho phép họ tiếp tục nhiệm vụ đang làm)",
+      "To make the operator focus his/her attention fully on the task in hand (Để khiến người thao tác tập trung toàn bộ sự chú ý vào nhiệm vụ đang làm)"
+    ],
+    0,
+    "To get the operators full attention at all times (Để thu hút toàn bộ sự chú ý của người thao tác vào mọi lúc)"
+  ],
+  [
+    56,
+    "The effect of unfavorable lighting conditions at workplace can have: (Ảnh hưởng của điều kiện ánh sáng không thuận lợi tại nơi làm việc có thể là:)",
+    [
+      "Weakness of visual performance. (Suy giảm khả năng thị giác.)",
+      "Unpleasant feeling when performing the task. (Cảm giác khó chịu khi thực hiện nhiệm vụ.)",
+      "Affect Visual, Physical Performance & can lead to fatigue (Ảnh hưởng đến Thị lực, Hiệu suất Thể chất & có thể dẫn đến mệt mỏi)"
+    ],
+    2,
+    "Affect Visual, Physical Performance & can lead to fatigue (Ảnh hưởng đến Thị lực, Hiệu suất Thể chất & có thể dẫn đến mệt mỏi)"
+  ],
+  [
+    57,
+    "Working excessively long shifts and unsociable hours can lead to: (Làm việc theo ca quá dài và giờ giấc không thuận lợi có thể dẫn đến:)",
+    [
+      "Decreased ability to detect defects during aircraft maintenance. (Giảm khả năng phát hiện lỗi trong quá trình bảo dưỡng máy bay.)",
+      "An increased immunity to stress. (Tăng khả năng miễn dịch với căng thẳng.)",
+      "Increased ability to detect defects during aircraft maintenance (Tăng khả năng phát hiện lỗi trong quá trình bảo dưỡng máy bay)"
+    ],
+    0,
+    "Decreased ability to detect defects during aircraft maintenance. (Giảm khả năng phát hiện lỗi trong quá trình bảo dưỡng máy bay.)"
+  ],
+  [
+    58,
+    "The Tunnel Vision is an example of: (Tầm nhìn hình ống là ví dụ về:)",
+    [
+      "Lack of Awareness. (Thiếu Nhận thức.)",
+      "Fatigue. (Mệt mỏi.)",
+      "Stress (Căng thẳng)"
+    ],
+    0,
+    "Lack of Awareness. (Thiếu Nhận thức.)"
+  ],
+  [
+    59,
+    "The key issue in resolving a conflict is to : (Vấn đề cốt lõi trong việc giải quyết xung đột là :)",
+    [
+      "To stop the job/Task in hand (Dừng công việc/nhiệm vụ đang làm)",
+      "Take a extended break (Nghỉ ngơi kéo dài)",
+      "Determine the facts: What is right? not the emotional who is right? (Xác định sự thật: Cái gì đúng? chứ không phải cảm tính ai đúng?)"
+    ],
+    2,
+    "Determine the facts: What is right? not the emotional who is right? (Xác định sự thật: Cái gì đúng? chứ không phải cảm tính ai đúng?)"
+  ],
+  [
+    60,
+    "In the 'slips, lapses and mistakes' definition of errors, forgetting to close an engine cowling would be considered as: (Trong định nghĩa về lỗi 'trượt, đãng trí và sai sót', việc quên đóng nắp động cơ sẽ được coi là:)",
+    [
+      "Slip (Lỗi trượt/Lỡ tay)",
+      "Lapse (Lỗi đãng trí/Quên)",
+      "Mistake (Lỗi sai sót/Nhầm lẫn)"
+    ],
+    1,
+    "Lapse (Lỗi đãng trí/Quên)"
+  ],
+  [
+    61,
+    "A good leadership is to: (Một khả năng lãnh đạo tốt là:)",
+    [
+      "Be strict and vigilant with the team (Nghiêm khắc và cảnh giác với đội ngũ)",
+      "Motivating the team and Maintaining the group. (Tạo động lực cho đội và duy trì nhóm.)",
+      "Only fulfill the management role (Chỉ hoàn thành vai trò quản lý)"
+    ],
+    1,
+    "Motivating the team and Maintaining the group. (Tạo động lực cho đội và duy trì nhóm.)"
+  ],
+  [
+    62,
+    "The cycles of body temperature, sleep requirement and alertness are called: (Chu kỳ nhiệt độ cơ thể, nhu cầu ngủ và sự tỉnh táo được gọi là:)",
+    [
+      "Earth cycles (Chu kỳ Trái đất)",
+      "Window of Circadian Low (WOCL) (Khoảng thời gian nhịp sinh học thấp)",
+      "Circadian rhythms (Nhịp sinh học)"
+    ],
+    2,
+    "Circadian rhythms (Nhịp sinh học)"
+  ],
+  [
+    63,
+    "The intake of caffeine in moderate quantities can result in: (Việc tiêu thụ lượng caffeine vừa phải có thể dẫn đến:)",
+    [
+      "Anxiety, headaches and negative mood states. (Lo lắng, đau đầu và tâm trạng tiêu cực.)",
+      "Lack of sleep and subsequent disruption to the circadian rhythms. (Thiếu ngủ và hậu quả là rối loạn nhịp sinh học.)",
+      "A temporary increase in the ability to sustain vigilance and increased alertness (Tạm thời tăng cường khả năng duy trì sự cảnh giác và tăng sự tỉnh táo)"
+    ],
+    2,
+    "A temporary increase in the ability to sustain vigilance and increased alertness (Tạm thời tăng cường khả năng duy trì sự cảnh giác và tăng sự tỉnh táo)"
+  ],
+  [
+    64,
+    "The only permitted stimulant when working is: (Chất kích thích duy nhất được phép sử dụng khi làm việc là:)",
+    [
+      "Bromine. (Brom.)",
+      "Caffeine. (Caffeine.)",
+      "Amphetamine (Amphetamine)"
+    ],
+    1,
+    "Caffeine. (Caffeine.)"
+  ],
+  [
+    65,
+    "When going from day shift to night shift, the efficiency: (Khi chuyển từ ca ngày sang ca đêm, hiệu suất:)",
+    [
+      "Stays the same. (Vẫn giữ nguyên.)",
+      "Will increases after the weeks. (Sẽ tăng lên sau vài tuần.)",
+      "Will drop off in the first weeks (Sẽ giảm sút trong những tuần đầu tiên)"
+    ],
+    2,
+    "Will drop off in the first weeks (Sẽ giảm sút trong những tuần đầu tiên)"
+  ],
+  [
+    66,
+    "The only real remedy for fatigue is: (Phương pháp điều trị thực sự duy nhất cho sự mệt mỏi là:)",
+    [
+      "Eat good food. (Ăn thức ăn ngon.)",
+      "Sleep well. (Ngủ đủ giấc.)",
+      "Drink well (Uống đủ nước)"
+    ],
+    1,
+    "Sleep well. (Ngủ đủ giấc.)"
+  ],
+  [
+    67,
+    "Consumption of alcohol: (Việc tiêu thụ rượu/cồn:)",
+    [
+      "Increases mental and physical reaction times. (Làm tăng thời gian phản xạ tinh thần và thể chất.)",
+      "Has no affect upon mental and physical reaction times. (Không ảnh hưởng đến thời gian phản xạ tinh thần và thể chất.)",
+      "Decreases mental and physical reaction times (Làm giảm thời gian phản xạ tinh thần và thể chất)"
+    ],
+    0,
+    "Increases mental and physical reaction times. (Làm tăng thời gian phản xạ tinh thần và thể chất.)"
+  ],
+  [
+    68,
+    "The best way one can keep up to date in work: (Cách tốt nhất để cập nhật thông tin trong công việc là:)",
+    [
+      "Keeping up to date on courses/Regular reading of all current required documents (Cập nhật các khóa học/Thường xuyên đọc tất cả các tài liệu yêu cầu hiện hành)",
+      "Coming on time to duty. (Đi làm đúng giờ.)",
+      "Just discuss with team members (Chỉ cần thảo luận với các thành viên trong nhóm)"
+    ],
+    0,
+    "Keeping up to date on courses/Regular reading of all current required documents (Cập nhật các khóa học/Thường xuyên đọc tất cả các tài liệu yêu cầu hiện hành)"
+  ],
+  [
+    69,
+    "Consumption of alcohol before/during work will: (Sử dụng rượu/cồn trước/trong khi làm việc sẽ:)",
+    [
+      "Increases mental and physical reaction times. (Slow Performance) (Làm tăng thời gian phản xạ thể chất và tinh thần. (Hiệu suất chậm))",
+      "Has no affect upon mental and physical reaction times. (Normal Performance) (Không ảnh hưởng đến thời gian phản xạ. (Hiệu suất bình thường))",
+      "Decreases mental and physical reaction times. (Wrong Performance) (Làm giảm thời gian phản xạ. (Hiệu suất sai lệch))"
+    ],
+    0,
+    "Increases mental and physical reaction times. (Slow Performance) (Làm tăng thời gian phản xạ thể chất và tinh thần. (Hiệu suất chậm))"
+  ],
+  [
+    70,
+    "Large amounts of caffeine(coffee) can: (Lượng lớn caffeine (cà phê) có thể:)",
+    [
+      "Cause anxiety, headaches and stress. (Gây lo âu, đau đầu và căng thẳng.)",
+      "Reduce anxiety and stress. (Giảm lo âu và căng thẳng.)",
+      "Improve alertness and increase awareness (Cải thiện sự tỉnh táo và tăng cường nhận thức)"
+    ],
+    0,
+    "Cause anxiety, headaches and stress. (Gây lo âu, đau đầu và căng thẳng.)"
+  ],
+  [
+    71,
+    "In Human Factors a drug is defined as: (Trong Yếu tố Con người, ma túy/thuốc được định nghĩa là:)",
+    [
+      "Not tell your employer and carry on work as normal. (Không báo cho người sử dụng lao động và tiếp tục làm việc bình thường.)",
+      "Tell your employer and carry on work as normal. (Báo cho người sử dụng lao động và tiếp tục làm việc bình thường.)",
+      "Classified according their legal status,and their effects on the central nervous system of human body. (Được phân loại theo tình trạng pháp lý và tác động của chúng đối với hệ thần kinh trung ương của cơ thể người.)"
+    ],
+    2,
+    "Classified according their legal status,and their effects on the central nervous system of human body. (Được phân loại theo tình trạng pháp lý và tác động của chúng đối với hệ thần kinh trung ương của cơ thể người.)"
+  ],
+  [
+    72,
+    "The definition of a drug is: (Định nghĩa của một loại thuốc/chất gây nghiện là:)",
+    [
+      "Doctor’s prescription (Theo đơn của bác sĩ)",
+      "Drug is any substance (solid/liquid/gas) that brings about physical and/or psychological changes. (Thuốc là bất kỳ chất nào (rắn/lỏng/khí) mang lại sự thay đổi về thể chất và/hoặc tâm lý.)",
+      "An addictive substance (Một chất gây nghiện)"
+    ],
+    1,
+    "Drug is any substance (solid/liquid/gas) that brings about physical and/or psychological changes. (Thuốc là bất kỳ chất nào (rắn/lỏng/khí) mang lại sự thay đổi về thể chất và/hoặc tâm lý.)"
+  ],
+  [
+    73,
+    "The maximum allowable noise Level for human is: (Mức độ tiếng ồn tối đa cho phép đối với con người là:)",
+    [
+      "85 dB (85 dB)",
+      "Any combination of noise and time which exceeds 90 dB (Bất kỳ sự kết hợp nào giữa tiếng ồn và thời gian vượt quá 90 dB)",
+      "90 dB for 24 hours (90 dB trong 24 giờ)"
+    ],
+    0,
+    "85 dB (85 dB)"
+  ],
+  [
+    74,
+    "Employers must provide their employees with personal ear protectors if the noise level reaches: (Người sử dụng lao động phải cung cấp thiết bị bảo vệ tai cá nhân cho nhân viên nếu mức tiếng ồn đạt:)",
+    [
+      "70 dB",
+      "85 dB",
+      "60 dB"
+    ],
+    1,
+    "85 dB"
+  ],
+  [
+    75,
+    "To protect hearing the noise levels ,can be managed by: (Để bảo vệ thính giác, mức độ tiếng ồn có thể được quản lý bằng cách:)",
+    [
+      "Selecting Personal Protective Equipment (Lựa chọn Thiết bị Bảo vệ Cá nhân)",
+      "Hearing protection such as ear plugs or full ear muffs. (Sử dụng thiết bị bảo vệ thính giác như nút bịt tai hoặc chụp tai toàn phần.)",
+      "Moving away from the source (Di chuyển ra xa nguồn phát)"
+    ],
+    1,
+    "Hearing protection such as ear plugs or full ear muffs. (Sử dụng thiết bị bảo vệ thính giác như nút bịt tai hoặc chụp tai toàn phần.)"
+  ],
+  [
+    76,
+    "The ways that solvents can enter human system and cause damage are: (Các cách mà dung môi có thể xâm nhập vào cơ thể người và gây hại là:)",
+    [
+      "By respiratory system only (Chỉ thông qua hệ hô hấp)",
+      "By food and Drinks (Qua thức ăn và đồ uống)",
+      "Solvents can be absorbed through the skin, through the eyes and through the respiratory system (Dung môi có thể được hấp thụ qua da, qua mắt và qua hệ hô hấp)"
+    ],
+    2,
+    "Solvents can be absorbed through the skin, through the eyes and through the respiratory system (Dung môi có thể được hấp thụ qua da, qua mắt và qua hệ hô hấp)"
+  ],
+  [
+    77,
+    "When working in the temperature is above 38°C it will: (Khi làm việc ở nhiệt độ trên 38°C, nó sẽ:)",
+    [
+      "Weakening human performance. (Làm suy giảm hiệu suất của con người.)",
+      "It is normal in Line Maintenance. (Là điều bình thường trong Bảo dưỡng Ngoại trường.)",
+      "Weakening the human performance and sweating, dehydration will seriously cause the fatigue (Làm suy giảm hiệu suất con người và đổ mồ hôi, mất nước sẽ gây ra mệt mỏi nghiêm trọng)"
+    ],
+    2,
+    "Weakening the human performance and sweating, dehydration will seriously cause the fatigue (Làm suy giảm hiệu suất con người và đổ mồ hôi, mất nước sẽ gây ra mệt mỏi nghiêm trọng)"
+  ],
+  [
+    78,
+    "Human error can also be caused by: (Lỗi con người cũng có thể do:)",
+    [
+      "High body temperature. (Nhiệt độ cơ thể cao.)",
+      "Normal body temperature. (Nhiệt độ cơ thể bình thường.)",
+      "Low body temperature (Nhiệt độ cơ thể thấp)"
+    ],
+    2,
+    "Low body temperature (Nhiệt độ cơ thể thấp)"
+  ],
+  [
+    79,
+    "Working in cold environment can cause: (Làm việc trong môi trường lạnh có thể gây ra:)",
+    [
+      "Hypothermia. (Hạ thân nhiệt.)",
+      "Fell like having hot cup of coffee/tea. (Cảm giác thèm uống một tách cà phê/trà nóng.)",
+      "Hypothermia and the body movements will be less precise (Hạ thân nhiệt và các cử động cơ thể sẽ kém chính xác hơn)"
+    ],
+    2,
+    "Hypothermia and the body movements will be less precise (Hạ thân nhiệt và các cử động cơ thể sẽ kém chính xác hơn)"
+  ],
+  [
+    80,
+    "Engineers often work on Fumes, Chemical, Toxic substances etc. To follow: (Các kỹ sư thường làm việc với khói, hóa chất, chất độc hại, v.v. Cần tuân theo:)",
+    [
+      "The work may be carried out in maintenance normally (Công việc có thể được thực hiện bình thường trong bảo dưỡng)",
+      "Good ventilation in workplace required. (Yêu cầu thông gió tốt tại nơi làm việc.)",
+      "The work environment should be positive and promote a strong safety culture (Môi trường làm việc cần tích cực và thúc đẩy văn hóa an toàn mạnh mẽ)"
+    ],
+    2,
+    "The work environment should be positive and promote a strong safety culture (Môi trường làm việc cần tích cực và thúc đẩy văn hóa an toàn mạnh mẽ)"
+  ],
+  [
+    81,
+    "A well-organized work area will: (Một khu vực làm việc được tổ chức tốt sẽ:)",
+    [
+      "Improve productivity, safety and effective teamwork. (Cải thiện năng suất, sự an toàn và làm việc nhóm hiệu quả.)",
+      "Keep the work area look nice. (Giữ cho khu vực làm việc trông đẹp mắt.)",
+      "Have No effect in normal work (Không ảnh hưởng đến công việc bình thường)"
+    ],
+    0,
+    "Improve productivity, safety and effective teamwork. (Cải thiện năng suất, sự an toàn và làm việc nhóm hiệu quả.)"
+  ],
+  [
+    82,
+    "Heat loss originates from the: (Sự mất nhiệt bắt nguồn từ:)",
+    [
+      "Evaporation of sweat, Conductive heat loss the transfer of heat from a warm object - hand, to a cold object - tool Convection, known as wind chill. (Sự bay hơi mồ hôi, mất nhiệt do dẫn truyền - truyền nhiệt từ vật ấm (tay) sang vật lạnh (công cụ), mất nhiệt do đối lưu, còn được gọi là độ lạnh của gió.)",
+      "Air-conditioned air (Không khí điều hòa)",
+      "Working under Hot climate (Làm việc dưới khí hậu nóng)"
+    ],
+    0,
+    "Evaporation of sweat, Conductive heat loss the transfer of heat from a warm object - hand, to a cold object - tool Convection, known as wind chill. (Sự bay hơi mồ hôi, mất nhiệt do dẫn truyền - truyền nhiệt từ vật ấm (tay) sang vật lạnh (công cụ), mất nhiệt do đối lưu, còn được gọi là độ lạnh của gió.)"
+  ],
+  [
+    83,
+    "A regular behavior of an individual is known as: (Hành vi thường xuyên của một cá nhân được gọi là:)",
+    [
+      "The norm (Tiêu chuẩn/Định mức)",
+      "Habit (Thói quen)",
+      "Culture (Văn hóa)"
+    ],
+    1,
+    "Habit (Thói quen)"
+  ],
+  [
+    84,
+    "Environmental stresses are mainly: (Căng thẳng từ môi trường chủ yếu là:)",
+    [
+      "Caused by noise, fumes, heat and vibration. (Do tiếng ồn, khói, nhiệt và độ rung gây ra.)",
+      "Tolerated by everyone equally. (Được mọi người chịu đựng như nhau.)",
+      "Not normally cumulative (Thường không có tính tích lũy)"
+    ],
+    0,
+    "Caused by noise, fumes, heat and vibration. (Do tiếng ồn, khói, nhiệt và độ rung gây ra.)"
+  ],
+  [
+    85,
+    "One of the Dirty Dozen In Maintenance,repetitive tasks result in: (Một trong 12 nguyên nhân phổ biến trong Bảo dưỡng (Dirty Dozen), các nhiệm vụ lặp đi lặp lại dẫn đến:)",
+    [
+      "Stress. (Căng thẳng.)",
+      "Fatigue. (Mệt mỏi.)",
+      "Complacency. (Sự chủ quan/Tự mãn.)"
+    ],
+    2,
+    "Complacency. (Sự chủ quan/Tự mãn.)"
+  ],
+  [
+    86,
+    "An aircraft maintenance engineer who wears glasses or contact lenses: (Kỹ sư bảo dưỡng máy bay đeo kính hoặc kính áp tròng:)",
+    [
+      "Should have their duties restricted accordingly. (Nên bị hạn chế nhiệm vụ tương ứng.)",
+      "Should not require their duties to be restricted providing they have frequent checks to ensure the adequacy of their glasses/contact lenses. (Không bị yêu cầu hạn chế nhiệm vụ, miễn là họ thường xuyên kiểm tra để đảm bảo sự phù hợp của kính/kính áp tròng.)",
+      "Should not require their duties to be restricted providing they always wear their glasses/contact lenses when they carry out their duties (Không bị hạn chế nhiệm vụ với điều kiện luôn đeo kính/kính áp tròng khi thực hiện nhiệm vụ)"
+    ],
+    1,
+    "Should not require their duties to be restricted providing they have frequent checks to ensure the adequacy of their glasses/contact lenses. (Không bị yêu cầu hạn chế nhiệm vụ, miễn là họ thường xuyên kiểm tra để đảm bảo sự phù hợp của kính/kính áp tròng.)"
+  ],
+  [
+    87,
+    "Itemized checklists should be followed by: (Danh sách kiểm tra chi tiết cần được thực hiện theo:)",
+    [
+      "In any order, provided all steps are completed. (Bất kỳ thứ tự nào, miễn là tất cả các bước được hoàn thành.)",
+      "Item by item, in order, to cover each and every step diligently. (Từng mục một, theo thứ tự, để bao quát mọi bước một cách cẩn thận.)",
+      "As per one memorized (Theo như những gì ghi nhớ)"
+    ],
+    1,
+    "Item by item, in order, to cover each and every step diligently. (Từng mục một, theo thứ tự, để bao quát mọi bước một cách cẩn thận.)"
+  ],
+  [
+    88,
+    "An AMT who wears glasses or contact lenses: (Kỹ thuật viên bảo dưỡng (AMT) đeo kính hoặc kính áp tròng:)",
+    [
+      "Their duties restricted accordingly. (Bị hạn chế nhiệm vụ tương ứng.)",
+      "They have to check and ensure the adequacy of their glasses/contact lenses regularly (Phải kiểm tra và đảm bảo độ phù hợp của kính/kính áp tròng thường xuyên)",
+      "Their duties to be restricted providing they wear their glasses/contact lenses at all times they carry out their duties (Bị hạn chế nhiệm vụ với điều kiện luôn đeo kính/kính áp tròng khi làm việc)"
+    ],
+    1,
+    "They have to check and ensure the adequacy of their glasses/contact lenses regularly (Phải kiểm tra và đảm bảo độ phù hợp của kính/kính áp tròng thường xuyên)"
+  ],
+  [
+    89,
+    "When working with complex system like engine, Flight controls you should ask for: (Khi làm việc với hệ thống phức tạp như động cơ, hệ thống điều khiển bay, bạn nên yêu cầu:)",
+    [
+      "The junior mechanic to do a check. (Thợ máy cấp thấp hơn kiểm tra.)",
+      "Shift in charge to check the job. (Trưởng ca kiểm tra công việc.)",
+      "Duplicate inspection from another experienced person (Một người có kinh nghiệm khác kiểm tra lặp lại/thẩm định)"
+    ],
+    2,
+    "Duplicate inspection from another experienced person (Một người có kinh nghiệm khác kiểm tra lặp lại/thẩm định)"
+  ],
+  [
+    90,
+    "When describing tasks, the term 'complex system' refers to a task: (Khi mô tả nhiệm vụ, thuật ngữ 'hệ thống phức tạp' đề cập đến một nhiệm vụ:)",
+    [
+      "involving fault finding (liên quan đến tìm kiếm lỗi)",
+      "which may be broken down into many steps (có thể được chia nhỏ thành nhiều bước)",
+      "which involves decision making rather than practical work (liên quan đến việc ra quyết định thay vì công việc thực hành)"
+    ],
+    1,
+    "which may be broken down into many steps (có thể được chia nhỏ thành nhiều bước)"
+  ],
+  [
+    91,
+    "One of the best ways to prevent error in work is: (Một trong những cách tốt nhất để ngăn ngừa lỗi trong công việc là:)",
+    [
+      "Good Training/Check list/follow the working documents (Đào tạo tốt/Sử dụng danh sách kiểm tra/tuân thủ tài liệu làm việc)",
+      "Pass the job to the next shift. (Chuyển công việc cho ca sau.)",
+      "Not to work, apply sick leave (Không làm việc, xin nghỉ ốm)"
+    ],
+    0,
+    "Good Training/Check list/follow the working documents (Đào tạo tốt/Sử dụng danh sách kiểm tra/tuân thủ tài liệu làm việc)"
+  ],
+  [
+    92,
+    "Success breeds complacency, and complacency breed: (Thành công sinh ra sự chủ quan, và sự chủ quan sinh ra:)",
+    [
+      "Complacency breeds failure. (Sự chủ quan sinh ra thất bại.)",
+      "Complacency breeds success (Sự chủ quan sinh ra thành công)",
+      "Complacency breeds confidence (Sự chủ quan sinh ra tự tin)"
+    ],
+    0,
+    "Complacency breeds failure. (Sự chủ quan sinh ra thất bại.)"
+  ],
+  [
+    93,
+    "The correct information on performing specific tasks can be obtained from: (Thông tin chính xác về việc thực hiện các nhiệm vụ cụ thể có thể lấy từ:)",
+    [
+      "Information can be obtained on specific tasks from job cards or task sheets. (Thông tin có thể được lấy từ thẻ công việc hoặc phiếu nhiệm vụ.)",
+      "Aircraft Maintenance Supervisor (Giám sát bảo dưỡng máy bay)",
+      "Trouble Shooting Manual (Tài liệu hướng dẫn khắc phục sự cố)"
+    ],
+    0,
+    "Information can be obtained on specific tasks from job cards or task sheets. (Thông tin có thể được lấy từ thẻ công việc hoặc phiếu nhiệm vụ.)"
+  ],
+  [
+    94,
+    "The effect of unfavorable lighting conditions at workplace can have: (Ảnh hưởng của điều kiện ánh sáng không thuận lợi tại nơi làm việc có thể là:)",
+    [
+      "Weakness of visual performance. (Suy giảm khả năng thị giác.)",
+      "Unpleasant feeling when performing the task. (Cảm giác khó chịu khi thực hiện nhiệm vụ.)",
+      "Affect Visual, Physical Performance & can lead to fatigue (Ảnh hưởng đến Thị lực, Hiệu suất Thể chất & có thể dẫn đến mệt mỏi)"
+    ],
+    2,
+    "Affect Visual, Physical Performance & can lead to fatigue (Ảnh hưởng đến Thị lực, Hiệu suất Thể chất & có thể dẫn đến mệt mỏi)"
+  ],
+  [
+    95,
+    "For a planned and unplanned tasks resources required are: (Đối với các nhiệm vụ theo kế hoạch và đột xuất, các nguồn lực cần thiết là:)",
+    [
+      "Qualified personnel/ Tools and equipment/Documentation (Nhân sự có trình độ/ Công cụ và thiết bị/Tài liệu)",
+      "Facilities such as hangar space and lighting (Cơ sở vật chất như không gian xưởng bảo dưỡng và ánh sáng)",
+      "Experienced Supervisor (Người giám sát có kinh nghiệm)"
+    ],
+    0,
+    "Qualified personnel/ Tools and equipment/Documentation (Nhân sự có trình độ/ Công cụ và thiết bị/Tài liệu)"
+  ],
+  [
+    96,
+    "The most effective form of communication is. (Hình thức giao tiếp hiệu quả nhất là.)",
+    [
+      "Verbal communication. (Giao tiếp bằng lời nói.)",
+      "Written communication. (Giao tiếp bằng văn bản.)",
+      "Explicit communication (Giao tiếp rõ ràng/cụ thể)"
+    ],
+    2,
+    "Explicit communication (Giao tiếp rõ ràng/cụ thể)"
+  ],
+  [
+    97,
+    "Most common ways of Communication can be: (Các cách giao tiếp phổ biến nhất có thể là:)",
+    [
+      "Written. (Văn bản.)",
+      "Speaking. (Nói.)",
+      "Written, Speaking, Visual images and Body language. (Văn bản, Nói, Hình ảnh trực quan và Ngôn ngữ cơ thể.)"
+    ],
+    2,
+    "Written, Speaking, Visual images and Body language. (Văn bản, Nói, Hình ảnh trực quan và Ngôn ngữ cơ thể.)"
+  ],
+  [
+    98,
+    "List three examples of non-verbal communication. (Liệt kê ba ví dụ về giao tiếp phi ngôn ngữ.)",
+    [
+      "Verbal, written, and textual (Lời nói, văn bản và chữ viết)",
+      "Graphic, symbolic and spoken (Đồ họa, biểu tượng và tiếng nói)",
+      "Graphic, symbolic and body language (Đồ họa, biểu tượng và ngôn ngữ cơ thể)"
+    ],
+    2,
+    "Graphic, symbolic and body language (Đồ họa, biểu tượng và ngôn ngữ cơ thể)"
+  ],
+  [
+    99,
+    "Correct Recording / hand over/ logging of work performed allows: (Việc ghi chép/bàn giao/ghi nhận chính xác công việc đã thực hiện cho phép:)",
+    [
+      "Troubleshooting. (Khắc phục sự cố.)",
+      "Traceability. (Khả năng truy xuất nguồn gốc.)",
+      "Good troubleshooting and traceability for the entire team (Khắc phục sự cố tốt và khả năng truy xuất cho toàn bộ đội)"
+    ],
+    2,
+    "Good troubleshooting and traceability for the entire team (Khắc phục sự cố tốt và khả năng truy xuất cho toàn bộ đội)"
+  ],
+  [
+    100,
+    "Technical communication between two engineers can go wrong if: (Giao tiếp kỹ thuật giữa hai kỹ sư có thể sai lệch nếu:)",
+    [
+      "The recipient assumes of the meaning of the information being transmitted (Người nhận tự phỏng đoán ý nghĩa của thông tin đang được truyền)",
+      "The sender uses a sketch to augment the information transmittal (Người gửi sử dụng bản phác thảo để bổ sung cho việc truyền thông tin)",
+      "The recipient uses body language to provide feedback to the sender (Người nhận sử dụng ngôn ngữ cơ thể để phản hồi cho người gửi)"
+    ],
+    0,
+    "The recipient assumes of the meaning of the information being transmitted (Người nhận tự phỏng đoán ý nghĩa của thông tin đang được truyền)"
+  ],
+  [
+    101,
+    "Good safe working environment, written Communication provides: (Môi trường làm việc an toàn, tốt, Giao tiếp bằng văn bản cung cấp:)",
+    [
+      "Traceability. (Khả năng truy xuất nguồn gốc.)",
+      "Continuity. (Sự liên tục.)",
+      "Traceability, continuity and effective smooth handover (Khả năng truy xuất, tính liên tục và bàn giao suôn sẻ hiệu quả)"
+    ],
+    2,
+    "Traceability, continuity and effective smooth handover (Khả năng truy xuất, tính liên tục và bàn giao suôn sẻ hiệu quả)"
+  ],
+  [
+    102,
+    "A good Shift/work handover constitutes: (Một việc bàn giao ca/công việc tốt bao gồm:)",
+    [
+      "A written and verbal account of the work done. (Báo cáo bằng văn bản và bằng miệng về công việc đã hoàn thành.)",
+      "A written documentation of the work done. (Tài liệu ghi chép về công việc đã hoàn thành.)",
+      "A verbal account of the work done (Báo cáo bằng miệng về công việc đã hoàn thành)"
+    ],
+    0,
+    "A written and verbal account of the work done. (Báo cáo bằng văn bản và bằng miệng về công việc đã hoàn thành.)"
+  ],
+  [
+    103,
+    "Barriers to good communication during shift handover are: (Rào cản đối với giao tiếp tốt trong quá trình bàn giao ca là:)",
+    [
+      "Time pressure (Áp lực thời gian)",
+      "Tiredness after busy work (Mệt mỏi sau công việc bận rộn)",
+      "Attitudes. Certain practices in shift and human limitations (Thái độ. Các thông lệ nhất định trong ca và giới hạn của con người)"
+    ],
+    2,
+    "Attitudes. Certain practices in shift and human limitations (Thái độ. Các thông lệ nhất định trong ca và giới hạn của con người)"
+  ],
+  [
+    104,
+    "A good practice for a shift handover is for shifts to be specifically restored so there is an overlap of: (Một thực hành tốt trong việc bàn giao ca là các ca nên được sắp xếp cụ thể để có sự chồng chéo khoảng:)",
+    [
+      "5 - 10 minutes (5 - 10 phút)",
+      "20 - 30 minutes (20 - 30 phút)",
+      "2 - 3 hours (2 - 3 giờ)"
+    ],
+    1,
+    "20 - 30 minutes (20 - 30 phút)"
+  ],
+  [
+    105,
+    "The four steps of effective communication are: (Bốn bước của giao tiếp hiệu quả là:)",
+    [
+      "Talk/Listen/Feedback/Act. (Nói/Nghe/Phản hồi/Hành động.)",
+      "Someone Transmits the Information/someone else receives/understands/Confirm the information well received. (Ai đó Truyền thông tin/người khác nhận/hiểu/Xác nhận thông tin đã được nhận tốt.)",
+      "All Tasks discussed/ that have been completed/ in Progress/yet to be carried out (Tất cả nhiệm vụ được thảo luận/đã hoàn thành/đang tiến hành/chưa thực hiện)"
+    ],
+    1,
+    "Someone Transmits the Information/someone else receives/understands/Confirm the information well received. (Ai đó Truyền thông tin/người khác nhận/hiểu/Xác nhận thông tin đã được nhận tốt.)"
+  ],
+  [
+    106,
+    "The best way one can keep up to date in work: (Cách tốt nhất để cập nhật thông tin trong công việc là:)",
+    [
+      "Keeping up to date on courses/Regular reading of all current required documents (Cập nhật các khóa học/Thường xuyên đọc tất cả các tài liệu yêu cầu hiện hành)",
+      "Coming on time to duty. (Đi làm đúng giờ.)",
+      "Just discuss with team members (Chỉ cần thảo luận với các thành viên trong nhóm)"
+    ],
+    0,
+    "Keeping up to date on courses/Regular reading of all current required documents (Cập nhật các khóa học/Thường xuyên đọc tất cả các tài liệu yêu cầu hiện hành)"
+  ],
+  [
+    107,
+    "The information is typically received at shift handover are: (Thông tin thường được nhận khi bàn giao ca là:)",
+    [
+      "Tasks that have been completed, Tasks in progress, Tasks yet to be carried out. (Các nhiệm vụ đã hoàn thành, Các nhiệm vụ đang tiến hành, Các nhiệm vụ chưa thực hiện.)",
+      "List of team members working on the task (Danh sách thành viên làm việc trong nhiệm vụ)",
+      "List of supervising staff (Danh sách nhân viên giám sát)"
+    ],
+    0,
+    "Tasks that have been completed, Tasks in progress, Tasks yet to be carried out. (Các nhiệm vụ đã hoàn thành, Các nhiệm vụ đang tiến hành, Các nhiệm vụ chưa thực hiện.)"
+  ],
+  [
+    108,
+    "The Simplified English used in aviation is: (Tiếng Anh giản thể được sử dụng trong hàng không là:)",
+    [
+      "To Limits the number of words used to describe steps and ensures that each word has only one meaning. (Để hạn chế số lượng từ được sử dụng khi mô tả các bước và đảm bảo rằng mỗi từ chỉ có một nghĩa.)",
+      "To communicate with passengers (Để giao tiếp với hành khách)",
+      "To communicate with crew (Để giao tiếp với phi hành đoàn)"
+    ],
+    0,
+    "To Limits the number of words used to describe steps and ensures that each word has only one meaning. (Để hạn chế số lượng từ được sử dụng khi mô tả các bước và đảm bảo rằng mỗi từ chỉ có một nghĩa.)"
+  ],
+  [
+    109,
+    "The best way the AMTs keep up to date knowledge is: (Cách tốt nhất để Kỹ thuật viên bảo dưỡng (AMT) cập nhật kiến thức là:)",
+    [
+      "By talking with friends (Trò chuyện với bạn bè)",
+      "Attending courses, Reading briefing material, memos and bulletins. Self Studying (Tham dự các khóa học, Đọc tài liệu họp giao ban, bản ghi nhớ và bản tin. Tự học)",
+      "By working with different teams (Làm việc với các đội khác nhau)"
+    ],
+    1,
+    "Attending courses, Reading briefing material, memos and bulletins. Self Studying (Tham dự các khóa học, Đọc tài liệu họp giao ban, bản ghi nhớ và bản tin. Tự học)"
+  ],
+  [
+    110,
+    "The type of human error is easiest to correct is: (Loại lỗi con người dễ sửa nhất là:)",
+    [
+      "Constant error. (Lỗi cố định/lặp lại.)",
+      "Reversible error. (Lỗi có thể đảo ngược/phục hồi.)",
+      "Variable error (Lỗi thay đổi/ngẫu nhiên)"
+    ],
+    0,
+    "Constant error. (Lỗi cố định/lặp lại.)"
+  ],
+  [
+    111,
+    "When carrying out a risk assessment. (Khi thực hiện đánh giá rủi ro.)",
+    [
+      "Safety items should be worn during assessment. (Nên trang bị các vật dụng an toàn trong quá trình đánh giá.)",
+      "It is necessary to identify where equipment/procedures might fail. (Cần phải xác định những nơi mà thiết bị/quy trình có thể bị hỏng/thất bại.)",
+      "Nothing, it is not maintenance job. (Không cần gì, đó không phải là công việc bảo dưỡng.)"
+    ],
+    1,
+    "It is necessary to identify where equipment/procedures might fail. (Cần phải xác định những nơi mà thiết bị/quy trình có thể bị hỏng/thất bại.)"
+  ],
+  [
+    112,
+    "The PEAR model of human factors in maintenance can be divided into four main topic areas using the memory prompt PEAR: (Mô hình PEAR về các yếu tố con người trong bảo dưỡng có thể được chia thành bốn chủ đề chính bằng cách sử dụng từ gợi nhớ PEAR:)",
+    [
+      "People, Environment, Actions, Resources. (Con người, Môi trường, Hành động, Nguồn lực.)",
+      "People, Engine, APU, Resources. (Con người, Động cơ, APU, Nguồn lực.)",
+      "People, Ecology, All, Resources (Con người, Sinh thái, Tất cả, Nguồn lực)"
+    ],
+    0,
+    "People, Environment, Actions, Resources. (Con người, Môi trường, Hành động, Nguồn lực.)"
+  ],
+  [
+    113,
+    "The \"E\" in PEAR Model stands for: (Chữ \"E\" trong Mô hình PEAR là viết tắt của:)",
+    [
+      "The Engineer (Kỹ sư)",
+      "The Engine (Động cơ)",
+      "The Environment (Môi trường)"
+    ],
+    2,
+    "The Environment (Môi trường)"
+  ],
+  [
+    114,
+    "In the PEAR model “R” stands for: (Trong mô hình PEAR, \"R\" là viết tắt của:)",
+    [
+      "Resources. (Nguồn lực.)",
+      "Radiation (Bức xạ)",
+      "Rate of climb (Tốc độ lên)"
+    ],
+    0,
+    "Resources. (Nguồn lực.)"
+  ],
+  [
+    115,
+    "In the PEAR model “A” stands for: (Trong mô hình PEAR, \"A\" là viết tắt của:)",
+    [
+      "Autopilot (Lái tự động)",
+      "Alternate Law (Luật điều khiển dự phòng)",
+      "Actions (Hành động)"
+    ],
+    2,
+    "Actions (Hành động)"
+  ],
+  [
+    116,
+    "In the PEAR model “P” stands for: (Trong mô hình PEAR, \"P\" là viết tắt của:)",
+    [
+      "Pilot. (Phi công.)",
+      "Passengers (Hành khách)",
+      "People (Con người)"
+    ],
+    2,
+    "People (Con người)"
+  ],
+  [
+    117,
+    "One of the four ways to improve shift handover is: (Một trong bốn cách để cải thiện việc bàn giao ca là:)",
+    [
+      "Have direct verbal briefings between incoming and outgoing technicians. (Có buổi họp bàn giao trực tiếp bằng lời nói giữa kỹ thuật viên nhận ca và giao ca.)",
+      "Just the handover book entries is enough. (Chỉ ghi chép vào sổ bàn giao là đủ.)",
+      "Communicate just work accomplished (Chỉ giao tiếp về những công việc đã hoàn thành)"
+    ],
+    0,
+    "Have direct verbal briefings between incoming and outgoing technicians. (Có buổi họp bàn giao trực tiếp bằng lời nói giữa kỹ thuật viên nhận ca và giao ca.)"
+  ],
+  [
+    118,
+    "When working with complex system like engine, Flight controls you should ask for: (Khi làm việc với hệ thống phức tạp như động cơ, Hệ thống điều khiển bay, bạn nên yêu cầu:)",
+    [
+      "The junior mechanic to do a check. (Thợ máy cấp thấp hơn kiểm tra.)",
+      "Shift in charge to check the job. (Trưởng ca kiểm tra công việc.)",
+      "Duplicate inspection from another experienced person (Kiểm tra lặp lại/thẩm định từ một người có kinh nghiệm khác)"
+    ],
+    2,
+    "Duplicate inspection from another experienced person (Kiểm tra lặp lại/thẩm định từ một người có kinh nghiệm khác)"
+  ],
+  [
+    119,
+    "The impact of human factors and human error is most important to (Tác động của yếu tố con người và lỗi do con người quan trọng nhất đối với)",
+    [
+      "Technicians and engineers (Kỹ thuật viên và kỹ sư)",
+      "Planners and managers (Người lập kế hoạch và người quản lý)",
+      "It is equally important to technicians, engineers, planners and Managers (Quan trọng ngang nhau đối với kỹ thuật viên, kỹ sư, người lập kế hoạch và Người quản lý)"
+    ],
+    2,
+    "It is equally important to technicians, engineers, planners and Managers (Quan trọng ngang nhau đối với kỹ thuật viên, kỹ sư, người lập kế hoạch và Người quản lý)"
+  ],
+  [
+    120,
+    "Transport Canada identified twelve factors that degrade people's ability to perform effectively and safely, thus leading to maintenance errors, these 12 factors known as: (Cơ quan Giao thông vận tải Canada đã xác định mười hai yếu tố làm suy giảm khả năng làm việc hiệu quả và an toàn của con người, dẫn đến các lỗi bảo dưỡng, 12 yếu tố này được gọi là:)",
+    [
+      "The dirty dozen (Mười hai nguyên nhân phổ biến (Dirty Dozen))",
+      "The twelve bad habits in maintenance (Mười hai thói quen xấu trong bảo dưỡng)",
+      "The twelve mistakes in maintenance (Mười hai sai lầm trong bảo dưỡng)"
+    ],
+    0,
+    "The dirty dozen (Mười hai nguyên nhân phổ biến (Dirty Dozen))"
+  ],
+  [
+    121,
+    "The MEDA (Maintenance Errors Declension Aid) Process high lights the functions of: (Quy trình MEDA (Hỗ trợ Quyết định Lỗi Bảo dưỡng) nhấn mạnh các chức năng:)",
+    [
+      "Defect reporting (Báo cáo hỏng hóc)",
+      "Event; Decision; investigation; Prevention Strategies; and Feedback. (Sự kiện; Quyết định; Điều tra; Chiến lược phòng ngừa; và Phản hồi.)",
+      "Problem solving (Giải quyết vấn đề)"
+    ],
+    1,
+    "Event; Decision; investigation; Prevention Strategies; and Feedback. (Sự kiện; Quyết định; Điều tra; Chiến lược phòng ngừa; và Phản hồi.)"
+  ],
+  [
+    122,
+    "The two kinds of unintentional errors? (Hai loại lỗi vô ý là gì?)",
+    [
+      "Slips and Lapses (Lỗi trượt/Lỡ tay và Lỗi đãng trí/Quên)",
+      "Lapse and behavioral error (Lỗi đãng trí và lỗi hành vi)",
+      "Violation and constant error (Sự vi phạm và lỗi cố định)"
+    ],
+    0,
+    "Slips and Lapses (Lỗi trượt/Lỡ tay và Lỗi đãng trí/Quên)"
+  ],
+  [
+    123,
+    "The two kinds of intentional errors are: (Hai loại lỗi cố ý là:)",
+    [
+      "Mistakes and violations. (Sai lầm (Nhầm lẫn) và Sự vi phạm.)",
+      "Lapse and behavioral error (Lỗi đãng trí và lỗi hành vi)",
+      "Violation and constant error (Sự vi phạm và lỗi cố định)"
+    ],
+    0,
+    "Mistakes and violations. (Sai lầm (Nhầm lẫn) và Sự vi phạm.)"
+  ],
+  [
+    124,
+    "In Human Factor the Complacency is also known as: (Trong Yếu tố con người, Sự chủ quan cũng được biết đến như là:)",
+    [
+      "Over-confidence. (Sự tự tin thái quá.)",
+      "Under-confidence. (Sự thiếu tự tin.)",
+      "Dissatisfaction (Sự không hài lòng)"
+    ],
+    0,
+    "Over-confidence. (Sự tự tin thái quá.)"
+  ],
+  [
+    125,
+    "The memory of an individual can be aided by: (Trí nhớ của một cá nhân có thể được hỗ trợ bằng cách:)",
+    [
+      "Detailed checklist (Danh sách kiểm tra chi tiết)",
+      "Memory checking (Kiểm tra trí nhớ)",
+      "Mind logging (Ghi chép trong tâm trí)"
+    ],
+    0,
+    "Detailed checklist (Danh sách kiểm tra chi tiết)"
+  ],
+  [
+    126,
+    "One of the main aspect of aviation maintenance is that: (Một trong những khía cạnh chính của bảo dưỡng hàng không là:)",
+    [
+      "Maintenance tasks are still being done by human (Các nhiệm vụ bảo dưỡng vẫn đang được thực hiện bởi con người)",
+      "Maintenance tasks are being done by computers (Các nhiệm vụ bảo dưỡng đang được thực hiện bởi máy tính)",
+      "Maintenance tasks are being done by pilots (Các nhiệm vụ bảo dưỡng đang được thực hiện bởi phi công)"
+    ],
+    0,
+    "Maintenance tasks are still being done by human (Các nhiệm vụ bảo dưỡng vẫn đang được thực hiện bởi con người)"
+  ],
+  [
+    127,
+    "An engineer who has developed his or her own method of performing a complex task. (Một kỹ sư tự phát triển phương pháp riêng của mình để thực hiện một nhiệm vụ phức tạp.)",
+    [
+      "Should be commended for his/her resourcefulness. (Nên được khen ngợi vì sự tháo vát của mình.)",
+      "Is performing a rule-based behaviors. (Đang thực hiện các hành vi dựa trên quy tắc.)",
+      "Is violating on a regular basis and punishable (Đang vi phạm thường xuyên và có thể bị trừng phạt)"
+    ],
+    2,
+    "Is violating on a regular basis and punishable (Đang vi phạm thường xuyên và có thể bị trừng phạt)"
+  ],
+  [
+    128,
+    "Violations are considered in aviation as an: (Sự vi phạm được xem trong ngành hàng không là một:)",
+    [
+      "Unplanned action. (Hành động không có kế hoạch.)",
+      "Unintentional action. (Hành động vô ý.)",
+      "Deliberate action (Hành động có chủ ý)"
+    ],
+    2,
+    "Deliberate action (Hành động có chủ ý)"
+  ],
+  [
+    129,
+    "The SHEL model of human factors takes into account the: (Mô hình SHEL về yếu tố con người tính đến:)",
+    [
+      "Software, Hardware, Efficiency and Liveware (Phần mềm, Phần cứng, Hiệu quả và Con người (Liveware))",
+      "Software, Hardware, Environment and Liveware (Phần mềm, Phần cứng, Môi trường và Con người (Liveware))",
+      "Software, Hardware, Environment and Location (Phần mềm, Phần cứng, Môi trường và Vị trí)"
+    ],
+    1,
+    "Software, Hardware, Environment and Liveware (Phần mềm, Phần cứng, Môi trường và Con người (Liveware))"
+  ],
+  [
+    130,
+    "Itemized checklists should be dealt with: (Danh sách kiểm tra chi tiết nên được giải quyết:)",
+    [
+      "In any order, provided all steps are completed. (Theo bất kỳ thứ tự nào, miễn là tất cả các bước được hoàn thành.)",
+      "Item by item, in order, to cover every step diligently. (Từng mục một, theo thứ tự, để bao quát từng bước cẩn thận.)",
+      "As memorized (Như những gì ghi nhớ)"
+    ],
+    1,
+    "Item by item, in order, to cover every step diligently. (Từng mục một, theo thứ tự, để bao quát từng bước cẩn thận.)"
+  ],
+  [
+    131,
+    "Aircraft Troubleshooting are: (Khắc phục sự cố máy bay là:)",
+    [
+      "Rule based. (Dựa trên quy tắc.)",
+      "Skill and Experience based (Dựa trên Kỹ năng và Kinh nghiệm)",
+      "Knowledge based (Dựa trên Kiến thức)"
+    ],
+    0,
+    "Rule based. (Dựa trên quy tắc.)"
+  ],
+  [
+    132,
+    "If an organization which practices Maintenance Errors Declension Aid (MEDA) there is: (Nếu một tổ chức thực hiện Hỗ trợ Giảm thiểu Lỗi Bảo dưỡng (MEDA) thì có:)",
+    [
+      "No blame cultures (Văn hóa không đổ lỗi)",
+      "Positive employee intent (Sự thiện chí từ phía nhân viên)",
+      "Punishment for all violations (Hình phạt cho mọi vi phạm)"
+    ],
+    1,
+    "Positive employee intent (Sự thiện chí từ phía nhân viên)"
+  ],
+  [
+    133,
+    "The “Swiss Cheese” model is known as: (Mô hình "Pho mát Thụy Sĩ" được biết đến như là:)",
+    [
+      "The Window of Opportunity- is a theoretical model that illustrates how accidents occur in organizations (Cửa sổ cơ hội - là một mô hình lý thuyết minh họa cách tai nạn xảy ra trong các tổ chức)",
+      "Is a practical model (Là một mô hình thực tế)",
+      "Applicable only for base maintenance (Chỉ áp dụng cho bảo dưỡng nội trường)"
+    ],
+    0,
+    "The Window of Opportunity- is a theoretical model that illustrates how accidents occur in organizations (Cửa sổ cơ hội - là một mô hình lý thuyết minh họa cách tai nạn xảy ra trong các tổ chức)"
+  ],
+  [
+    134,
+    "The Majority of Maintenance Errors are caused during: (Phần lớn các lỗi bảo dưỡng xảy ra trong quá trình:)",
+    [
+      "Installation. (Lắp đặt.)",
+      "Servicing. (Bảo dưỡng.)",
+      "Removal (Tháo dỡ)"
+    ],
+    0,
+    "Installation. (Lắp đặt.)"
+  ],
+  [
+    135,
+    "The Alaska Airlines MD-83 crash due to: (Vụ tai nạn chuyến bay MD-83 của Alaska Airlines là do:)",
+    [
+      "The Pilots error. (Lỗi của phi công.)",
+      "The Maintenance error, inadequate greasing of THS jack screw. (Lỗi bảo dưỡng, bôi trơn không đủ trục vít me của cánh thăng bằng ngang (THS).)",
+      "The Bad weather near airport (Thời tiết xấu gần sân bay)"
+    ],
+    1,
+    "The Maintenance error, inadequate greasing of THS jack screw. (Lỗi bảo dưỡng, bôi trơn không đủ trục vít me của cánh thăng bằng ngang (THS).)"
+  ],
+  [
+    136,
+    "An engineer who has developed his own way of performing a task: (Một kỹ sư tự phát triển cách riêng để thực hiện một nhiệm vụ:)",
+    [
+      "Is in regular violation punishable by law. (Thường xuyên vi phạm và có thể bị pháp luật trừng phạt.)",
+      "Is improving maintenance efficiency. (Đang cải thiện hiệu quả bảo dưỡng.)",
+      "Should be commended for his resourcefulness (Nên được khen ngợi vì sự tháo vát của mình)"
+    ],
+    0,
+    "Is in regular violation punishable by law. (Thường xuyên vi phạm và có thể bị pháp luật trừng phạt.)"
+  ],
+  [
+    137,
+    "In an error chain, an accident can be prevented by breaking: (Trong một chuỗi lỗi, tai nạn có thể được ngăn chặn bằng cách phá vỡ:)",
+    [
+      "All links in the error chain. (Tất cả các mắt xích trong chuỗi lỗi.)",
+      "More than one link in the error chain. (Nhiều hơn một mắt xích trong chuỗi lỗi.)",
+      "Only one link which is the main cause, in the error chain (Chỉ một mắt xích là nguyên nhân chính trong chuỗi lỗi)"
+    ],
+    2,
+    "Only one link which is the main cause, in the error chain (Chỉ một mắt xích là nguyên nhân chính trong chuỗi lỗi)"
+  ],
+  [
+    138,
+    "The "Window of Opportunity" stand for in the Swiss Cheese model: ("Cửa sổ Cơ hội" trong mô hình Pho mát Thụy Sĩ là viết tắt của:)",
+    [
+      "Window of opportunity refers to mistakes that can align at all levels in the organization, leading to the occurrence of an accident (Cửa sổ cơ hội dùng để chỉ những sai lầm có thể sắp xếp trùng khớp ở mọi cấp độ trong tổ chức, dẫn đến sự xuất hiện của một tai nạn)",
+      "Window of Opportunity refers to the way an organization works (Cửa sổ cơ hội đề cập đến cách thức hoạt động của một tổ chức)",
+      "Window of Opportunity refers to the way an individual works (Cửa sổ cơ hội đề cập đến cách làm việc của một cá nhân)"
+    ],
+    0,
+    "Window of opportunity refers to mistakes that can align at all levels in the organization, leading to the occurrence of an accident (Cửa sổ cơ hội dùng để chỉ những sai lầm có thể sắp xếp trùng khớp ở mọi cấp độ trong tổ chức, dẫn đến sự xuất hiện của một tai nạn)"
+  ],
+  [
+    139,
+    "The best way to eliminate errors in workplace is: (Cách tốt nhất để loại bỏ lỗi tại nơi làm việc là:)",
+    [
+      "Blaming errors liability to the individual or team (Đổ lỗi trách nhiệm cho cá nhân hoặc đội)",
+      "Discover, assess and eliminate error producing factors within the workplace (Phát hiện, đánh giá và loại bỏ các yếu tố tạo ra lỗi trong nơi làm việc)",
+      "Report to management (Báo cáo cho ban quản lý)"
+    ],
+    1,
+    "Discover, assess and eliminate error producing factors within the workplace (Phát hiện, đánh giá và loại bỏ các yếu tố tạo ra lỗi trong nơi làm việc)"
+  ],
+  [
+    140,
+    "Risk assessment and management is. (Đánh giá và quản lý rủi ro là.)",
+    [
+      "Reduction of risks to a tolerable standard and monitoring the situation. (Giảm thiểu rủi ro xuống mức tiêu chuẩn có thể chấp nhận được và theo dõi tình hình.)",
+      "The investigation of risks and totally removing them and the monitoring of new work practices. (Điều tra rủi ro, loại bỏ hoàn toàn chúng và theo dõi các phương thức làm việc mới.)",
+      "Avoiding the risky jobs in maintenance (Tránh các công việc rủi ro trong bảo dưỡng)"
+    ],
+    0,
+    "Reduction of risks to a tolerable standard and monitoring the situation. (Giảm thiểu rủi ro xuống mức tiêu chuẩn có thể chấp nhận được và theo dõi tình hình.)"
+  ],
+  [
+    141,
+    "The best way of dealing with emergencies in workplace is: (Cách tốt nhất để đối phó với các trường hợp khẩn cấp tại nơi làm việc là:)",
+    [
+      "Keep the evidence. (Giữ lại bằng chứng.)",
+      "Prevent further accidents (Ngăn chặn các tai nạn tiếp theo)",
+      "Keep the evidence, follow up and implement SMS culture (Giữ bằng chứng, theo dõi và thực hiện văn hóa Quản lý an toàn - SMS)"
+    ],
+    2,
+    "Keep the evidence, follow up and implement SMS culture (Giữ bằng chứng, theo dõi và thực hiện văn hóa Quản lý an toàn - SMS)"
+  ],
+  [
+    142,
+    "An emergency in workplace can cause: (Một trường hợp khẩn cấp tại nơi làm việc có thể gây ra:)",
+    [
+      "An injury to oneself or to a colleague; (Chấn thương cho bản thân hoặc cho đồng nghiệp;)",
+      "A situation that is inherently dangerous, which has the potential to cause injury (such as the escape of a noxious substance, or a fire) (Một tình huống vốn dĩ nguy hiểm, có khả năng gây thương tích (như rò rỉ chất độc hại, hoặc hỏa hoạn))",
+      "Serious Injury or  incapacitation or Even Death (Chấn thương nghiêm trọng hoặc mất khả năng làm việc hoặc Thậm chí tử vong)"
+    ],
+    2,
+    "Serious Injury or  incapacitation or Even Death (Chấn thương nghiêm trọng hoặc mất khả năng làm việc hoặc Thậm chí tử vong)"
+  ],
+  [
+    143,
+    "Preparing for emergencies in workplace requires: (Việc chuẩn bị cho các trường hợp khẩn cấp tại nơi làm việc yêu cầu:)",
+    [
+      "That you have Two things in place: planning, attitude. (Bạn phải có sẵn hai thứ: lập kế hoạch, thái độ.)",
+      "That you have Three things in place: planning, attitude, people (Bạn phải có sẵn ba thứ: lập kế hoạch, thái độ, con người)",
+      "That you have Four things in place: planning, attitude, supplies, and communications (Bạn phải có sẵn bốn thứ: lập kế hoạch, thái độ, vật tư và giao tiếp/liên lạc)"
+    ],
+    2,
+    "That you have Four things in place: planning, attitude, supplies, and communications (Bạn phải có sẵn bốn thứ: lập kế hoạch, thái độ, vật tư và giao tiếp/liên lạc)"
+  ],
+  [
+    144,
+    "Breathing Emergencies in workplace means: (Trường hợp khẩn cấp về hô hấp tại nơi làm việc có nghĩa là:)",
+    [
+      "A polluted atmosphere (Bầu không khí bị ô nhiễm)",
+      "The person stops breathing for longer than 15 to 20 seconds. (Người đó ngừng thở lâu hơn 15 đến 20 giây.)",
+      "Normal in workplace due to smoke/fumes (Là điều bình thường tại nơi làm việc do khói/hơi độc)"
+    ],
+    1,
+    "The person stops breathing for longer than 15 to 20 seconds. (Người đó ngừng thở lâu hơn 15 đến 20 giây.)"
+  ],
+  [
+    145,
+    "Tonal find the emergency Exits in workplace: (Để tìm Lối thoát hiểm tại nơi làm việc:)",
+    [
+      "Ask Some senior person about the Emergency Exits. (Hỏi một người lớn tuổi/cấp cao về Lối thoát hiểm.)",
+      "Be aware of where the exits signs board are and know the evacuation routes. (Chú ý đến vị trí các bảng chỉ dẫn lối ra và biết các tuyến đường sơ tán.)",
+      "Ask at the reception (Hỏi ở quầy lễ tân)"
+    ],
+    1,
+    "Be aware of where the exits signs board are and know the evacuation routes. (Chú ý đến vị trí các bảng chỉ dẫn lối ra và biết các tuyến đường sơ tán.)"
+  ],
+  [
+    146,
+    "Hypothermia means: (Hạ thân nhiệt có nghĩa là:)",
+    [
+      "When the body loses heat faster than it can produce heat. It is an emergency that can quickly lead to death (Khi cơ thể mất nhiệt nhanh hơn mức có thể tạo ra nhiệt. Đây là tình trạng khẩn cấp có thể nhanh chóng dẫn đến tử vong)",
+      "Cold weather working conditions. (Điều kiện làm việc thời tiết lạnh.)",
+      "Hot weather working conditions (Điều kiện làm việc thời tiết nóng)"
+    ],
+    0,
+    "When the body loses heat faster than it can produce heat. It is an emergency that can quickly lead to death (Khi cơ thể mất nhiệt nhanh hơn mức có thể tạo ra nhiệt. Đây là tình trạng khẩn cấp có thể nhanh chóng dẫn đến tử vong)"
+  ],
+  [
+    147,
+    "The Caution Signs are colored as: (Biển Báo Thận Trọng có màu:)",
+    [
+      "Yellow and Black (Vàng và Đen)",
+      "Blue and Green (Xanh lam và Xanh lục)",
+      "Always white (Luôn là màu trắng)"
+    ],
+    0,
+    "Yellow and Black (Vàng và Đen)"
+  ],
+  [
+    148,
+    "The Danger Signs are colored as: (Biển BBoy Danger Signscolored as:)",
+    [
+      "Red (Đỏ)",
+      "Black and White (Den và Trắng)",
+      "Bright orange (Cam sáng)"
+    ],
+    0,
+    "Red (Đỏ)"
+  ],
+  [
+    149,
+    "When preparing for an emergency, the issues should be addressed mainly: (Khi chuẩn bị cho một trường hợp khẩn cấp, các vấn đề chủ yếu cần giải quyết là:)",
+    [
+      "Planning, Attitude, Safety supplies (Kế hoạch, Thái độ, Vật tư an toàn)",
+      "Communication with safety Department. (Giao tiếp với Bộ phận an toàn.)",
+      "Inform shift supervisor (Thông báo cho trưởng ca)"
+    ],
+    0,
+    "Planning, Attitude, Safety supplies (Kế hoạch, Thái độ, Vật tư an toàn)"
+  ],
+  [
+    150,
+    "One of the step in the process to protect workers in hazardous area is: (Một trong những bước trong quy trình bảo vệ công nhân trong khu vực nguy hiểm là:)",
+    [
+      "Call an ambulance (Gọi xe cứu thương)",
+      "The use of Personal Protective Equipment (PPE) (Việc sử dụng Thiết bị Bảo vệ Cá nhân (PPE))",
+      "Call Local airport assistance team (Gọi đội hỗ trợ sân bay địa phương)"
+    ],
+    1,
+    "The use of Personal Protective Equipment (PPE) (Việc sử dụng Thiết bị Bảo vệ Cá nhân (PPE))"
+  ]
+]
