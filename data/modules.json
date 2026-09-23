@@ -33,11 +33,18 @@
     "title": "Module 7A: Maintenance Practices",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m07a209.json"
-  }, {
+  }, 
+  {
     "id": "m8",
     "title": "Module 8: Basic Aerodynamics",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m8.json"
+  },
+  {
+    "id": "m9",
+    "title": "Module 9: Human Factors",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m9.json"
   },
    {
     "id": "m11",
