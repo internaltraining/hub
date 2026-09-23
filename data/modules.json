@@ -2,15 +2,25 @@
   
   {
     "id": "m1",
-    "title": "Module M1: Mathematics",
+    "title": "Module 1: Mathematics",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m1.json"
   },
   {
     "id": "m2",
-    "title": "Module M2: Physics",
+    "title": "Module 2: Physics",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m2.json"
+  },{
+    "id": "m3",
+    "title": "Module 3: Electrical Fundamentals",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m3.json"
+  },{
+    "id": "m5",
+    "title": "Module 5: Instrument & Computer Syste",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m5.json"
   },
   {
     "id": "m07a",
