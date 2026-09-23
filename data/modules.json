@@ -16,11 +16,18 @@
     "title": "Module 3: Electrical Fundamentals",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m3.json"
-  },{
+  },
+  {
     "id": "m5",
     "title": "Module 5: Instrument & Computer Syste",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m5.json"
+  },
+   {
+    "id": "m6",
+    "title": "Module 6: Materials and Hardware",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m6.json"
   },
   {
     "id": "m07a",
@@ -45,6 +52,12 @@
     "title": "Module 9: Human Factors",
     "desc": "Basic Training for Aircraft Maintenance Technician",
     "file": "data/m9.json"
+  },
+   {
+    "id": "m10",
+    "title": "Module 10: Aviation Legislation",
+    "desc": "Basic Training for Aircraft Maintenance Technician",
+    "file": "data/m10.json"
   },
    {
     "id": "m11",
