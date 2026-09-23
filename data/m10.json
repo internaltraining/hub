@@ -1,0 +1,1674 @@
+[
+  [
+    1,
+    "What is the main purpose of Chapter 1 in this document?",
+    [
+      "To provide detailed technical drawings of aircraft engines",
+      "To introduce air transport operations, economic impacts, and licensing requirements",
+      "To explain how to pilot an aircraft"
+    ],
+    1,
+    "To introduce air transport operations, economic impacts, and licensing requirements"
+  ],
+  [
+    2,
+    "What does CAAV stand for?",
+    [
+      "Civil Aviation Authority of Vietnam",
+      "Commercial Aircraft and Aviation Ventures",
+      "Certified Aerospace Administration Vietnam"
+    ],
+    0,
+    "Civil Aviation Authority of Vietnam"
+  ],
+  [
+    3,
+    "What is an Approved Training Organization (ATO)?",
+    [
+      "A facility authorized to provide aviation training under a regulated curriculum",
+      "A company that sells aircraft parts",
+      "A government agency responsible for air traffic control"
+    ],
+    0,
+    "A facility authorized to provide aviation training under a regulated curriculum"
+  ],
+  [
+    4,
+    "When was the Convention on International Civil Aviation (Chicago Convention) signed?",
+    [
+      "4 April 1947",
+      "7 December 1944",
+      "5 March 1947"
+    ],
+    1,
+    "7 December 1944"
+  ],
+  [
+    5,
+    "What is the headquarters location of the International Civil Aviation Organization (ICAO)?",
+    [
+      "New York, USA",
+      "London, UK",
+      "Montreal, Canada"
+    ],
+    2,
+    "Montreal, Canada"
+  ],
+  [
+    6,
+    "Which of the following is NOT one of ICAO’s three main bodies?",
+    [
+      "Assembly",
+      "Council",
+      "Air Traffic Committee"
+    ],
+    2,
+    "Air Traffic Committee"
+  ],
+  [
+    7,
+    "How many member states does ICAO have?",
+    [
+      "36",
+      "193",
+      "52"
+    ],
+    1,
+    "193"
+  ],
+  [
+    8,
+    "What does SARPs stand for?",
+    [
+      "Safety and Reliability Procedures",
+      "Standards and Recommended Practices",
+      "Security and Airspace Regulations"
+    ],
+    1,
+    "Standards and Recommended Practices"
+  ],
+  [
+    9,
+    "What does ICAO Annex 1 cover?",
+    [
+      "Airworthiness of Aircraft",
+      "Operation of Aircraft",
+      "Personnel Licensing"
+    ],
+    2,
+    "Personnel Licensing"
+  ],
+  [
+    10,
+    "What is a power-driven heavier-than-air aircraft primarily using aerodynamic lift called?",
+    [
+      "Helicopter",
+      "Aeroplane",
+      "Glider"
+    ],
+    1,
+    "Aeroplane"
+  ],
+  [
+    11,
+    "What is the primary purpose of ICAO Annex 6?",
+    [
+      "Flight Crew Licensing",
+      "Operation of Aircraft",
+      "Airworthiness Certification"
+    ],
+    1,
+    "Operation of Aircraft"
+  ],
+  [
+    12,
+    "What is an Air Operator Certificate (AOC)?",
+    [
+      "A document proving pilot training",
+      "A certificate authorizing an operator to conduct commercial air transport",
+      "A maintenance approval document"
+    ],
+    1,
+    "A certificate authorizing an operator to conduct commercial air transport"
+  ],
+  [
+    13,
+    "Which ICAO Annex deals with Airworthiness of Aircraft?",
+    [
+      "Annex 1",
+      "Annex 6",
+      "Annex 8"
+    ],
+    2,
+    "Annex 8"
+  ],
+  [
+    14,
+    "What is the minimum age required to apply for an Aircraft Maintenance Engineer (AME) license?",
+    [
+      "18 years",
+      "21 years",
+      "25 years"
+    ],
+    0,
+    "18 years"
+  ],
+  [
+    15,
+    "Which organization is responsible for issuing Aviation Safety Advisory Circulars in Vietnam?",
+    [
+      "ICAO",
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "Ministry of Transport"
+    ],
+    1,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    16,
+    "What document must an aircraft have to be considered legally airworthy?",
+    [
+      "Pilot’s License",
+      "Certificate of Airworthiness",
+      "Aircraft Maintenance Log"
+    ],
+    1,
+    "Certificate of Airworthiness"
+  ],
+  [
+    17,
+    "What does an Aircraft Technical Logbook primarily record?",
+    [
+      "Passenger details",
+      "Defects and maintenance history",
+      "Weather conditions"
+    ],
+    1,
+    "Defects and maintenance history"
+  ],
+  [
+    18,
+    "Who is responsible for issuing a Certificate of Release to Service after maintenance?",
+    [
+      "Pilot",
+      "Certifying staff",
+      "Air Traffic Controller"
+    ],
+    1,
+    "Certifying staff"
+  ],
+  [
+    19,
+    "What is the purpose of a Maintenance Program?",
+    [
+      "To schedule pilot training",
+      "To describe required aircraft maintenance tasks",
+      "To record flight hours"
+    ],
+    1,
+    "To describe required aircraft maintenance tasks"
+  ],
+  [
+    20,
+    "Which document provides ICAO’s guidance on training aircraft maintenance personnel?",
+    [
+      "ICAO Doc 7192",
+      "ICAO Annex 1",
+      "ICAO Annex 8"
+    ],
+    0,
+    "ICAO Doc 7192"
+  ],
+  [
+    21,
+    "What is the primary goal of airworthiness design requirements?",
+    [
+      "To minimize passenger discomfort",
+      "To prevent hazardous and catastrophic failures",
+      "To increase aircraft speed"
+    ],
+    1,
+    "To prevent hazardous and catastrophic failures"
+  ],
+  [
+    22,
+    "What is the purpose of aircraft control systems?",
+    [
+      "To ensure smooth and precise aircraft operation",
+      "To reduce fuel consumption",
+      "To improve passenger comfort"
+    ],
+    0,
+    "To ensure smooth and precise aircraft operation"
+  ],
+  [
+    23,
+    "What aerodynamic requirement must an aircraft meet?",
+    [
+      "Be free from flutter and structural divergence",
+      "Have flexible wings",
+      "Minimize vibration for passenger comfort"
+    ],
+    0,
+    "Be free from flutter and structural divergence"
+  ],
+  [
+    24,
+    "What is the key requirement for aircraft reliability?",
+    [
+      "Redundant systems for safe flight after structural damage",
+      "The ability to fly without maintenance",
+      "The use of lightweight materials"
+    ],
+    0,
+    "Redundant systems for safe flight after structural damage"
+  ],
+  [
+    25,
+    "What must be included in an aircraft’s design to ensure safe operation?",
+    [
+      "An entertainment system",
+      "Approved instruments and flight management systems",
+      "An automatic meal service"
+    ],
+    1,
+    "Approved instruments and flight management systems"
+  ],
+  [
+    26,
+    "What is the purpose of a fire detection system in an aircraft?",
+    [
+      "To locate electrical faults",
+      "To ensure rapid detection and extinguishing of fires",
+      "To improve fuel efficiency"
+    ],
+    1,
+    "To ensure rapid detection and extinguishing of fires"
+  ],
+  [
+    27,
+    "What does a \"fail-safe\" aircraft design mean?",
+    [
+      "It incorporates redundancy to mitigate failure risks",
+      "It eliminates all failures",
+      "It requires no maintenance"
+    ],
+    0,
+    "It incorporates redundancy to mitigate failure risks"
+  ],
+  [
+    28,
+    "What document contains mandatory corrective actions for unsafe aircraft conditions?",
+    [
+      "Flight Operations Manual",
+      "Airworthiness Directive",
+      "Passenger Service Guide"
+    ],
+    1,
+    "Airworthiness Directive"
+  ],
+  [
+    29,
+    "What is the function of an aircraft’s maintenance program?",
+    [
+      "To ensure continued airworthiness",
+      "To improve fuel economy",
+      "To record flight data"
+    ],
+    0,
+    "To ensure continued airworthiness"
+  ],
+  [
+    30,
+    "Who is responsible for ensuring maintenance is conducted according to regulations?",
+    [
+      "The aircraft manufacturer",
+      "The licensed maintenance technician",
+      "The flight crew"
+    ],
+    1,
+    "The licensed maintenance technician"
+  ],
+  [
+    31,
+    "How does an aircraft structure ensure safety under varying loads?",
+    [
+      "By using flexible materials",
+      "By complying with load limits and avoiding detrimental deformation",
+      "By using lightweight components"
+    ],
+    1,
+    "By complying with load limits and avoiding detrimental deformation"
+  ],
+  [
+    32,
+    "Why is redundancy important in aircraft control systems?",
+    [
+      "To minimize pilot workload",
+      "To ensure continued safe flight in case of a system failure",
+      "To reduce weight"
+    ],
+    1,
+    "To ensure continued safe flight in case of a system failure"
+  ],
+  [
+    33,
+    "What must be considered when designing aircraft systems for reliability?",
+    [
+      "The number of passengers on board",
+      "Probability of failure and severity of effects",
+      "The number of crew members required"
+    ],
+    1,
+    "Probability of failure and severity of effects"
+  ],
+  [
+    34,
+    "What factors must be considered in determining maximum aircraft loads?",
+    [
+      "Gust environment, ground handling, and flight control loads",
+      "Pilot experience level",
+      "Passenger weight distribution"
+    ],
+    0,
+    "Gust environment, ground handling, and flight control loads"
+  ],
+  [
+    35,
+    "Why must an aircraft’s fire protection system be tested regularly?",
+    [
+      "To verify functionality and rapid response in case of fire",
+      "To ensure compliance with customer service requirements",
+      "To maintain aircraft resale value"
+    ],
+    0,
+    "To verify functionality and rapid response in case of fire"
+  ],
+  [
+    36,
+    "What is the primary concern in engine installation for safe flight?",
+    [
+      "It must function reliably under operating conditions",
+      "It must be easy to replace",
+      "It must have the lowest fuel consumption"
+    ],
+    0,
+    "It must function reliably under operating conditions"
+  ],
+  [
+    37,
+    "What is required for an aircraft’s control systems to be considered fail-safe?",
+    [
+      "They must be operated by at least two pilots",
+      "They must be designed to prevent jamming and incorrect assembly",
+      "They must have redundant electrical systems"
+    ],
+    1,
+    "They must be designed to prevent jamming and incorrect assembly"
+  ],
+  [
+    38,
+    "What is a major factor in determining an aircraft’s airworthiness certification?",
+    [
+      "Compliance with structural and operational safety standards",
+      "Passenger comfort levels",
+      "Airline profitability"
+    ],
+    0,
+    "Compliance with structural and operational safety standards"
+  ],
+  [
+    39,
+    "How do airworthiness directives (ADs) impact aircraft maintenance?",
+    [
+      "They mandate corrective actions for identified safety issues",
+      "They suggest maintenance improvements",
+      "They are optional for airlines"
+    ],
+    0,
+    "They mandate corrective actions for identified safety issues"
+  ],
+  [
+    40,
+    "What is the purpose of an Air Operator Certificate (AOC)?",
+    [
+      "To certify that an operator is authorized to conduct commercial air transport",
+      "To certify that a pilot is qualified to fly commercial aircraft",
+      "To approve aircraft designs"
+    ],
+    0,
+    "To certify that an operator is authorized to conduct commercial air transport"
+  ],
+  [
+    41,
+    "Who issues the AOC in Vietnam?",
+    [
+      "International Civil Aviation Organization (ICAO)",
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "Ministry of Transportation"
+    ],
+    1,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    42,
+    "What is a requirement for obtaining an AOC in Vietnam?",
+    [
+      "The applicant must have its principal place of business in Vietnam",
+      "The applicant must operate at least 10 aircraft",
+      "The applicant must have international routes"
+    ],
+    0,
+    "The applicant must have its principal place of business in Vietnam"
+  ],
+  [
+    43,
+    "What is required for an aircraft to operate in commercial air transport?",
+    [
+      "A pilot with over 10 years of experience",
+      "A valid Airworthiness Certificate",
+      "A special engine inspection every 6 months"
+    ],
+    1,
+    "A valid Airworthiness Certificate"
+  ],
+  [
+    44,
+    "How long must an aircraft emergency evacuation be completed in?",
+    [
+      "30 seconds",
+      "60 seconds",
+      "90 seconds"
+    ],
+    2,
+    "90 seconds"
+  ],
+  [
+    45,
+    "What must an AOC holder ensure regarding aircraft maintenance?",
+    [
+      "The aircraft remains in an airworthy condition",
+      "Pilots conduct routine maintenance",
+      "Passengers inspect the aircraft before flight"
+    ],
+    0,
+    "The aircraft remains in an airworthy condition"
+  ],
+  [
+    46,
+    "What is the primary responsibility of an aircraft maintenance program?",
+    [
+      "Ensuring continued airworthiness of the aircraft",
+      "Reducing fuel consumption",
+      "Increasing passenger capacity"
+    ],
+    0,
+    "Ensuring continued airworthiness of the aircraft"
+  ],
+  [
+    47,
+    "What is the validity period of an aviation personnel license in Vietnam?",
+    [
+      "2 years",
+      "5 years",
+      "10 years"
+    ],
+    1,
+    "5 years"
+  ],
+  [
+    48,
+    "What is the minimum age requirement for an Aviation Maintenance Technician (AMT) license?",
+    [
+      "16 years",
+      "18 years",
+      "21 years"
+    ],
+    1,
+    "18 years"
+  ],
+  [
+    49,
+    "What document must an AMT present when applying for a license?",
+    [
+      "A flight experience certificate",
+      "A certificate from an Approved Training Organization (ATO)",
+      "A letter from an airline"
+    ],
+    1,
+    "A certificate from an Approved Training Organization (ATO)"
+  ],
+  [
+    50,
+    "What is an Approved Training Organization (ATO) responsible for?",
+    [
+      "Certifying aircraft as airworthy",
+      "Providing aviation training programs",
+      "Conducting aircraft maintenance"
+    ],
+    1,
+    "Providing aviation training programs"
+  ],
+  [
+    51,
+    "How long is an ATO certificate valid?",
+    [
+      "12 months",
+      "24 months",
+      "36 months"
+    ],
+    2,
+    "36 months"
+  ],
+  [
+    52,
+    "What was the first jet airline to cross the Atlantic?",
+    [
+      "Boeing 707",
+      "De Havilland Comet",
+      "Douglas DC-3"
+    ],
+    1,
+    "De Havilland Comet"
+  ],
+  [
+    53,
+    "Which aircraft contributed to making air travel more affordable in the 1970s?",
+    [
+      "Airbus A320",
+      "Boeing 747",
+      "Concorde"
+    ],
+    1,
+    "Boeing 747"
+  ],
+  [
+    54,
+    "When was Vietnam’s Civil Aviation Authority established?",
+    [
+      "1960",
+      "1956",
+      "1975"
+    ],
+    1,
+    "1956"
+  ],
+  [
+    55,
+    "When did Vietnam Airlines officially become a national airline?",
+    [
+      "1993",
+      "1985",
+      "2000"
+    ],
+    0,
+    "1993"
+  ],
+  [
+    56,
+    "In which year did Vietnam Airlines join the SkyTeam global airline alliance?",
+    [
+      "2005",
+      "2010",
+      "2018"
+    ],
+    1,
+    "2010"
+  ],
+  [
+    57,
+    "What was Vietnam Airlines the first airline in the world to do in 2015?",
+    [
+      "Operate both Boeing 787 and Airbus A350 simultaneously",
+      "Fly non-stop to the United States",
+      "Introduce in-flight internet service"
+    ],
+    0,
+    "Operate both Boeing 787 and Airbus A350 simultaneously"
+  ],
+  [
+    58,
+    "What rating has Skytrax given Vietnam Airlines for multiple consecutive years?",
+    [
+      "3-Star Airline",
+      "4-Star Airline",
+      "5-Star Airline"
+    ],
+    1,
+    "4-Star Airline"
+  ],
+  [
+    59,
+    "What is a key challenge faced by commercial aviation today?",
+    [
+      "Competition with rail transport",
+      "Reducing air and noise pollution",
+      "Decreasing fuel efficiency"
+    ],
+    1,
+    "Reducing air and noise pollution"
+  ],
+  [
+    60,
+    "How does air transport impact the world economy?",
+    [
+      "It is responsible for 20% of global employment",
+      "It contributes significantly to GDP and creates jobs",
+      "It has minimal impact on economic growth"
+    ],
+    1,
+    "It contributes significantly to GDP and creates jobs"
+  ],
+  [
+    61,
+    "What percentage of the world’s output in GDP did air transport generate in 1998?",
+    [
+      "2%",
+      "4.5%",
+      "6.2%"
+    ],
+    1,
+    "4.5%"
+  ],
+  [
+    62,
+    "What is the estimated economic multiplier effect of air transport?",
+    [
+      "Every $1 in air transport creates $2 in other industries",
+      "Every $1 in air transport creates $3.25 in other industries",
+      "Every $1 in air transport creates $5 in other industries"
+    ],
+    1,
+    "Every $1 in air transport creates $3.25 in other industries"
+  ],
+  [
+    63,
+    "What is the oldest airline in Vietnam?",
+    [
+      "VietJet Air",
+      "Pacific Airlines",
+      "Vietnam Airlines"
+    ],
+    2,
+    "Vietnam Airlines"
+  ],
+  [
+    64,
+    "Which Vietnamese airline is known for being a low-cost carrier?",
+    [
+      "VietJet Air",
+      "Bamboo Airways",
+      "Vietnam Airlines"
+    ],
+    0,
+    "VietJet Air"
+  ],
+  [
+    65,
+    "What type of aircraft does Hai Au Aviation primarily operate?",
+    [
+      "Jet aircraft",
+      "Helicopters",
+      "Seaplanes"
+    ],
+    2,
+    "Seaplanes"
+  ],
+  [
+    66,
+    "What is the main role of Vietnam Helicopter Corporation?",
+    [
+      "International passenger transport",
+      "Search and rescue, air transport, and tourism",
+      "Low-cost domestic flights"
+    ],
+    1,
+    "Search and rescue, air transport, and tourism"
+  ],
+  [
+    67,
+    "What is a key characteristic of Bamboo Airways?",
+    [
+      "It is Vietnam’s first hybrid airline",
+      "It is the oldest airline in Vietnam",
+      "It only operates international flights"
+    ],
+    0,
+    "It is Vietnam’s first hybrid airline"
+  ],
+  [
+    68,
+    "What is the main responsibility of an air operator regarding maintenance?",
+    [
+      "Ensure aircraft are maintained in an airworthy condition",
+      "Design new aircraft systems",
+      "Manufacture aircraft parts"
+    ],
+    0,
+    "Ensure aircraft are maintained in an airworthy condition"
+  ],
+  [
+    69,
+    "What is an Air Operator Certificate (AOC) required for?",
+    [
+      "Owning an aircraft",
+      "Conducting commercial air transport",
+      "Operating private flights"
+    ],
+    1,
+    "Conducting commercial air transport"
+  ],
+  [
+    70,
+    "Who issues the Air Operator Certificate (AOC) in Vietnam?",
+    [
+      "International Civil Aviation Organization (ICAO)",
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "Vietnam Airlines"
+    ],
+    1,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    71,
+    "What document must be placed in the flight deck of an AOC holder’s aircraft?",
+    [
+      "Certificate of Airworthiness",
+      "A certified true copy of the AOC",
+      "Pilot's License"
+    ],
+    1,
+    "A certified true copy of the AOC"
+  ],
+  [
+    72,
+    "What is the purpose of an operator’s Maintenance Control Manual?",
+    [
+      "To describe procedures for aircraft maintenance",
+      "To outline pilot training programs",
+      "To define aircraft manufacturing processes"
+    ],
+    0,
+    "To describe procedures for aircraft maintenance"
+  ],
+  [
+    73,
+    "What is required for an aircraft to be released to service after maintenance?",
+    [
+      "Approval by the aircraft manufacturer",
+      "A maintenance release signed by authorized personnel",
+      "Verification from the flight crew"
+    ],
+    1,
+    "A maintenance release signed by authorized personnel"
+  ],
+  [
+    74,
+    "What is the purpose of an aircraft’s technical logbook?",
+    [
+      "To record fuel purchases",
+      "To document maintenance activities and defects",
+      "To track pilot duty hours"
+    ],
+    1,
+    "To document maintenance activities and defects"
+  ],
+  [
+    75,
+    "What is an MEL (Minimum Equipment List) used for?",
+    [
+      "To determine which equipment may be inoperative for a flight",
+      "To list the aircraft's emergency exits",
+      "To certify pilot competency"
+    ],
+    0,
+    "To determine which equipment may be inoperative for a flight"
+  ],
+  [
+    76,
+    "What must an air operator ensure regarding maintenance records?",
+    [
+      "They are kept up to date and available",
+      "They are discarded after one year",
+      "They are only reviewed by pilots"
+    ],
+    0,
+    "They are kept up to date and available"
+  ],
+  [
+    77,
+    "What is the minimum retention period for flight crew training records?",
+    [
+      "3 years",
+      "12 months after leaving the company",
+      "5 years"
+    ],
+    1,
+    "12 months after leaving the company"
+  ],
+  [
+    78,
+    "What must be documented in the aircraft’s journey log?",
+    [
+      "Passenger complaints",
+      "Flight times, servicing, and maintenance",
+      "In-flight meal preferences"
+    ],
+    1,
+    "Flight times, servicing, and maintenance"
+  ],
+  [
+    79,
+    "What must an operator submit to CAAV when applying for an AOC?",
+    [
+      "Pilot training history",
+      "Aircraft maintenance program",
+      "Passenger statistics"
+    ],
+    1,
+    "Aircraft maintenance program"
+  ],
+  [
+    80,
+    "What must be available for immediate communication to rescue centers?",
+    [
+      "Pilot work schedules",
+      "Emergency and survival equipment lists",
+      "Passenger luggage weights"
+    ],
+    1,
+    "Emergency and survival equipment lists"
+  ],
+  [
+    81,
+    "What is the purpose of a Maintenance Control Manual (MCM)?",
+    [
+      "To outline maintenance procedures and responsibilities",
+      "To describe in-flight passenger services",
+      "To provide flight crew schedules"
+    ],
+    0,
+    "To outline maintenance procedures and responsibilities"
+  ],
+  [
+    82,
+    "What document must be approved by CAAV before being used by an air operator?",
+    [
+      "The airline’s marketing plan",
+      "The operator’s Maintenance Control Manual",
+      "The passenger seating arrangement"
+    ],
+    1,
+    "The operator’s Maintenance Control Manual"
+  ],
+  [
+    83,
+    "What should an operator’s Operations Manual include?",
+    [
+      "Procedures for flight operations and maintenance",
+      "Aircraft seat designs",
+      "Passenger entertainment options"
+    ],
+    0,
+    "Procedures for flight operations and maintenance"
+  ],
+  [
+    84,
+    "What is the purpose of an AOC holder’s Maintenance Control Manual?",
+    [
+      "To describe procedures for aircraft maintenance and airworthiness compliance",
+      "To outline passenger safety procedures",
+      "To provide in-flight service guidelines"
+    ],
+    0,
+    "To describe procedures for aircraft maintenance and airworthiness compliance"
+  ],
+  [
+    85,
+    "What must an AOC holder’s Maintenance Control Manual include?",
+    [
+      "A list of airline ticket prices",
+      "A description of maintenance procedures and responsibilities",
+      "A directory of airport hotels"
+    ],
+    1,
+    "A description of maintenance procedures and responsibilities"
+  ],
+  [
+    86,
+    "What is the purpose of long-term maintenance planning?",
+    [
+      "To maximize aircraft availability and efficiency",
+      "To reduce pilot training time",
+      "To extend aircraft lifespan beyond manufacturer limits"
+    ],
+    0,
+    "To maximize aircraft availability and efficiency"
+  ],
+  [
+    87,
+    "What is the role of a Maintenance Quality System?",
+    [
+      "To monitor compliance with maintenance procedures and airworthiness",
+      "To track fuel consumption",
+      "To document pilot rest periods"
+    ],
+    0,
+    "To monitor compliance with maintenance procedures and airworthiness"
+  ],
+  [
+    88,
+    "What must an AOC holder establish as part of its Safety Management System?",
+    [
+      "A methodology for reporting and correcting safety issues",
+      "A database of passenger preferences",
+      "A marketing strategy for the airline"
+    ],
+    0,
+    "A methodology for reporting and correcting safety issues"
+  ],
+  [
+    89,
+    "What is a key function of an aircraft maintenance program?",
+    [
+      "Ensuring continued airworthiness by scheduling inspections and repairs",
+      "Optimizing in-flight passenger entertainment",
+      "Managing airline employee salaries"
+    ],
+    0,
+    "Ensuring continued airworthiness by scheduling inspections and repairs"
+  ],
+  [
+    90,
+    "Who is responsible for ensuring all maintenance is carried out properly?",
+    [
+      "The Civil Aviation Authority",
+      "The AOC holder",
+      "The aircraft manufacturer"
+    ],
+    1,
+    "The AOC holder"
+  ],
+  [
+    91,
+    "What does an aircraft reliability program monitor?",
+    [
+      "Aircraft system performance and failure trends",
+      "Passenger complaints",
+      "The airline’s financial status"
+    ],
+    0,
+    "Aircraft system performance and failure trends"
+  ],
+  [
+    92,
+    "What is the purpose of the Minimum Equipment List (MEL)?",
+    [
+      "To specify which inoperative equipment may be allowed for flight",
+      "To list maintenance personnel qualifications",
+      "To schedule aircraft cleaning operations"
+    ],
+    0,
+    "To specify which inoperative equipment may be allowed for flight"
+  ],
+  [
+    93,
+    "What is included in an AOC holder’s Safety Management System (SMS)?",
+    [
+      "Procedures for accident prevention and reporting",
+      "A list of passenger seating preferences",
+      "Guidelines for in-flight food service"
+    ],
+    0,
+    "Procedures for accident prevention and reporting"
+  ],
+  [
+    94,
+    "What is an Approved Maintenance Organization (AMO)?",
+    [
+      "An organization authorized to conduct aircraft maintenance and repairs",
+      "A company that designs new aircraft models",
+      "A regulatory body overseeing air traffic control"
+    ],
+    0,
+    "An organization authorized to conduct aircraft maintenance and repairs"
+  ],
+  [
+    95,
+    "Which authority issues AMO certificates in Vietnam?",
+    [
+      "International Civil Aviation Organization (ICAO)",
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "Ministry of Transport"
+    ],
+    1,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    96,
+    "What document must an AMO obtain to operate legally?",
+    [
+      "Flight Operations Certificate",
+      "AMO Certificate issued by CAAV",
+      "Pilot License"
+    ],
+    1,
+    "AMO Certificate issued by CAAV"
+  ],
+  [
+    97,
+    "Where must an AMO certificate be displayed?",
+    [
+      "In the aircraft cockpit",
+      "In a location accessible to the public",
+      "In the airline’s administrative office"
+    ],
+    1,
+    "In a location accessible to the public"
+  ],
+  [
+    98,
+    "What are the privileges of an AMO?",
+    [
+      "It can perform maintenance and issue a return-to-service certificate",
+      "It can operate passenger flights",
+      "It can modify aircraft designs"
+    ],
+    0,
+    "It can perform maintenance and issue a return-to-service certificate"
+  ],
+  [
+    99,
+    "What is a key limitation of an AMO?",
+    [
+      "It cannot contract out maintenance without CAAV approval",
+      "It cannot repair avionics systems",
+      "It must be based in an airport"
+    ],
+    0,
+    "It cannot contract out maintenance without CAAV approval"
+  ],
+  [
+    100,
+    "Who is responsible for ensuring AMO compliance with regulations?",
+    [
+      "The Flight Operations Manager",
+      "The Accountable Manager",
+      "The Airport Authority"
+    ],
+    1,
+    "The Accountable Manager"
+  ],
+  [
+    101,
+    "What type of training must AMO personnel receive?",
+    [
+      "Customer service training",
+      "Human factors and safety training",
+      "Airline marketing training"
+    ],
+    1,
+    "Human factors and safety training"
+  ],
+  [
+    102,
+    "What information must be recorded for certifying staff in an AMO?",
+    [
+      "Their passport details",
+      "Their qualifications, authorizations, and training records",
+      "Their flight hours"
+    ],
+    1,
+    "Their qualifications, authorizations, and training records"
+  ],
+  [
+    103,
+    "What are the two main documents issued with an AMO certificate?",
+    [
+      "An Operations Specification and a one-page certificate",
+      "A maintenance log and an inspection checklist",
+      "A pilot training manual and a maintenance manual"
+    ],
+    0,
+    "An Operations Specification and a one-page certificate"
+  ],
+  [
+    104,
+    "What must an AMO demonstrate before obtaining certification?",
+    [
+      "Compliance with VAR Part 5 requirements",
+      "A minimum of 10 years in operation",
+      "A contract with an airline"
+    ],
+    0,
+    "Compliance with VAR Part 5 requirements"
+  ],
+  [
+    105,
+    "What must an AMO holder do when contracting maintenance to an external provider?",
+    [
+      "Ensure CAAV approves the contracted work",
+      "Transfer responsibility to the external provider",
+      "Report to the airline’s operations department"
+    ],
+    0,
+    "Ensure CAAV approves the contracted work"
+  ],
+  [
+    106,
+    "What is required for an AMO to perform maintenance at a location other than its principal base?",
+    [
+      "Availability of necessary personnel, tools, and approved standards",
+      "Permission from the aircraft manufacturer",
+      "Approval from the pilot-in-command"
+    ],
+    0,
+    "Availability of necessary personnel, tools, and approved standards"
+  ],
+  [
+    107,
+    "What is the purpose of an AMO’s Safety and Quality Assurance Manager?",
+    [
+      "To monitor compliance with regulations and ensure corrective actions",
+      "To schedule pilot training",
+      "To oversee airline ticket sales"
+    ],
+    0,
+    "To monitor compliance with regulations and ensure corrective actions"
+  ],
+  [
+    108,
+    "What is included in an AMO’s training program for maintenance personnel?",
+    [
+      "Training in human performance and coordination with flight crews",
+      "Customer service training",
+      "Aircraft marketing strategies"
+    ],
+    0,
+    "Training in human performance and coordination with flight crews"
+  ],
+  [
+    109,
+    "What is the minimum age required to apply for an Aircraft Maintenance Technician (AMT) license?",
+    [
+      "16 years",
+      "18 years",
+      "21 years"
+    ],
+    1,
+    "18 years"
+  ],
+  [
+    110,
+    "What language proficiency must an AMT applicant demonstrate?",
+    [
+      "Ability to speak French",
+      "Ability to read, write, and understand English",
+      "Ability to communicate with passengers"
+    ],
+    1,
+    "Ability to read, write, and understand English"
+  ],
+  [
+    111,
+    "What are the two main categories of AMT licenses issued by the CAAV?",
+    [
+      "Airframe and Powerplant",
+      "Pilot and Engineer",
+      "Avionics and Flight Control"
+    ],
+    0,
+    "Airframe and Powerplant"
+  ],
+  [
+    112,
+    "How long does an AMT have to pass the required tests for an additional rating?",
+    [
+      "12 months",
+      "24 months",
+      "36 months"
+    ],
+    1,
+    "24 months"
+  ],
+  [
+    113,
+    "What type of aircraft requires a type rating endorsement on an AMT license?",
+    [
+      "Aircraft with a takeoff gross weight of more than 5,700 kg",
+      "Private jets under 2,000 kg",
+      "Experimental aircraft"
+    ],
+    0,
+    "Aircraft with a takeoff gross weight of more than 5,700 kg"
+  ],
+  [
+    114,
+    "What is one of the key knowledge requirements for an AMT license?",
+    [
+      "Understanding of aircraft painting techniques",
+      "Familiarity with aircraft structures and maintenance procedures",
+      "Passenger safety briefing skills"
+    ],
+    1,
+    "Familiarity with aircraft structures and maintenance procedures"
+  ],
+  [
+    115,
+    "What subjects are included in the basic knowledge requirements for an AMT license?",
+    [
+      "Mathematics, physics, and aerodynamics",
+      "Culinary arts and customer service",
+      "Advanced meteorology"
+    ],
+    0,
+    "Mathematics, physics, and aerodynamics"
+  ],
+  [
+    116,
+    "What experience is required for a B2 AMT license if the applicant has not undergone technical training?",
+    [
+      "2 years of experience",
+      "5 years of practical maintenance experience",
+      "10 years of general aviation work"
+    ],
+    1,
+    "5 years of practical maintenance experience"
+  ],
+  [
+    117,
+    "What does an AMT with a Level B1 license have the authority to sign off on?",
+    [
+      "Aircraft structure, propulsion systems, and engine maintenance",
+      "Passenger boarding procedures",
+      "In-flight service reports"
+    ],
+    0,
+    "Aircraft structure, propulsion systems, and engine maintenance"
+  ],
+  [
+    118,
+    "What are the four levels of AMT licensing?",
+    [
+      "Levels A, B1, B2, and C",
+      "Levels A, C, D, and E",
+      "Levels B, C, and D"
+    ],
+    0,
+    "Levels A, B1, B2, and C"
+  ],
+  [
+    119,
+    "What is the main difference between Level B1 and Level B2 AMT licenses?",
+    [
+      "Level B1 focuses on mechanical systems, while Level B2 focuses on avionics",
+      "Level B2 allows for engine repairs, while Level B1 does not",
+      "Level B1 requires fewer training hours"
+    ],
+    0,
+    "Level B1 focuses on mechanical systems, while Level B2 focuses on avionics"
+  ],
+  [
+    120,
+    "What is a key component of the practical experience requirement for an AMT license?",
+    [
+      "Performing maintenance work on an actual aircraft under supervision",
+      "Completing an online exam only",
+      "Attending a theoretical course with no hands-on training"
+    ],
+    0,
+    "Performing maintenance work on an actual aircraft under supervision"
+  ],
+  [
+    121,
+    "What is a requirement for obtaining a Level C AMT license?",
+    [
+      "Having a technical engineering degree and 3 years of civil aircraft maintenance experience",
+      "Completing a 2-week online training course",
+      "Working for an airline for at least 6 months"
+    ],
+    0,
+    "Having a technical engineering degree and 3 years of civil aircraft maintenance experience"
+  ],
+  [
+    122,
+    "What is included in an AMT training program for type ratings?",
+    [
+      "Theory, practice, and specific aircraft system functions",
+      "Only theoretical coursework",
+      "Customer service training"
+    ],
+    0,
+    "Theory, practice, and specific aircraft system functions"
+  ],
+  [
+    123,
+    "What must an AMT do to maintain license validity?",
+    [
+      "Have a minimum of 6 months of relevant maintenance experience in the last 2 years",
+      "Retake the full licensing exam every year",
+      "Submit a report to the airline"
+    ],
+    0,
+    "Have a minimum of 6 months of relevant maintenance experience in the last 2 years"
+  ],
+  [
+    124,
+    "What is the main role of the State Aviation Regulatory Body?",
+    [
+      "To ensure the safety of flight operations and regulate air services",
+      "To operate commercial airlines",
+      "To provide in-flight services"
+    ],
+    0,
+    "To ensure the safety of flight operations and regulate air services"
+  ],
+  [
+    125,
+    "Which law governs civil aviation in Vietnam?",
+    [
+      "Law on Air Traffic Control",
+      "Law on Civil Aviation of Vietnam 2006",
+      "International Aviation Act"
+    ],
+    1,
+    "Law on Civil Aviation of Vietnam 2006"
+  ],
+  [
+    126,
+    "Which organization is responsible for issuing air traffic rights in Vietnam?",
+    [
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "Ministry of Foreign Affairs",
+      "International Civil Aviation Organization (ICAO)"
+    ],
+    0,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    127,
+    "What is required for an enterprise to provide aviation services at airports?",
+    [
+      "A permit issued by the Ministry of Transport",
+      "A contract with an airline",
+      "A private business license"
+    ],
+    0,
+    "A permit issued by the Ministry of Transport"
+  ],
+  [
+    128,
+    "What is one of the key responsibilities of the Civil Aviation Authority of Vietnam (CAAV)?",
+    [
+      "Issuing directives and commands to ensure aviation safety",
+      "Managing airline customer service",
+      "Conducting airline promotions"
+    ],
+    0,
+    "Issuing directives and commands to ensure aviation safety"
+  ],
+  [
+    129,
+    "What action can the CAAV take in an emergency?",
+    [
+      "Suspend flight operations at an airport",
+      "Lower ticket prices",
+      "Change airline schedules"
+    ],
+    0,
+    "Suspend flight operations at an airport"
+  ],
+  [
+    130,
+    "What must air carriers obtain before conducting commercial air transport?",
+    [
+      "Air traffic rights from the Ministry of Transport",
+      "Approval from ICAO",
+      "A passenger satisfaction certificate"
+    ],
+    0,
+    "Air traffic rights from the Ministry of Transport"
+  ],
+  [
+    131,
+    "What is one of the functions of the CAAV’s aviation safety and security supervision?",
+    [
+      "Ensuring compliance with regulations on aircraft operation and maintenance",
+      "Managing airline loyalty programs",
+      "Handling airline customer complaints"
+    ],
+    0,
+    "Ensuring compliance with regulations on aircraft operation and maintenance"
+  ],
+  [
+    132,
+    "What document provides official information about civil aviation activities?",
+    [
+      "Aeronautical Information Publication (AIP)",
+      "Passenger Flight Guide",
+      "Aircraft Maintenance Manual"
+    ],
+    0,
+    "Aeronautical Information Publication (AIP)"
+  ],
+  [
+    133,
+    "What type of inspections does the CAAV conduct?",
+    [
+      "Aviation specialized inspections",
+      "Passenger baggage inspections",
+      "Airline financial audits"
+    ],
+    0,
+    "Aviation specialized inspections"
+  ],
+  [
+    134,
+    "What is a Type Certificate (TC) in aircraft certification?",
+    [
+      "A certificate proving the aircraft has been inspected for safety.",
+      "A document that certifies an aircraft type meets regulatory standards.",
+      "A pilot’s license to operate a specific type of aircraft."
+    ],
+    1,
+    "A document that certifies an aircraft type meets regulatory standards."
+  ],
+  [
+    135,
+    "Which organization in Vietnam issues Airworthiness Certificates?",
+    [
+      "Civil Aviation Authority of Vietnam (CAAV)",
+      "International Civil Aviation Organization (ICAO)",
+      "Federal Aviation Administration (FAA)"
+    ],
+    0,
+    "Civil Aviation Authority of Vietnam (CAAV)"
+  ],
+  [
+    136,
+    "What is the purpose of a Supplemental Type Certificate (STC)?",
+    [
+      "Approving modifications to an existing aircraft design.",
+      "Certifying a new aircraft design.",
+      "Issuing a pilot license."
+    ],
+    0,
+    "Approving modifications to an existing aircraft design."
+  ],
+  [
+    137,
+    "Which certification specification applies to small rotorcraft?",
+    [
+      "CS-23",
+      "CS-27",
+      "CS-29"
+    ],
+    1,
+    "CS-27"
+  ],
+  [
+    138,
+    "Which of the following must an aircraft carry during operation?",
+    [
+      "Certificate of Registration",
+      "Certificate of Airworthiness",
+      "Both A and B"
+    ],
+    2,
+    "Both A and B"
+  ],
+  [
+    139,
+    "What happens if an aircraft’s airworthiness certificate is amended?",
+    [
+      "The aircraft must stop flying permanently.",
+      "The amendment is reviewed by CAAV within 7 working days.",
+      "The pilot is responsible for updating the certificate."
+    ],
+    1,
+    "The amendment is reviewed by CAAV within 7 working days."
+  ],
+  [
+    140,
+    "What is “continuing airworthiness” in aviation?",
+    [
+      "The process of maintaining an aircraft’s compliance with airworthiness requirements.",
+      "A special type of aircraft design.",
+      "The first step in obtaining a Type Certificate."
+    ],
+    0,
+    "The process of maintaining an aircraft’s compliance with airworthiness requirements."
+  ],
+  [
+    141,
+    "What is required for an aircraft to receive a Standard Airworthiness Certificate?",
+    [
+      "The aircraft must conform to an approved type design.",
+      "The aircraft must be brand new.",
+      "The aircraft must be manufactured in Vietnam."
+    ],
+    0,
+    "The aircraft must conform to an approved type design."
+  ],
+  [
+    142,
+    "Which type of certification is required for aircraft exported from Vietnam?",
+    [
+      "Provisional Type Certificate",
+      "Export Certificate of Airworthiness",
+      "Crew License Certificate"
+    ],
+    1,
+    "Export Certificate of Airworthiness"
+  ],
+  [
+    143,
+    "Why are Airworthiness Directives (ADs) issued?",
+    [
+      "To ensure the safety of aircraft operation by requiring corrective actions.",
+      "To restrict aircraft from flying internationally.",
+      "To certify an aircraft for commercial operations."
+    ],
+    0,
+    "To ensure the safety of aircraft operation by requiring corrective actions."
+  ],
+  [
+    144,
+    "What is the difference between a minor and major change in a Type Certificate?",
+    [
+      "Minor changes do not affect airworthiness significantly, while major changes do.",
+      "Major changes are more expensive than minor changes.",
+      "Minor changes must be reported to ICAO."
+    ],
+    0,
+    "Minor changes do not affect airworthiness significantly, while major changes do."
+  ],
+  [
+    145,
+    "What must an applicant demonstrate to obtain a Supplemental Type Certificate (STC)?",
+    [
+      "Compliance with applicable type certificate and environmental protection regulations.",
+      "That the aircraft is brand new.",
+      "That the aircraft has never been modified before."
+    ],
+    0,
+    "Compliance with applicable type certificate and environmental protection regulations."
+  ],
+  [
+    146,
+    "What does the Certificate of Airworthiness confirm?",
+    [
+      "That the aircraft meets the safety standards set by regulatory authorities.",
+      "That the pilot is certified to operate the aircraft.",
+      "That the aircraft is only allowed to fly in Vietnam."
+    ],
+    0,
+    "That the aircraft meets the safety standards set by regulatory authorities."
+  ],
+  [
+    147,
+    "How does Vietnam validate a foreign airworthiness certificate?",
+    [
+      "By issuing an equivalent authorization valid for up to one year.",
+      "By requiring all foreign aircraft to apply for a new certificate.",
+      "By inspecting the aircraft in its home country."
+    ],
+    0,
+    "By issuing an equivalent authorization valid for up to one year."
+  ],
+  [
+    148,
+    "What are the responsibilities of an aircraft owner regarding continuing airworthiness?",
+    [
+      "Ensuring all required maintenance is performed.",
+      "Performing maintenance personnel.",
+      "Renewing the aircraft’s type certificate annually."
+    ],
+    0,
+    "Ensuring all required maintenance is performed."
+  ],
+  [
+    149,
+    "Why is reporting aircraft failures to the aviation authority important?",
+    [
+      "To prevent accidents and improve aviation safety.",
+      "To assign blame for the failure.",
+      "To increase aircraft maintenance costs."
+    ],
+    0,
+    "To prevent accidents and improve aviation safety."
+  ],
+  [
+    150,
+    "What is the purpose of structural inspection programs for older aircraft?",
+    [
+      "To ensure continued airworthiness and detect potential structural issues.",
+      "To upgrade older aircraft to newer models.",
+      "To reduce maintenance costs."
+    ],
+    0,
+    "To ensure continued airworthiness and detect potential structural issues."
+  ],
+  [
+    151,
+    "What action should be found when a design defect is found in an aircraft part?",
+    [
+      "The type certificate holder must cooperate in the investigation.",
+      "The part should be removed without reporting the issue.",
+      "The defect should be ignored if the aircraft is still operational."
+    ],
+    0,
+    "The type certificate holder must cooperate in the investigation."
+  ],
+  [
+    152,
+    "What is required for an aircraft operator to apply for a renewal of the Certificate of Airworthiness?",
+    [
+      "Submitting an application with relevant supporting documents.",
+      "The application must be submitted.",
+      "The aircraft must be flown internationally first."
+    ],
+    0,
+    "Submitting an application with relevant supporting documents."
+  ]
+]
