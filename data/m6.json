@@ -1,0 +1,420 @@
+[
+  [
+    1,
+    "What are metals which contain mostly iron known as?",
+    [
+      "Non-ferrous precious metals containing base elements",
+      "Ferrous metals derived from the Latin 'ferrum' meaning iron",
+      "Pure elemental polymers with metallic plating"
+    ],
+    1,
+    "Ferrous metals derived from the Latin 'ferrum' meaning iron"
+  ],
+  [
+    2,
+    "What defines 'plain carbon steel'?",
+    [
+      "A composite material made of carbon fibers and iron resin",
+      "Steel alloyed heavily with nickel and chromium for hardness",
+      "Steel that has no other constituents other than iron and carbon"
+    ],
+    2,
+    "Steel that has no other constituents other than iron and carbon"
+  ],
+  [
+    3,
+    "Why is steel tempered after undergoing a hardening process?",
+    [
+      "To increase electrical conductivity and thermal expansion",
+      "To reduce the brittleness which is caused by hardening",
+      "To permanently dissolve all carbon content into a liquid phase"
+    ],
+    1,
+    "To reduce the brittleness which is caused by hardening"
+  ],
+  [
+    4,
+    "What is a primary advantage of spark testing metals?",
+    [
+      "It measures the exact atomic weight of trace elements",
+      "It provides a completely non-destructive metallurgical analysis",
+      "It is quick, easy, and inexpensive"
+    ],
+    2,
+    "It is quick, easy, and inexpensive"
+  ],
+  [
+    5,
+    "What is the carbon content range characteristic of high carbon steels?",
+    [
+      "Between 0.80% and 1.4% of the overall weight",
+      "Between 0.05% and 0.15% of the overall weight",
+      "Between 2.5% and 4.0% of the overall weight"
+    ],
+    0,
+    "Between 0.80% and 1.4% of the overall weight"
+  ],
+  [
+    6,
+    "What does the term 'non-ferrous' refer to in metallurgy?",
+    [
+      "Pure iron metals treated with high-temperature quenching",
+      "All metals which have elements other than iron as their base or principal constituent",
+      "Synthetic carbon-based plastics used as metal substitutes"
+    ],
+    1,
+    "All metals which have elements other than iron as their base or principal constituent"
+  ],
+  [
+    7,
+    "What is the specific gravity of pure aluminium?",
+    [
+      "1.0, matching the density of pure water",
+      "Exactly 7.8, matching the density of carbon steel",
+      "About 2.7, nearly one-third that of steel or copper"
+    ],
+    2,
+    "About 2.7, nearly one-third that of steel or copper"
+  ],
+  [
+    8,
+    "What is a notable safety hazard associated with magnesium?",
+    [
+      "It has a high affinity for oxygen and will ignite and burn with a fierce white flame if overheated",
+      "It melts at room temperature and dissolves in standard hydraulic fluid",
+      "It releases toxic radioactive radiation when exposed to air"
+    ],
+    0,
+    "It has a high affinity for oxygen and will ignite and burn with a fierce white flame if overheated"
+  ],
+  [
+    9,
+    "How does titanium compare in strength and weight to steel and aluminium?",
+    [
+      "It matches the exact weight and elasticity of pure copper wire",
+      "It is heavier than steel and weaker than aluminium in all structural aspects",
+      "It is 45% lighter than steel but equal in strength, and 60% heavier than aluminium but twice as strong"
+    ],
+    2,
+    "It is 45% lighter than steel but equal in strength, and 60% heavier than aluminium but twice as strong"
+  ],
+  [
+    10,
+    "What is brass primarily composed of?",
+    [
+      "A copper-based alloy with up to 45% zinc",
+      "An aluminium-based alloy with 80% magnesium content",
+      "A pure iron matrix reinforced with carbon fibers"
+    ],
+    0,
+    "A copper-based alloy with up to 45% zinc"
+  ],
+  [
+    11,
+    "What are the primary reasons composite materials are used on aircraft?",
+    [
+      "Their high electrical resistance and magnetic shielding",
+      "Their low cost and ability to melt easily for recycling",
+      "Their strength to weight ratio and corrosion resistance"
+    ],
+    2,
+    "Their strength to weight ratio and corrosion resistance"
+  ],
+  [
+    12,
+    "What material is represented by DuPont’s Kevlar?",
+    [
+      "Thermoplastic resin",
+      "Fibreglass",
+      "Aramid"
+    ],
+    2,
+    "Aramid"
+  ],
+  [
+    13,
+    "What is the primary function of resins in composite structures?",
+    [
+      "Absorbing high-frequency radar waves",
+      "Providing electrical insulation and grounding",
+      "Laminating and bonding"
+    ],
+    2,
+    "Laminating and bonding"
+  ],
+  [
+    14,
+    "What is a honeycomb structure typically composed of?",
+    [
+      "Solid rectangular blocks of dense titanium",
+      "Thin-walled hexagonal cells",
+      "Interlocking circular rings of carbon fiber"
+    ],
+    1,
+    "Thin-walled hexagonal cells"
+  ],
+  [
+    15,
+    "What is considered the best non-destructive testing method for checking composite structures?",
+    [
+      "Acid immersion etching test",
+      "High-voltage spark testing",
+      "Coin-tap test"
+    ],
+    2,
+    "Coin-tap test"
+  ],
+  [
+    16,
+    "What is 'delamination' in composite materials?",
+    [
+      "The melting of resin due to friction heat",
+      "The complete separation of a metal fitting from a composite panel",
+      "The failure of the bond between layers of glass or carbon cloth"
+    ],
+    2,
+    "The failure of the bond between layers of glass or carbon cloth"
+  ],
+  [
+    17,
+    "What is the primary purpose of applying dope to an aircraft fabric covering?",
+    [
+      "To increase the electrical conductivity of the wing surface",
+      "To lubricate control cables passing beneath the fabric",
+      "To protect the fabric covering from damage by environmental factors"
+    ],
+    2,
+    "To protect the fabric covering from damage by environmental factors"
+  ],
+  [
+    18,
+    "What are the two primary ways corrosion occurs on metals?",
+    [
+      "Chemical (oxidation) and electrochemical (galvanic)",
+      "Thermal expansion and magnetic induction",
+      "Mechanical friction and acoustic vibration"
+    ],
+    0,
+    "Chemical (oxidation) and electrochemical (galvanic)"
+  ],
+  [
+    19,
+    "What is galvanic corrosion also referred to as?",
+    [
+      "Atmospheric oxidation and surface weathering",
+      "Electrolytic, electrochemical, or dissimilar metal corrosion",
+      "Uniform chemical dissolution"
+    ],
+    1,
+    "Electrolytic, electrochemical, or dissimilar metal corrosion"
+  ],
+  [
+    20,
+    "How is pitting corrosion described?",
+    [
+      "A localized form of corrosion by which cavities or 'holes' form",
+      "A uniform layer of rust covering the entire exterior surface",
+      "A complete structural fracture caused by tensile stress"
+    ],
+    0,
+    "A localized form of corrosion by which cavities or 'holes' form"
+  ],
+  [
+    21,
+    "Which environmental factors accelerate the corrosion process?",
+    [
+      "High altitude and low speed",
+      "Darkness and vacuum pressure",
+      "Temperature and moisture"
+    ],
+    2,
+    "Temperature and moisture"
+  ],
+  [
+    22,
+    "How is 'thread pitch' defined on a threaded fastener?",
+    [
+      "The angle of the fastener head relative to the shaft",
+      "The total tensile strength limit measured in pounds per square inch",
+      "The distance along the cylinder covered by one full turn of the helix"
+    ],
+    2,
+    "The distance along the cylinder covered by one full turn of the helix"
+  ],
+  [
+    23,
+    "Why are thread inserts frequently installed in softer metals like aluminium or magnesium?",
+    [
+      "To provide a more resilient screw thread and prevent wear/damage during periodic maintenance",
+      "To increase the magnetic permeability of the structural joint",
+      "To act as an electrical fuse during short circuits"
+    ],
+    0,
+    "To provide a more resilient screw thread and prevent wear/damage during periodic maintenance"
+  ],
+  [
+    24,
+    "What is the primary operational difference between a tension bolt and a shear bolt?",
+    [
+      "A tension bolt is made of plastic, while a shear bolt is made of titanium",
+      "A tension bolt requires a head and nut to resist pulling loads, whereas a shear bolt only takes sideways loads and may have a reduced head size",
+      "A tension bolt is used exclusively for fluid lines, while a shear bolt is for electrical panels"
+    ],
+    1,
+    "A tension bolt requires a head and nut to resist pulling loads, whereas a shear bolt only takes sideways loads and may have a reduced head size"
+  ],
+  [
+    25,
+    "What is the main difference between flared and flareless pipe couplings?",
+    [
+      "Flared couplings use rubber hoses, while flareless use solid copper pipes",
+      "Flared couplings require a specially shaped pipe end with a nipple and collar, whereas flareless couplings employ a sleeve pressed into the tube material",
+      "Flared couplings are only used for low-pressure air, while flareless are for high voltage wiring"
+    ],
+    1,
+    "Flared couplings require a specially shaped pipe end with a nipple and collar, whereas flareless couplings employ a sleeve pressed into the tube material"
+  ],
+  [
+    26,
+    "Where is a banjo coupling typically utilized in aircraft systems?",
+    [
+      "To secure interior cabin trim panels and carpets",
+      "To connect structural wing spars to the fuselage frame",
+      "Where a fluid-tight seal is required alongside relative rotational movement between fitting and hose, such as on brake units"
+    ],
+    2,
+    "Where a fluid-tight seal is required alongside relative rotational movement between fitting and hose, such as on brake units"
+  ],
+  [
+    27,
+    "What does a yellow marking on a fluid hose signify?",
+    [
+      "Electrical grounding path",
+      "Extreme high temperature",
+      "Low pressure"
+    ],
+    2,
+    "Low pressure"
+  ],
+  [
+    28,
+    "What is the primary function of bearings in mechanical assemblies?",
+    [
+      "To generate hydraulic pressure",
+      "To reduce friction",
+      "To increase structural elasticity"
+    ],
+    1,
+    "To reduce friction"
+  ],
+  [
+    29,
+    "What application is a spherical plain bearing typically used for?",
+    [
+      "High-speed turbine main shaft rotation",
+      "Numerous push-pull rod applications where rotation is not intended",
+      "Electrical current transmission across joints"
+    ],
+    1,
+    "Numerous push-pull rod applications where rotation is not intended"
+  ],
+  [
+    30,
+    "What is the core purpose of a mechanical transmission system?",
+    [
+      "To convert mechanical motion, change motion direction, or alter gear ratios for mechanical advantage",
+      "To filter contaminants out of hydraulic fluid",
+      "To measure atmospheric pressure and altitude"
+    ],
+    0,
+    "To convert mechanical motion, change motion direction, or alter gear ratios for mechanical advantage"
+  ],
+  [
+    31,
+    "What is a defining characteristic of a spur gear?",
+    [
+      "They use flexible chains to connect non-parallel rotating drums",
+      "They feature spiral bevel teeth for 90-degree angle power transfer",
+      "They have straight teeth and are used to transmit power between parallel shafts or shafts in the same axis"
+    ],
+    2,
+    "They have straight teeth and are used to transmit power between parallel shafts or shafts in the same axis"
+  ],
+  [
+    32,
+    "Where are bevel gears typically applied in aircraft?",
+    [
+      "Inside hydraulic accumulator cylinders to measure fluid volume",
+      "In accessory gearboxes providing a right-angle change in the direction of transmission",
+      "Along primary flight control cables to prevent chafing"
+    ],
+    1,
+    "In accessory gearboxes providing a right-angle change in the direction of transmission"
+  ],
+  [
+    33,
+    "What is a major advantage of using chains and sprockets?",
+    [
+      "Complete immunity to lubrication requirements and corrosion",
+      "Infinite flexibility and ability to stretch around tight corners",
+      "No slippage between chain teeth and negligible stretch under heavy loads"
+    ],
+    2,
+    "No slippage between chain teeth and negligible stretch under heavy loads"
+  ],
+  [
+    34,
+    "What is the primary function of control cables in an aircraft?",
+    [
+      "To conduct high-voltage electrical power",
+      "To transfer movement",
+      "To store hydraulic fluid under pressure"
+    ],
+    1,
+    "To transfer movement"
+  ],
+  [
+    35,
+    "What is the purpose of fairleads installed in aircraft structures?",
+    [
+      "To convert electrical signals into mechanical cable motion",
+      "To increase the tension of control cables automatically",
+      "To prevent chafing of cables where they pass through bulkheads and frames"
+    ],
+    2,
+    "To prevent chafing of cables where they pass through bulkheads and frames"
+  ],
+  [
+    36,
+    "What is a standard rule of thumb when substituting a copper electrical cable with an aluminium cable?",
+    [
+      "Use a cable that is two gauge numbers larger",
+      "Use a cable that is half the physical length",
+      "Use a cable rated for triple the voltage limit"
+    ],
+    0,
+    "Use a cable that is two gauge numbers larger"
+  ],
+  [
+    37,
+    "What measurement standard is utilized to determine electrical wire diameter?",
+    [
+      "British Thermal Units (BTU)",
+      "Metric Pascal Scale (MPS)",
+      "American Wire Gauge (AWG)"
+    ],
+    2,
+    "American Wire Gauge (AWG)"
+  ],
+  [
+    38,
+    "Why are electrical wires marked or color-coded on an aircraft?",
+    [
+      "To allow for clear identification and differentiation",
+      "To indicate their maximum operating temperature limit",
+      "To show whether they carry AC or DC current"
+    ],
+    0,
+    "To allow for clear identification and differentiation"
+  ]
+]
